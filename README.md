@@ -18,9 +18,9 @@
   - Contrastive Learning：对比学习  
   - Reinforcement Learning：强化学习
 - 研究级
-  - Large language model fine tuning: 大模型微调
+  - Large language model fine tuning：大模型微调
   - Knowledge Distillation：知识蒸馏
-  - Multi-Task Learning:多任务学习
+  - Multi-Task Learning：多任务学习
   - Model pruning and quantization：模型剪枝与量化 
 - 高级研究级
   - Neural Architecture Search (NAS): 神经架构搜索
