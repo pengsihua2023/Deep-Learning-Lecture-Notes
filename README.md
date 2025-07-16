@@ -18,4 +18,6 @@
   - Reinforcement Learning：强化学习
   - VAE(Variational Autoencoder）：变分自编码器
 - 研究级
+  - Multi-Task Learning:多任务学习
+  - Large language model fine tuning: 大模型微调
 - 高级研究级
