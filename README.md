@@ -13,10 +13,10 @@
   - ResNet：残差网络
   - Graph Neural Network(GNN）：图神经网络
 - 高级
-  - Contrastive Learning：对比学习
-  - Diffusion Models：扩散模型
-  - Reinforcement Learning：强化学习
   - VAE(Variational Autoencoder）：变分自编码器
+  - Diffusion Models：扩散模型
+  - Contrastive Learning：对比学习  
+  - Reinforcement Learning：强化学习
 - 研究级
   - Multi-Task Learning:多任务学习
   - Large language model fine tuning: 大模型微调
