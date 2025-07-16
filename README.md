@@ -20,4 +20,8 @@
 - 研究级
   - Multi-Task Learning:多任务学习
   - Large language model fine tuning: 大模型微调
+  - Model pruning and quantization：模型剪枝与量化
+  - Knowledge Distillation：知识蒸馏
 - 高级研究级
+  - Neural Architecture Search (NAS): 神经架构搜索
+  - AI agent: AI智能体
