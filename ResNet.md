@@ -1,4 +1,12 @@
 ## ResNet
+ResNet（残差网络，Residual Network）
+- 重要性：
+ResNet 是 CNN 的进阶版本，通过“残差连接”解决深层网络的梯度消失问题，允许构建非常深的网络（几十到上百层）。  
+在图像分类（如 ImageNet 比赛）中表现卓越，是现代计算机视觉的基石。  
+- 核心概念：
+ResNet 引入“残差连接”（skip connection），让网络学习“变化量”而非直接输出，减轻深层网络的训练难度。  
+- 应用：图像分类、目标检测（如自动驾驶中的物体识别）、人脸识别。
+
 ```
 import tensorflow as tf
 from tensorflow.keras import layers, models
