@@ -2,5 +2,6 @@
 - 初级
 - 中级
 - 高级
+  - Contrastive Learning
 - 研究级
 - 高级研究级
