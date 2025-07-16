@@ -25,3 +25,4 @@
 - 高级研究级
   - Neural Architecture Search (NAS): 神经架构搜索
   - AI agent: AI智能体
+  - World Model：世界模型
