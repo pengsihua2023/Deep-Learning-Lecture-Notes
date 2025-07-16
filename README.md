@@ -2,7 +2,7 @@
 - 初级
   - FCN：全连接网络
   - CNN: 卷积网络
-  - 回归问题：以波士顿房价预测为例
+  - Regression Problem：回归问题（以波士顿房价预测为例）
   - RNN： 循环网络
   - LSTN：长短期记忆网络
   - Autoencoder: 自编码器
