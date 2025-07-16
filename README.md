@@ -8,7 +8,7 @@
   - Autoencoder: 自编码器
   - GAN：生成对抗网络 
 - 中级
-  - Transformer
+  - Transformer：转换器
   - Attention-based Models：注意力机制模型
   - ResNet：残差网络
   - Graph Neural Network(GNN）：图神经网络
