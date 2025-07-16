@@ -1,5 +1,5 @@
 ## VAE（变分自编码器，Variational Autoencoder）
--重要性：
+- 重要性：
 VAE 是 Autoencoder 的生成式扩展，结合概率模型，能生成新数据（如图片、文本）。  
 在生成模型领域与 GAN 齐名，适合数据生成和分布学习。 
 - 核心概念：
