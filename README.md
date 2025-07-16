@@ -22,8 +22,8 @@
 - 研究级
   - Large language model fine tuning：大模型微调    
   - Model pruning and quantization：模型剪枝与量化 
-- 高级研究级
-  - AI4science：AI for Scienc：人工智能应用于科学
+- 高级研究级 
   - Neural Architecture Search (NAS): 神经架构搜索
   - AI agent: AI智能体
+  - AI4science：AI for Scienc：人工智能应用于科学
   - World Model：世界模型 (一般介绍)
