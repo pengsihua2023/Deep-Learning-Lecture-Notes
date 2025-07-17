@@ -5,3 +5,4 @@ Transformer 的注意力机制是现代深度学习的基石，衍生出如 BERT
 - 核心概念：
 注意力机制让模型聚焦输入中最重要的部分（如句子中的关键词），通过“查询-键-值”机制计算权重。  
 - 应用：聊天机器人（如 Grok）、机器翻译、文本摘要。
+<img width="265" height="190" alt="image" src="https://github.com/user-attachments/assets/69ce55ee-fc84-4492-84b4-6cd53bf78445" />  
