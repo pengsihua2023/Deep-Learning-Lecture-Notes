@@ -6,3 +6,4 @@ RNN 有“记忆”，可以记住之前的输入，适合处理有序数据（�
 变种如 LSTM（长短期记忆网络）能记住更长的序列。  
 - 应用：语音识别（如 Siri）、机器翻译、股票预测。
 - 为什么教：RNN 展示深度学习如何处理动态数据，与语音助手等应用相关。
+<img width="1194" height="346" alt="image" src="https://github.com/user-attachments/assets/fb831947-92f9-4b61-86ec-6049d0e50843" />
