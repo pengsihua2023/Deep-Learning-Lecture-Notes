@@ -368,6 +368,7 @@ if __name__ == "__main__":
 
 ```
 ## 注释
+### 1. 数据准备
 ```
 # 生成2000个样本
 sequences, labels = generate_synthetic_data(num_samples=2000, seq_len=30)
@@ -377,6 +378,8 @@ split_idx = int(0.8 * len(sequences))
 train_sequences = sequences[:split_idx]  # 1600个
 val_sequences = sequences[split_idx:]    # 400个
 ```
+
+### 2. 训练循环
 ```
 for epoch in range(15):
     # 训练阶段
