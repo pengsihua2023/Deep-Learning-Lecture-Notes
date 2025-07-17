@@ -368,7 +368,6 @@ if __name__ == "__main__":
 
 ```
 ## 注释
-# 生成2000个样本
 ```
 # 生成2000个样本
 sequences, labels = generate_synthetic_data(num_samples=2000, seq_len=30)
@@ -377,4 +376,22 @@ sequences, labels = generate_synthetic_data(num_samples=2000, seq_len=30)
 split_idx = int(0.8 * len(sequences))
 train_sequences = sequences[:split_idx]  # 1600个
 val_sequences = sequences[split_idx:]    # 400个
+```
+```
+for epoch in range(15):
+    # 训练阶段
+    model.train()
+    for batch in train_loader:
+        optimizer.zero_grad()
+        output = model(data)  # 前向传播
+        loss = criterion(output, target)  # 计算损失
+        loss.backward()  # 反向传播
+        optimizer.step()  # 更新参数
+    
+    # 验证阶段
+    model.eval()
+    with torch.no_grad():
+        for batch in val_loader:
+            output = model(data)
+            # 计算验证损失和准确率
 ```
