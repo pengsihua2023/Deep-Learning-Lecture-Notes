@@ -5,3 +5,4 @@
 - 核心概念：
 扩散模型通过“加噪-去噪”过程学习数据分布，先把数据加噪到随机噪声，再逐步还原。  
 - 应用：图像生成（艺术、游戏设计）、视频生成、科学模拟。  
+<img width="2060" height="920" alt="image" src="https://github.com/user-attachments/assets/427d35b9-10d1-4bca-b74c-b5e166d7613d" />
