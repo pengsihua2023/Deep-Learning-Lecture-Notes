@@ -72,3 +72,9 @@ with torch.no_grad():
     print(f"Input shape: {test_input.shape}, Reconstructed shape: {reconstructed.shape}")
 
 ```
+## 运行结果
+Epoch [7/10], Loss: 0.9657  
+Epoch [8/10], Loss: 0.9408  
+Epoch [9/10], Loss: 0.9078  
+Epoch [10/10], Loss: 0.8681  
+Input shape: torch.Size([1, 784]), Reconstructed shape: torch.Size([1, 784])  
