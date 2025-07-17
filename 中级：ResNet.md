@@ -6,7 +6,9 @@ ResNet 是 CNN 的进阶版本，通过“残差连接”解决深层网络的�
 - 核心概念：
 ResNet 引入“残差连接”（skip connection），让网络学习“变化量”而非直接输出，减轻深层网络的训练难度。  
 - 应用：图像分类、目标检测（如自动驾驶中的物体识别）、人脸识别。
-
+<img width="570" height="328" alt="image" src="https://github.com/user-attachments/assets/4c111489-898f-4412-9e70-336ec2320f03" />  
+ <img width="850" height="595" alt="image" src="https://github.com/user-attachments/assets/ee800edc-db6e-4cde-84d9-0d396ca69e58" />  
+ 
 ```
 import tensorflow as tf
 from tensorflow.keras import layers, models
