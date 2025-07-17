@@ -398,3 +398,14 @@ for epoch in range(15):
             output = model(data)
             # 计算验证损失和准确率
 ```
+### 3. 损失函数
+```
+criterion = nn.CrossEntropyLoss()  # 交叉熵损失
+optimizer = optim.Adam(model.parameters(), lr=0.0005)  # Adam优化器
+```
+### 总结
+数据：程序生成的合成数据，基于统计特征分类 
+模型：只有编码器的Transformer，用于序列分类  
+解码器：没有，因为不需要生成序列输出  
+流程：数据生成 → 预处理 → 嵌入 → 位置编码 → 自注意力 → 池化 → 分类  
+这个模型适合学习Transformer的基本概念，特别是自注意力机制和位置编码！  
