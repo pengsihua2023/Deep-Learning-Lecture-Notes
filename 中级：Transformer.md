@@ -367,3 +367,14 @@ if __name__ == "__main__":
     main()
 
 ```
+## 注释
+# 生成2000个样本
+```
+# 生成2000个样本
+sequences, labels = generate_synthetic_data(num_samples=2000, seq_len=30)
+
+# 80%训练，20%验证
+split_idx = int(0.8 * len(sequences))
+train_sequences = sequences[:split_idx]  # 1600个
+val_sequences = sequences[split_idx:]    # 400个
+```
