@@ -7,7 +7,8 @@ LSTM 是 RNN（循环神经网络）的一种变种，解决了标准 RNN 的梯
 LSTM 通过“门机制”（输入门、遗忘门、输出门）控制信息的保留和遗忘，适合处理长序列数据。  
 - 应用：语音助手（如 Siri）、股票价格预测、机器翻译。
 
-<img width="863" height="671" alt="image" src="https://github.com/user-attachments/assets/f6df7aef-51fe-4edc-999e-7fc0b05403bb" />  
+<img width="969" height="304" alt="image" src="https://github.com/user-attachments/assets/1d0be4d9-f07c-4428-9aaa-cfe0ecbfd411" />
+
 
 ## 代码
 ```
