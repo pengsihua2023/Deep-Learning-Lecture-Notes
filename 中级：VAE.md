@@ -182,4 +182,4 @@ if __name__ == "__main__":
 图一 训练和验证损失曲线    
 <img width="286" height="109" alt="image" src="https://github.com/user-attachments/assets/344ba28c-ea33-492c-afd4-7b352fecc93e" />    
 
-图2 生成的图像  
+图2 原始图像（上）和生成图像（下）的比较   
