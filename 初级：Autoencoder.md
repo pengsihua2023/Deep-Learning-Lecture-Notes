@@ -14,68 +14,170 @@ Autoencoder 包含编码器（压缩数据）和解码器（重构数据），�
 import torch
 import torch.nn as nn
 import torch.optim as optim
+from torch.utils.data import DataLoader
+from torchvision import datasets, transforms
+import torch.nn.functional as F
+import matplotlib.pyplot as plt
+import torchvision.utils as vutils
+import os
 
-# 定义Autoencoder模型
+# 设置随机种子
+torch.manual_seed(42)
+
+# 超参数
+input_dim = 784  # 28x28 MNIST图像
+hidden_dim = 400
+latent_dim = 20
+batch_size = 128
+epochs = 10
+learning_rate = 1e-3
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+# 创建保存可视化结果的目录
+if not os.path.exists('results'):
+    os.makedirs('results')
+
+# Autoencoder模型
 class Autoencoder(nn.Module):
-    def __init__(self, input_dim, hidden_dim):
+    def __init__(self):
         super(Autoencoder, self).__init__()
+        
         # 编码器
         self.encoder = nn.Sequential(
             nn.Linear(input_dim, hidden_dim),
-            nn.ReLU()
+            nn.ReLU(),
+            nn.Linear(hidden_dim, latent_dim)
         )
+        
         # 解码器
         self.decoder = nn.Sequential(
+            nn.Linear(latent_dim, hidden_dim),
+            nn.ReLU(),
             nn.Linear(hidden_dim, input_dim),
             nn.Sigmoid()
         )
-
+    
     def forward(self, x):
+        x = x.view(-1, input_dim)
         encoded = self.encoder(x)
         decoded = self.decoder(encoded)
         return decoded
 
-# 参数设置
-input_dim = 784  # 假设输入是28x28的图像展平后的维度 (如MNIST)
-hidden_dim = 128  # 隐层维度
-learning_rate = 0.001
-epochs = 10
-batch_size = 32
+# 损失函数（仅使用重构损失）
+def loss_function(recon_x, x):
+    # 反归一化目标值从 [-1, 1] 到 [0, 1]
+    x = (x.view(-1, input_dim) + 1) / 2
+    BCE = F.binary_cross_entropy(recon_x, x, reduction='sum')
+    return BCE
 
-# 模型、损失函数和优化器
-model = Autoencoder(input_dim, hidden_dim)
-criterion = nn.MSELoss()
+# 数据加载
+transform = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize((0.5,), (0.5,))
+])
+
+train_dataset = datasets.MNIST(root='./data', train=True, transform=transform, download=True)
+test_dataset = datasets.MNIST(root='./data', train=False, transform=transform, download=True)
+train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+
+# 可视化函数
+def visualize_results(model, test_loader, epoch, device):
+    model.eval()
+    with torch.no_grad():
+        # 获取测试集中的一批数据
+        data, _ = next(iter(test_loader))
+        data = data.to(device)
+        recon_batch = model(data)
+        
+        # 反归一化用于显示
+        data = (data + 1) / 2
+        recon_batch = (recon_batch + 1) / 2
+        
+        # 比较原始图像和重构图像
+        comparison = torch.cat([data[:8], recon_batch.view(batch_size, 1, 28, 28)[:8]])
+        vutils.save_image(comparison, f'results/reconstruction_{epoch}.png', nrow=8)
+
+# 初始化模型和优化器
+model = Autoencoder().to(device)
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
-# 模拟数据 (这里用随机数据代替，实际使用时需替换为真实数据集)
-data = torch.randn(1000, input_dim)
-
-# 训练循环
-for epoch in range(epochs):
-    for i in range(0, len(data), batch_size):
-        batch = data[i:i+batch_size]
-        
-        # 前向传播
-        output = model(batch)
-        loss = criterion(output, batch)
-        
-        # 反向传播和优化
+# 训练和验证循环
+def train(epoch):
+    model.train()
+    train_loss = 0
+    for batch_idx, (data, _) in enumerate(train_loader):
+        data = data.to(device)
         optimizer.zero_grad()
+        recon_batch = model(data)
+        loss = loss_function(recon_batch, data)
         loss.backward()
+        train_loss += loss.item()
         optimizer.step()
+        
+        if batch_idx % 100 == 0:
+            print(f'Train Epoch: {epoch} [{batch_idx * len(data)}/{len(train_loader.dataset)} '
+                  f'({100. * batch_idx / len(train_loader):.0f}%)]\tLoss: {loss.item() / len(data):.6f}')
     
-    print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f}')
+    avg_train_loss = train_loss / len(train_loader.dataset)
+    print(f'====> Epoch: {epoch} Average training loss: {avg_train_loss:.4f}')
+    return avg_train_loss
 
-# 测试模型
-with torch.no_grad():
-    test_input = torch.randn(1, input_dim)
-    reconstructed = model(test_input)
-    print(f"Input shape: {test_input.shape}, Reconstructed shape: {reconstructed.shape}")
+def test(epoch):
+    model.eval()
+    test_loss = 0
+    with torch.no_grad():
+        for data, _ in test_loader:
+            data = data.to(device)
+            recon_batch = model(data)
+            test_loss += loss_function(recon_batch, data).item()
+    
+    avg_test_loss = test_loss / len(test_loader.dataset)
+    print(f'====> Test set loss: {avg_test_loss:.4f}')
+    return avg_test_loss
 
+# 主训练循环
+if __name__ == "__main__":
+    train_losses = []
+    test_losses = []
+    
+    for epoch in range(1, epochs + 1):
+        train_loss = train(epoch)
+        test_loss = test(epoch)
+        train_losses.append(train_loss)
+        test_losses.append(test_loss)
+        
+        # 可视化结果
+        visualize_results(model, test_loader, epoch, device)
+        
+        # 绘制损失曲线
+        plt.figure(figsize=(10, 5))
+        plt.plot(train_losses, label='Training Loss')
+        plt.plot(test_losses, label='Test Loss')
+        plt.title('Training and Test Loss')
+        plt.xlabel('Epoch')
+        plt.ylabel('Loss')
+        plt.legend()
+        plt.savefig(f'results/loss_curve_{epoch}.png')
+        plt.close()
 ```
 ## 运行结果
-Epoch [7/10], Loss: 0.9657  
-Epoch [8/10], Loss: 0.9408  
-Epoch [9/10], Loss: 0.9078  
-Epoch [10/10], Loss: 0.8681  
-Input shape: torch.Size([1, 784]), Reconstructed shape: torch.Size([1, 784])  
+====> Epoch: 9 Average training loss: 69.1569  
+====> Test set loss: 69.0569 
+Train Epoch: 10 [0/60000 (0%)]  Loss: 71.628830  
+Train Epoch: 10 [12800/60000 (21%)]     Loss: 65.910645  
+Train Epoch: 10 [25600/60000 (43%)]     Loss: 68.564079  
+Train Epoch: 10 [38400/60000 (64%)]     Loss: 70.579895  
+Train Epoch: 10 [51200/60000 (85%)]     Loss: 69.532722  
+====> Epoch: 10 Average training loss: 68.6832  
+====> Test set loss: 68.4474  
+
+<img width="960" height="490" alt="image" src="https://github.com/user-attachments/assets/8d28cf45-b977-4de8-a857-d62f8893be0f" />    
+
+图1 loss曲线  
+<img width="274" height="108" alt="image" src="https://github.com/user-attachments/assets/d5769c88-f37c-4d0a-94b9-fb627129abfd" />  
+
+
+图2 输入与输出图像比较
+
+
