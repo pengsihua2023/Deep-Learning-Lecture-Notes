@@ -28,3 +28,15 @@
   - AI agent: AI智能体
   - AI4science：AI for Scienc：人工智能应用于科学
   - World Model：世界模型 (一般介绍)
+
+  - 著名网络架构
+    - LeNet (1998)
+    - AlexNet (2012)
+    - VGG (2014)
+    - Inception (GoogleNet, 2014)
+    - ResNet（2015）
+    - U-Net (2015)
+    - YOLO系列 (2016-)
+    - EfficientNet (2019)
+    - Vision Transformer (ViT, 2020)
+    - Diffusion Models（2020s）
