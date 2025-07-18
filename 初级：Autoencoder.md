@@ -9,7 +9,7 @@ Autoencoder 包含编码器（压缩数据）和解码器（重构数据），�
 - 应用：图像去噪、数据压缩、异常检测（如信用卡欺诈检测）。
 <img width="1400" height="797" alt="image" src="https://github.com/user-attachments/assets/28b89fa6-5c8b-460f-8385-4cd46c7c47cd" />
 
-## 代码
+## 代码 （Pytorch）
 ```
 import torch
 import torch.nn as nn
