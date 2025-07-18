@@ -177,3 +177,8 @@ if __name__ == "__main__":
     print("\nGenerating final visualization...")
     plot_final_results()
 ```
+## 训练结果
+Epoch [45/50], D Loss: 0.3414, G Loss: 2.7712   
+Epoch [50/50], D Loss: 0.3680, G Loss: 2.7854   
+
+Generating final visualization...   
