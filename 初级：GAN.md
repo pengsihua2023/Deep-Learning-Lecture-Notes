@@ -187,3 +187,4 @@ Epoch [45/50], D Loss: 0.3414, G Loss: 2.7712
 Epoch [50/50], D Loss: 0.3680, G Loss: 2.7854   
 
 Generating final visualization...   
+<img width="741" height="708" alt="image" src="https://github.com/user-attachments/assets/1787c031-5bf5-4ef9-b734-ef7e6ef65b3b" />
