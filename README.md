@@ -29,7 +29,7 @@
   - AI4science：AI for Scienc：人工智能应用于科学
   - World Model：世界模型 (一般介绍)
 
-  - 著名网络架构
+- 著名网络架构
     - LeNet (1998)
     - AlexNet (2012)
     - VGG (2014)
