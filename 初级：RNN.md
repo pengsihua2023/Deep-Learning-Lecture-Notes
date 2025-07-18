@@ -11,3 +11,106 @@ RNN 有“记忆”，可以记住之前的输入，适合处理有序数据（�
 
 RNN: 基本的循环神经网络单元，通过tanh激活函数处理输入Xt和前一时刻的隐藏状态h(t-1)，生成当前隐藏状态h(t)。它简单但容易遇到梯度消失问题，限制了长序列的处理能力。  
 RNN（循环神经网络）被认为具有“记忆”是因为它通过隐藏状态h(t)在时间步之间传递信息。当前时刻的隐藏状态不仅依赖于当前输入x(t)，还依赖于前一时刻的隐藏状态h(t-1)，从而能够“记住”之前序列中的部分信息。这种结构使其适合处理序列数据，如时间序列或自然语言。然而，标准RNN的记忆能力有限，容易受梯度消失问题影响，难以捕捉长距离依赖。
+## 代码（Pytorch）
+```
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import numpy as np
+
+# 设置随机种子以确保结果可重复
+torch.manual_seed(42)
+np.random.seed(42)
+
+# 1. 生成简单序列数据
+def generate_sequence_data(num_samples, seq_length):
+    data = []
+    labels = []
+    for _ in range(num_samples):
+        # 随机生成序列（0或1）
+        seq = np.random.randint(0, 2, size=(seq_length,))
+        # 标签：序列中1的数量是否超过一半
+        label = 1 if np.sum(seq) > seq_length // 2 else 0
+        data.append(seq)
+        labels.append(label)
+    return torch.FloatTensor(data).unsqueeze(-1), torch.LongTensor(labels)
+
+# 数据参数
+num_samples = 1000
+seq_length = 10
+input_size = 1
+hidden_size = 16
+num_classes = 2
+
+# 生成训练和测试数据
+train_data, train_labels = generate_sequence_data(num_samples, seq_length)
+test_data, test_labels = generate_sequence_data(num_samples // 5, seq_length)
+
+# 2. 定义RNN模型
+class SimpleRNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_classes):
+        super(SimpleRNN, self).__init__()
+        self.rnn = nn.RNN(input_size, hidden_size, batch_first=True)
+        self.fc = nn.Linear(hidden_size, num_classes)
+        
+    def forward(self, x):
+        # 初始化隐藏状态
+        h0 = torch.zeros(1, x.size(0), hidden_size).to(x.device)
+        # RNN前向传播
+        out, _ = self.rnn(x, h0)
+        # 取最后一个时间步的输出
+        out = self.fc(out[:, -1, :])
+        return out
+
+# 3. 初始化模型、损失函数和优化器
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = SimpleRNN(input_size, hidden_size, num_classes).to(device)
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.01)
+
+# 4. 训练模型
+def train_model(num_epochs=20):
+    model.train()
+    for epoch in range(num_epochs):
+        inputs, labels = train_data.to(device), train_labels.to(device)
+        
+        # 前向传播
+        outputs = model(inputs)
+        loss = criterion(outputs, labels)
+        
+        # 反向传播和优化
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        
+        if (epoch + 1) % 5 == 0:
+            print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
+
+# 5. 测试模型
+def test_model():
+    model.eval()
+    with torch.no_grad():
+        inputs, labels = test_data.to(device), test_labels.to(device)
+        outputs = model(inputs)
+        _, predicted = torch.max(outputs.data, 1)
+        total = labels.size(0)
+        correct = (predicted == labels).sum().item()
+        accuracy = 100 * correct / total
+        print(f'Test Accuracy: {accuracy:.2f}%')
+
+# 6. 执行训练和测试
+if __name__ == "__main__":
+    print("Training started...")
+    train_model(num_epochs=20)
+    print("\nTesting started...")
+    test_model()
+```
+## 训练结果
+Training started... 
+Epoch [5/20], Loss: 0.6591  
+Epoch [10/20], Loss: 0.6286  
+Epoch [15/20], Loss: 0.5319  
+Epoch [20/20], Loss: 0.3664  
+
+Testing started... 
+Test Accuracy: 79.00%  
