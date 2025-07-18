@@ -5,13 +5,14 @@
   - Regression Problem：回归问题（以波士顿房价预测为例）
   - RNN： 循环网络
   - LSTN：长短期记忆网络  
-  - GAN：生成对抗网络 
+   
 - 中级
   - Autoencoder: 自编码器
   - Transformer：转换器
   - Attention-based Models：注意力机制模型 
   - VAE(Variational Autoencoder）：变分自编码器
-
+  - GAN：生成对抗网络
+    
 - 高级
   - Graph Neural Network(GNN）：图神经网络
   - Diffusion Models：扩散模型
