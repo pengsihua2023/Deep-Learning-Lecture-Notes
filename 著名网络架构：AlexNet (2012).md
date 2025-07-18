@@ -141,3 +141,12 @@ if __name__ == "__main__":
     test_model()
     plot_training_curve()
 ```
+### 训练结果
+[Epoch 29, Batch 600] Loss: 0.421  
+[Epoch 30, Batch 200] Loss: 0.378  
+[Epoch 30, Batch 400] Loss: 0.396  
+[Epoch 30, Batch 600] Loss: 0.409  
+训练完成！  
+测试集准确率: 77.61%  
+训练损失曲线已保存为: alexnet_training_curve.png   
+<img width="1239" height="609" alt="image" src="https://github.com/user-attachments/assets/f102aae9-d87d-4f43-bbb1-b3fac9d373b7" />
