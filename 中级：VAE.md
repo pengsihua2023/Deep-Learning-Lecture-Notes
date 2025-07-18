@@ -7,7 +7,7 @@ VAE 将编码器输出映射到一个概率分布（通常是正态分布），�
 - 应用：生成艺术、数据增强、异常检测。
 
 <img width="617" height="376" alt="image" src="https://github.com/user-attachments/assets/d8b5e82e-5b83-41d9-8b3c-521a3aeeb38e" /> 
-
+## 代码 （Pytorch）
 ```
 import torch
 import torch.nn as nn
