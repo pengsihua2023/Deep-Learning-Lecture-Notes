@@ -15,7 +15,7 @@ LSTM 通过“门机制”（输入门、遗忘门、输出门）控制信息的
    - Output gate: 决定当前隐藏状态h(t)的输出。    
    - LSTM通过这些门控制信息流动，缓解梯度消失问题。   
 
-## 代码
+## 代码 （Pytorch）
 ```
 import torch
 import torch.nn as nn
