@@ -7,12 +7,11 @@
   - LSTN：长短期记忆网络  
   - GAN：生成对抗网络 
 - 中级
-  - ResNet：残差网络
   - Autoencoder: 自编码器
   - Transformer：转换器
   - Attention-based Models：注意力机制模型 
   - VAE(Variational Autoencoder）：变分自编码器
-  - ResNet：残差网络 
+
 - 高级
   - Graph Neural Network(GNN）：图神经网络
   - Diffusion Models：扩散模型
