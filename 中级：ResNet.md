@@ -1,5 +1,7 @@
-## ResNet
-ResNet（残差网络，Residual Network）
+## ResNet （残差网络，Residual Network）
+- 提出者：何凯明（微软研究院）  
+- 特点：引入残差连接（Residual Connections），解决深层网络梯度消失问题，可构建数百层网络。 
+- 掌握要点：残差学习、深层网络训练技巧。  
 - 重要性：
 ResNet 是 CNN 的进阶版本，通过“残差连接”解决深层网络的梯度消失问题，允许构建非常深的网络（几十到上百层）。  
 在图像分类（如 ImageNet 比赛）中表现卓越，是现代计算机视觉的基石。  
