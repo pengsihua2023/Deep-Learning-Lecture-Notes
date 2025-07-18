@@ -175,4 +175,7 @@ if __name__ == "__main__":
 
 ### 训练结果
 
-  <img width="934" height="478" alt="image" src="https://github.com/user-attachments/assets/ecda78c7-6330-4a20-9a9c-e62bdbd035d7" />  
+  <img width="934" height="478" alt="image" src="https://github.com/user-attachments/assets/ecda78c7-6330-4a20-9a9c-e62bdbd035d7" />    
+图一 训练和验证损失曲线  
+<img width="286" height="109" alt="image" src="https://github.com/user-attachments/assets/344ba28c-ea33-492c-afd4-7b352fecc93e" />  
+图2 生成的图像  
