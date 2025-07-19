@@ -10,6 +10,32 @@ ResNet 引入“残差连接”（skip connection），让网络学习“变化�
 - 应用：图像分类、目标检测（如自动驾驶中的物体识别）、人脸识别。
 <img width="570" height="328" alt="image" src="https://github.com/user-attachments/assets/4c111489-898f-4412-9e70-336ec2320f03" />  
  <img width="850" height="595" alt="image" src="https://github.com/user-attachments/assets/ee800edc-db6e-4cde-84d9-0d396ca69e58" />  
+
+
+## 代码
+
+该代码实现了一个**简化的ResNet模型**，用于在**CIFAR-10数据集**上进行图像分类任务。主要功能如下：
+
+1. **残差块定义**：
+   - 实现`residual_block`函数，定义一个残差模块，包含两个卷积层（带批量归一化和ReLU激活）及残差连接。
+   - 支持维度调整（通过1x1卷积调整shortcut分支），确保输入输出维度匹配。
+
+2. **模型构建**：
+   - 定义`build_simple_resnet`函数，构建一个简化的ResNet模型：
+     - 初始卷积层（64个滤波器，3x3卷积）。
+     - 堆叠4个残差块（两组64通道和两组128通道，第二组使用stride=2降采样）。
+     - 全局平均池化后接全连接层，输出10类分类结果（带softmax激活）。
+
+3. **数据预处理**：
+   - 加载CIFAR-10数据集（32x32彩色图像）。
+   - 将像素值归一化到[0,1]范围。
+
+4. **模型编译与训练**：
+   - 使用Adam优化器和稀疏分类交叉熵损失函数编译模型，跟踪准确率指标。
+   - 以batch_size=64训练模型10个epoch，使用测试集进行验证。
+
+代码基于TensorFlow/Keras实现，适用于CIFAR-10图像分类，输出模型结构摘要并进行训练，旨在学习图像的分类特征。
+
  
 ```
 import tensorflow as tf
