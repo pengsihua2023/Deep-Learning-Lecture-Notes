@@ -5,6 +5,28 @@
 掌握要点：模型缩放策略、轻量化设计。  
 <img width="782" height="400" alt="image" src="https://github.com/user-attachments/assets/f88060f1-8ac4-4b2c-8cc7-6186af74255c" />  
 ## 代码
+该代码实现了一个**简化的EfficientNet模型**，用于在**CIFAR-10数据集**上进行图像分类任务。主要功能如下：
+
+1. **模型定义**：
+   - 实现了一个基于EfficientNet的`MBConv`模块，包括扩展卷积、深度可分离卷积和压缩卷积，支持残差连接。
+   - 定义`SimpleEfficientNet`，包含初始卷积层、多个MBConv块和全局平均池化，输出10类分类结果。
+
+2. **数据预处理**：
+   - 加载CIFAR-10数据集（32x32图像），应用归一化变换。
+   - 使用DataLoader进行批处理（batch_size=64）。
+
+3. **训练过程**：
+   - 使用Adam优化器（学习率0.001）和交叉熵损失函数，训练模型50个epoch。
+   - 每200个批次记录并打印平均损失。
+
+4. **测试过程**：
+   - 在测试集上评估模型，计算并输出分类准确率。
+
+5. **可视化**：
+   - 绘制训练过程中的损失曲线，保存为`efficientnet_training_curve.png`。
+   - 从测试集取8张图像，显示预测和真实标签，保存为`efficientnet_predictions.png`，支持中文显示（使用SimHei字体）。
+
+代码运行在CPU或GPU上，训练完成后输出测试集准确率，并生成损失曲线和预测结果的可视化图像，用于分析模型性能和分类效果。
 
 ```
 import torch
