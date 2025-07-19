@@ -6,6 +6,28 @@
 <img width="1703" height="490" alt="image" src="https://github.com/user-attachments/assets/7944d7cd-6b8f-4753-a453-38146ed9b160" />  
 
 ## 代码
+该代码实现了一个**简化的Inception模型**（基于GoogLeNet的Inception架构），用于在**CIFAR-10数据集**上进行图像分类任务。主要功能如下：
+
+1. **模型定义**：
+   - 实现`InceptionModule`，包含四个并行分支：1x1卷积、3x3卷积、5x5卷积和池化+1x1卷积，输出拼接以捕获多尺度特征。
+   - 定义`SimpleInception`，包括初始卷积层、两个Inception模块、最大池化层和全连接分类器，输出10类分类结果。
+
+2. **数据预处理**：
+   - 加载CIFAR-10数据集（32x32图像），应用归一化变换。
+   - 使用DataLoader进行批处理（batch_size=64）。
+
+3. **训练过程**：
+   - 使用SGD优化器（学习率0.001，动量0.9）和交叉熵损失函数，训练模型50个epoch。
+   - 每200个批次记录并打印平均损失。
+
+4. **测试过程**：
+   - 在测试集上评估模型，计算并输出分类准确率。
+
+5. **可视化**：
+   - 绘制训练过程中的损失曲线，保存为`inception_training_curve.png`。
+   - 从测试集取8张图像，显示预测和真实标签，保存为`inception_predictions.png`，支持中文显示（使用SimHei字体）。
+
+代码运行在CPU或GPU上，训练完成后输出测试集准确率，并生成损失曲线和预测结果的可视化图像，用于分析模型性能和分类效果。
 
 ```
 import torch
