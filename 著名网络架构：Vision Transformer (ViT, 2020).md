@@ -325,6 +325,22 @@ if __name__ == "__main__":
 
 ## 训练结果
 
+Epoch: 15/15, Batch: 1400/1563, Loss: 0.8820  
+Epoch 15/15:  
+  Train Loss: 0.8538, Train Acc: 69.65%  
+  Test Acc: 67.46%  
+--------------------------------------------------  
+Loading CIFAR-10 dataset...  
+Training samples: 50000  
+Test samples: 10000 
+
+Visualizing 8 sample predictions...  
+
+Training completed!  
+Results saved:  
+- cifar10_light_training_curves.png: Training curves  
+- cifar10_light_predictions.png: Sample predictions  
+
 <img width="1488" height="497" alt="image" src="https://github.com/user-attachments/assets/5a7569bc-82c4-40bc-b626-28462c50bf49" />
   
 
