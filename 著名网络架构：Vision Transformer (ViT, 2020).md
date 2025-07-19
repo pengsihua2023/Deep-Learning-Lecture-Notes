@@ -329,7 +329,7 @@ Epoch: 15/15, Batch: 1400/1563, Loss: 0.8820
 Epoch 15/15:  
   Train Loss: 0.8538, Train Acc: 69.65%  
   Test Acc: 67.46%  
---------------------------------------------------  
+
 Loading CIFAR-10 dataset...  
 Training samples: 50000  
 Test samples: 10000 
