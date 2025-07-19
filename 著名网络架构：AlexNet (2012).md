@@ -5,7 +5,19 @@
 掌握要点：深层CNN设计、过拟合控制。  
  <img width="3179" height="1385" alt="image" src="https://github.com/user-attachments/assets/e81cb10e-cf86-423e-8518-0a103288c71e" />
 ### 代码
+该代码实现了一个**简化的AlexNet卷积神经网络**，用于在**CIFAR-10数据集**上进行图像分类任务。主要功能如下：
 
+1. **模型定义**：实现了一个适配CIFAR-10的AlexNet模型，包含5层卷积（`features`）和3层全连接层（`classifier`），使用ReLU激活、最大池化和Dropout正则化，输出10类分类结果。
+
+2. **数据预处理**：加载CIFAR-10数据集（训练集和测试集），应用变换（调整大小到32x32、归一化），并使用DataLoader进行批处理（batch_size=64）。
+
+3. **训练过程**：使用SGD优化器（学习率0.001，动量0.9）和交叉熵损失函数，训练模型30个epoch。每200个批次记录平均损失和准确率，并打印损失。
+
+4. **测试过程**：在测试集上评估模型，计算并输出分类准确率。
+
+5. **可视化**：绘制训练过程中的损失曲线，保存为`alexnet_training_curve.png`，支持中文显示（使用SimHei字体）。
+
+代码运行在CPU或GPU上，训练完成后输出测试集准确率并生成损失曲线图，用于分析模型训练效果。
 ```
 import torch
 import torch.nn as nn
