@@ -9,3 +9,159 @@
 扩散模型通过“加噪-去噪”过程学习数据分布，先把数据加噪到随机噪声，再逐步还原。  
 - 应用：图像生成（艺术、游戏设计）、视频生成、科学模拟。  
 <img width="2060" height="920" alt="image" src="https://github.com/user-attachments/assets/427d35b9-10d1-4bca-b74c-b5e166d7613d" />
+
+## 代码
+
+```
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 设置随机种子以确保可重复性
+torch.manual_seed(42)
+
+# 超参数
+num_steps = 1000  # 扩散步数
+beta_start = 0.0001  # 方差调度起始值
+beta_end = 0.02  # 方差调度终止值
+data_dim = 2  # 数据维度（2D正态分布）
+batch_size = 128
+epochs = 1000
+lr = 0.001
+n_samples = 1000  # 用于可视化的样本数
+
+# 线性方差调度
+betas = torch.linspace(beta_start, beta_end, num_steps)
+alphas = 1.0 - betas
+alphas_cumprod = torch.cumprod(alphas, dim=0)
+
+# 前向扩散过程
+def forward_diffusion(x_0, t, device):
+    betas_t = betas.to(device)
+    alphas_cumprod_t = alphas_cumprod.to(device)
+    noise = torch.randn_like(x_0).to(device)
+    sqrt_alphas_cumprod = torch.sqrt(alphas_cumprod_t[t]).view(-1, 1)
+    sqrt_one_minus_alphas_cumprod = torch.sqrt(1.0 - alphas_cumprod_t[t]).view(-1, 1)
+    return sqrt_alphas_cumprod * x_0 + sqrt_one_minus_alphas_cumprod * noise, noise
+
+# 简单MLP模型
+class SimpleDenoiser(nn.Module):
+    def __init__(self):
+        super(SimpleDenoiser, self).__init__()
+        self.model = nn.Sequential(
+            nn.Linear(data_dim + 1, 64),
+            nn.ReLU(),
+            nn.Linear(64, 64),
+            nn.ReLU(),
+            nn.Linear(64, data_dim)
+        )
+    
+    def forward(self, x, t):
+        t = t.view(-1, 1).float() / num_steps
+        x_t = torch.cat([x, t], dim=1)
+        return self.model(x_t)
+
+# 生成简单数据集（2D正态分布）
+def generate_data(n_samples):
+    return torch.randn(n_samples, data_dim) * 0.5 + torch.tensor([2.0, 2.0])
+
+# 训练模型
+def train():
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    # Move global tensors to device
+    global betas, alphas, alphas_cumprod
+    betas = betas.to(device)
+    alphas = alphas.to(device)
+    alphas_cumprod = alphas_cumprod.to(device)
+    
+    model = SimpleDenoiser().to(device)
+    optimizer = optim.Adam(model.parameters(), lr=lr)
+    
+    for epoch in range(epochs):
+        data = generate_data(batch_size).to(device)
+        t = torch.randint(0, num_steps, (batch_size,), device=device)
+        
+        x_t, noise = forward_diffusion(data, t, device)
+        predicted_noise = model(x_t, t)
+        loss = nn.MSELoss()(predicted_noise, noise)
+        
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        
+        if (epoch + 1) % 100 == 0:
+            print(f"Epoch {epoch + 1}, Loss: {loss.item():.4f}")
+    
+    return model
+
+# 采样过程
+def sample(model, n_samples, device):
+    betas_t = betas.to(device)
+    alphas_t = alphas.to(device)
+    alphas_cumprod_t = alphas_cumprod.to(device)
+    
+    x = torch.randn(n_samples, data_dim).to(device)
+    for t in reversed(range(num_steps)):
+        t_tensor = torch.full((n_samples,), t, dtype=torch.long, device=device)
+        predicted_noise = model(x, t_tensor)
+        alpha = alphas_t[t]
+        alpha_cumprod = alphas_cumprod_t[t]
+        beta = betas_t[t]
+        
+        x = (1 / torch.sqrt(alpha)) * (x - ((1 - alpha) / torch.sqrt(1 - alpha_cumprod)) * predicted_noise)
+        if t > 0:
+            x += torch.sqrt(beta) * torch.randn_like(x)
+    return x
+
+# 可视化函数
+def visualize_samples(original_data, generated_samples):
+    plt.figure(figsize=(10, 5))
+    
+    # 原始数据散点图
+    plt.subplot(1, 2, 1)
+    plt.scatter(original_data[:, 0], original_data[:, 1], alpha=0.5, label="Original Data")
+    plt.title("Original Data")
+    plt.xlabel("X")
+    plt.ylabel("Y")
+    plt.legend()
+    
+    # 生成样本散点图
+    plt.subplot(1, 2, 2)
+    plt.scatter(generated_samples[:, 0], generated_samples[:, 1], alpha=0.5, color="orange", label="Generated Samples")
+    plt.title("Generated Samples")
+    plt.xlabel("X")
+    plt.ylabel("Y")
+    plt.legend()
+    
+    plt.tight_layout()
+    plt.show()
+
+if __name__ == "__main__":
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    
+    # 训练模型
+    model = train()
+    
+    # 生成用于可视化的原始数据和生成样本
+    original_data = generate_data(n_samples).cpu().numpy()
+    generated_samples = sample(model, n_samples, device).cpu().detach().numpy()
+    
+    # 可视化结果
+    visualize_samples(original_data, generated_samples)
+    print("Generated samples shape:", generated_samples.shape)
+
+```
+
+## 训练结果
+
+Epoch 700, Loss: 0.1903  
+Epoch 800, Loss: 0.1887  
+Epoch 900, Loss: 0.2179  
+Epoch 1000, Loss: 0.3247  
+Generated samples shape: (1000, 2)  
+
+<img width="984" height="493" alt="image" src="https://github.com/user-attachments/assets/b57caf73-74d1-41a4-b547-ff59cd9670a8" />
+
+图2 原始样本和生成的比较
