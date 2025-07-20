@@ -21,9 +21,9 @@
 - 高级
   - Meta-Learning：元学习
   - Reinforcement Learning：强化学习
-  - Large language model fine tuning：大模型微调
-  - Model pruning and quantization：模型剪枝与量化
   - Federated Learning：联邦学习
+  - Large language model fine tuning：大模型微调
+  - Model pruning and quantization：模型剪枝与量化 
     
 - 研究级 
   - Neural Architecture Search (NAS): 神经架构搜索
