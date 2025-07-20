@@ -22,10 +22,10 @@
   - Meta-Learning：元学习
   - Reinforcement Learning：强化学习
   - Large language model fine tuning：大模型微调
-  - Model pruning and quantization：模型剪枝与量化 
+  - Model pruning and quantization：模型剪枝与量化
+  - Federated Learning：联邦学习
     
 - 研究级 
-  - Federated Learning：联邦学习
   - Neural Architecture Search (NAS): 神经架构搜索
   - AI agent: AI智能体
   - AI4science：AI for Scienc：人工智能应用于科学
