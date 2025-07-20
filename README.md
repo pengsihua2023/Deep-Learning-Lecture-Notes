@@ -13,7 +13,6 @@
     
 - 中级
   - Graph Neural Network(GNN）：图神经网络
-  - Diffusion Models：扩散模型
   - Transfer Learning：迁移学习
   - Contrastive Learning：对比学习
   - Knowledge Distillation：知识蒸馏
