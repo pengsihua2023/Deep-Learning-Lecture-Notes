@@ -1,7 +1,7 @@
 # AI技术学习：
 - 初级
   - [FCN：全连接网络](https://github.com/pengsihua2023/AI-learning/blob/main/%E5%88%9D%E7%BA%A7%3A%20%20FCN(MLP).md) 
-  - [CNN: 卷积网络]https://github.com/pengsihua2023/AI-learning/blob/main/%E5%88%9D%E7%BA%A7%EF%BC%9ACNN.md
+  - [CNN: 卷积网络](https://github.com/pengsihua2023/AI-learning/blob/main/%E5%88%9D%E7%BA%A7%EF%BC%9ACNN.md)
   - [Regression Problem：回归问题（以波士顿房价预测为例）]()
   - [RNN： 循环网络]()
   - [LSTN：长短期记忆网络]()   
