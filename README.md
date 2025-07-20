@@ -7,11 +7,11 @@
   - LSTN：长短期记忆网络   
   - Autoencoder: 自编码器
   - VAE(Variational Autoencoder）：变分自编码器
-  - GAN：生成对抗网络
-  - Attention-based Models：注意力机制模型 
-  - Transformer：转换器
+  - GAN：生成对抗网络 
     
 - 中级
+  - Attention-based Models：注意力机制模型
+  - Transformer：转换器
   - Graph Neural Network(GNN）：图神经网络
   - Transfer Learning：迁移学习
   - Contrastive Learning：对比学习
