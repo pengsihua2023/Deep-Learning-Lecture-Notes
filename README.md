@@ -28,6 +28,7 @@
   - Model pruning and quantization：模型剪枝与量化 
     
 - 高级研究级 
+  - Federated Learning：联邦学习
   - Neural Architecture Search (NAS): 神经架构搜索
   - AI agent: AI智能体
   - AI4science：AI for Scienc：人工智能应用于科学
