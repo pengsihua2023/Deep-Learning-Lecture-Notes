@@ -38,7 +38,7 @@
     - Inception (GoogleNet, 2014)
     - ResNet（2015）
     - U-Net (2015)
-    - YOLO系列 (2016-)
+    - YOLO系列 (2016)
     - EfficientNet (2019)
     - Vision Transformer (ViT, 2020)
     - Diffusion Models（2020s）
