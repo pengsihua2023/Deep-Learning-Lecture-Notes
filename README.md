@@ -20,9 +20,13 @@
   - Knowledge Distillation：知识蒸馏
   - Multi-Task Learning：多任务学习  
   - Reinforcement Learning：强化学习
+    
 - 研究级
   - Large language model fine tuning：大模型微调    
-  - Model pruning and quantization：模型剪枝与量化 
+  - Model pruning and quantization：模型剪枝与量化
+  - Meta-Learning：元学习
+  - 迁移学习（Transfer Learning：迁移学习
+    
 - 高级研究级 
   - Neural Architecture Search (NAS): 神经架构搜索
   - AI agent: AI智能体
