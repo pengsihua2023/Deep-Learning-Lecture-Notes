@@ -22,10 +22,10 @@
   - Reinforcement Learning：强化学习
     
 - 研究级
-  - Large language model fine tuning：大模型微调    
-  - Model pruning and quantization：模型剪枝与量化
-  - Meta-Learning：元学习
   - Transfer Learning：迁移学习
+  - Meta-Learning：元学习
+  - Large language model fine tuning：大模型微调
+  - Model pruning and quantization：模型剪枝与量化 
     
 - 高级研究级 
   - Neural Architecture Search (NAS): 神经架构搜索
