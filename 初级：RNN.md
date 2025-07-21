@@ -17,6 +17,13 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.rcParams['font.sans-serif'] = ['SimHei']  # 显示中文
+matplotlib.rcParams['axes.unicode_minus'] = False    # 显示负号
+
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
 
 # 设置随机种子以确保结果可重复
 torch.manual_seed(42)
@@ -71,6 +78,7 @@ optimizer = optim.Adam(model.parameters(), lr=0.01)
 # 4. 训练模型
 def train_model(num_epochs=20):
     model.train()
+    loss_list = []  # 记录每个epoch的损失
     for epoch in range(num_epochs):
         inputs, labels = train_data.to(device), train_labels.to(device)
         
@@ -83,8 +91,10 @@ def train_model(num_epochs=20):
         loss.backward()
         optimizer.step()
         
+        loss_list.append(loss.item())  # 保存损失
         if (epoch + 1) % 5 == 0:
             print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
+    return loss_list  # 返回损失列表
 
 # 5. 测试模型
 def test_model():
@@ -97,20 +107,56 @@ def test_model():
         correct = (predicted == labels).sum().item()
         accuracy = 100 * correct / total
         print(f'Test Accuracy: {accuracy:.2f}%')
+        return predicted.cpu().numpy(), labels.cpu().numpy()  # 返回预测和真实标签
 
-# 6. 执行训练和测试
+# 6. 可视化函数
+def plot_loss_curve(loss_list):
+    """绘制训练损失曲线"""
+    plt.figure(figsize=(8, 4))
+    plt.plot(loss_list, label='Train Loss')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.title('训练损失曲线')
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+def plot_confusion_matrix(pred, true):
+    """绘制混淆矩阵"""
+    cm = confusion_matrix(true, pred)
+    plt.figure(figsize=(4, 3))
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=['0', '1'], yticklabels=['0', '1'])
+    plt.xlabel('预测标签')
+    plt.ylabel('真实标签')
+    plt.title('混淆矩阵')
+    plt.tight_layout()
+    plt.show()
+
+# 7. 执行训练和测试
 if __name__ == "__main__":
     print("Training started...")
-    train_model(num_epochs=20)
+    loss_list = train_model(num_epochs=20)
     print("\nTesting started...")
-    test_model()
+    pred, true = test_model()
+    # 可视化
+    plot_loss_curve(loss_list)
+    plot_confusion_matrix(pred, true)
 ```
 ## 训练结果
-Training started... 
+Training started...
 Epoch [5/20], Loss: 0.6591  
 Epoch [10/20], Loss: 0.6286  
 Epoch [15/20], Loss: 0.5319  
 Epoch [20/20], Loss: 0.3664  
 
-Testing started... 
+Testing started...  
 Test Accuracy: 79.00%  
+
+<img width="791" height="385" alt="image" src="https://github.com/user-attachments/assets/ea2bbd16-e1b1-4334-a856-d1e91223a8a7" /> 
+图2 
+<img width="396" height="295" alt="image" src="https://github.com/user-attachments/assets/4c5c3a4d-986f-4b42-8612-9a05ed4e3f87" />  
+
+图3 混淆矩阵
+
+
