@@ -1,3 +1,4 @@
+
 ## Attention-based Models (注意力机制模型, 扩展 Transformer)
 - 重要性：
 Transformer 的注意力机制是现代深度学习的基石，衍生出如 BERT、GPT 等模型，驱动了 NLP 和多模态任务。  
@@ -11,7 +12,7 @@ Transformer 的注意力机制是现代深度学习的基石，衍生出如 BERT
 ## 代码
 
 ```
-添加注意力权重的可视化，使用一个热图来展示第一个样本的注意力权重矩阵，帮助直观理解Attention机制如何关注不同词之间的关系。代码仍基于IMDb数据集，并使用PyTorch实现简单的Scaled Dot-Product Attention。由于您要求结果可视化，我将生成一个热图，显示注意力权重。
+添加注意力权重的可视化，使用一个热图来展示第一个样本的注意力权重矩阵，帮助直观理解Attention机制如何关注不同词之间的关系。代码仍基于IMDb数据集，并使用PyTorch实现简单的Scaled Dot-Product Attention。由于您要求结果可视化，将生成一个热图，显示注意力权重。
 
 ```python
 import torch
