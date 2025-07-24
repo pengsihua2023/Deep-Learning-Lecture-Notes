@@ -11,6 +11,23 @@ RNN 有“记忆”，可以记住之前的输入，适合处理有序数据（�
 
 RNN: 基本的循环神经网络单元，通过tanh激活函数处理输入Xt和前一时刻的隐藏状态h(t-1)，生成当前隐藏状态h(t)。它简单但容易遇到梯度消失问题，限制了长序列的处理能力。  
 RNN（循环神经网络）被认为具有“记忆”是因为它通过隐藏状态h(t)在时间步之间传递信息。当前时刻的隐藏状态不仅依赖于当前输入x(t)，还依赖于前一时刻的隐藏状态h(t-1)，从而能够“记住”之前序列中的部分信息。这种结构使其适合处理序列数据，如时间序列或自然语言。然而，标准RNN的记忆能力有限，容易受梯度消失问题影响，难以捕捉长距离依赖。
+
+## 1. RNN的基本结构
+RNN是一种专门处理序列数据的神经网络，通过引入隐藏状态（hidden state）来捕获序列中的时间依赖关系。其核心思想是：当前时刻的输出不仅依赖当前输入，还依赖之前的隐藏状态。  
+### 基本公式
+对于时间步 $ t $，RNN的计算公式如下： 
+隐藏状态更新  
+<img width="765" height="725" alt="image" src="https://github.com/user-attachments/assets/4e5534a8-9be3-4ae6-8b77-9e139fca05be" />  
+
+## 2. 前向传播
+<img width="856" height="274" alt="image" src="https://github.com/user-attachments/assets/6405f4f1-36d1-4306-a057-aef01620cd4a" />  
+
+## 3. 损失函数  
+RNN通常使用损失函数来衡量预测输出与真实标签之间的差距。对于序列预测任务，常用交叉熵损失（分类）或均方误差（回归）。总损失为各时间步损失之和：  
+<img width="613" height="152" alt="image" src="https://github.com/user-attachments/assets/fc7b1b5a-b37a-4ae3-aefd-7aefe3f259bd" />  
+## 4. 反向传播（Backpropagation Through Time, BPTT） 
+<img width="1003" height="752" alt="image" src="https://github.com/user-attachments/assets/4d71329f-a372-476f-bf17-f6b094056b40" />
+
 ## 代码（Pytorch）
 ```
 import torch
