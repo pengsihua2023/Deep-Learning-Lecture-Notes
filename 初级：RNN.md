@@ -15,7 +15,7 @@ RNN（循环神经网络）被认为具有“记忆”是因为它通过隐藏�
 ## 1. RNN的基本结构
 RNN是一种专门处理序列数据的神经网络，通过引入隐藏状态（hidden state）来捕获序列中的时间依赖关系。其核心思想是：当前时刻的输出不仅依赖当前输入，还依赖之前的隐藏状态。  
 ### 基本公式
-对于时间步 $ t $，RNN的计算公式如下： 
+对于时间步t，RNN的计算公式如下： 
 隐藏状态更新  
 <img width="765" height="725" alt="image" src="https://github.com/user-attachments/assets/4e5534a8-9be3-4ae6-8b77-9e139fca05be" />  
 
