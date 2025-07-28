@@ -3,7 +3,8 @@
 特点：引入ReLU激活函数、Dropout正则化、数据增强和GPU加速，在ImageNet竞赛中大幅提升性能。  
 应用：图像分类、特征提取、迁移学习基础。  
 掌握要点：深层CNN设计、过拟合控制。  
-<img width="1459" height="775" alt="image" src="https://github.com/user-attachments/assets/5bd0deb5-051a-43ba-95f7-931fcd671b32" />
+<img width="1459" height="775" alt="image" src="https://github.com/user-attachments/assets/5bd0deb5-051a-43ba-95f7-931fcd671b32" />  
+<img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/e27296cb-2aee-4389-a119-7c2ac8120d4d" />  
 
 ### 代码
 该代码实现了一个**简化的AlexNet卷积神经网络**，用于在**CIFAR-10数据集**上进行图像分类任务。主要功能如下：
