@@ -359,7 +359,7 @@ if __name__ == "__main__":
 ```
 ### 训练结果
 GRU通过更新门和重置门学习正弦波的周期性模式。  
-# 修复OpenMP错误 - 必须在所有其他导入之前
+
 <img width="1124" height="404" alt="image" src="https://github.com/user-attachments/assets/7edf7421-1de7-49db-a6ad-59f663023739" />  
 
 <img width="927" height="617" alt="image" src="https://github.com/user-attachments/assets/e67b0969-fa76-4e9c-a4e6-fbeb9f65fa2c" />  
