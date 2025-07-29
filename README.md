@@ -1,5 +1,6 @@
 # AI技术学习：
-[矩阵知识](https://www.bilibili.com/video/BV1h7pteyEww?spm_id_from=333.788.videopod.episodes&p=57)
+[矩阵知识](https://www.bilibili.com/video/BV1h7pteyEww?spm_id_from=333.788.videopod.episodes&p=57)  
+[张量知识](https://www.youtube.com/watch?v=JbErq0_Q43w&t=45s)  
 - 初级
   - [FCN：全连接网络](https://github.com/pengsihua2023/AI-learning/blob/main/%E5%88%9D%E7%BA%A7%3A%20%20FCN(MLP).md) 
   - [CNN: 卷积网络](https://github.com/pengsihua2023/AI-learning/blob/main/%E5%88%9D%E7%BA%A7%EF%BC%9ACNN.md)
