@@ -362,7 +362,8 @@ GRU通过更新门和重置门学习正弦波的周期性模式。
 
 <img width="1124" height="404" alt="image" src="https://github.com/user-attachments/assets/7edf7421-1de7-49db-a6ad-59f663023739" />  
 
-<img width="927" height="617" alt="image" src="https://github.com/user-attachments/assets/e67b0969-fa76-4e9c-a4e6-fbeb9f65fa2c" />  
+<img width="1941" height="1283" alt="image" src="https://github.com/user-attachments/assets/539fc09d-fab6-4b79-ab8a-5d50d92fe6ec" />
+
 
 
 
