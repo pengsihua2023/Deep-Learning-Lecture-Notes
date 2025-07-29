@@ -44,82 +44,325 @@ GRU层处理序列，线性层（fc）将最后一个时间步的输出映射到
 可视化：通过Matplotlib绘制真实值（蓝色实线）和预测值（红色虚线），展示GRU对正弦波模式的拟合效果。
 ## 代码
 ```
+# 修复OpenMP错误 - 必须在所有其他导入之前
+import os
+import sys
+
+# 设置环境变量
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
+os.environ['OMP_NUM_THREADS'] = '1'
+os.environ['MKL_NUM_THREADS'] = '1'
+os.environ['KMP_WARNINGS'] = 'off'
+os.environ['OPENBLAS_NUM_THREADS'] = '1'
+os.environ['NUMEXPR_NUM_THREADS'] = '1'
+
 import torch
 import torch.nn as nn
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.patches import FancyBboxPatch
+
+# 设置matplotlib后端和字体
+plt.switch_backend('Agg')
+
+# 设置中文字体支持
+plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans', 'Arial Unicode MS', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
 
 # 设置随机种子以确保可重复性
 torch.manual_seed(42)
 np.random.seed(42)
 
-# 1. 生成正弦波数据
-t = np.linspace(0, 20, 1000)  # 时间轴
-data = np.sin(t)  # 正弦波
-sequence_length = 10  # 序列长度
-X, y = [], []
+def generate_sine_wave_data():
+    """生成正弦波数据"""
+    t = np.linspace(0, 20, 1000)  # 时间轴
+    data = np.sin(t)  # 正弦波
+    sequence_length = 10  # 序列长度
+    X, y = [], []
 
-# 准备输入-输出对：用前10个点预测下一个点
-for i in range(len(data) - sequence_length):
-    X.append(data[i:i + sequence_length])
-    y.append(data[i + sequence_length])
-X = np.array(X).reshape(-1, sequence_length, 1)  # [样本数, 序列长度, 特征数]
-y = np.array(y).reshape(-1, 1)  # [样本数, 1]
-X = torch.FloatTensor(X)
-y = torch.FloatTensor(y)
+    # 准备输入-输出对：用前10个点预测下一个点
+    for i in range(len(data) - sequence_length):
+        X.append(data[i:i + sequence_length])
+        y.append(data[i + sequence_length])
+    
+    X = np.array(X).reshape(-1, sequence_length, 1)  # [样本数, 序列长度, 特征数]
+    y = np.array(y).reshape(-1, 1)  # [样本数, 1]
+    X = torch.FloatTensor(X)
+    y = torch.FloatTensor(y)
+    
+    return X, y, t, data
 
-# 2. 定义GRU模型
 class GRUModel(nn.Module):
-    def __init__(self, input_size=1, hidden_size=16, output_size=1):
+    """GRU模型用于时间序列预测"""
+    def __init__(self, input_size=1, hidden_size=32, num_layers=2, output_size=1, dropout=0.1):
         super(GRUModel, self).__init__()
         self.hidden_size = hidden_size
-        self.gru = nn.GRU(input_size, hidden_size, batch_first=True)
+        self.num_layers = num_layers
+        
+        # GRU层
+        self.gru = nn.GRU(
+            input_size, 
+            hidden_size, 
+            num_layers=num_layers, 
+            batch_first=True,
+            dropout=dropout if num_layers > 1 else 0
+        )
+        
+        # 全连接层
         self.fc = nn.Linear(hidden_size, output_size)
+        
+        # 初始化权重
+        self._initialize_weights()
+    
+    def _initialize_weights(self):
+        """初始化网络权重"""
+        for name, param in self.named_parameters():
+            if 'weight' in name:
+                nn.init.xavier_uniform_(param)
+            elif 'bias' in name:
+                nn.init.constant_(param, 0)
     
     def forward(self, x):
         # 初始化隐藏状态
-        h0 = torch.zeros(1, x.size(0), self.hidden_size)
+        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
+        
         # GRU前向传播
         out, _ = self.gru(x, h0)
+        
         # 取最后一个时间步的输出
         out = self.fc(out[:, -1, :])
         return out
 
-# 3. 训练模型
-model = GRUModel()
-criterion = nn.MSELoss()
-optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+def train_model(model, X, y, epochs=100, lr=0.01):
+    """训练模型"""
+    criterion = nn.MSELoss()
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=1e-5)
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=10)
+    
+    train_losses = []
+    
+    print("开始训练GRU模型...")
+    for epoch in range(epochs):
+        model.train()
+        optimizer.zero_grad()
+        
+        # 前向传播
+        output = model(X)
+        loss = criterion(output, y)
+        
+        # 反向传播
+        loss.backward()
+        
+        # 梯度裁剪
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+        
+        optimizer.step()
+        scheduler.step(loss)
+        
+        train_losses.append(loss.item())
+        
+        if (epoch + 1) % 20 == 0:
+            print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.6f}, LR: {optimizer.param_groups[0]["lr"]:.6f}')
+    
+    return train_losses
 
-# 训练循环
-epochs = 100
-for epoch in range(epochs):
-    model.train()
-    optimizer.zero_grad()
-    output = model(X)
-    loss = criterion(output, y)
-    loss.backward()
-    optimizer.step()
-    if (epoch + 1) % 20 == 0:
-        print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.6f}')
+def evaluate_model(model, X, y):
+    """评估模型"""
+    model.eval()
+    with torch.no_grad():
+        predictions = model(X).numpy()
+        true_values = y.numpy()
+        
+        # 计算评估指标
+        mse = np.mean((predictions - true_values) ** 2)
+        mae = np.mean(np.abs(predictions - true_values))
+        rmse = np.sqrt(mse)
+        
+        print(f"模型评估结果:")
+        print(f"MSE: {mse:.6f}")
+        print(f"MAE: {mae:.6f}")
+        print(f"RMSE: {rmse:.6f}")
+        
+        return predictions, mse, mae, rmse
 
-# 4. 预测
-model.eval()
-with torch.no_grad():
-    pred = model(X).numpy()
+def visualize_results(t, data, y, predictions, sequence_length, train_losses):
+    """可视化结果"""
+    # 创建子图
+    fig, axes = plt.subplots(2, 2, figsize=(15, 10))
+    
+    # 1. 预测结果对比
+    axes[0, 0].plot(t[sequence_length:], y.numpy(), label='真实值', color='blue', linewidth=2)
+    axes[0, 0].plot(t[sequence_length:], predictions, label='预测值', color='red', linestyle='--', linewidth=2)
+    axes[0, 0].set_title('GRU正弦波预测结果', fontsize=14, fontweight='bold')
+    axes[0, 0].set_xlabel('时间')
+    axes[0, 0].set_ylabel('数值')
+    axes[0, 0].legend()
+    axes[0, 0].grid(True, alpha=0.3)
+    
+    # 2. 训练损失曲线
+    axes[0, 1].plot(train_losses, 'b-', linewidth=2)
+    axes[0, 1].set_title('训练损失曲线', fontsize=14, fontweight='bold')
+    axes[0, 1].set_xlabel('Epoch')
+    axes[0, 1].set_ylabel('Loss')
+    axes[0, 1].grid(True, alpha=0.3)
+    axes[0, 1].set_yscale('log')
+    
+    # 3. 预测误差
+    error = y.numpy() - predictions
+    axes[1, 0].plot(t[sequence_length:], error, color='green', linewidth=1)
+    axes[1, 0].axhline(y=0, color='black', linestyle='-', alpha=0.5)
+    axes[1, 0].set_title('预测误差', fontsize=14, fontweight='bold')
+    axes[1, 0].set_xlabel('时间')
+    axes[1, 0].set_ylabel('误差')
+    axes[1, 0].grid(True, alpha=0.3)
+    
+    # 4. 误差分布直方图
+    axes[1, 1].hist(error, bins=30, color='orange', alpha=0.7, edgecolor='black')
+    axes[1, 1].set_title('误差分布直方图', fontsize=14, fontweight='bold')
+    axes[1, 1].set_xlabel('误差')
+    axes[1, 1].set_ylabel('频次')
+    axes[1, 1].grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    plt.savefig('gru_sine_wave_results.png', dpi=300, bbox_inches='tight')
+    plt.close()
 
-# 5. 可视化
-plt.figure(figsize=(10, 5))
-plt.plot(t[sequence_length:], y.numpy(), label='True Values', color='blue')
-plt.plot(t[sequence_length:], pred, label='Predicted Values', color='red', linestyle='--')
-plt.title('GRU Prediction on Sine Wave')
-plt.xlabel('Time')
-plt.ylabel('Value')
-plt.legend()
-plt.grid(True)
-plt.show()
+def visualize_model_architecture():
+    """可视化模型架构"""
+    fig, ax = plt.subplots(1, 1, figsize=(12, 8))
+    
+    # 定义颜色
+    colors = {
+        'input': '#E8F4FD',
+        'gru': '#FFE6E6',
+        'fc': '#E6FFE6',
+        'output': '#F0E6FF'
+    }
+    
+    # 定义位置
+    positions = {
+        'input': (2, 6),
+        'gru1': (4, 6),
+        'gru2': (6, 6),
+        'fc': (8, 6),
+        'output': (10, 6)
+    }
+    
+    # 绘制网络层
+    for name, pos in positions.items():
+        if 'gru' in name:
+            color = colors['gru']
+            width, height = 2.0, 1.2
+        elif 'fc' in name:
+            color = colors['fc']
+            width, height = 2.0, 1.2
+        elif 'input' in name:
+            color = colors['input']
+            width, height = 1.8, 1.0
+        elif 'output' in name:
+            color = colors['output']
+            width, height = 1.8, 1.0
+        else:
+            color = colors['input']
+            width, height = 1.8, 1.0
+        
+        # 绘制框
+        box = FancyBboxPatch(
+            (pos[0] - width/2, pos[1] - height/2),
+            width, height,
+            boxstyle="round,pad=0.15",
+            facecolor=color,
+            edgecolor='black',
+            linewidth=2
+        )
+        ax.add_patch(box)
+        
+        # 添加文本
+        if 'gru' in name:
+            text = f'{name.upper()}\nHidden Size: 32'
+        elif 'fc' in name:
+            text = f'{name.upper()}\n32→1'
+        elif 'input' in name:
+            text = 'Input\n10×1'
+        elif 'output' in name:
+            text = 'Output\n1'
+        else:
+            text = name
+        
+        ax.text(pos[0], pos[1], text, ha='center', va='center', 
+                fontsize=10, fontweight='bold')
+    
+    # 绘制连接线
+    main_flow = ['input', 'gru1', 'gru2', 'fc', 'output']
+    for i in range(len(main_flow) - 1):
+        start_pos = positions[main_flow[i]]
+        end_pos = positions[main_flow[i + 1]]
+        ax.arrow(start_pos[0] + 0.9, start_pos[1], 
+                end_pos[0] - start_pos[0] - 1.8, 0,
+                head_width=0.15, head_length=0.15, fc='blue', ec='blue', linewidth=3)
+    
+    # 设置坐标轴
+    ax.set_xlim(0, 12)
+    ax.set_ylim(4, 8)
+    ax.set_aspect('equal')
+    ax.axis('off')
+    
+    plt.title('GRU模型架构', fontsize=16, fontweight='bold', pad=20)
+    plt.tight_layout()
+    plt.savefig('gru_model_architecture.png', dpi=300, bbox_inches='tight')
+    plt.close()
+
+def main():
+    """主函数"""
+    print("开始GRU正弦波预测实验...")
+    
+    # 1. 生成数据
+    print("生成正弦波数据...")
+    X, y, t, data = generate_sine_wave_data()
+    print(f"数据形状: X={X.shape}, y={y.shape}")
+    
+    # 2. 创建模型
+    print("创建GRU模型...")
+    model = GRUModel(input_size=1, hidden_size=32, num_layers=2, output_size=1, dropout=0.1)
+    print(f"模型参数数量: {sum(p.numel() for p in model.parameters()):,}")
+    
+    # 3. 生成模型架构图
+    print("生成模型架构图...")
+    visualize_model_architecture()
+    
+    # 4. 训练模型
+    train_losses = train_model(model, X, y, epochs=100, lr=0.01)
+    
+    # 5. 评估模型
+    predictions, mse, mae, rmse = evaluate_model(model, X, y)
+    
+    # 6. 可视化结果
+    print("生成可视化结果...")
+    visualize_results(t, data, y, predictions, 10, train_losses)
+    
+    # 7. 保存模型
+    torch.save(model.state_dict(), 'gru_sine_wave_model.pth')
+    print("模型已保存到: gru_sine_wave_model.pth")
+    
+    print("GRU正弦波预测实验完成！")
+    print("生成的文件:")
+    print("- gru_model_architecture.png: 模型架构图")
+    print("- gru_sine_wave_results.png: 预测结果可视化")
+    print("- gru_sine_wave_model.pth: 训练好的模型")
+    
+    # 清理内存
+    del model, X, y
+    torch.cuda.empty_cache() if torch.cuda.is_available() else None
+
+if __name__ == "__main__":
+    main() 
 ```
-### 结果解读
-
+### 训练结果
 GRU通过更新门和重置门学习正弦波的周期性模式。  
-图表中，预测值应接近真实值，表明GRU能有效捕捉序列的规律。  
-若预测偏差较大，可增加hidden_size或epochs，或调整lr。  
+# 修复OpenMP错误 - 必须在所有其他导入之前
+<img width="1124" height="404" alt="image" src="https://github.com/user-attachments/assets/7edf7421-1de7-49db-a6ad-59f663023739" />  
+
+<img width="927" height="617" alt="image" src="https://github.com/user-attachments/assets/e67b0969-fa76-4e9c-a4e6-fbeb9f65fa2c" />  
+
+
+
