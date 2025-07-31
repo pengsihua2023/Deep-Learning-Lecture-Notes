@@ -1,5 +1,8 @@
 ## 著名网络架构：EfficientNet (2019)
 提出者：Google 
+第一作者：Mingxiing Tan  
+<img width="256" height="233" alt="image" src="https://github.com/user-attachments/assets/5b194e36-40bf-47ca-a03a-fd24faf436ed" />  
+
 特点：通过复合缩放（深度、宽度、分辨率）平衡性能和效率，适合资源受限场景。  
 应用：高效图像分类、嵌入式设备。  
 掌握要点：模型缩放策略、轻量化设计。  
