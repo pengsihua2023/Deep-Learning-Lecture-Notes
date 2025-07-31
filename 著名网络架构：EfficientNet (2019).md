@@ -3,6 +3,8 @@
 第一作者：Mingxiing Tan  
 <img width="256" height="233" alt="image" src="https://github.com/user-attachments/assets/5b194e36-40bf-47ca-a03a-fd24faf436ed" />  
 
+EfficientNet 是一种高效的卷积神经网络（Convolutional Neural Network, CNN）架构，由 Mingxing Tan 和 Quoc V. Le 在 2019 年提出，发表在论文《EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks》中（ICML 2019）。EfficientNet 通过系统化的复合缩放（Compound Scaling）方法，在计算资源有限的情况下实现高精度图像分类，标志着 CNN 设计从手动调参向自动化和高效化的转变。EfficientNet 系列模型（B0 到 B7）在 ImageNet 上取得了 SOTA（State-of-the-Art）性能，同时参数量和计算量远低于 ResNet 和 Inception 等模型，广泛应用于移动设备和边缘计算场景。   
+   
 特点：通过复合缩放（深度、宽度、分辨率）平衡性能和效率，适合资源受限场景。  
 应用：高效图像分类、嵌入式设备。  
 掌握要点：模型缩放策略、轻量化设计。  
