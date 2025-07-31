@@ -6,7 +6,9 @@
  
 DDPM 第一作者：Jonathan Ho  
 <img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/ee589462-59e3-432c-b20d-87b11a0ad85d" />  
-  
+
+扩散模型（Diffusion Models）是一种强大的生成式人工智能模型，主要用于从噪声中逐步生成高质量数据，如图像、音频或文本。它们的核心机制是通过模拟一个“扩散过程”来实现数据生成：先将真实数据逐步添加噪声（前向过程），然后训练模型学习逆向过程（去噪），从而从纯噪声中恢复出类似训练数据的样本。这种方法在生成模型领域取得了突破，尤其在图像合成任务中表现突出。扩散模型的理论基础最早由 Jascha Sohl-Dickstein 等人在 2015 年的论文《Deep Unsupervised Learning using Nonequilibrium Thermodynamics》中提出，因此 Jascha Sohl-Dickstein 被视为扩散模型的原创第一作者。该论文引入了基于非平衡热力学的扩散概念，用于无监督学习。 然而，扩散模型的流行始于 2020 年 Jonathan Ho 等人的《Denoising Diffusion Probabilistic Models》（DDPM），这篇论文将扩散模型应用于实际图像生成，并显著提升了生成质量。  
+   
 
 - 特点：通过加噪和去噪过程生成高质量图像，性能超越GAN。  
 - 掌握要点：去噪过程、概率建模。  
