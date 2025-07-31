@@ -6,7 +6,7 @@
 ---  
 DDPM 第一作者：Jonathan Ho  
 <img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/ee589462-59e3-432c-b20d-87b11a0ad85d" />  
-  
+---   
 
 - 特点：通过加噪和去噪过程生成高质量图像，性能超越GAN。  
 - 掌握要点：去噪过程、概率建模。  
