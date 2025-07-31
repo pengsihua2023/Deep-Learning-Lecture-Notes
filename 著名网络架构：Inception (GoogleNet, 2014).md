@@ -1,7 +1,8 @@
 ## 著名网络架构：Inception (GoogleNet, 2014)
 提出者：Google  
 第一作者：Christian Szegedy  
-<img width="200" height="250" alt="image" src="https://github.com/user-attachments/assets/c4120069-66c0-4625-b257-fc28c310bce6" />
+<img width="200" height="250" alt="image" src="https://github.com/user-attachments/assets/c4120069-66c0-4625-b257-fc28c310bce6" />  
+  
 该架构在2014年ImageNet挑战赛中获得冠军。  
 特点：Inception模块并行处理多尺度卷积，优化计算效率，引入1x1卷积降维。  
 应用：图像分类、特征提取。  
