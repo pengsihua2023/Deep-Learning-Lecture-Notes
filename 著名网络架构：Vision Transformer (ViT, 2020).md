@@ -1,5 +1,8 @@
 ## 著名网络架构：Vision Transformer (ViT, 2020)
 提出者：Google  
+第一作者：Alexey Dosovitskiy   
+<img width="236" height="256" alt="image" src="https://github.com/user-attachments/assets/e8b41203-25a3-4583-978d-46f29ea2f38c" />  
+
 特点：将图像分块（patch）后用Transformer处理，取代传统CNN，适合大数据集。  
 应用：图像分类、目标检测、图像分割。  
 掌握要点：自注意力机制、图像分块处理。  
