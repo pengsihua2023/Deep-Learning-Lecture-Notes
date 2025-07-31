@@ -1,5 +1,7 @@
 ## 著名网络架构：AlexNet (2012)
 提出者：Alex Krizhevsky 等  
+<img width="206" height="245" alt="image" src="https://github.com/user-attachments/assets/062a3e51-cb54-4711-adaa-f68671fca005" />  
+
 特点：引入ReLU激活函数、Dropout正则化、数据增强和GPU加速，在ImageNet竞赛中大幅提升性能。  
 应用：图像分类、特征提取、迁移学习基础。  
 掌握要点：深层CNN设计、过拟合控制。  
