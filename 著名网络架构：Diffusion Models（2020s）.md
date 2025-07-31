@@ -1,5 +1,6 @@
 ## Diffusion Models (扩散模型)
 - 提出者：多位研究者（如DDPM）  
+   
 理论最早提出者：Jascha Sohl-Dickstein  
 <img width="256" height="256" alt="image" src="https://github.com/user-attachments/assets/06fe6aa7-bb8f-45de-9239-c490de348e6e" />
  
