@@ -4,10 +4,9 @@
 理论最早提出者：Jascha Sohl-Dickstein  
 <img width="256" height="256" alt="image" src="https://github.com/user-attachments/assets/06fe6aa7-bb8f-45de-9239-c490de348e6e" />
  
----  
 DDPM 第一作者：Jonathan Ho  
 <img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/ee589462-59e3-432c-b20d-87b11a0ad85d" />  
----   
+  
 
 - 特点：通过加噪和去噪过程生成高质量图像，性能超越GAN。  
 - 掌握要点：去噪过程、概率建模。  
