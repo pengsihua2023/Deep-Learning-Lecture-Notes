@@ -78,7 +78,7 @@ Matplotlib 是 Python 中一个强大的 2D（和部分 3D）绘图库，广泛�
      - 深度学习场景：可视化分类任务的样本分布。
    - **柱状图**：
      - 显示类别统计，如每个类别的样本数量。
-       ```python
+```
 import matplotlib.pyplot as plt
 
 classes = ['Class A', 'Class B', 'Class C']
@@ -88,7 +88,9 @@ plt.xlabel('Classes')
 plt.ylabel('Count')
 plt.title('Class Distribution')
 plt.show()
-       ```
+```
+<img width="590" height="456" alt="image" src="https://github.com/user-attachments/assets/6da66945-fa61-413e-b249-188c63dbc055" />
+
      - 深度学习场景：检查数据集是否平衡。
    - **直方图**：
      - 显示数据分布，如特征值或权重分布。
