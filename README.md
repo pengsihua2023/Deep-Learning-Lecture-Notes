@@ -1,6 +1,5 @@
 # AI技术学习：
-[矩阵知识](https://www.bilibili.com/video/BV1h7pteyEww?spm_id_from=333.788.videopod.episodes&p=57)  
-[张量知识](https://www.youtube.com/watch?v=JbErq0_Q43w&t=45s)  
+
 - Python基础知识
   - [Python 中的类(class)](https://github.com/pengsihua2023/AI-learning-Sihua-Chinese/blob/main/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9APython%E4%B8%AD%E7%9A%84%E7%B1%BB(class).md)
 - 数学基础知识
@@ -55,3 +54,6 @@
     - [EfficientNet (2019)](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9AEfficientNet%20(2019).md)
     - [Vision Transformer (ViT, 2020)](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9AVision%20Transformer%20(ViT%2C%202020).md)
     - [Diffusion Models（2020s）](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9ADiffusion%20Models%EF%BC%882020s%EF%BC%89.md)
+- 外部链接
+  - [矩阵知识](https://www.bilibili.com/video/BV1h7pteyEww?spm_id_from=333.788.videopod.episodes&p=57)
+  - [张量知识](https://www.youtube.com/watch?v=JbErq0_Q43w&t=45s)  
