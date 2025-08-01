@@ -5,7 +5,7 @@
   - [NumPy库的基础知识](https://github.com/pengsihua2023/AI-learning-Sihua-Chinese/blob/main/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9ANumPy%20%E5%BA%93%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
   - [Pandas库的基础知识](https://github.com/pengsihua2023/AI-learning-Sihua-Chinese/blob/main/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9APandas%E5%BA%93%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
   - [Matplotlib库的基础知识](https://github.com/pengsihua2023/AI-learning-Sihua-Chinese/blob/main/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9AMatplotlib%E5%BA%93%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
-  - [Scikit-learn库的基础知识]()
+  - [Scikit-learn库的基础知识](https://github.com/pengsihua2023/AI-learning-Sihua-Chinese/blob/main/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9AScikit-learn%E5%BA%93%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
   - [SciPy库的基础知识](https://github.com/pengsihua2023/AI-learning-Sihua-Chinese/blob/main/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9ASciPy%E5%BA%93%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
 - 数学基础知识
   - [数组的基础知识](https://github.com/pengsihua2023/AI-learning-Sihua-Chinese/blob/main/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A%E6%95%B0%E7%BB%84%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
