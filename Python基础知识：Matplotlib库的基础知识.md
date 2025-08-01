@@ -79,13 +79,15 @@ Matplotlib 是 Python 中一个强大的 2D（和部分 3D）绘图库，广泛�
    - **柱状图**：
      - 显示类别统计，如每个类别的样本数量。
        ```python
-       classes = ['Class A', 'Class B', 'Class C']
-       counts = [50, 30, 20]
-       plt.bar(classes, counts, color='green')
-       plt.xlabel('Classes')
-       plt.ylabel('Count')
-       plt.title('Class Distribution')
-       plt.show()
+import matplotlib.pyplot as plt
+
+classes = ['Class A', 'Class B', 'Class C']
+counts = [50, 30, 20]
+plt.bar(classes, counts, color='green')
+plt.xlabel('Classes')
+plt.ylabel('Count')
+plt.title('Class Distribution')
+plt.show()
        ```
      - 深度学习场景：检查数据集是否平衡。
    - **直方图**：
