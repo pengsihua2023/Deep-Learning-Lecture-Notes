@@ -1,6 +1,8 @@
 # AI技术学习：
 [矩阵知识](https://www.bilibili.com/video/BV1h7pteyEww?spm_id_from=333.788.videopod.episodes&p=57)  
 [张量知识](https://www.youtube.com/watch?v=JbErq0_Q43w&t=45s)  
+- Python基础知识
+  - [Python 中的类(class)]()
 - 数学基础知识
   - [数组的基础知识](https://github.com/pengsihua2023/AI-learning-Sihua-Chinese/blob/main/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A%E6%95%B0%E7%BB%84%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
   - [张量的基础知识](https://github.com/pengsihua2023/AI-learning-Sihua-Chinese/blob/main/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A%E5%BC%A0%E9%87%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
