@@ -25,11 +25,12 @@ VAE 将编码器输出映射到一个概率分布（通常是正态分布），�
   
 6. 生成过程    
 生成新样本时：
-<img width="504" height="144" alt="image" src="https://github.com/user-attachments/assets/2ddfe035-7641-405d-b64c-f4df6a9cca57" />  
+<img width="504" height="144" alt="image" src="https://github.com/user-attachments/assets/2ddfe035-7641-405d-b64c-f4df6a9cca57" />
+--
 总结  
 VAE通过变分推断优化ELBO，结合编码器和解码器学习数据的潜在表示。损失函数平衡重构质量和潜在分布的正则化，重参数化技巧确保可微性。其数学核心是：
 <img width="730" height="73" alt="image" src="https://github.com/user-attachments/assets/fea30f8d-3a62-414b-9f7c-bd8a09805bbb" />  
--- 
+--- 
 ## 代码 （Pytorch）
 
 ```
