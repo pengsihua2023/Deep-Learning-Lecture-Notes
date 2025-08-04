@@ -1,4 +1,5 @@
 ## 循环神经网络
+外部链接（Youtube）：[RNN](https://www.youtube.com/watch?v=Cc4ENs6BHQw)  
 循环神经网络（Recurrent Neural Network, RNN）  
 - 重要性：RNN 适合处理序列数据（如文本、语音），是自然语言处理和时间序列预测的基础。
 - 核心概念：
