@@ -9,7 +9,8 @@ LSTM 通过“门机制”（输入门、遗忘门、输出门）控制信息的
 
 <img width="969" height="304" alt="image" src="https://github.com/user-attachments/assets/1d0be4d9-f07c-4428-9aaa-cfe0ecbfd411" />    
 
-<img width="480" height="288" alt="image" src="https://github.com/user-attachments/assets/18bdd7ef-80d7-4195-bec3-b8e4be8d9455" />  
+<img width="808" height="589" alt="image" src="https://github.com/user-attachments/assets/fc451318-b941-487a-8f5b-bcf4662cb83d" />  
+
 
 
 - LSTM: 引入了门控机制来更好地处理长依赖关系。包括：      
