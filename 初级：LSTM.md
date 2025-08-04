@@ -1,4 +1,5 @@
 ## LSTM 
+外部链接（Youtube）：[LSTM](https://www.youtube.com/watch?v=vTouAvxlphc)
 LSTM（长短期记忆网络，Long Short-Term Memory）  
 - 重要性：
 LSTM 是 RNN（循环神经网络）的一种变种，解决了标准 RNN 的梯度消失问题，能记住更长的序列信息。  
