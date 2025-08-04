@@ -18,6 +18,28 @@ Autoencoder 包含编码器（压缩数据）和解码器（重构数据），�
 
 图3 第三种表示  
 
+## Autoencoder的数学描述
+1. 基本结构
+Autoencoder 由编码器（Encoder）和解码器（Decoder）组成：  
+<img width="1072" height="144" alt="image" src="https://github.com/user-attachments/assets/7be41cfc-93e2-4693-ba9a-57cdf09c70ed" />
+2. 数学表达式
+   <img width="1022" height="465" alt="image" src="https://github.com/user-attachments/assets/ed97e888-b6a7-4b2b-b0b2-b30521495dcd" />
+3. 参数化
+   <img width="1030" height="380" alt="image" src="https://github.com/user-attachments/assets/6ab87265-3c9e-495b-b60c-8c3622199c5c" />
+4. 正则化变体
+   <img width="1275" height="515" alt="image" src="https://github.com/user-attachments/assets/f4a234df-cbb5-4fa9-8073-36708d5e0787" />
+5. 优化  
+通过反向传播优化：
+<img width="633" height="150" alt="image" src="https://github.com/user-attachments/assets/1879d224-0f1b-4aa9-ab2b-840d01c2e535" />
+6. 应用
+<img width="693" height="234" alt="image" src="https://github.com/user-attachments/assets/fdf6bf90-728b-436d-9d6e-39efa2c51aa2" />  
+
+
+
+
+
+
+
 ## 代码 （Pytorch）
 ```
 import torch
