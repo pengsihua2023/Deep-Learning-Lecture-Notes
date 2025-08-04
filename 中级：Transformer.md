@@ -11,6 +11,65 @@ Transformer 使用“注意力机制”（Attention），关注输入中最重�
 
 <img width="534" height="742" alt="image" src="https://github.com/user-attachments/assets/8d064b02-6166-47ec-bfc6-fb031f94192c" />  
 
+## Transformer的数学描述
+Transformer架构是自然语言处理和深度学习领域的核心模型，最初由Vaswani等人在2017年论文《Attention is All You Need》中提出。以下是其数学描述，涵盖主要组成部分，包括输入表示、注意力机制、位置编码、前馈网络和层归一化等。    
+1. 整体架构  
+Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分包含多个堆叠的层（通常是 $ N $ 层）。编码器处理输入序列，解码器生成输出序列。核心创新是自注意力机制（Self-Attention），取代了传统循环神经网络（RNN）的序列处理方式。  
+输入表示  
+输入序列（如单词或标记）首先被转换为向量表示：
+<img width="1390" height="474" alt="image" src="https://github.com/user-attachments/assets/fb62a0e3-59d9-41e0-b322-d4d5c2c06904" />
+编码器  
+每个编码器层包含两个主要子模块： 
+
+多头自注意力机制（Multi-Head Self-Attention）  
+前馈神经网络（Feed-Forward Neural Network, FFN）  
+
+每个子模块后接残差连接（Residual Connection）和层归一化（Layer Normalization）。  
+解码器  
+解码器与编码器类似，但多了掩码自注意力（Masked Self-Attention，用于避免未来信息的泄露）和编码器-解码器注意力（Encoder-Decoder Attention）。  
+
+2. 多头自注意力机制 
+自注意力是Transformer的核心，允许模型在处理每个词时关注序列中的其他词。  
+缩放点积注意力（Scaled Dot-Product Attention）
+<img width="1109" height="644" alt="image" src="https://github.com/user-attachments/assets/0ebc34f6-2940-498e-a1f2-541c907b8197" />
+多头机制
+<img width="1180" height="634" alt="image" src="https://github.com/user-attachments/assets/8f46e5e3-645e-4d3a-9fad-2fa525721a79" />
+3. 前馈神经网络（FFN） 
+每个编码器和解码器层包含一个逐位置的前馈网络，应用于每个词的向量：
+<img width="966" height="165" alt="image" src="https://github.com/user-attachments/assets/0230124d-f977-4ae3-8f37-d55d796c2182" />
+4. 残差连接与层归一化  
+每个子模块（自注意力或FFN）后接残差连接和层归一化：  
+<img width="962" height="334" alt="image" src="https://github.com/user-attachments/assets/fc2bff13-19c6-4c30-9413-c39e72a662da" />
+5. 编码器-解码器注意力  
+解码器中的额外注意力层使用编码器的输出K, V和解码器的Q：
+<img width="405" height="66" alt="image" src="https://github.com/user-attachments/assets/1f9602ff-70e2-4313-b1c2-e3e6aa979f9a" />
+这允许解码器关注输入序列的上下文。
+
+6. 输出层
+解码器最后一层通过线性变换和softmax生成输出概率：
+<img width="925" height="165" alt="image" src="https://github.com/user-attachments/assets/74539e82-e297-4605-9960-d5dcdf8e79bc" />
+7. 损失函数 
+训练时通常使用交叉熵损失，优化目标是最大化正确输出序列的概率：
+<img width="909" height="208" alt="image" src="https://github.com/user-attachments/assets/15f18713-2da0-4dea-8173-4ac2205ad792" />
+8. 总结  
+Transformer的数学核心在于：   
+
+自注意力：通过Q, K, V捕捉序列内关系。  
+多头机制：并行捕捉多种语义关系。  
+位置编码：弥补序列顺序信息。  
+残差与归一化：稳定训练并加速收敛。  
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 一个只有编码器的Transformer
 <img width="753" height="263" alt="image" src="https://github.com/user-attachments/assets/a9203ca4-71c3-4184-89db-8b2b551d0042" />  
