@@ -40,18 +40,20 @@ Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分�
 4. 残差连接与层归一化  
 每个子模块（自注意力或FFN）后接残差连接和层归一化：  
 <img width="962" height="334" alt="image" src="https://github.com/user-attachments/assets/fc2bff13-19c6-4c30-9413-c39e72a662da" />
-5. 编码器-解码器注意力  
+ 
+6. 编码器-解码器注意力  
 解码器中的额外注意力层使用编码器的输出K, V和解码器的Q：
 <img width="405" height="66" alt="image" src="https://github.com/user-attachments/assets/1f9602ff-70e2-4313-b1c2-e3e6aa979f9a" />
-这允许解码器关注输入序列的上下文。
-
-6. 输出层
+这允许解码器关注输入序列的上下文。  
+  
+7. 输出层
 解码器最后一层通过线性变换和softmax生成输出概率：
-<img width="925" height="165" alt="image" src="https://github.com/user-attachments/assets/74539e82-e297-4605-9960-d5dcdf8e79bc" />
-7. 损失函数 
+<img width="925" height="165" alt="image" src="https://github.com/user-attachments/assets/74539e82-e297-4605-9960-d5dcdf8e79bc" />  
+  
+8. 损失函数 
 训练时通常使用交叉熵损失，优化目标是最大化正确输出序列的概率：
 <img width="909" height="208" alt="image" src="https://github.com/user-attachments/assets/15f18713-2da0-4dea-8173-4ac2205ad792" />
-8. 总结  
+9. 总结  
 Transformer的数学核心在于：   
 
 自注意力：通过Q, K, V捕捉序列内关系。  
