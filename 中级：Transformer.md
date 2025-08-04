@@ -50,7 +50,7 @@ Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分�
 这允许解码器关注输入序列的上下文。  
  
 ### 6. 输出层
-解码器最后一层通过线性变换和softmax生成输出概率：  
+   
 <img width="931" height="213" alt="image" src="https://github.com/user-attachments/assets/71e989cc-cec3-4b65-9c01-187dd5190c77" />
 
 
