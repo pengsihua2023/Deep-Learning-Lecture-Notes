@@ -19,8 +19,10 @@ VAE 将编码器输出映射到一个概率分布（通常是正态分布），�
 4. 重参数化技巧  
 为了使损失函数可通过梯度下降优化，VAE使用重参数化技巧：  
 <img width="945" height="204" alt="image" src="https://github.com/user-attachments/assets/a723a5bf-3191-4542-897e-a5c272d14e60" />  
+  
 5. 模型结构  
    <img width="877" height="219" alt="image" src="https://github.com/user-attachments/assets/5a4a0a7a-82f9-4aca-88c8-2adf281e8e6b" />  
+  
 6. 生成过程    
 生成新样本时：
 <img width="504" height="144" alt="image" src="https://github.com/user-attachments/assets/2ddfe035-7641-405d-b64c-f4df6a9cca57" />  
