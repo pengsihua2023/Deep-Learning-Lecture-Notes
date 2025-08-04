@@ -24,13 +24,13 @@ LSTM的核心计算分为以下步骤：
 (1) 遗忘门（Forget Gate）
 <img width="927" height="524" alt="image" src="https://github.com/user-attachments/assets/3e3223c8-2f48-43c3-8efa-feef9d765a87" />  
 (2) 输入门（Input Gate）  
-输入门决定哪些新信息将被存储到单元状态中。公式为：
+输入门决定哪些新信息将被存储到单元状态中。公式为：  
 <img width="943" height="562" alt="image" src="https://github.com/user-attachments/assets/071174d6-9eb8-414f-8769-38ca10aa6235" />  
 (3) 单元状态更新（Cell State Update）  
-结合遗忘门和输入门，更新单元状态：
+结合遗忘门和输入门，更新单元状态：  
 <img width="922" height="253" alt="image" src="https://github.com/user-attachments/assets/5b9ff9a3-877a-4a7d-b7c8-5c9715c8bd5b" />  
 (4) 输出门（Output Gate）   
-输出门决定当前隐藏状态的输出：  
+输出门决定当前隐藏状态的输出：   
 <img width="1045" height="502" alt="image" src="https://github.com/user-attachments/assets/d0983304-4438-4268-a783-379e885ef205" />  
 3. 参数总结  
 LSTM的参数包括：  
