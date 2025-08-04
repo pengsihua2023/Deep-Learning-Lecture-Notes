@@ -11,6 +11,27 @@ GAN 有两个网络：生成器（造假图片）和判别器（判断真假）�
 1. **生成器**：在左侧用青色表示，生成器负责创建数据样本（例如图中的方块）。它的作用是生成模仿真实数据的假数据。  
 2. **判别器**：在右侧用红色表示，判别器对接收到的数据进行评估，判断其是“真实”（真实数据）还是“伪造”（生成数据）。绿色标签“真实”和“伪造”表示判别器的分类结果。  
 在GAN中，生成器和判别器会同时进行训练，通过竞争过程进行优化：生成器通过试图欺骗判别器来改进，而判别器通过更好地区分真实数据和假数据来提升。这种迭代过程会持续进行，直到生成器能够生成高度逼真的数据。
+## GAN的数学描述
+1. 基本结构  
+GAN由两个模型组成：  
+生成器（G）：将随机噪声 $ z $（通常从标准正态分布或均匀分布中采样）映射到数据空间，生成假样本G(z) ，试图模仿真实数据的分布 Pdata。  
+判别器（D）：接收输入（真实样本x 或生成样本G(z)），输出一个标量 D(x) 或  D(G(z)) ，表示输入是真实样本的概率（接近1）还是生成样本（接近0）。
+2. 优化目标  
+GAN的核心是一个最小最大博弈问题，生成器和判别器通过对抗性训练优化。目标函数可以表示为：
+<img width="1058" height="342" alt="image" src="https://github.com/user-attachments/assets/2ac71e60-4723-46ac-8602-1fea4bd4368a" />
+3. 目标函数的直观理解  
+   <img width="1152" height="191" alt="image" src="https://github.com/user-attachments/assets/73e1b6f2-7dfd-415b-8199-eb5fbad47657" />
+4. 训练过程   
+GAN的训练通过交替优化以下两步进行：  
+<img width="1144" height="524" alt="image" src="https://github.com/user-attachments/assets/11e4dd4d-8a6e-43e3-88a3-1eaa24d4a42d" />
+5. 数学性质与挑战  
+   <img width="1109" height="424" alt="image" src="https://github.com/user-attachments/assets/eb9fde5f-e3a3-4ff1-a822-5c71343c48a6" />
+6. 总结  
+   <img width="1188" height="268" alt="image" src="https://github.com/user-attachments/assets/dc02ea44-ffaa-42a6-95bc-91ef5a349867" />
+
+
+
+
 
 ## 代码(Pytorch)
 ```
