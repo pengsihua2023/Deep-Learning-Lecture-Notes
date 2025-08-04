@@ -9,6 +9,9 @@ LSTM 通过“门机制”（输入门、遗忘门、输出门）控制信息的
 
 <img width="969" height="304" alt="image" src="https://github.com/user-attachments/assets/1d0be4d9-f07c-4428-9aaa-cfe0ecbfd411" />    
 
+<img width="480" height="288" alt="image" src="https://github.com/user-attachments/assets/18bdd7ef-80d7-4195-bec3-b8e4be8d9455" />  
+
+
 - LSTM: 引入了门控机制来更好地处理长依赖关系。包括：      
    - Forget gate: 决定丢弃多少前一时刻信息。   
    - Input gate: 控制新输入x(t)的多少被加入。    
