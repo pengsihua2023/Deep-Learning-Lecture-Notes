@@ -23,6 +23,7 @@ LSTM单元通过输入门、遗忘门、输出门和单元状态来控制信息�
 LSTM的核心计算分为以下步骤：  
 (1) 遗忘门（Forget Gate）
 <img width="927" height="524" alt="image" src="https://github.com/user-attachments/assets/3e3223c8-2f48-43c3-8efa-feef9d765a87" />    
+  
 (2) 输入门（Input Gate）  
 输入门决定哪些新信息将被存储到单元状态中。公式为：  
 <img width="943" height="562" alt="image" src="https://github.com/user-attachments/assets/071174d6-9eb8-414f-8769-38ca10aa6235" />  
