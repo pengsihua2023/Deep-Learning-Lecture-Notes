@@ -48,9 +48,11 @@ Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分�
   
 这允许解码器关注输入序列的上下文。  
  
-### 6. 编码器-解码器注意力  
-解码器中的额外注意力层使用编码器的输出K, V和解码器的Q：
-<img width="405" height="66" alt="image" src="https://github.com/user-attachments/assets/1f9602ff-70e2-4313-b1c2-e3e6aa979f9a" />
+### 6. 输出层
+解码器最后一层通过线性变换和softmax生成输出概率：  
+<img width="931" height="213" alt="image" src="https://github.com/user-attachments/assets/71e989cc-cec3-4b65-9c01-187dd5190c77" />
+
+
   
 这允许解码器关注输入序列的上下文。  
   
