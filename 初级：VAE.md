@@ -8,6 +8,26 @@ VAE 将编码器输出映射到一个概率分布（通常是正态分布），�
 
 <center><img width="617" height="376" alt="image" src="https://github.com/user-attachments/assets/d8b5e82e-5b83-41d9-8b3c-521a3aeeb38e" /></center>  
 
+## VAE的数学描述
+1. 目标
+<img width="1310" height="388" alt="image" src="https://github.com/user-attachments/assets/5aea31bd-e523-4579-a4b4-19cfd619ead4" />
+2. 变分推断
+   <img width="1101" height="456" alt="image" src="https://github.com/user-attachments/assets/fc3b7272-2c56-48e7-b095-aa9cb9d8e200" />
+3. 损失函数
+   VAE的损失函数由两部分组成：  
+   <img width="1296" height="508" alt="image" src="https://github.com/user-attachments/assets/9cc837e7-266e-4bb8-9bd8-4c340f538018" />
+4. 重参数化技巧  
+为了使损失函数可通过梯度下降优化，VAE使用重参数化技巧：  
+<img width="945" height="204" alt="image" src="https://github.com/user-attachments/assets/a723a5bf-3191-4542-897e-a5c272d14e60" />
+5. 模型结构
+   <img width="877" height="219" alt="image" src="https://github.com/user-attachments/assets/5a4a0a7a-82f9-4aca-88c8-2adf281e8e6b" />
+6. 生成过程  
+生成新样本时：
+<img width="504" height="144" alt="image" src="https://github.com/user-attachments/assets/2ddfe035-7641-405d-b64c-f4df6a9cca57" />
+总结  
+VAE通过变分推断优化ELBO，结合编码器和解码器学习数据的潜在表示。损失函数平衡重构质量和潜在分布的正则化，重参数化技巧确保可微性。其数学核心是：
+<img width="730" height="73" alt="image" src="https://github.com/user-attachments/assets/fea30f8d-3a62-414b-9f7c-bd8a09805bbb" />
+ 
 ## 代码 （Pytorch）
 
 ```
