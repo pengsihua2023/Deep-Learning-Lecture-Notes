@@ -1,5 +1,4 @@
-## 数据集简介
-### UCI HAR数据集
+### 数据集简介：UCI HAR数据集
 UCI HAR（Human Activity Recognition）数据集是用于研究人类活动识别的公开数据集，由意大利热那亚大学的Davide Anguita等人于2012年收集并发布，托管在UCI机器学习数据库中。它通过智能手机（Samsung Galaxy SII）上的加速度计和陀螺仪传感器，记录了30名年龄在19至48岁的受试者在执行日常活动时的运动数据，广泛应用于时间序列数据分类和机器学习研究。[](https://machinelearningmastery.com/how-to-model-human-activity-from-smartphone-data/)[](https://archive.ics.uci.edu/ml/datasets/Human%2BActivity%2BRecognition%2BUsing%2BSmartphones)
 
 ### 数据集概述
