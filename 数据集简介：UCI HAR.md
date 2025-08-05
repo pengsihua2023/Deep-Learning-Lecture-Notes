@@ -69,8 +69,6 @@ UCI HAR数据集广泛用于以下研究领域：
 - **预处理**：原始时间序列数据需要额外处理（如标准化、缺失值填补）以适应特定模型。[](https://arxiv.org/html/2505.06730v1)[](https://www.nature.com/articles/s41597-024-03951-4)
 - **挑战**：活动识别涉及大量传感器数据（每秒数十次观测），需要处理时间序列的复杂性和个体运动模式的差异。[](https://machinelearningmastery.com/how-to-model-human-activity-from-smartphone-data/)
 
--------------------
-UCI Human Activity Recognition (HAR) 数据集是一个经典的时间序列数据集，包含通过智能手机传感器采集的加速度计和陀螺仪数据，用于人类活动识别任务。以下是下载 UCI HAR 数据集的 Python 代码，以及一个简单的使用示例，包括加载数据、预处理和可视化。
 
 ---
 
