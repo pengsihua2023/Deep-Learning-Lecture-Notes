@@ -61,4 +61,6 @@
     - [Diffusion Models（2020s）](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9ADiffusion%20Models%EF%BC%882020s%EF%BC%89.md)
 - 外部链接
   - [矩阵知识](https://www.bilibili.com/video/BV1h7pteyEww?spm_id_from=333.788.videopod.episodes&p=57)
-  - [张量知识](https://www.youtube.com/watch?v=JbErq0_Q43w&t=45s)  
+  - [张量知识](https://www.youtube.com/watch?v=JbErq0_Q43w&t=45s)
+- 数据集简介
+  - [UCI HAR]()
