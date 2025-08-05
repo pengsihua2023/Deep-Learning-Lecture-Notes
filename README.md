@@ -66,4 +66,6 @@
   - [UCI HAR](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AUCI%20HAR.md)  
   - [ImageNet](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AImageNet%E6%95%B0%E6%8D%AE%E9%9B%86.md)  
   - [CIFA10](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9ACIFAR-10%E6%95%B0%E6%8D%AE%E9%9B%86.md)
-  - [MNIST](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AMNIST%E6%95%B0%E6%8D%AE%E9%9B%86.md) 
+  - [MNIST](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AMNIST%E6%95%B0%E6%8D%AE%E9%9B%86.md)
+  - [Fashion-MNIST数据集]()
+  - [IMDb]()
