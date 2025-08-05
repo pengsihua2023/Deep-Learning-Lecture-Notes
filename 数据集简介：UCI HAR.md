@@ -69,3 +69,185 @@ UCI HAR数据集广泛用于以下研究领域：
 - **预处理**：原始时间序列数据需要额外处理（如标准化、缺失值填补）以适应特定模型。[](https://arxiv.org/html/2505.06730v1)[](https://www.nature.com/articles/s41597-024-03951-4)
 - **挑战**：活动识别涉及大量传感器数据（每秒数十次观测），需要处理时间序列的复杂性和个体运动模式的差异。[](https://machinelearningmastery.com/how-to-model-human-activity-from-smartphone-data/)
 
+-------------------
+UCI Human Activity Recognition (HAR) 数据集是一个经典的时间序列数据集，包含通过智能手机传感器采集的加速度计和陀螺仪数据，用于人类活动识别任务。以下是下载 UCI HAR 数据集的 Python 代码，以及一个简单的使用示例，包括加载数据、预处理和可视化。
+
+---
+
+### 下载 UCI HAR 数据集的 Python 代码
+UCI HAR 数据集可以从 UCI Machine Learning Repository 下载（约58MB，解压后包含训练和测试数据）。以下代码使用 `requests` 下载并解压数据集：
+
+```python
+import requests
+import zipfile
+import os
+import shutil
+
+def download_uci_har_dataset(save_dir='./UCI_HAR_Dataset'):
+    """
+    下载并解压 UCI HAR 数据集到指定目录
+    """
+    url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip'
+    zip_path = os.path.join(save_dir, 'UCI_HAR_Dataset.zip')
+
+    # 创建保存目录
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+
+    # 下载数据集
+    print("正在下载 UCI HAR 数据集...")
+    response = requests.get(url, stream=True)
+    with open(zip_path, 'wb') as f:
+        for chunk in response.iter_content(chunk_size=8192):
+            if chunk:
+                f.write(chunk)
+    print("下载完成！")
+
+    # 解压数据集
+    print("正在解压数据集...")
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall(save_dir)
+    print("解压完成！")
+
+    # 删除压缩文件（可选）
+    os.remove(zip_path)
+    print(f"数据集已保存到 {save_dir}")
+
+# 执行下载
+download_uci_har_dataset()
+```
+
+### 说明
+- **依赖**：需要安装 `requests`（`pip install requests`）。
+- **保存路径**：数据集将下载到 `./UCI_HAR_Dataset` 目录，解压后包含 `UCI HAR Dataset` 文件夹。
+- **文件结构**：
+  - `train/X_train.txt`：训练集特征（7352样本，561维特征）。
+  - `train/y_train.txt`：训练集标签（1-6，6种活动）。
+  - `train/subject_train.txt`：训练集受试者ID。
+  - `test/X_test.txt`、`test/y_test.txt`、`test/subject_test.txt`：测试集对应文件。
+  - `activity_labels.txt`：活动标签映射（如1=Walking）。
+  - `features.txt`：561个特征名称。
+
+---
+
+### 简单使用示例代码
+以下是一个加载 UCI HAR 数据集、进行简单预处理并可视化数据的示例代码，使用 Pandas 加载数据并用 Matplotlib 绘制活动分布。
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+
+def load_uci_har_dataset(data_dir='./UCI_HAR_Dataset/UCI HAR Dataset'):
+    """
+    加载 UCI HAR 数据集
+    返回训练和测试数据的特征、标签和受试者ID
+    """
+    # 读取特征名称
+    features = pd.read_csv(os.path.join(data_dir, 'features.txt'), sep='\s+', header=None, names=['index', 'feature_name'])['feature_name'].values
+    
+    # 读取训练数据
+    X_train = pd.read_csv(os.path.join(data_dir, 'train/X_train.txt'), sep='\s+', header=None, names=features)
+    y_train = pd.read_csv(os.path.join(data_dir, 'train/y_train.txt'), sep='\s+', header=None, names=['activity'])
+    subject_train = pd.read_csv(os.path.join(data_dir, 'train/subject_train.txt'), sep='\s+', header=None, names=['subject'])
+    
+    # 读取测试数据
+    X_test = pd.read_csv(os.path.join(data_dir, 'test/X_test.txt'), sep='\s+', header=None, names=features)
+    y_test = pd.read_csv(os.path.join(data_dir, 'test/y_test.txt'), sep='\s+', header=None, names=['activity'])
+    subject_test = pd.read_csv(os.path.join(data_dir, 'test/subject_test.txt'), sep='\s+', header=None, names=['subject'])
+    
+    # 读取活动标签映射
+    activity_labels = pd.read_csv(os.path.join(data_dir, 'activity_labels.txt'), sep='\s+', header=None, names=['id', 'activity_name'])
+    activity_map = dict(zip(activity_labels['id'], activity_labels['activity_name']))
+    
+    # 将标签映射为活动名称
+    y_train['activity_name'] = y_train['activity'].map(activity_map)
+    y_test['activity_name'] = y_test['activity'].map(activity_map)
+    
+    return X_train, y_train, subject_train, X_test, y_test, subject_test, activity_map
+
+def visualize_activity_distribution(y_train, y_test, activity_map):
+    """
+    可视化训练和测试集中活动的分布
+    """
+    plt.figure(figsize=(12, 5))
+    
+    # 训练集活动分布
+    plt.subplot(1, 2, 1)
+    y_train['activity_name'].value_counts().plot(kind='bar', title='Training Set Activity Distribution')
+    plt.xlabel('Activity')
+    plt.ylabel('Count')
+    plt.xticks(rotation=45)
+    
+    # 测试集活动分布
+    plt.subplot(1, 2, 2)
+    y_test['activity_name'].value_counts().plot(kind='bar', title='Test Set Activity Distribution')
+    plt.xlabel('Activity')
+    plt.ylabel('Count')
+    plt.xticks(rotation=45)
+    
+    plt.tight_layout()
+    plt.show()
+
+# 加载数据集
+X_train, y_train, subject_train, X_test, y_test, subject_test, activity_map = load_uci_har_dataset()
+
+# 打印数据集信息
+print(f"训练集特征形状: {X_train.shape}")  # (7352, 561)
+print(f"训练集标签形状: {y_train.shape}")  # (7352, 2)
+print(f"测试集特征形状: {X_test.shape}")   # (2947, 561)
+print(f"测试集标签形状: {y_test.shape}")    # (2947, 2)
+print("活动标签映射:", activity_map)
+
+# 可视化活动分布
+visualize_activity_distribution(y_train, y_test, activity_map)
+
+# 示例：简单预处理（标准化特征）
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+print("标准化后训练集特征（前5行）：")
+print(X_train_scaled[:5, :5])  # 显示前5行前5列
+```
+
+### 代码说明
+1. **依赖**：
+   - 安装所需库：`pip install pandas numpy matplotlib requests scikit-learn`
+2. **下载代码**：
+   - 使用 `requests` 下载 UCI HAR 数据集的 ZIP 文件并解压。
+   - 保存到指定目录（默认 `./UCI_HAR_Dataset`）。
+3. **加载代码**：
+   - 使用 Pandas 读取 `X_train.txt`（特征）、`y_train.txt`（标签）、`subject_train.txt`（受试者ID）等。
+   - 加载活动标签映射（`activity_labels.txt`）并将数字标签转换为活动名称。
+4. **可视化**：
+   - 绘制训练集和测试集中各活动类别的分布柱状图，帮助了解数据平衡性。
+5. **预处理**：
+   - 使用 `StandardScaler` 标准化特征（均值为0，方差为1），适合机器学习模型输入。
+6. **输出示例**：
+   - 显示数据集形状、活动标签映射和标准化后的特征片段。
+   - 生成柱状图，展示6种活动（Walking、Sitting等）的分布。
+
+### 运行结果
+- **数据集信息**：
+  - 训练集：7352样本，561维特征。
+  - 测试集：2947样本，561维特征。
+  - 活动标签：{1: 'WALKING', 2: 'WALKING_UPSTAIRS', 3: 'WALKING_DOWNSTAIRS', 4: 'SITTING', 5: 'STANDING', 6: 'LAYING'}。
+- **可视化**：显示训练和测试集中各活动类别的样本数量，确认数据分布较为平衡。
+- **标准化特征**：输出标准化后的特征值（部分），便于后续模型训练。
+
+### 使用建议
+- **模型训练**：可使用 `X_train_scaled` 和 `y_train['activity']` 训练分类模型（如SVM、随机森林或深度学习模型如LSTM、CNN）。
+- **深度学习示例**：若需使用 PyTorch 或 TensorFlow 训练模型，可将数据转换为张量格式。
+- **扩展**：
+  - 可加载原始传感器数据（`train/Inertial Signals/`）进行时间序列分析。
+  - 尝试特征选择或降维（如PCA）以减少561维特征的复杂度。
+
+### 注意事项
+- **数据路径**：确保 `data_dir` 指向解压后的数据集目录。
+- **内存需求**：数据集规模较小（约58MB），普通PC即可处理。
+- **Kaggle替代**：Kaggle也提供UCI HAR数据集，但分区可能不同，建议使用UCI官方版本以确保一致性。
+- **错误处理**：下载或解压失败时，检查网络连接或磁盘空间。
