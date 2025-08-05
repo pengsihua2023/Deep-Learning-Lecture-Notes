@@ -63,9 +63,9 @@
   - [矩阵知识](https://www.bilibili.com/video/BV1h7pteyEww?spm_id_from=333.788.videopod.episodes&p=57)
   - [张量知识](https://www.youtube.com/watch?v=JbErq0_Q43w&t=45s)
 - 数据集简介
-  - [UCI HAR](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AUCI%20HAR.md)  
-  - [ImageNet](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AImageNet%E6%95%B0%E6%8D%AE%E9%9B%86.md)  
-  - [CIFA10](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9ACIFAR-10%E6%95%B0%E6%8D%AE%E9%9B%86.md)
   - [MNIST](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AMNIST%E6%95%B0%E6%8D%AE%E9%9B%86.md)
   - [Fashion-MNIST](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AFashion-MNIST%E6%95%B0%E6%8D%AE%E9%9B%86.md)
+  - [CIFA10](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9ACIFAR-10%E6%95%B0%E6%8D%AE%E9%9B%86.md)
+  - [ImageNet](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AImageNet%E6%95%B0%E6%8D%AE%E9%9B%86.md)  
+  - [UCI HAR](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AUCI%20HAR.md)   
   - [IMDb](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AIMDb%E6%95%B0%E6%8D%AE%E9%9B%86.md)
