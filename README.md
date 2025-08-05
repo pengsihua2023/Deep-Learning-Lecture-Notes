@@ -1,4 +1,4 @@
-# 深度学习技术：
+# 深度学习讲义：
 
 - Python基础知识
   - [Python 中的类(class)](https://github.com/pengsihua2023/AI-learning-Sihua-Chinese/blob/main/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9APython%E4%B8%AD%E7%9A%84%E7%B1%BB(class).md)
