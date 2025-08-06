@@ -64,6 +64,7 @@
 - 外部链接
   - [矩阵知识](https://www.bilibili.com/video/BV1h7pteyEww?spm_id_from=333.788.videopod.episodes&p=57)
   - [张量知识](https://www.youtube.com/watch?v=JbErq0_Q43w&t=45s)
+  - [LSTM](https://www.youtube.com/watch?v=CJVA6Zwoesk)  
 - 数据集简介
   - [MNIST](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AMNIST%E6%95%B0%E6%8D%AE%E9%9B%86.md)
   - [Fashion-MNIST](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AFashion-MNIST%E6%95%B0%E6%8D%AE%E9%9B%86.md)
