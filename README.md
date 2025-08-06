@@ -60,11 +60,7 @@
     - [YOLO (2016)](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9AYOLO%E7%B3%BB%E5%88%97%20(2016).md)
     - [EfficientNet (2019)](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9AEfficientNet%20(2019).md)
     - [Vision Transformer (ViT, 2020)](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9AVision%20Transformer%20(ViT%2C%202020).md)
-    - [Diffusion Models（2020s）](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9ADiffusion%20Models%EF%BC%882020s%EF%BC%89.md)
-- 外部链接
-  - [矩阵知识](https://www.bilibili.com/video/BV1h7pteyEww?spm_id_from=333.788.videopod.episodes&p=57)
-  - [张量知识](https://www.youtube.com/watch?v=JbErq0_Q43w&t=45s)
-  - [LSTM](https://www.youtube.com/watch?v=CJVA6Zwoesk)  
+    - [Diffusion Models（2020s）](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9ADiffusion%20Models%EF%BC%882020s%EF%BC%89.md)  
 - 数据集简介
   - [MNIST](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AMNIST%E6%95%B0%E6%8D%AE%E9%9B%86.md)
   - [Fashion-MNIST](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AFashion-MNIST%E6%95%B0%E6%8D%AE%E9%9B%86.md)
@@ -72,3 +68,7 @@
   - [ImageNet](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AImageNet%E6%95%B0%E6%8D%AE%E9%9B%86.md)  
   - [UCI HAR](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AUCI%20HAR.md)   
   - [IMDb](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AIMDb%E6%95%B0%E6%8D%AE%E9%9B%86.md)
+- 外部链接
+  - [矩阵知识](https://www.bilibili.com/video/BV1h7pteyEww?spm_id_from=333.788.videopod.episodes&p=57)
+  - [张量知识](https://www.youtube.com/watch?v=JbErq0_Q43w&t=45s)
+  - [LSTM](https://www.youtube.com/watch?v=CJVA6Zwoesk)  
