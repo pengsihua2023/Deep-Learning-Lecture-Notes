@@ -10,7 +10,9 @@ $x_i$
 求和：
 $\sum_{i=1}^{n} i$ → Σᵢ₌₁ⁿ i  
 积分：
-$\int_{0}^{\infty} e^{-x} \, dx$ → ∫₀∞ e⁻ˣ dx
+$\int_{0}^{\infty} e^{-x} \, dx$
+
+→ ∫₀∞ e⁻ˣ dx
 矩阵：  
 $\begin{pmatrix} a & b \\ c & d \end{pmatrix}$  
 
