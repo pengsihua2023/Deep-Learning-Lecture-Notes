@@ -1,26 +1,3 @@
-分数：
-$\frac{a}{b}$   
-→ a/b
-上标/下标：
-$x^2$ 
-或 
-$x_i$ 
-
-→ x² 或 xᵢ  
-求和：
-$\sum_{i=1}^{n} i$ → Σᵢ₌₁ⁿ i  
-积分：
-$\int_{0}^{\infty} e^{-x} \, dx$
-
-→ ∫₀∞ e⁻ˣ dx
-矩阵：  
-$\begin{pmatrix} a & b \\ c & d \end{pmatrix}$  
-
-
-→ 2x2 矩阵
-
-$\frac{a}{b}$  
-$E = mc^2$
 ## LSTM 
 LSTM（长短期记忆网络，Long Short-Term Memory）  
 - 重要性：
