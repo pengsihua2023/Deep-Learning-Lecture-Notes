@@ -11,8 +11,10 @@ $x_i$
 $\sum_{i=1}^{n} i$ → Σᵢ₌₁ⁿ i  
 积分：
 $\int_{0}^{\infty} e^{-x} \, dx$ → ∫₀∞ e⁻ˣ dx
-矩阵：
+矩阵：  
 $\begin{pmatrix} a & b \\ c & d \end{pmatrix}$  
+
+
 → 2x2 矩阵
 
 $\frac{a}{b}$  
