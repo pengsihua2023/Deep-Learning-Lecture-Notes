@@ -97,13 +97,15 @@ class SimpleLSTM(nn.Module):
         super(SimpleLSTM, self).__init__()
         self.hidden_size = hidden_size
         self.lstm = nn.LSTM(input_size, hidden_size, batch_first=True)
-        self.fc = nn.Linear(hidden_size, output_size)
+        self.fc_new =nn.Linear(hidden_size,20)
+        self.fc = nn.Linear(20, output_size)
         self.sigmoid = nn.Sigmoid()
     def forward(self, x):
         batch_size = x.size(0)
         h0 = torch.zeros(1, batch_size, self.hidden_size).to(x.device)
         c0 = torch.zeros(1, batch_size, self.hidden_size).to(x.device)
         out, _ = self.lstm(x, (h0, c0))
+        out = self.fc_new(out)
         out = self.fc(out[:, -1, :])
         out = self.sigmoid(out)
         return out
