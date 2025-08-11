@@ -7,7 +7,7 @@
 - [标准化层输入 (Layer Normalization)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A0%87%E5%87%86%E5%8C%96%E5%B1%82%E8%BE%93%E5%85%A5%20(Layer%20Normalization).md)
 - [L1范数正则化 (L1 Regularization)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/L1%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96.md)
 - [L2范数正则化 （L2 Regularization (Weight Decay)）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/L2%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96.md)
-- 添加噪声到输入/权重 （Noise Injection）
+- [添加噪声到输入/权重 （Noise Injection）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%B7%BB%E5%8A%A0%E5%99%AA%E5%A3%B0%E5%88%B0%E8%BE%93%E5%85%A5-%E6%9D%83%E9%87%8D%EF%BC%88Noise%20Injection%EF%BC%89.md)
 - 动态调整学习率 （Learning Rate Scheduling）
 - 根据损失监控自动降低学习率 （ReduceLROnPlateau）
 - [自适应学习率 （Adam Optimizer）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E8%87%AA%E9%80%82%E5%BA%94%E5%AD%A6%E4%B9%A0%E7%8E%87%20%EF%BC%88Adam%20Optimizer%EF%BC%89.md)
