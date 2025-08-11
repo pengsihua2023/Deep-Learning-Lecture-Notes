@@ -6,7 +6,7 @@
 - 标准化批次输入 (Batch Normalization) 
 - 标准化层输入 (Layer Normalization)
 - L1范数正则化 (L1 Regularization)
-- L2正则化 （L2 Regularization (Weight Decay)）
+- L2范数正则化 （L2 Regularization (Weight Decay)）
 - 添加噪声到输入/权重 （Noise Injection）
 - 动态调整学习率 （Learning Rate Scheduling）
 - 根据损失监控自动降低学习率 （ReduceLROnPlateau）
