@@ -1,7 +1,7 @@
 ## 深度学习模型训练技术集成
 - 梯度裁剪（clip_grad_norm_）
 - 学习率调度（ReduceLROnPlateau）
-- 训练早停技术(Early Stopping)
+- 训练早停(Early Stopping)
 - 随机丢弃神经元 (Dropout)
 - 标准化批次输入 (Batch Normalization) 
 - 标准化层输入 (Layer Normalization)
