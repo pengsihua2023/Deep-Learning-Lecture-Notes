@@ -5,7 +5,7 @@
 - 随机丢弃神经元 (Dropout)
 - 标准化批次输入 (Batch Normalization) 
 - 标准化层输入 (Layer Normalization)
-- L1范数正则化 (L1 Regularization)
+- [L1范数正则化 (L1 Regularization)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/L1%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96.md)
 - [L2范数正则化 （L2 Regularization (Weight Decay)）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/L2%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96.md)
 - 添加噪声到输入/权重 （Noise Injection）
 - 动态调整学习率 （Learning Rate Scheduling）
