@@ -204,4 +204,3 @@ print(f'Test Accuracy: {test_accuracy:.2f}%')
 - **计算开销**：LN对高维特征的计算略高于BN，但通常影响不大。
 - **与其他正则化结合**：可与Dropout、L1/L2正则化（如前述问题）联合使用。
 
-通过以上代码和说明，你可以理解Layer Normalization的原理及其在PyTorch中的实现。如果需要更复杂示例（如结合Dropout、BatchNorm或Flash Attention），欢迎继续提问！
