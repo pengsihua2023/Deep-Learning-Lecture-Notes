@@ -10,7 +10,7 @@
 - 添加噪声到输入/权重 （Noise Injection）
 - 动态调整学习率 （Learning Rate Scheduling）
 - 根据损失监控自动降低学习率 （ReduceLROnPlateau）
-- 自适应学习率 （Adam Optimizer）
+- [自适应学习率 （Adam Optimizer）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E8%87%AA%E9%80%82%E5%BA%94%E5%AD%A6%E4%B9%A0%E7%8E%87%20%EF%BC%88Adam%20Optimizer%EF%BC%89.md)
 - 自适应学习率 （RMSprop）
 - Adam变体 （AdamW）
 - 均匀/正态分布初始化 （Xavier/Glorot Initialization）
