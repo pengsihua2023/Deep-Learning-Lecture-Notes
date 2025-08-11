@@ -30,6 +30,6 @@
 - 微调提示嵌入 （Prompt Tuning）
 - 差异化剪枝 （Diff Pruning）
 - 模型剪枝（移除不重要权重, Model Pruning）
-- 高效注意力计算 （Flash Attention）
+- [高效注意力计算 （Flash Attention）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E9%AB%98%E6%95%88%E6%B3%A8%E6%84%8F%E5%8A%9B%E8%AE%A1%E7%AE%97%20%EF%BC%88Flash%20Attention%EF%BC%89.md)
 - 超参数搜索 （Bayesian Optimization）
 - 多个模型集成 （Ensemble Learning）
