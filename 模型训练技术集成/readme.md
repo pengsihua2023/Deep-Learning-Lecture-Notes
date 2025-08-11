@@ -4,9 +4,10 @@
 - [训练早停(Early Stopping)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E8%AE%AD%E7%BB%83%E6%97%A9%E5%81%9C.md)
 - [随机丢弃神经元 (Dropout)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E9%9A%8F%E6%9C%BA%E4%B8%A2%E5%BC%83%E7%A5%9E%E7%BB%8F%E5%85%83.md)
 - [正则化技术概述](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%AD%A3%E5%88%99%E5%8C%96%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0.md)
+  - [L1范数正则化 (L1 Regularization)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/L1%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96.md)
 - [标准化批次输入 (Batch Normalization) ](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A0%87%E5%87%86%E5%8C%96%E6%89%B9%E6%AC%A1%E8%BE%93%E5%85%A5%EF%BC%88Batch%20Normalization%EF%BC%89.md)
 - [标准化层输入 (Layer Normalization)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A0%87%E5%87%86%E5%8C%96%E5%B1%82%E8%BE%93%E5%85%A5%20(Layer%20Normalization).md)
-- [L1范数正则化 (L1 Regularization)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/L1%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96.md)
+- 
 - [L2范数正则化 （L2 Regularization (Weight Decay)）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/L2%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96.md)
 - [添加噪声到输入/权重 （Noise Injection）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%B7%BB%E5%8A%A0%E5%99%AA%E5%A3%B0%E5%88%B0%E8%BE%93%E5%85%A5-%E6%9D%83%E9%87%8D%EF%BC%88Noise%20Injection%EF%BC%89.md)
 - 动态调整学习率 （Learning Rate Scheduling）
