@@ -39,7 +39,7 @@
 
 以下是一个使用PyTorch实现Batch Normalization的简单示例，基于MNIST手写数字分类任务。代码在全连接神经网络中添加BN层，并结合Adam优化器和早停（如前述问题）。
 
-<xaiArtifact artifact_id="0f017704-f4c6-4845-a3b1-0297c5f0c1f3" artifact_version_id="1e02d7c6-71aa-466d-9ac9-af2348238a19" title="batch_normalization.py" contentType="text/python">
+```
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -155,7 +155,7 @@ if early_stopping.best_model_state:
 # 步骤8: 测试最佳模型
 test_accuracy = test()
 print(f'Test Accuracy: {test_accuracy:.2f}%')
-</xaiArtifact>
+```
 
 ---
 
