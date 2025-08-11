@@ -1,7 +1,7 @@
 ## 深度学习模型训练技术集成
 - [梯度裁剪（clip_grad_norm_)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A2%AF%E5%BA%A6%E8%A3%81%E5%89%AA.md)
 - [学习率调度（ReduceLROnPlateau）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%B0%83%E5%BA%A6.md)
-- 训练早停(Early Stopping)
+- [训练早停(Early Stopping)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E8%AE%AD%E7%BB%83%E6%97%A9%E5%81%9C.md)
 - [随机丢弃神经元 (Dropout)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E9%9A%8F%E6%9C%BA%E4%B8%A2%E5%BC%83%E7%A5%9E%E7%BB%8F%E5%85%83.md)
 - 标准化批次输入 (Batch Normalization) 
 - 标准化层输入 (Layer Normalization)
