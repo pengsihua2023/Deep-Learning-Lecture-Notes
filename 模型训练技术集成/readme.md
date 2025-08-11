@@ -1,6 +1,6 @@
 ## 深度学习模型训练技术集成
 - [梯度裁剪（clip_grad_norm_)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A2%AF%E5%BA%A6%E8%A3%81%E5%89%AA.md)
-- 学习率调度（ReduceLROnPlateau）
+- [学习率调度（ReduceLROnPlateau）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%B0%83%E5%BA%A6.md)
 - 训练早停(Early Stopping)
 - 随机丢弃神经元 (Dropout)
 - 标准化批次输入 (Batch Normalization) 
