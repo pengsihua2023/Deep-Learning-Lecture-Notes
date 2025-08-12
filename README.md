@@ -52,7 +52,7 @@
 
 - [模型训练技术集成](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90)
   - [模型训练技术集成](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90#readme)
-- 著名网络架构
+- [著名网络架构](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9C%BA%E6%9E%84)
     - [LeNet (1998)](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9ALeNet%20(1998).md)
     - [AlexNet (2012)](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9AAlexNet%20(2012).md)
     - [VGG (2014)](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9AVGG%20(2014).md)
