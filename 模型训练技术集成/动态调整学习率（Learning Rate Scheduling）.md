@@ -27,7 +27,7 @@
 
 以下是一个最简单的PyTorch示例，展示如何在MNIST手写数字分类任务中使用**StepLR**（时间衰减）调度器动态调整学习率。代码保持极简，结合Adam优化器。
 
-<xaiArtifact artifact_id="b364b2c6-a145-47b4-9272-a771fba115c9" artifact_version_id="24d4b8b7-d938-483e-a0d6-b4ebbd5d962c" title="lr_scheduling.py" contentType="text/python">
+```
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -92,7 +92,7 @@ for epoch in range(1, epochs + 1):
     train(epoch)
     test()
     scheduler.step()  # 更新学习率
-</xaiArtifact>
+```
 
 ---
 
