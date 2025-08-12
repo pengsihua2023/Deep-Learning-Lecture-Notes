@@ -20,7 +20,7 @@
 
 - [著名网络架构](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/09.%20%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84)
 
-- [数据集简介](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E9%9B%86)
+- [速度学习常用数据集](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/10.%20%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E9%9B%86)
 
 - 外部链接
   - [矩阵知识](https://www.bilibili.com/video/BV1h7pteyEww?spm_id_from=333.788.videopod.episodes&p=57)
