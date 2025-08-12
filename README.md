@@ -2,7 +2,7 @@
 
 - [Python基础知识](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/01.%20Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
 
-- [数学基础知识](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
+- [数学基础知识](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/02.%20%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
 
 - [深度学习基础知识](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
 
