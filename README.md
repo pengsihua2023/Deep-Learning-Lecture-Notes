@@ -6,7 +6,7 @@
 
 - [深度学习基础知识](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/03.%20%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
 
-- [初级](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E5%88%9D%E7%BA%A7)  
+- [初级](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/04.%20%E5%88%9D%E7%BA%A7) 
 
     
 - [中级](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E4%B8%AD%E7%BA%A7)
