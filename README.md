@@ -9,8 +9,7 @@
 - [初级](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/04.%20%E5%88%9D%E7%BA%A7) 
 
     
-- [中级](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E4%B8%AD%E7%BA%A7)
-    
+- [中级](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/05.%20%E4%B8%AD%E7%BA%A7)
     
 - [高级](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E9%AB%98%E7%BA%A7)
 
