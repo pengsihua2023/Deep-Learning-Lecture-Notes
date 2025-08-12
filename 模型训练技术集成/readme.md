@@ -14,13 +14,14 @@
 - [自适应学习率 （Adam Optimizer）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E8%87%AA%E9%80%82%E5%BA%94%E5%AD%A6%E4%B9%A0%E7%8E%87%20%EF%BC%88Adam%20Optimizer%EF%BC%89.md)
 - [自适应学习率 （RMSprop）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E8%87%AA%E9%80%82%E5%BA%94%E5%AD%A6%E4%B9%A0%E7%8E%87%20%EF%BC%88RMSprop%EF%BC%89.md)
 - [Adam变体 （AdamW）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/Adam%E5%8F%98%E4%BD%93%20%EF%BC%88AdamW%EF%BC%89.md)
-- 均匀/正态分布初始化 （Xavier/Glorot Initialization）
-- 考虑ReLU的方差的初始化 （He Initialization）
-- 均匀分布初始化 （Uniform Initialization）
-- 正态分布初始化 （Normal Initialization）
-- He初始化的均匀变体 （Kaiming Uniform）
-- 层级标准化初始化 （LSUV (Layer-Sequential Unit-Variance)）
-- 零初始化 （Zero Initialization）
+- 初始化方法概述
+  - 均匀/正态分布初始化 （Xavier/Glorot Initialization
+  - 考虑ReLU的方差的初始化 （He Initialization）
+  - 均匀分布初始化 （Uniform Initialization）
+  - 正态分布初始化 （Normal Initialization）
+  - He初始化的均匀变体 （Kaiming Uniform）
+  - 层级标准化初始化 （LSUV (Layer-Sequential Unit-Variance)）
+  - 零初始化 （Zero Initialization）
 - [累积梯度 （Gradient Accumulation）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E7%B4%AF%E7%A7%AF%E6%A2%AF%E5%BA%A6%20%EF%BC%88Gradient%20Accumulation%EF%BC%89.md)
 - 使用float16加速 （Mixed Precision Training）
 - 多GPU并行训练 （Distributed Data Parallel (DDP)）
