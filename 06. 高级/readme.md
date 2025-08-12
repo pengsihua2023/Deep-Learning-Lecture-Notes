@@ -1,5 +1,5 @@
    
-- [高级](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E9%AB%98%E7%BA%A7)
+- 高级
   - [Self-supervised learning: 自监督学习](https://github.com/pengsihua2023/AI-learning-Sihua-Chinese/blob/main/%E9%AB%98%E7%BA%A7%EF%BC%9A%E8%87%AA%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0.md)
   - [Meta-Learning：元学习](https://github.com/pengsihua2023/AI-learning/blob/main/%E9%AB%98%E7%BA%A7%EF%BC%9A%E5%85%83%E5%AD%A6%E4%B9%A0.md)
   - [Reinforcement Learning：强化学习](https://github.com/pengsihua2023/AI-learning/blob/main/%E9%AB%98%E7%BA%A7%EF%BC%9A%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0.md)
