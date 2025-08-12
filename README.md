@@ -18,7 +18,7 @@
 
 - [模型训练技术集成](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90)
 
-- [著名网络架构](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9C%BA%E6%9E%84)
+- [著名网络架构](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/09.%20%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84)
 
 - [数据集简介](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E9%9B%86)
 
