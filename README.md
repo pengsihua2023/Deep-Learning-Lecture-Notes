@@ -63,7 +63,7 @@
     - [EfficientNet (2019)](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9AEfficientNet%20(2019).md)
     - [Vision Transformer (ViT, 2020)](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9AVision%20Transformer%20(ViT%2C%202020).md)
     - [Diffusion Models（2020s）](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9ADiffusion%20Models%EF%BC%882020s%EF%BC%89.md)  
-- [数据集简介]()
+- [数据集简介](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E9%9B%86)
   - [MNIST](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AMNIST%E6%95%B0%E6%8D%AE%E9%9B%86.md)
   - [Fashion-MNIST](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9AFashion-MNIST%E6%95%B0%E6%8D%AE%E9%9B%86.md)
   - [CIFA10](https://github.com/pengsihua2023/Deep-learning-Sihua-Chinese/blob/main/%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B%EF%BC%9ACIFAR-10%E6%95%B0%E6%8D%AE%E9%9B%86.md)
