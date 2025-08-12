@@ -16,7 +16,7 @@
 - 深度学习基础知识
   - [常用激活函数简介](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A%E5%B8%B8%E7%94%A8%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%AE%80%E4%BB%8B.md)
 - 初级
-  - [FCN：全连接网络](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E5%88%9D%E7%BA%A7/FCN(%E5%85%A8%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BB%9C%EF%BC%89.md) 
+  - [FCN：全连接网络](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E5%88%9D%E7%BA%A7/FCN(%E5%85%A8%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BB%9C%EF%BC%89.md)   
   - [CNN: 卷积网络](https://github.com/pengsihua2023/AI-learning/blob/main/%E5%88%9D%E7%BA%A7%EF%BC%9ACNN.md)
   - [Regression Problem：回归问题（以波士顿房价预测为例）](https://github.com/pengsihua2023/AI-learning/blob/main/%E5%88%9D%E7%BA%A7%EF%BC%9A%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98.md)
   - [RNN： 循环网络](https://github.com/pengsihua2023/AI-learning/blob/main/%E5%88%9D%E7%BA%A7%EF%BC%9ARNN.md)
