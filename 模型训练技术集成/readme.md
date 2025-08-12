@@ -10,7 +10,12 @@
   - Layer Normalization
   - Batch Normalization
   - 使用float16加速 （Mixed Precision Training）
-- [梯度裁剪（clip_grad_norm_)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A2%AF%E5%BA%A6%E8%A3%81%E5%89%AA.md)
+  - 多GPU并行训练 （Distributed Data Parallel (DDP)）
+  - [梯度裁剪（clip_grad_norm_)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A2%AF%E5%BA%A6%E8%A3%81%E5%89%AA.md)
+  - [累积梯度 （Gradient Accumulation）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E7%B4%AF%E7%A7%AF%E6%A2%AF%E5%BA%A6%20%EF%BC%88Gradient%20Accumulation%EF%BC%89.md)
+  - [高效注意力计算 （Flash Attention）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E9%AB%98%E6%95%88%E6%B3%A8%E6%84%8F%E5%8A%9B%E8%AE%A1%E7%AE%97%20%EF%BC%88Flash%20Attention%EF%BC%89.md)
+  - [超参数搜索 （Bayesian Optimization）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E8%B6%85%E5%8F%82%E6%95%B0%E6%90%9C%E7%B4%A2%20%EF%BC%88Bayesian%20Optimization%EF%BC%89.md)
+  - 多个模型集成 （Ensemble Learning） 
 - [正则化技术概述](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%AD%A3%E5%88%99%E5%8C%96%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0.md)
   - [L1范数正则化 (L1 Regularization)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/L1%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96.md)
   - [L2范数正则化 （L2 Regularization (Weight Decay)）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/L2%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96.md)  - 
@@ -37,7 +42,6 @@
   - Rprop优化器（Resilient Backpropagation）
   - SparseAdam优化器
   - ASGD优化器（Averaged Stochastic Gradient Descent）
-
 - [初始化方法概述](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E6%B3%95%E6%A6%82%E8%BF%B0.md)
   - 均匀/正态分布初始化 （Xavier/Glorot Initialization
   - 考虑ReLU的方差的初始化 （He Initialization）
@@ -46,15 +50,11 @@
   - He初始化的均匀变体 （Kaiming Uniform）
   - 层级标准化初始化 （LSUV (Layer-Sequential Unit-Variance)）
   - 零初始化 （Zero Initialization）
-- [累积梯度 （Gradient Accumulation）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E7%B4%AF%E7%A7%AF%E6%A2%AF%E5%BA%A6%20%EF%BC%88Gradient%20Accumulation%EF%BC%89.md)
-- 多GPU并行训练 （Distributed Data Parallel (DDP)）
-- 少参数微调 （LoRA）
-- 量化+LoRA （QLoRA）
-- 重启LoRA （ReLoRA）
-- 添加小型适配器层 （Adapter Modules）
-- 微调提示嵌入 （Prompt Tuning）
-- 差异化剪枝 （Diff Pruning）
-- 模型剪枝（移除不重要权重, Model Pruning）
-- [高效注意力计算 （Flash Attention）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E9%AB%98%E6%95%88%E6%B3%A8%E6%84%8F%E5%8A%9B%E8%AE%A1%E7%AE%97%20%EF%BC%88Flash%20Attention%EF%BC%89.md)
-- [超参数搜索 （Bayesian Optimization）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E8%B6%85%E5%8F%82%E6%95%B0%E6%90%9C%E7%B4%A2%20%EF%BC%88Bayesian%20Optimization%EF%BC%89.md)
-- 多个模型集成 （Ensemble Learning）
+- 模型微调技术概述
+  - 少参数微调 （LoRA）
+  - 微调提示嵌入 （Prompt Tuning）
+  - 重启LoRA （ReLoRA）
+  - 量化+LoRA （QLoRA）
+  - 差异化剪枝 （Diff Pruning）
+  - 添加小型适配器层 （Adapter Modules）
+  - 模型剪枝（移除不重要权重, Model Pruning）
