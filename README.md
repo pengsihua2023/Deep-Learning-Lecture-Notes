@@ -50,7 +50,7 @@
   - [AI4science：AI for Scienc：人工智能应用于科学](https://github.com/pengsihua2023/AI-learning/blob/main/%E7%A0%94%E7%A9%B6%E7%BA%A7%EF%BC%9AAI4science.md)
   - [World Model：世界模型](https://github.com/pengsihua2023/AI-learning/blob/main/%E7%A0%94%E7%A9%B6%E7%BA%A7%EF%BC%9AWorld%20Model.md)
 
-- [模型训练技术集成]()
+- [模型训练技术集成](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90)
   - [模型训练技术集成](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90#readme)
 - 著名网络架构
     - [LeNet (1998)](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9ALeNet%20(1998).md)
