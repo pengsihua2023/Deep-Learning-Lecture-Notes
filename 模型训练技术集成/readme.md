@@ -10,7 +10,7 @@
   -  [添加噪声到输入/权重 （Noise Injection）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%B7%BB%E5%8A%A0%E5%99%AA%E5%A3%B0%E5%88%B0%E8%BE%93%E5%85%A5-%E6%9D%83%E9%87%8D%EF%BC%88Noise%20Injection%EF%BC%89.md)
   -  [随机丢弃神经元 (Dropout)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E9%9A%8F%E6%9C%BA%E4%B8%A2%E5%BC%83%E7%A5%9E%E7%BB%8F%E5%85%83.md)
 - [动态调整学习率 （Learning Rate Scheduling）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%8A%A8%E6%80%81%E8%B0%83%E6%95%B4%E5%AD%A6%E4%B9%A0%E7%8E%87%EF%BC%88Learning%20Rate%20Scheduling%EF%BC%89.md)
-- 根据损失监控自动降低学习率 （ReduceLROnPlateau）
+- [根据损失监控自动降低学习率 （ReduceLROnPlateau）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A0%B9%E6%8D%AE%E6%8D%9F%E5%A4%B1%E7%9B%91%E6%8E%A7%E8%87%AA%E5%8A%A8%E9%99%8D%E4%BD%8E%E5%AD%A6%E4%B9%A0%E7%8E%87%EF%BC%88ReduceLROnPlateau%EF%BC%89.md)
 - [自适应学习率 （Adam Optimizer）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E8%87%AA%E9%80%82%E5%BA%94%E5%AD%A6%E4%B9%A0%E7%8E%87%20%EF%BC%88Adam%20Optimizer%EF%BC%89.md)
 - 自适应学习率 （RMSprop）
 - Adam变体 （AdamW）
