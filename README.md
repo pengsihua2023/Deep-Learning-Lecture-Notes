@@ -44,13 +44,13 @@
   - [Model pruning and quantization：模型剪枝与量化 ](https://github.com/pengsihua2023/AI-learning/blob/main/%E9%AB%98%E7%BA%A7%EF%BC%9A%E6%A8%A1%E5%9E%8B%E5%89%AA%E6%9E%9D%E4%B8%8E%E9%87%8F%E5%8C%96.md)
 
     
-- [研究级]() 
+- [研究级](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E7%A0%94%E7%A9%B6%E7%BA%A7) 
   - [Neural Architecture Search (NAS): 神经架构搜索](https://github.com/pengsihua2023/AI-learning/blob/main/%E7%A0%94%E7%A9%B6%E7%BA%A7%EF%BC%9A%E7%A5%9E%E7%BB%8F%E6%9E%B6%E6%9E%84%E6%90%9C%E7%B4%A2.md)
   - [AI agent: AI智能体](https://github.com/pengsihua2023/AI-learning/blob/main/%E7%A0%94%E7%A9%B6%E7%BA%A7%3A%20AI%20agent.md)
   - [AI4science：AI for Scienc：人工智能应用于科学](https://github.com/pengsihua2023/AI-learning/blob/main/%E7%A0%94%E7%A9%B6%E7%BA%A7%EF%BC%9AAI4science.md)
   - [World Model：世界模型](https://github.com/pengsihua2023/AI-learning/blob/main/%E7%A0%94%E7%A9%B6%E7%BA%A7%EF%BC%9AWorld%20Model.md)
 
-- [模型训练技术集成]{}
+- [模型训练技术集成]()
   - [模型训练技术集成](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90#readme)
 - 著名网络架构
     - [LeNet (1998)](https://github.com/pengsihua2023/AI-learning/blob/main/%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%EF%BC%9ALeNet%20(1998).md)
