@@ -1,4 +1,14 @@
 ## 深度学习模型训练技术集成
+- 关键技术和诀窍
+  - Create 自动混合精度（AMP）
+  - Curriculum Learning
+  - Optuna超参数优化方法
+  - Ray Tune超参数优化方法
+  - 处理类别不平衡处理方法
+  - Min-Max 归一化
+  - Z-score 标准化
+  - Layer Normalization
+  - Batch Normalization
 - [梯度裁剪（clip_grad_norm_)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A2%AF%E5%BA%A6%E8%A3%81%E5%89%AA.md)
 - [正则化技术概述](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%AD%A3%E5%88%99%E5%8C%96%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0.md)
   - [L1范数正则化 (L1 Regularization)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/L1%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96.md)
