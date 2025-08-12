@@ -14,8 +14,7 @@
 - [高级](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/06.%20%E9%AB%98%E7%BA%A7)
 
     
-- [研究级](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E7%A0%94%E7%A9%B6%E7%BA%A7) 
-
+- [研究级](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7)
 
 - [模型训练技术集成](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90)
 
