@@ -13,7 +13,7 @@
   - [数组和张量的相互转换](https://github.com/pengsihua2023/AI-learning-Sihua-Chinese/blob/main/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A%E6%95%B0%E7%BB%84%E5%92%8C%E5%BC%A0%E9%87%8F%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2.md)
   - [矩阵的基础知识](https://github.com/pengsihua2023/AI-learning-Sihua-Chinese/blob/main/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A%E7%9F%A9%E9%98%B5%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
   - [矩阵和张量之间的转换](https://github.com/pengsihua2023/AI-learning-Sihua-Chinese/blob/main/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A%E7%9F%A9%E9%98%B5%E5%92%8C%E5%BC%A0%E9%87%8F%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2.md)
-- 深度学习基础知识
+- [深度学习基础知识](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
   - [常用激活函数简介](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A%E5%B8%B8%E7%94%A8%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%AE%80%E4%BB%8B.md)
 - 初级  
   - [FCN：全连接网络](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E5%88%9D%E7%BA%A7%3A%20%20FCN(MLP).md)   
