@@ -58,4 +58,5 @@
   - 差异化剪枝 （Diff Pruning）
   - 添加小型适配器层 （Adapter Modules）
   - 模型剪枝（移除不重要权重, Model Pruning）
+- [深度学习模型评估方法汇总]()
 
