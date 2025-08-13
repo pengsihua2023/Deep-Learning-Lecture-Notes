@@ -34,7 +34,7 @@
   - [Adam变体 （AdamW）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/Adam%E5%8F%98%E4%BD%93%20%EF%BC%88AdamW%EF%BC%89.md)
   - [SGD优化器（随机梯度下降，Stochastic Gradient Descent）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/SGD%E4%BC%98%E5%8C%96%E5%99%A8%EF%BC%88%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%EF%BC%8CStochastic%20Gradient%20Descent%EF%BC%89.md)
   - [RMSProp优化器（Root Mean Square Propagation）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E8%87%AA%E9%80%82%E5%BA%94%E5%AD%A6%E4%B9%A0%E7%8E%87%20%EF%BC%88RMSprop%EF%BC%89.md)
-  - Adagrad优化器（Adaptive Gradient Algorithm）
+  - [Adagrad优化器（Adaptive Gradient Algorithm）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/Adagrad%E4%BC%98%E5%8C%96%E5%99%A8%EF%BC%88Adaptive%20Gradient%20Algorithm%EF%BC%89.md)
   - [Adadelta优化器](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/Adadelta%E4%BC%98%E5%8C%96%E5%99%A8.md)  
   - [AMSGrad优化器]
   - [Nadam优化器]
