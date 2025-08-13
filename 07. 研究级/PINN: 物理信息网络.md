@@ -128,8 +128,8 @@ print("预测结果形状:", u_pred.shape)  # 输出：torch.Size([100, 1])
 
   - 总损失是三部分的加权和（这里权重设为 1，实际可调）。
 - **数据**：
-  - 随机采样 PDE 点（`x_f, t_f`）、初始点（`x_i, t_i`）和边界点（`x_b, t_b`）。
-  - 初始条件 \( u_i = -\sin(\pi x) \)，边界条件 \( u_b = 0 \)。
+<img width="751" height="88" alt="image" src="https://github.com/user-attachments/assets/84132386-7ff5-44c3-8c0e-2c207cf76352" />
+
 - **训练**：
   - 使用 Adam 优化器（更适合 PINNs，SGD 或 Adagrad 也可试）。
   - 训练 1000 次，打印损失。
