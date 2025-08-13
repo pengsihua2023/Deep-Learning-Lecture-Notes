@@ -9,20 +9,8 @@
    - Xavier 初始化根据层的输入维度（`fan_in`）和输出维度（`fan_out`）设置权重的分布范围或标准差。
 
 2. **公式**：
-   - **均匀分布初始化**：
-     权重从以下均匀分布中采样：
-     \[
-     W \sim U\left(-\sqrt{\frac{6}{\text{fan_in} + \text{fan_out}}}, \sqrt{\frac{6}{\text{fan_in} + \text{fan_out}}}\right)
-     \]
-     其中，`fan_in` 是输入神经元数量，`fan_out` 是输出神经元数量。
-   - **正态分布初始化**：
-     权重从正态分布中采样，均值为 0，标准差为：
-     \[
-     \sigma = \sqrt{\frac{2}{\text{fan_in} + \text{fan_out}}}
-     \]
-     \[
-     W \sim N(0, \sigma^2)
-     \]
+<img width="809" height="388" alt="image" src="https://github.com/user-attachments/assets/6f88cc62-a351-43e1-8334-c6dbbefaf00a" />
+
 
 3. **适用场景**：
    - 适合激活函数为 **tanh** 或 **sigmoid** 的网络，因为这些函数在输入接近零时近似线性，Xavier 初始化能保持梯度稳定性。
@@ -39,8 +27,8 @@
    - 对非常深的网络可能需要其他调整（如批量归一化）。
 
 6. **与 He 初始化对比**：
-   - **He 初始化**（专为 ReLU 设计）使用标准差 \(\sqrt{\frac{2}{\text{fan_in}}}\)，考虑 ReLU 的单侧激活特性。
-   - Xavier 初始化假定激活函数对称（如 tanh），方差基于 `fan_in + fan_out`。
+<img width="779" height="107" alt="image" src="https://github.com/user-attachments/assets/4db2d23b-4d1d-471b-b3a6-b5111b4d76d4" />
+
 
 ---
 
