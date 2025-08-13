@@ -14,13 +14,12 @@
 
 3. **损失函数**：
    PINNs 的损失函数由三部分组成：
-   - **PDE 残差损失**：
 <img width="562" height="477" alt="image" src="https://github.com/user-attachments/assets/113895c6-df38-4dd9-afdf-c9f434d16f16" />
 
 
 4. **自动微分**：
-   - PINNs 使用神经网络的自动微分（autograd）计算 PDE 中的导数（如 \( \frac{\partial u}{\partial t}, \frac{\partial^2 u}{\partial x^2} \)），无需显式离散化。
-   - 网络输入为空间和时间坐标 \( (x, t) \)，输出为解 \( u(x, t) \)。
+<img width="704" height="70" alt="image" src="https://github.com/user-attachments/assets/38497436-1a0e-4636-a0f8-7eee56bf6d0f" />
+
 
 5. **优点**：
    - 无需网格划分，适合高维或复杂几何。
@@ -28,9 +27,8 @@
    - 可结合少量观测数据和物理规律。
 
 6. **缺点**：
-   - 训练可能较慢，优化复杂 PDE 时可能不稳定。
-   - 损失函数的权重 \( \lambda_i \) 需调参。
-   - 对复杂非线性 PDE 的求解精度可能不如传统数值方法。
+<img width="532" height="137" alt="image" src="https://github.com/user-attachments/assets/4531f7e6-3c8a-4535-9c3e-466ac5b9a795" />
+
 
 7. **适用场景**：
    - 求解 PDE（如热传导、波动方程、流体力学）。
@@ -43,19 +41,8 @@
 以下是最简洁的 PyTorch 代码示例，展示如何使用 PINNs 求解一维 Burgers 方程（一个非线性 PDE），并说明其原理和使用方法。
 
 ##### **问题描述**
-Burgers 方程：
-\[
-\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} = \nu \frac{\partial^2 u}{\partial x^2}, \quad x \in [-1, 1], t \in [0, 1]
-\]
-初始条件：
-\[
-u(x, 0) = -\sin(\pi x)
-\]
-边界条件：
-\[
-u(-1, t) = u(1, t) = 0
-\]
-其中 \( \nu = 0.01/\pi \) 是粘性系数。
+<img width="758" height="382" alt="image" src="https://github.com/user-attachments/assets/6399f215-6598-43db-b06f-274c0a1dbdce" />
+
 
 ##### **代码示例**
 ```python
