@@ -178,7 +178,7 @@ PINNs 是一种强大的方法，通过将物理方程嵌入神经网络损失�
 这些示例基于 PyTorch，代码更完整，包括数据生成、训练循环、损失记录和可视化。假设你有基本的 PyTorch 和 Matplotlib 环境。
 
 #### 1. **多维 PDE 示例：二维热传导方程**
-二维热传导方程（简化 Laplace 方程）：
+二维热传导方程（简化 Laplace 方程）：  
 <img width="716" height="279" alt="image" src="https://github.com/user-attachments/assets/1502430f-1ab7-4586-b80c-3d10dfdf61ea" />
 
 
