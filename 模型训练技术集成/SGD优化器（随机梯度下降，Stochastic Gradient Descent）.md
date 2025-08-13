@@ -1,5 +1,5 @@
 ## SGD优化器（随机梯度下降，Stochastic Gradient Descent）
-### SGD 优化器（随机梯度下降，Stochastic Gradient Descent）原理和用法
+### 原理和用法
 
 #### **原理**
 SGD（Stochastic Gradient Descent，随机梯度下降）是一种经典的优化算法，广泛用于深度学习模型的训练。其核心思想是通过计算损失函数对模型参数的梯度，沿着梯度反方向更新参数以最小化损失。SGD 的“随机”体现在每次更新只使用一个样本或一个小批量（mini-batch）数据，而非整个数据集，从而加速计算。
