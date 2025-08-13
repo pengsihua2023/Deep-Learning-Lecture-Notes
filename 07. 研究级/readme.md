@@ -3,4 +3,5 @@
   - [AI agent: AI智能体](https://github.com/pengsihua2023/AI-learning/blob/main/%E7%A0%94%E7%A9%B6%E7%BA%A7%3A%20AI%20agent.md)
   - [AI4science：AI for Scienc：人工智能应用于科学](https://github.com/pengsihua2023/AI-learning/blob/main/%E7%A0%94%E7%A9%B6%E7%BA%A7%EF%BC%9AAI4science.md)
   - [World Model：世界模型](https://github.com/pengsihua2023/AI-learning/blob/main/%E7%A0%94%E7%A9%B6%E7%BA%A7%EF%BC%9AWorld%20Model.md)
+  - [PINN: 物理信息网络]()
 
