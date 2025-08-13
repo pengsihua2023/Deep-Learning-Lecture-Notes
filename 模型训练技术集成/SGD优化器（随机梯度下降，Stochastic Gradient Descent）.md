@@ -5,30 +5,16 @@
 SGD（Stochastic Gradient Descent，随机梯度下降）是一种经典的优化算法，广泛用于深度学习模型的训练。其核心思想是通过计算损失函数对模型参数的梯度，沿着梯度反方向更新参数以最小化损失。SGD 的“随机”体现在每次更新只使用一个样本或一个小批量（mini-batch）数据，而非整个数据集，从而加速计算。
 
 1. **核心公式**：
-   - 参数更新规则：
-     \[
-     \theta_{t+1} = \theta_t - \eta \cdot \nabla_\theta L(\theta_t, x_i, y_i)
-     \]
-     其中：
-     - \( \theta_t \)：当前参数。
-     - \( \eta \)：学习率（learning rate），控制步长。
-     - \( \nabla_\theta L \)：损失函数 \( L \) 对参数的梯度，基于样本 \( (x_i, y_i) \) 或小批量数据。
-   - 如果使用动量法（Momentum），更新规则变为：
-     \[
-     v_t = \gamma v_{t-1} + \eta \cdot \nabla_\theta L(\theta_t)
-     \]
-     \[
-     \theta_{t+1} = \theta_t - v_t
-     \]
-     其中 \( \gamma \) 是动量系数（通常 0.9），\( v_t \) 是速度（累积历史梯度）。
+<img width="709" height="504" alt="image" src="https://github.com/user-attachments/assets/93876a68-593c-44ab-a276-c7c827c216ae" />
+
 
 2. **特点**：
    - **优点**：
      - 计算效率高，适合大规模数据集。
      - 随机性有助于逃离局部最小值。
    - **缺点**：
-     - 梯度噪声大，可能导致收敛不稳定。
-     - 需手动调整学习率 \( \eta \) 和动量 \( \gamma \)。
+<img width="366" height="93" alt="image" src="https://github.com/user-attachments/assets/dd3b020f-dc22-4821-9148-c2940d5b3c46" />
+
    - **适用场景**：图像分类、文本分类、回归等深度学习任务，适合简单优化或作为基准算法。
 
 3. **与 Adadelta 的对比**：
