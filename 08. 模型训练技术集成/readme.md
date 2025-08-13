@@ -43,7 +43,7 @@
   - [SparseAdam优化器]
   - [ASGD优化器（Averaged Stochastic Gradient Descent）]
 - [初始化方法概述](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E6%B3%95%E6%A6%82%E8%BF%B0.md)
-  - 均匀/正态分布初始化 （Xavier/Glorot Initialization
+  - [均匀/正态分布初始化 （Xavier/Glorot Initialization](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%9D%87%E5%8C%80-%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E5%88%9D%E5%A7%8B%E5%8C%96%20%EF%BC%88Xavier-Glorot%20Initialization%EF%BC%89.md)
   - 考虑ReLU的方差的初始化 （He Initialization）
   - 均匀分布初始化 （Uniform Initialization）
   - 正态分布初始化 （Normal Initialization）
