@@ -1,5 +1,5 @@
 ## Adagrad优化器（Adaptive Gradient Algorithm）
-### Adagrad 优化器（Adaptive Gradient Algorithm）原理和用法
+### 原理和用法
 
 #### **原理**
 Adagrad（Adaptive Gradient Algorithm）是一种自适应学习率的优化算法，专门设计用于处理稀疏数据和凸优化问题。它通过根据历史梯度的累积调整每个参数的学习率，使得频繁更新的参数具有较小的学习率，而稀疏更新的参数具有较大的学习率。以下是 Adagrad 的核心原理：
