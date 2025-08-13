@@ -166,3 +166,281 @@ print("预测结果形状:", u_pred.shape)  # 输出：torch.Size([100, 1])
 
 #### **总结**
 PINNs 是一种强大的方法，通过将物理方程嵌入神经网络损失函数，求解 PDE 或建模物理系统。PyTorch 实现简单，利用自动微分计算 PDE 残差，结合初始和边界条件优化网络。上述代码展示了 PINNs 在 Burgers 方程上的基本应用。
+
+## 多维 PDE，反问题,及可视化
+### 物理信息神经网络（PINN）更详细代码示例
+
+基于之前的介绍和一维 Burgers 方程示例，以下提供更详细的 PINN 代码示例，涵盖：
+- **多维 PDE**：以二维热传导方程为例（2D Laplace 方程的变体）。
+- **反问题**：结合观测数据估计 PDE 中的未知参数（如扩散系数）。
+- **可视化**：使用 Matplotlib 绘制预测解的热图和动画。
+
+这些示例基于 PyTorch，代码更完整，包括数据生成、训练循环、损失记录和可视化。假设你有基本的 PyTorch 和 Matplotlib 环境。
+
+#### 1. **多维 PDE 示例：二维热传导方程**
+二维热传导方程（简化 Laplace 方程）：
+<img width="716" height="279" alt="image" src="https://github.com/user-attachments/assets/1502430f-1ab7-4586-b80c-3d10dfdf61ea" />
+
+
+##### **代码示例**
+```python
+import torch
+import torch.nn as nn
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+# 1. 定义神经网络
+class PINN(nn.Module):
+    def __init__(self):
+        super(PINN, self).__init__()
+        self.net = nn.Sequential(
+            nn.Linear(2, 50),  # 输入 (x, y)
+            nn.Tanh(),
+            nn.Linear(50, 50),
+            nn.Tanh(),
+            nn.Linear(50, 50),
+            nn.Tanh(),
+            nn.Linear(50, 1)  # 输出 u(x, y)
+        )
+
+    def forward(self, x, y):
+        inputs = torch.cat([x, y], dim=1)
+        return self.net(inputs)
+
+# 2. 定义损失函数
+def compute_loss(model, x_f, y_f, x_b, y_b, u_b):
+    x_f, y_f = x_f.requires_grad_(True), y_f.requires_grad_(True)  # 需要计算导数
+    u = model(x_f, y_f)
+    
+    # PDE 残差：Laplace 方程 u_xx + u_yy = 0
+    u_x = torch.autograd.grad(u, x_f, grad_outputs=torch.ones_like(u), create_graph=True)[0]
+    u_y = torch.autograd.grad(u, y_f, grad_outputs=torch.ones_like(u), create_graph=True)[0]
+    u_xx = torch.autograd.grad(u_x, x_f, grad_outputs=torch.ones_like(u_x), create_graph=True)[0]
+    u_yy = torch.autograd.grad(u_y, y_f, grad_outputs=torch.ones_like(u_y), create_graph=True)[0]
+    pde_residual = u_xx + u_yy
+    loss_pde = torch.mean(pde_residual ** 2)
+    
+    # 边界条件
+    u_bc = model(x_b, y_b)
+    loss_bc = torch.mean((u_bc - u_b) ** 2)
+    
+    # 总损失
+    return loss_pde + 10 * loss_bc  # 增加边界权重以加强约束
+
+# 3. 准备数据
+N_f = 10000  # PDE 内部采样点
+N_b = 400    # 边界采样点 (每边 100 点)
+
+# PDE 内部点
+x_f = torch.rand(N_f, 1)
+y_f = torch.rand(N_f, 1)
+
+# 边界点
+x_b_left = torch.zeros(N_b//4, 1)  # x=0
+y_b_left = torch.rand(N_b//4, 1)
+u_b_left = torch.zeros(N_b//4, 1)  # u=0
+
+x_b_right = torch.ones(N_b//4, 1)  # x=1
+y_b_right = torch.rand(N_b//4, 1)
+u_b_right = torch.zeros(N_b//4, 1)  # u=0
+
+x_b_bottom = torch.rand(N_b//4, 1)  # y=0
+y_b_bottom = torch.zeros(N_b//4, 1)
+u_b_bottom = torch.zeros(N_b//4, 1)  # u=0
+
+x_b_top = torch.rand(N_b//4, 1)  # y=1
+y_b_top = torch.ones(N_b//4, 1)
+u_b_top = torch.sin(np.pi * x_b_top)  # u=sin(πx)
+
+x_b = torch.cat([x_b_left, x_b_right, x_b_bottom, x_b_top], dim=0)
+y_b = torch.cat([y_b_left, y_b_right, y_b_bottom, y_b_top], dim=0)
+u_b = torch.cat([u_b_left, u_b_right, u_b_bottom, u_b_top], dim=0)
+
+# 4. 训练模型
+model = PINN()
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+losses = []  # 记录损失
+
+for epoch in range(5000):
+    optimizer.zero_grad()
+    loss = compute_loss(model, x_f, y_f, x_b, y_b, u_b)
+    loss.backward()
+    optimizer.step()
+    losses.append(loss.item())
+    if epoch % 500 == 0:
+        print(f"Epoch {epoch}, Loss: {loss.item():.6f}")
+
+# 5. 可视化
+# 绘制损失曲线
+plt.figure(figsize=(10, 5))
+plt.subplot(1, 2, 1)
+plt.plot(losses)
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.title('Training Loss')
+
+# 绘制预测解热图
+nx, ny = 100, 100
+x_grid = torch.linspace(0, 1, nx).reshape(-1, 1)
+y_grid = torch.linspace(0, 1, ny).reshape(-1, 1)
+X, Y = torch.meshgrid(x_grid.squeeze(), y_grid.squeeze(), indexing='ij')
+X_flat, Y_flat = X.reshape(-1, 1), Y.reshape(-1, 1)
+u_pred = model(X_flat, Y_flat).detach().numpy().reshape(nx, ny)
+
+plt.subplot(1, 2, 2)
+plt.imshow(u_pred, extent=[0, 1, 0, 1], origin='lower', cmap='viridis')
+plt.colorbar(label='u(x, y)')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Predicted Solution')
+plt.tight_layout()
+plt.show()
+```
+
+##### **代码说明**
+- **网络**：3 层全连接网络，使用 Tanh 激活，确保平滑。
+- **损失**：PDE 残差（二阶导数）和边界条件损失，边界权重设为 10 以加强约束。
+- **数据**：随机采样内部点和边界点，确保均匀分布。
+- **训练**：5000 次迭代，记录损失曲线。
+- **可视化**：损失曲线 + 预测解的 2D 热图，使用 `imshow` 显示温度分布。
+
+#### 2. **反问题示例：参数估计**
+<img width="951" height="47" alt="image" src="https://github.com/user-attachments/assets/7d2f8d41-8fe8-4c8f-a250-f4f30cf79cf0" />
+
+
+##### **代码示例**
+```python
+import torch
+import torch.nn as nn
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 1. 定义神经网络（添加可学习参数 nu）
+class PINN(nn.Module):
+    def __init__(self):
+        super(PINN, self).__init__()
+        self.net = nn.Sequential(
+            nn.Linear(2, 20),  # 输入 (x, t)
+            nn.Tanh(),
+            nn.Linear(20, 20),
+            nn.Tanh(),
+            nn.Linear(20, 1)  # 输出 u(x, t)
+        )
+        self.nu = nn.Parameter(torch.tensor(0.1))  # 初始猜测 nu，可学习
+
+    def forward(self, x, t):
+        inputs = torch.cat([x, t], dim=1)
+        return self.net(inputs)
+
+# 2. 定义损失函数（添加观测损失）
+def compute_loss(model, x_f, t_f, x_i, t_i, u_i, x_b, t_b, u_b, x_o, t_o, u_o):
+    x_f, t_f = x_f.requires_grad_(True), t_f.requires_grad_(True)
+    u = model(x_f, t_f)
+    
+    # PDE 残差
+    u_t = torch.autograd.grad(u, t_f, grad_outputs=torch.ones_like(u), create_graph=True)[0]
+    u_x = torch.autograd.grad(u, x_f, grad_outputs=torch.ones_like(u), create_graph=True)[0]
+    u_xx = torch.autograd.grad(u_x, x_f, grad_outputs=torch.ones_like(u_x), create_graph=True)[0]
+    pde_residual = u_t + u * u_x - model.nu * u_xx
+    loss_pde = torch.mean(pde_residual ** 2)
+    
+    # 初始条件
+    u_init = model(x_i, t_i)
+    loss_init = torch.mean((u_init - u_i) ** 2)
+    
+    # 边界条件
+    u_bc = model(x_b, t_b)
+    loss_bc = torch.mean((u_bc - u_b) ** 2)
+    
+    # 观测数据损失
+    u_obs = model(x_o, t_o)
+    loss_obs = torch.mean((u_obs - u_o) ** 2)
+    
+    # 总损失
+    return loss_pde + loss_init + loss_bc + loss_obs
+
+# 3. 准备数据（添加观测数据）
+N_f, N_i, N_b, N_o = 2000, 100, 100, 50  # 添加观测点
+true_nu = 0.01 / np.pi  # 真实 nu
+
+# PDE、初始、边界数据（同之前一维示例）
+x_f = torch.rand(N_f, 1) * 2 - 1
+t_f = torch.rand(N_f, 1)
+x_i = torch.rand(N_i, 1) * 2 - 1
+t_i = torch.zeros(N_i, 1)
+u_i = -torch.sin(np.pi * x_i)
+x_b = torch.cat([torch.ones(N_b//2, 1), -torch.ones(N_b//2, 1)])
+t_b = torch.rand(N_b, 1)
+u_b = torch.zeros(N_b, 1)
+
+# 观测数据（模拟：使用真实解 + 噪声）
+x_o = torch.rand(N_o, 1) * 2 - 1
+t_o = torch.rand(N_o, 1)
+# 模拟观测 u_o（假设有解析解或数值解，这里简化用 sin 近似 + 噪声）
+u_o = -torch.sin(np.pi * x_o) * torch.exp(-true_nu * np.pi**2 * t_o) + 0.01 * torch.randn(N_o, 1)
+
+# 4. 训练模型
+model = PINN()
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+losses = []
+nu_history = []  # 记录 nu 估计
+
+for epoch in range(2000):
+    optimizer.zero_grad()
+    loss = compute_loss(model, x_f, t_f, x_i, t_i, u_i, x_b, t_b, u_b, x_o, t_o, u_o)
+    loss.backward()
+    optimizer.step()
+    losses.append(loss.item())
+    nu_history.append(model.nu.item())
+    if epoch % 200 == 0:
+        print(f"Epoch {epoch}, Loss: {loss.item():.6f}, Estimated nu: {model.nu.item():.6f}")
+
+# 5. 可视化
+plt.figure(figsize=(12, 4))
+plt.subplot(1, 3, 1)
+plt.plot(losses)
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.title('Training Loss')
+
+plt.subplot(1, 3, 2)
+plt.plot(nu_history)
+plt.axhline(true_nu, color='r', linestyle='--', label='True nu')
+plt.xlabel('Epoch')
+plt.ylabel('nu')
+plt.title('nu Estimation')
+plt.legend()
+
+# 动画可视化：u(x, t) 随时间变化
+fig, ax = plt.subplots()
+x_test = torch.linspace(-1, 1, 100).reshape(-1, 1)
+def animate(t_frame):
+    ax.clear()
+    t_test = torch.ones_like(x_test) * (t_frame / 50.0)  # t from 0 to 1
+    u_pred = model(x_test, t_test).detach().numpy()
+    ax.plot(x_test.numpy(), u_pred, label=f't={t_frame/50:.2f}')
+    ax.set_xlabel('x')
+    ax.set_ylabel('u(x, t)')
+    ax.set_ylim(-1.5, 1.5)
+    ax.legend()
+ani = FuncAnimation(fig, animate, frames=50, interval=100)
+plt.close(fig)  # 防止静态显示
+ani.save('burgers_animation.gif', writer='imagemagick')  # 保存为 GIF（需安装 imagemagick）
+plt.show()  # 或直接显示动画
+```
+
+##### **代码说明**
+- **网络**：添加 `self.nu` 作为可学习参数（初始 0.1）。
+- **损失**：新增观测损失 `loss_obs`，使用模拟观测数据（真实解 + 噪声）。
+- **训练**：记录 `nu_history`，估计 nu。
+- **可视化**：损失曲线、nu 估计曲线 + u(x, t) 的动画（保存为 GIF）。
+
+#### 3. **注意事项和扩展**
+- **多维 PDE**：对于 3D 或更高维，输入层改为 `nn.Linear(3, ...)` 或更多，采样点需均匀分布。
+- **反问题**：观测数据可从实验或模拟获取；对于更复杂参数（如函数参数），可使用额外网络表示。
+- **可视化**：动画使用 `FuncAnimation`，适合动态 PDE；热图适合稳态问题。
+- **优化**：若收敛慢，可用 L-BFGS 优化器或增加采样点。
+- **运行**：代码需 PyTorch、NumPy、Matplotlib。动画需 imagemagick 支持 GIF 输出。
+
+
