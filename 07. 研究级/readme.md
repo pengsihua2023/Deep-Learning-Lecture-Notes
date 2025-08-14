@@ -9,7 +9,7 @@
     - [Deep Galerkin Method (DGM)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E6%95%B0%E5%AD%A6%E4%B8%93%E9%A2%98/Deep%20Galerkin%20Method%20(DGM).md)
     - [Deep Ritz Method (DRM)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E6%95%B0%E5%AD%A6%E4%B8%93%E9%A2%98/Deep%20Ritz%20Method%20(DRM).md)
     - [Deep Backward Stochastic Differential Equation (Deep BSDE) Method](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E6%95%B0%E5%AD%A6%E4%B8%93%E9%A2%98/Deep%20Backward%20Stochastic%20Differential%20Equation%20(Deep%20BSDE)%20Method.md)
-    - [Discontinuous Galerkin (DG) Based Neural Networks]()
+    - [Discontinuous Galerkin (DG) Based Neural Networks](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E6%95%B0%E5%AD%A6%E4%B8%93%E9%A2%98/Discontinuous%20Galerkin%20(DG)%20Based%20Neural%20Networks.md)
   - 化学与材料科学专题
   - 生物学与医学专题
   - 物理学专题
