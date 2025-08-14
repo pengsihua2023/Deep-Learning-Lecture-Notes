@@ -1,5 +1,5 @@
-## BERT模型
-### BERT 网络介绍、原理和具体问题的实现
+## BERT：Bidirectional Encoder Representations from Transformers
+### BERT原理和具体问题的实现
 
 #### **介绍**
 BERT（Bidirectional Encoder Representations from Transformers）是 Google 在 2018 年提出的预训练语言模型，广泛应用于自然语言处理（NLP）任务，如文本分类、问答、命名实体识别等。BERT 的核心在于使用 **双向 Transformer Encoder**，通过大规模无监督预训练捕获深层语义信息，然后微调以适配特定任务。
@@ -202,4 +202,4 @@ plt.show()
    - 结合观测数据估计 BERT 参数（如注意力权重）。
 
 #### **总结**
-BERT 通过双向 Transformer 建模语义，预训练后微调适配任务。上述代码展示了在 IMDb 数据集上的文本分类实现，包括数据加载、微调和注意力可视化。如果需要更复杂的任务（如问答、NER）或特定可视化（如多头注意力）。
+BERT 通过双向 Transformer 建模语义，预训练后微调适配任务。上述代码展示了在 IMDb 数据集上的文本分类实现，包括数据加载、微调和注意力可视化。
