@@ -26,10 +26,8 @@ BERT（Bidirectional Encoder Representations from Transformers）是 Google 在 
      \text{Input} = \text{Token Embedding} + \text{Segment Embedding} + \text{Position Embedding}
      \]
    - 自注意力：
-     \[
-     \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-     \]
-     其中 \( Q, K, V \) 是查询、键、值向量，\( d_k \) 是维度。
+<img width="722" height="133" alt="image" src="https://github.com/user-attachments/assets/4eee741d-26d9-46fc-b073-e05bf8b64055" />
+
    - 输出：最后一层 `[CLS]` 表示用于分类，或 token 表示用于序列标注。
 
 4. **优点**：
