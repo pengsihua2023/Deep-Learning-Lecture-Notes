@@ -11,10 +11,10 @@
   - Batch Normalization
   - 使用float16加速 （Mixed Precision Training）
   - 多GPU并行训练 （Distributed Data Parallel (DDP)）
-  - [梯度裁剪（clip_grad_norm_)]()
-  - [累积梯度 （Gradient Accumulation）]()
-  - [高效注意力计算 （Flash Attention）]()
-  - [超参数搜索 （Bayesian Optimization）]()
+  - [梯度裁剪（clip_grad_norm_)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%92%8C%E8%AF%80%E7%AA%8D/%E6%A2%AF%E5%BA%A6%E8%A3%81%E5%89%AA.md)
+  - [累积梯度 （Gradient Accumulation）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%92%8C%E8%AF%80%E7%AA%8D/%E7%B4%AF%E7%A7%AF%E6%A2%AF%E5%BA%A6%20%EF%BC%88Gradient%20Accumulation%EF%BC%89.md)
+  - [高效注意力计算 （Flash Attention）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%92%8C%E8%AF%80%E7%AA%8D/%E9%AB%98%E6%95%88%E6%B3%A8%E6%84%8F%E5%8A%9B%E8%AE%A1%E7%AE%97%20%EF%BC%88Flash%20Attention%EF%BC%89.md)
+  - [超参数搜索 （Bayesian Optimization）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%92%8C%E8%AF%80%E7%AA%8D/%E8%B6%85%E5%8F%82%E6%95%B0%E6%90%9C%E7%B4%A2%20%EF%BC%88Bayesian%20Optimization%EF%BC%89.md)
   - 多个模型集成 （Ensemble Learning） 
 - [正则化技术概述](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%AD%A3%E5%88%99%E5%8C%96%E6%8A%80%E6%9C%AF%E4%B8%93%E9%A2%98/%E6%AD%A3%E5%88%99%E5%8C%96%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0.md)
   - [L1范数正则化 (L1 Regularization)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%AD%A3%E5%88%99%E5%8C%96%E6%8A%80%E6%9C%AF%E4%B8%93%E9%A2%98/L1%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96.md)
