@@ -11,42 +11,42 @@
   - Batch Normalization
   - 使用float16加速 （Mixed Precision Training）
   - 多GPU并行训练 （Distributed Data Parallel (DDP)）
-  - [梯度裁剪（clip_grad_norm_)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A2%AF%E5%BA%A6%E8%A3%81%E5%89%AA.md)
-  - [累积梯度 （Gradient Accumulation）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E7%B4%AF%E7%A7%AF%E6%A2%AF%E5%BA%A6%20%EF%BC%88Gradient%20Accumulation%EF%BC%89.md)
-  - [高效注意力计算 （Flash Attention）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E9%AB%98%E6%95%88%E6%B3%A8%E6%84%8F%E5%8A%9B%E8%AE%A1%E7%AE%97%20%EF%BC%88Flash%20Attention%EF%BC%89.md)
-  - [超参数搜索 （Bayesian Optimization）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E8%B6%85%E5%8F%82%E6%95%B0%E6%90%9C%E7%B4%A2%20%EF%BC%88Bayesian%20Optimization%EF%BC%89.md)
+  - [梯度裁剪（clip_grad_norm_)]
+  - [累积梯度 （Gradient Accumulation）]
+  - [高效注意力计算 （Flash Attention）]
+  - [超参数搜索 （Bayesian Optimization）]
   - 多个模型集成 （Ensemble Learning） 
-- [正则化技术概述](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%AD%A3%E5%88%99%E5%8C%96%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0.md)
-  - [L1范数正则化 (L1 Regularization)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/L1%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96.md)
-  - [L2范数正则化 （L2 Regularization (Weight Decay)）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/L2%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96.md)  - 
-  - [标准化批次输入 (Batch Normalization) ](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A0%87%E5%87%86%E5%8C%96%E6%89%B9%E6%AC%A1%E8%BE%93%E5%85%A5%EF%BC%88Batch%20Normalization%EF%BC%89.md)
-  -  [标准化层输入 (Layer Normalization)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A0%87%E5%87%86%E5%8C%96%E5%B1%82%E8%BE%93%E5%85%A5%20(Layer%20Normalization).md)
-  -  [训练早停(Early Stopping)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E8%AE%AD%E7%BB%83%E6%97%A9%E5%81%9C.md)
-  -  [添加噪声到输入/权重 （Noise Injection）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%B7%BB%E5%8A%A0%E5%99%AA%E5%A3%B0%E5%88%B0%E8%BE%93%E5%85%A5-%E6%9D%83%E9%87%8D%EF%BC%88Noise%20Injection%EF%BC%89.md)
-  -  [随机丢弃神经元 (Dropout)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E9%9A%8F%E6%9C%BA%E4%B8%A2%E5%BC%83%E7%A5%9E%E7%BB%8F%E5%85%83.md)
-- [学习率调整方法概述](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%B0%83%E6%95%B4%E6%96%B9%E6%B3%95%E6%A6%82%E8%BF%B0.md)
-  - [动态调整学习率 （Learning Rate Scheduling）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%8A%A8%E6%80%81%E8%B0%83%E6%95%B4%E5%AD%A6%E4%B9%A0%E7%8E%87%EF%BC%88Learning%20Rate%20Scheduling%EF%BC%89.md)
-  - [根据损失监控自动降低学习率 （ReduceLROnPlateau）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A0%B9%E6%8D%AE%E6%8D%9F%E5%A4%B1%E7%9B%91%E6%8E%A7%E8%87%AA%E5%8A%A8%E9%99%8D%E4%BD%8E%E5%AD%A6%E4%B9%A0%E7%8E%87%EF%BC%88ReduceLROnPlateau%EF%BC%89.md)
-  - [自适应学习率 （Adam Optimizer）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E8%87%AA%E9%80%82%E5%BA%94%E5%AD%A6%E4%B9%A0%E7%8E%87%20%EF%BC%88Adam%20Optimizer%EF%BC%89.md)
-  - [自适应学习率 （RMSprop）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E8%87%AA%E9%80%82%E5%BA%94%E5%AD%A6%E4%B9%A0%E7%8E%87%20%EF%BC%88RMSprop%EF%BC%89.md)
-- [优化器概述](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E4%BC%98%E5%8C%96%E5%99%A8%E6%A6%82%E8%BF%B0.md)
-  - [Adam优化器](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E8%87%AA%E9%80%82%E5%BA%94%E5%AD%A6%E4%B9%A0%E7%8E%87%20%EF%BC%88Adam%20Optimizer%EF%BC%89.md)
-  - [Adam变体 （AdamW）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/Adam%E5%8F%98%E4%BD%93%20%EF%BC%88AdamW%EF%BC%89.md)
-  - [SGD优化器（随机梯度下降，Stochastic Gradient Descent）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/SGD%E4%BC%98%E5%8C%96%E5%99%A8%EF%BC%88%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%EF%BC%8CStochastic%20Gradient%20Descent%EF%BC%89.md)
-  - [RMSProp优化器（Root Mean Square Propagation）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E8%87%AA%E9%80%82%E5%BA%94%E5%AD%A6%E4%B9%A0%E7%8E%87%20%EF%BC%88RMSprop%EF%BC%89.md)
-  - [Adagrad优化器（Adaptive Gradient Algorithm）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/Adagrad%E4%BC%98%E5%8C%96%E5%99%A8%EF%BC%88Adaptive%20Gradient%20Algorithm%EF%BC%89.md)
-  - [Adadelta优化器](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/Adadelta%E4%BC%98%E5%8C%96%E5%99%A8.md)  
+- [正则化技术概述]
+  - [L1范数正则化 (L1 Regularization)]
+  - [L2范数正则化 （L2 Regularization (Weight Decay)）]  - 
+  - [标准化批次输入 (Batch Normalization) ]
+  -  [标准化层输入 (Layer Normalization)]
+  -  [训练早停(Early Stopping)]
+  -  [添加噪声到输入/权重 （Noise Injection）]
+  -  [随机丢弃神经元 (Dropout)]
+- [学习率调整方法概述]
+  - [动态调整学习率 （Learning Rate Scheduling）]
+  - [根据损失监控自动降低学习率 （ReduceLROnPlateau）]
+  - [自适应学习率 （Adam Optimizer）]
+  - [自适应学习率 （RMSprop）]
+- [优化器概述]
+  - [Adam优化器]
+  - [Adam变体 （AdamW）]
+  - [SGD优化器（随机梯度下降，Stochastic Gradient Descent）]
+  - [RMSProp优化器（Root Mean Square Propagation）]
+  - [Adagrad优化器（Adaptive Gradient Algorithm）]
+  - [Adadelta优化器]  
   - [AMSGrad优化器]
   - [Nadam优化器]
   - [L-BFGS优化器（Limited-memory Broyden–Fletcher–Goldfarb–Shanno）]
   - [Rprop优化器（Resilient Backpropagation）]
   - [SparseAdam优化器]
   - [ASGD优化器（Averaged Stochastic Gradient Descent）]
-- [初始化方法概述](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E6%B3%95%E6%A6%82%E8%BF%B0.md)
-  - [均匀/正态分布初始化 （Xavier/Glorot Initialization](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%9D%87%E5%8C%80-%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E5%88%9D%E5%A7%8B%E5%8C%96%20%EF%BC%88Xavier-Glorot%20Initialization%EF%BC%89.md)
+- [初始化方法概述]
+  - [均匀/正态分布初始化 （Xavier/Glorot Initialization]
   - 考虑ReLU的方差的初始化 （He Initialization）
   - 均匀分布初始化 （Uniform Initialization）
-  - [正态分布初始化 （Normal Initialization）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E5%88%9D%E5%A7%8B%E5%8C%96%20%EF%BC%88Normal%20Initialization%EF%BC%89.md)
+  - [正态分布初始化 （Normal Initialization）]
   - He初始化的均匀变体 （Kaiming Uniform）
   - 层级标准化初始化 （LSUV (Layer-Sequential Unit-Variance)）
   - 零初始化 （Zero Initialization）
@@ -58,8 +58,8 @@
   - 差异化剪枝 （Diff Pruning）
   - 添加小型适配器层 （Adapter Modules）
   - 模型剪枝（移除不重要权重, Model Pruning）
-- [深度学习模型评估方法汇总](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB.md)
-- [深度学习模型解释方法概述](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%A7%A3%E9%87%8A%E5%B7%A5%E5%85%B7%E6%B1%87%E6%80%BB.md)
+- [深度学习模型评估方法汇总]
+- [深度学习模型解释方法概述]
   - SHAP
   - LIME
   - Saliency Maps
