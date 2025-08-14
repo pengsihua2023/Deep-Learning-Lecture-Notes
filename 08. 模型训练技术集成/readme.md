@@ -7,8 +7,6 @@
   - 处理类别不平衡处理方法
   - Min-Max 归一化
   - Z-score 标准化
-  - Layer Normalization
-  - Batch Normalization
   - 使用float16加速 （Mixed Precision Training）
   - 多GPU并行训练 （Distributed Data Parallel (DDP)）
   - [梯度裁剪（clip_grad_norm_)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%92%8C%E8%AF%80%E7%AA%8D/%E6%A2%AF%E5%BA%A6%E8%A3%81%E5%89%AA.md)
