@@ -8,7 +8,7 @@
     - [神经算子（Neural Operators）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E6%95%B0%E5%AD%A6%E4%B8%93%E9%A2%98/%E7%A5%9E%E7%BB%8F%E7%AE%97%E5%AD%90%EF%BC%88Neural%20Operators%EF%BC%89.md)
     - [Deep Galerkin Method (DGM)]()
     - [Deep Ritz Method (DRM)]()
-    - [Deep Backward Stochastic Differential Equation (Deep BSDE) Method]()
+    - [Deep Backward Stochastic Differential Equation (Deep BSDE) Method](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E6%95%B0%E5%AD%A6%E4%B8%93%E9%A2%98/Deep%20Backward%20Stochastic%20Differential%20Equation%20(Deep%20BSDE)%20Method.md)
     - [Discontinuous Galerkin (DG) Based Neural Networks]()
   - 化学与材料科学专题
   - 生物学与医学专题
