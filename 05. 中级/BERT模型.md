@@ -1,4 +1,6 @@
 ## BERT：Bidirectional Encoder Representations from Transformers
+<img width="876" height="594" alt="image" src="https://github.com/user-attachments/assets/313fa320-c931-4fb3-8fcb-5d81de615a21" />
+
 ### BERT原理和具体问题的实现
 
 #### **介绍**
