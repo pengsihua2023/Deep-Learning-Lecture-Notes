@@ -171,14 +171,8 @@ plt.show()
 ```
 
 #### **代码说明**
-- **网络**：
-  - 输入：\( (x, y, t) \)，输出：\( (u, v, p) \)。
-  - 使用 3 层全连接网络，50 个神经元，Tanh 激活函数。
-- **损失函数**：
-  - PDE 残差：动量方程（x 和 y 方向）+ 连续性方程。
-  - 初始条件：\( u(x, y, 0) = \sin(\pi x) \cos(\pi y), v(x, y, 0) = -\cos(\pi x) \sin(\pi y) \)。
-  - 边界条件：无滑移，边界上 \( u = v = 0 \)。
-  - 损失加权：初始和边界损失权重设为 10，加强约束。
+<img width="804" height="364" alt="image" src="https://github.com/user-attachments/assets/856b5c44-c6dd-4820-883a-8e632df4b674" />
+
 - **数据**：
   - 随机采样内部点（10000）、初始点（200）、边界点（400）。
   - 初始条件模拟旋涡流场，边界为无滑移。
@@ -197,16 +191,8 @@ plt.show()
    - 确保边界点均匀分布，避免偏向。
 3. **初始条件**：
    - 这里使用解析初始条件，实际应用可从实验数据或数值模拟获取。
-4. **可视化**：
-   - 需要安装 `matplotlib` 和 `imagemagick`（用于保存 GIF）。
-   - 可添加 \( v \) 和 \( p \) 的热图，或绘制速度矢量场（`plt.quiver`）。
-5. **扩展**：
-   - **反问题**：将 \( \nu \) 或 \( \rho \) 设为可学习参数（`nn.Parameter`），加入观测数据。
-   - **复杂几何**：定义复杂边界条件（如圆形障碍物）。
-   - **三维问题**：扩展输入为 \( (x, y, z, t) \)，输出为 \( (u, v, w, p) \)。
+<img width="772" height="404" alt="image" src="https://github.com/user-attachments/assets/6fc65d92-229d-4769-8bdb-114fc8e456db" />
 
-#### **扩展：反问题**
-若要估计 \( \nu \)，可修改 `PINN` 类：
 ```python
 class PINN(nn.Module):
     def __init__(self):
