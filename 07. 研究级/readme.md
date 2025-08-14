@@ -5,6 +5,11 @@
   - 数学专题
     - [PINN: 物理信息网络](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E6%95%B0%E5%AD%A6%E4%B8%93%E9%A2%98/PINN%3A%20%E7%89%A9%E7%90%86%E4%BF%A1%E6%81%AF%E7%BD%91%E7%BB%9C.md)
     - [PINN：求解Navier-Stokes 方程](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E6%95%B0%E5%AD%A6%E4%B8%93%E9%A2%98/PINN%EF%BC%9A%E6%B1%82%E8%A7%A3Navier-Stokes%20%E6%96%B9%E7%A8%8B.md)
+    - [神经算子（Neural Operators）]()
+    - [Deep Galerkin Method (DGM)]()
+    - [Deep Ritz Method (DRM)]()
+    - [Deep Backward Stochastic Differential Equation (Deep BSDE) Method]()
+    - [Discontinuous Galerkin (DG) Based Neural Networks]()
   - 化学与材料科学专题
   - 生物学与医学专题
   - 物理学专题
