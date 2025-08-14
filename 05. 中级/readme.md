@@ -1,6 +1,7 @@
    
 - 中级
   - [Attention-based Models：注意力机制模型](https://github.com/pengsihua2023/AI-learning/blob/main/%E4%B8%AD%E7%BA%A7%EF%BC%9AAttention-based%20Models.md)
+  - [BERT模型]()
   - [Transformer：转换器](https://github.com/pengsihua2023/AI-learning/blob/main/%E4%B8%AD%E7%BA%A7%EF%BC%9ATransformer.md)
   - [Graph Neural Network(GNN）：图神经网络](https://github.com/pengsihua2023/AI-learning/blob/main/%E4%B8%AD%E7%BA%A7%EF%BC%9AGNN.md)
   - [Transfer Learning：迁移学习](https://github.com/pengsihua2023/AI-learning/blob/main/%E4%B8%AD%E7%BA%A7%EF%BC%9A%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0.md)
