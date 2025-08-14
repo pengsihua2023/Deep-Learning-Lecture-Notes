@@ -1,0 +1,1 @@
+## Deep Galerkin Method (DGM)
