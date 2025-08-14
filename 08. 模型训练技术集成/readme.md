@@ -16,9 +16,9 @@
   - [高效注意力计算 （Flash Attention）]()
   - [超参数搜索 （Bayesian Optimization）]()
   - 多个模型集成 （Ensemble Learning） 
-- [正则化技术概述]()
-  - [L1范数正则化 (L1 Regularization)]()
-  - [L2范数正则化 （L2 Regularization (Weight Decay)）]()  - 
+- [正则化技术概述](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%AD%A3%E5%88%99%E5%8C%96%E6%8A%80%E6%9C%AF%E4%B8%93%E9%A2%98/%E6%AD%A3%E5%88%99%E5%8C%96%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0.md)
+  - [L1范数正则化 (L1 Regularization)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%AD%A3%E5%88%99%E5%8C%96%E6%8A%80%E6%9C%AF%E4%B8%93%E9%A2%98/L1%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96.md)
+  - [L2范数正则化 （L2 Regularization (Weight Decay)）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%AD%A3%E5%88%99%E5%8C%96%E6%8A%80%E6%9C%AF%E4%B8%93%E9%A2%98/L2%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96.md)  - 
   - [标准化批次输入 (Batch Normalization)]()
   -  [标准化层输入 (Layer Normalization)]()
   -  [训练早停(Early Stopping)]()
