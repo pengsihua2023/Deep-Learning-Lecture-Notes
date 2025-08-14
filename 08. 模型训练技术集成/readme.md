@@ -36,7 +36,7 @@
   - [RMSProp优化器（Root Mean Square Propagation）]
   - [Adagrad优化器（Adaptive Gradient Algorithm）]
   - [Adadelta优化器]  
-  - [AMSGrad优化器]
+  - [AMSGrad优化器](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E4%BC%98%E5%8C%96%E5%99%A8%E4%B8%93%E9%A2%98/AMSGrad%E4%BC%98%E5%8C%96%E5%99%A8.md)
   - [Nadam优化器]
   - [L-BFGS优化器（Limited-memory Broyden–Fletcher–Goldfarb–Shanno）]
   - [Rprop优化器（Resilient Backpropagation）]
