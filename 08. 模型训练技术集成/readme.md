@@ -57,7 +57,7 @@
   - 添加小型适配器层 （Adapter Modules）
   - 模型剪枝（移除不重要权重, Model Pruning）
 - [深度学习模型评估方法汇总](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB.md)
-- [深度学习模型解释方法概述](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%A7%A3%E9%87%8A%E5%B7%A5%E5%85%B7%E6%B1%87%E6%80%BB.md)
+- [深度学习模型解释方法概述](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A8%A1%E5%9E%8B%E8%A7%A3%E9%87%8A%E6%96%B9%E6%B3%95%E4%B8%93%E9%A2%98/%E6%A8%A1%E5%9E%8B%E8%A7%A3%E9%87%8A%E6%96%B9%E6%B3%95%E6%A6%82%E8%BF%B0.md)
   - SHAP
   - LIME
   - Saliency Maps
