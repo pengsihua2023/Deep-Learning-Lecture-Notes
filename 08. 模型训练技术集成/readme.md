@@ -37,11 +37,11 @@
   - [Adagrad优化器（Adaptive Gradient Algorithm）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E4%BC%98%E5%8C%96%E5%99%A8%E4%B8%93%E9%A2%98/Adagrad%E4%BC%98%E5%8C%96%E5%99%A8%EF%BC%88Adaptive%20Gradient%20Algorithm%EF%BC%89.md)
   - [Adadelta优化器](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E4%BC%98%E5%8C%96%E5%99%A8%E4%B8%93%E9%A2%98/Adadelta%E4%BC%98%E5%8C%96%E5%99%A8.md)  
   - [AMSGrad优化器](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E4%BC%98%E5%8C%96%E5%99%A8%E4%B8%93%E9%A2%98/AMSGrad%E4%BC%98%E5%8C%96%E5%99%A8.md)
-  - [Nadam优化器]()
-  - [L-BFGS优化器（Limited-memory Broyden–Fletcher–Goldfarb–Shanno）]()
-  - [Rprop优化器（Resilient Backpropagation）]()
-  - [SparseAdam优化器]()
-  - [ASGD优化器（Averaged Stochastic Gradient Descent）]()
+  - [Nadam优化器]
+  - [L-BFGS优化器（Limited-memory Broyden–Fletcher–Goldfarb–Shanno）]
+  - [Rprop优化器（Resilient Backpropagation）]
+  - [SparseAdam优化器]
+  - [ASGD优化器（Averaged Stochastic Gradient Descent）]
 - [初始化方法概述]()
   - [均匀/正态分布初始化 （Xavier/Glorot Initialization]()
   - 考虑ReLU的方差的初始化 （He Initialization）
