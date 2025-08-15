@@ -2,39 +2,11 @@
 神经算子（Neural Operators）是一种特殊的神经网络架构，用于学习从一个函数空间到另一个函数空间的映射（即学习“算子”）。传统的神经网络通常处理点到点的映射（如图像分类中的像素到标签），而神经算子可以处理函数到函数的映射，例如在科学计算中快速近似求解偏微分方程（PDE），它具有网格无关性（resolution-invariant），意味着训练时用一种分辨率的数据，推理时可以用不同的分辨率。
 
 ### 数学描述
-神经算子旨在近似一个算子 \(\mathcal{G}: \mathcal{A} \to \mathcal{U}\)，其中 \(\mathcal{A}\) 和 \(\mathcal{U}\) 是 Banach 空间（通常是函数空间，如 \(L^2(D)\)），\(D \subset \mathbb{R}^d\) 是域。给定输入函数 \(a \in \mathcal{A}\)，目标是预测输出函数 \(u = \mathcal{G}(a) \in \mathcal{U}\)。
+<img width="982" height="671" alt="image" src="https://github.com/user-attachments/assets/ff261a8f-9397-4c75-a14e-f93170346591" />
 
-神经算子 \(\mathcal{G}^\theta\)（参数为 \(\theta\)）被设计为网格无关的，即它不依赖于输入函数的离散化分辨率。形式上，它可以表示为层级结构：
-\[
-v_0(x) = P(a(x)), \quad v_{t+1}(x) = \sigma \left( W v_t(x) + (\mathcal{K}(a; \phi) v_t)(x) \right), \quad t=0,\dots,T-1,
-\]
-\[
-\mathcal{G}^\theta(a)(x) = Q(v_T(x)),
-\]
-其中：
-- \(P: \mathbb{R}^{d_a} \to \mathbb{R}^{d_v}\) 是提升映射（lifting），将输入维度从 \(d_a\) 提升到更高维度 \(d_v\)。
-- \(Q: \mathbb{R}^{d_v} \to \mathbb{R}^{d_u}\) 是投影映射（projection），将隐藏维度投影到输出维度 \(d_u\)。
-- \(W\) 是局部线性变换（点到点）。
-- \(\mathcal{K}\) 是非局部积分核算子：
-  \[
-  (\mathcal{K}(a; \phi) v)(x) = \int_D \kappa_\phi(x, y, a(x), a(y)) v(y) \, dy,
-  \]
-  其中 \(\kappa_\phi\) 是由神经网络参数化的核函数。
-- \(\sigma\) 是激活函数（如 GELU）。
 
-一个经典的实现是傅里叶神经算子（Fourier Neural Operator, FNO），它利用傅里叶变换在频域中高效参数化 \(\mathcal{K}\)，避免直接计算积分。假设周期边界条件，在1D情况下：
-\[
-(\mathcal{K} v)(x) = \mathcal{F}^{-1} \left( R_\phi \cdot (\mathcal{F} v) \right)(x),
-\]
-其中：
-- \(\mathcal{F}\) 是傅里叶变换： \((\mathcal{F} v)_k = \int_D v(x) e^{-2\pi i k \cdot x} dx\)（离散时用 FFT）。
-- \(\mathcal{F}^{-1}\) 是逆傅里叶变换。
-- \(R_\phi\) 是可学习参数矩阵（复数），截断到前 \(k_{\max}\) 个低频模式：对于每个模式 \(k\)，\(R_\phi(k) \in \mathbb{C}^{d_v \times d_v}\)。
-这使得 \(\mathcal{K}\) 成为全局卷积，计算复杂度为 \(O(N \log N)\)，其中 \(N\) 是网格点数。
+<img width="1021" height="523" alt="image" src="https://github.com/user-attachments/assets/8f275f27-a9f9-4b14-b635-ebcd5720c1c2" />
 
-FNO 的优势在于分辨率无关性：训练时用粗网格，推理时可用于细网格，因为傅里叶模式是连续的。
-
-下面是用PyTorch从零实现的一个最简单的1D FNO例子。我们假设任务是学习一个简单的算子：将输入函数 \(f(x) = \sin(k x)\) 映射到其积分形式（累积积分）。代码包括谱卷积层（SpectralConv1d）和FNO模型，生成随机数据进行训练演示。
 
 ```python
 import torch
