@@ -3,31 +3,8 @@ Deep Galerkin Method (DGM)是一种深度学习算法，用于求解偏微分方
 
 与Physics-Informed Neural Networks (PINN)类似，DGM也使用神经网络表示解，但DGM更强调Galerkin正交条件，通过随机采样积分域来近似损失函数，从而高效处理高维问题。它已被扩展到各种PDE，如Fokker-Planck方程、Stokes方程和均场游戏。
 
-### 数学描述
-考虑一个一般的偏微分方程（PDE）问题：在域\(\Omega \subset \mathbb{R}^d\)上，满足：
-\[
-\mathcal{L} u(x) = f(x), \quad x \in \Omega,
-\]
-伴随边界条件：
-\[
-\mathcal{B} u(x) = g(x), \quad x \in \partial \Omega,
-\]
-其中\(\mathcal{L}\)是微分算子（可能非线性），\(\mathcal{B}\)是边界算子，\(u(x)\)是待求解函数。
+![Uploading image.png…]()
 
-DGM使用一个参数化神经网络\(u_\theta(x)\)（\(\theta\)为网络参数）来逼近\(u(x)\)。类似于Galerkin方法，它通过最小化残差的积分形式来求解，但积分通过蒙特卡罗采样近似。具体地，损失函数定义为：
-\[
-J(\theta) = \frac{1}{N_\Omega} \sum_{i=1}^{N_\Omega} \left| \mathcal{L} u_\theta(x_i) - f(x_i) \right|^2 + \frac{\lambda}{N_{\partial \Omega}} \sum_{j=1}^{N_{\partial \Omega}} \left| \mathcal{B} u_\theta(y_j) - g(y_j) \right|^2,
-\]
-其中：
-- \(x_i \sim \mathcal{U}(\Omega)\) 是从内部域\(\Omega\)均匀随机采样的点（\(N_\Omega\)个样本）。
-- \(y_j \sim \mathcal{U}(\partial \Omega)\) 是从边界\(\partial \Omega\)均匀随机采样的点（\(N_{\partial \Omega}\)个样本）。
-- \(\lambda > 0\) 是平衡内部残差和边界条件的权重超参数。
-- 损失使用L2范数（或其他范数），通过自动微分计算\(\mathcal{L} u_\theta\)和\(\mathcal{B} u_\theta\).
-
-训练过程使用随机梯度下降（SGD）或Adam优化器最小化\(J(\theta)\)。由于采样是随机的，每批次数据不同，这有助于避免局部最小值。DGM的收敛性已在某些条件下证明，如对于线性椭圆PDE。 对于更复杂的PDE（如抛物型），可引入时间步进扩展（DGMT）。
-
-### 代码实现
-下面是用PyTorch实现的一个简单1D DGM例子，用于求解Poisson方程：\(-u''(x) = \pi^2 \sin(\pi x)\)，在\(x \in [0, 1]\)上，边界条件\(u(0) = u(1) = 0\)。真实解为\(u(x) = \sin(\pi x)\)。代码包括神经网络定义、损失计算和训练循环。
 
 ```python
 import torch
