@@ -3,7 +3,8 @@ Deep Galerkin Method (DGM)是一种深度学习算法，用于求解偏微分方
 
 与Physics-Informed Neural Networks (PINN)类似，DGM也使用神经网络表示解，但DGM更强调Galerkin正交条件，通过随机采样积分域来近似损失函数，从而高效处理高维问题。它已被扩展到各种PDE，如Fokker-Planck方程、Stokes方程和均场游戏。
 
-![Uploading image.png…]()
+<img width="1007" height="1026" alt="image" src="https://github.com/user-attachments/assets/89b91045-a1a6-4ebf-9458-a2ad029242fe" />
+
 
 
 ```python
