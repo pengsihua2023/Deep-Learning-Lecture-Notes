@@ -4,38 +4,12 @@ Deep Backward Stochastic Differential Equation (Deep BSDE) Method 是一种基�
 与 Deep Galerkin Method (DGM) 或 Deep Ritz Method (DRM) 相比，Deep BSDE 更适合时间相关的抛物型 PDE，并自然处理随机性，但需要模拟随机路径，可能引入方差。
 
 ### 数学描述
-考虑一个一般的半线性抛物型 PDE：
-\[
-\partial_t u(t,x) + \mu(t,x) \cdot \nabla_x u(t,x) + \frac{1}{2} \operatorname{Tr}\left( \sigma(t,x) [\sigma(t,x)]^* \operatorname{Hess}_x u(t,x) \right) + f(t,x,u(t,x), [\sigma(t,x)]^* \nabla_x u(t,x)) = 0,
-\]
-对于 \(t \in [0,T)\)，\(x \in \mathbb{R}^d\)，伴随终端条件 \(u(T,x) = g(x)\)。其中 \(\mu: [0,T] \times \mathbb{R}^d \to \mathbb{R}^d\) 是漂移项，\(\sigma: [0,T] \times \mathbb{R}^d \to \mathbb{R}^{d \times d}\) 是扩散矩阵，\(f\) 是非线性项，\(\operatorname{Tr}(\cdot)\) 是迹，\(A^*\) 是转置，\(\operatorname{Hess}_x u\) 是 Hessian 矩阵。
+<img width="1010" height="922" alt="image" src="https://github.com/user-attachments/assets/9c3ef52c-b02b-447d-b2ae-d460053c66cf" />
 
-通过 Feynman-Kac 定理，该 PDE 可表示为前向-后向随机微分方程（FBSDE）系统：
-- 前向 SDE（路径过程）：
-  \[
-  X_t = x + \int_0^t \mu(s, X_s) \, ds + \int_0^t \sigma(s, X_s) \, dW_s,
-  \]
-  其中 \(W_s\) 是 \(d\)-维 Wiener 过程。
-- 后向 SDE（值过程）：
-  \[
-  Y_t = g(X_T) + \int_t^T f(s, X_s, Y_s, Z_s) \, ds - \int_t^T Z_s^* \, dW_s,
-  \]
-  其中 \(Y_t = u(t, X_t)\)，\(Z_t = [\sigma(t, X_t)]^* \nabla_x u(t, X_t)\)（梯度过程）。
-
-Deep BSDE 通过时间离散化（Euler 方案）逼近 BSDE：将时间区间 \([0,T]\) 分成 \(N\) 步，步长 \(\Delta t = T/N\)，模拟 Brownian 增量 \(\Delta W_n \sim \mathcal{N}(0, \Delta t I_d)\)。然后，使用神经网络参数化初始值 \(Y_0^\theta\)（标量）和梯度过程 \(Z_n^\theta(t_n, X_n)\)（对于每个时间步的 NN）。
-
-算法将问题转化为最小化变分损失：
-\[
-J(\theta) = \mathbb{E} \left[ \left| Y_T^\theta - g(X_T) \right|^2 \right],
-\]
-其中 \(Y_T^\theta\) 通过前向迭代计算：
-\[
-Y_{n+1}^\theta = Y_n^\theta - f(t_n, X_n, Y_n^\theta, Z_n^\theta) \Delta t + (Z_n^\theta)^* \Delta W_n,
-\]
-从 \(Y_0^\theta\) 开始。期望通过蒙特卡罗采样（批量模拟路径）近似，使用 Adam 等优化器训练 \(\theta\)。这相当于求解一个随机控制问题，其中 \(Z^\theta\) 是控制变量。
 
 ### 代码实现
-下面是用 PyTorch 实现的一个简单 1D Deep BSDE 例子，用于求解非线性 PDE：\(\partial_t u + \frac{1}{2} \partial_{xx} u + u^3 = 0\)，在 \(t \in [0,1]\)，\(x \in \mathbb{R}\)，终端条件 \(u(1,x) = \cos(\pi x / 2)\)。这是一个简化版本的 Allen-Cahn 方程变体，真实解近似为一个平滑函数。代码包括神经网络定义、路径模拟和训练循环。
+<img width="888" height="115" alt="image" src="https://github.com/user-attachments/assets/8f855fa3-dac5-411d-8a32-6d289a76d75e" />
+
 
 ```python
 import torch
