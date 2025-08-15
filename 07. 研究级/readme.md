@@ -14,6 +14,7 @@
     - [Discontinuous Galerkin (DG) Based Neural Networks](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E6%95%B0%E5%AD%A6%E4%B8%93%E9%A2%98/Discontinuous%20Galerkin%20(DG)%20Based%20Neural%20Networks.md)
   - 物理学专题
     - [QuTiP库在量子光学中的应用]()
+    - [基于QuTiP库的开放量子双比特系统研究]()
   - 生物学与医学专题
     - [DeepMD-kit库用于分子动力学模拟](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E7%94%9F%E7%89%A9%E5%AD%A6%E4%B8%8E%E5%8C%BB%E5%AD%A6%E4%B8%93%E9%A2%98/DeepMD-kit%E5%BA%93%E7%94%A8%E4%BA%8E%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%A8%A1%E6%8B%9F.md)
     - [DeepChem库用于分子毒性预测](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E7%94%9F%E7%89%A9%E5%AD%A6%E4%B8%8E%E5%8C%BB%E5%AD%A6%E4%B8%93%E9%A2%98/DeepChem%E5%BA%93%E7%94%A8%E4%BA%8E%E5%88%86%E5%AD%90%E6%AF%92%E6%80%A7%E9%A2%84%E6%B5%8B.md)
