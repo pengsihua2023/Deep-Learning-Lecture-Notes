@@ -2,7 +2,7 @@
   - [Neural Architecture Search (NAS): 神经架构搜索](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E7%A0%94%E7%A9%B6%E7%BA%A7%EF%BC%9A%E7%A5%9E%E7%BB%8F%E6%9E%B6%E6%9E%84%E6%90%9C%E7%B4%A2.md)
   - [AI4science：AI for Scienc：人工智能应用于科学](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E7%A0%94%E7%A9%B6%E7%BA%A7%EF%BC%9AAI4science.md)
   - [AI Agent:AI代理](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E7%A0%94%E7%A9%B6%E7%BA%A7%3A%20AI%20agent.md)
-  - [n8n工作流对AI Agenet支持的一个例子]()
+  - [n8n工作流对AI Agenet支持的一个例子](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/n8n%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%AF%B9AI%20Agenet%E6%94%AF%E6%8C%81%E7%9A%84%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90.md)
   - [World Model：世界模型](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E7%A0%94%E7%A9%B6%E7%BA%A7%EF%BC%9AWorld%20Model.md)
   - [深度学习用于科学研究中的重要的python库汇集](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%94%A8%E4%BA%8E%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6%E4%B8%AD%E7%9A%84%E9%87%8D%E8%A6%81%E7%9A%84python%E5%BA%93%E6%B1%87%E9%9B%86.md)
   - 数学专题
