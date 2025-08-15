@@ -1,7 +1,7 @@
 ## 数学基础知识
 
 - 数学基础知识
-  - [数学基础知识：线性代数知识]()
+  - [线性代数知识](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/02.%20%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A5%E8%AF%86.md)
   - [范数的基础知识](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/02.%20%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A%E8%8C%83%E6%95%B0%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
 
   - [数组的基础知识](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/02.%20%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A%E6%95%B0%E7%BB%84%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
