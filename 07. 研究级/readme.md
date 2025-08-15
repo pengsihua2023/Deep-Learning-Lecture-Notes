@@ -14,6 +14,7 @@
   - 物理学专题
   - 生物学与医学专题
     - [DeepMD-kit库用于分子动力学模拟](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E7%94%9F%E7%89%A9%E5%AD%A6%E4%B8%8E%E5%8C%BB%E5%AD%A6%E4%B8%93%E9%A2%98/DeepMD-kit%E5%BA%93%E7%94%A8%E4%BA%8E%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%A8%A1%E6%8B%9F.md)
+    - [DeepChem库用于分子毒性预测]()
   - 化学与材料科学专题
     - [DeepMD-kit库用于铜金属的宏观热-力学过程模拟](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E5%8C%96%E5%AD%A6%E4%B8%8E%E6%9D%90%E6%96%99%E7%A7%91%E5%AD%A6%E4%B8%93%E9%A2%98/DeepMD-kit%E5%BA%93%E7%94%A8%E4%BA%8E%E9%93%9C%E9%87%91%E5%B1%9E%E7%9A%84%E5%AE%8F%E8%A7%82%E7%83%AD-%E5%8A%9B%E5%AD%A6%E8%BF%87%E7%A8%8B%E6%A8%A1%E6%8B%9F.md)
     
