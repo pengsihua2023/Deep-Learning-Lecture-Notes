@@ -1,0 +1,155 @@
+## 混合精度训练Mixed Precision Training
+### 什么是混合精度训练（Mixed Precision Training）？
+
+**混合精度训练（Mixed Precision Training, MPT）**是一种深度学习训练技术，通过结合低精度（如半精度浮点数 FP16）和高精度（如单精度浮点数 FP32）进行计算，以加速训练、减少显存占用，同时尽量保持模型的精度和稳定性。它在支持 FP16 计算的硬件（如 NVIDIA GPU）上尤其有效。
+
+#### 核心特点：
+- **适用场景**：适用于深度学习任务，如图像分类、目标检测、自然语言处理，尤其在大规模模型（如 Transformer）中。
+- **原理**：
+  - 使用 FP16 进行大部分计算（如前向传播、反向传播），以加速运算和降低显存需求。
+  - 使用 FP32 进行关键操作（如权重更新、损失计算），以确保数值稳定性。
+  - 引入**损失缩放（Loss Scaling）**，通过放大损失值避免 FP16 梯度过小导致的精度丢失。
+- **优点**：
+  - 训练速度更快（通常提升 1.5-3 倍）。
+  - 显存占用减少（FP16 占一半内存），支持更大模型或批次。
+  - 精度损失小，通常接近 FP32。
+- **缺点**：
+  - 需要支持 FP16 的硬件（如 NVIDIA Volta、Ampere GPU）。
+  - 可能需调试损失缩放因子以确保稳定性。
+
+---
+
+### 混合精度训练的原理
+
+1. **FP16 计算**：
+   - 前向和反向传播使用 FP16，减少计算量和显存占用。
+   - 模型权重和激活值存储为 FP16。
+2. **FP32 关键操作**：
+   - 权重更新、优化器状态（如动量）保持 FP32，防止数值溢出。
+3. **损失缩放**：
+   - 在反向传播前，将损失值乘以一个缩放因子（如 128），放大梯度。
+   - 反向传播后，梯度除以相同因子，恢复正确值。
+4. **自动管理**：
+   - 现代框架（如 PyTorch 的 `torch.cuda.amp`）自动处理 FP16/FP32 切换和损失缩放。
+
+---
+
+### 简单代码示例：基于 PyTorch 的混合精度训练
+
+以下是一个简单的例子，展示如何在 PyTorch 中使用 `torch.cuda.amp` 实现混合精度训练，在 MNIST 数据集上训练一个简单神经网络。
+
+```python
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader
+
+# 1. 定义模型
+class SimpleNet(nn.Module):
+    def __init__(self):
+        super(SimpleNet, self).__init__()
+        self.fc1 = nn.Linear(28 * 28, 256)
+        self.fc2 = nn.Linear(256, 10)
+    
+    def forward(self, x):
+        x = x.view(-1, 28 * 28)
+        x = torch.relu(self.fc1(x))
+        return self.fc2(x)
+
+# 2. 数据加载
+transform = transforms.ToTensor()
+train_dataset = datasets.MNIST('.', train=True, download=True, transform=transform)
+train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
+
+# 3. 训练设置
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = SimpleNet().to(device)
+optimizer = optim.Adam(model.parameters(), lr=1e-3)
+criterion = nn.CrossEntropyLoss()
+
+# 4. AMP 相关对象
+scaler = torch.cuda.amp.GradScaler()  # 用于损失缩放
+
+# 5. 训练循环
+for epoch in range(2):  # 2 个 epoch 作为示例
+    model.train()
+    total_loss = 0
+    for data, target in train_loader:
+        data, target = data.to(device), target.to(device)
+        optimizer.zero_grad()
+        
+        # 使用 autocast 自动切换 FP16/FP32
+        with torch.cuda.amp.autocast():
+            output = model(data)
+            loss = criterion(output, target)
+        
+        # 损失缩放与反向传播
+        scaler.scale(loss).backward()
+        scaler.step(optimizer)
+        scaler.update()
+        total_loss += loss.item()
+    
+    print(f"Epoch {epoch + 1}, Avg Loss: {total_loss / len(train_loader):.6f}")
+
+# 6. 测试模型
+test_dataset = datasets.MNIST('.', train=False, transform=transform)
+test_loader = DataLoader(test_dataset, batch_size=64)
+model.eval()
+correct = 0
+total = 0
+with torch.no_grad():
+    for data, target in test_loader:
+        data, target = data.to(device), target.to(device)
+        output = model(data)
+        pred = output.argmax(dim=1, keepdim=True)
+        correct += pred.eq(target.view_as(pred)).sum().item()
+        total += target.size(0)
+print(f"Test Accuracy: {correct / total * 100:.2f}%")
+```
+
+---
+
+### 代码说明
+
+1. **模型定义**：
+   - 定义一个简单的全连接神经网络，用于 MNIST 分类（输入 28x28，输出 10 类）。
+
+2. **数据加载**：
+   - 使用 `torchvision` 加载 MNIST 数据集，批量大小为 64。
+
+3. **AMP 核心组件**：
+   - `torch.cuda.amp.autocast()`：自动在 FP16 和 FP32 间切换，卷积/矩阵乘法使用 FP16，损失计算等使用 FP32。
+   - `torch.cuda.amp.GradScaler()`：管理损失缩放，放大损失以避免 FP16 梯度过小，反向传播后恢复。
+
+4. **训练循环**：
+   - 在 `autocast` 上下文中执行前向传播和损失计算。
+   - 使用 `scaler.scale(loss).backward()` 缩放损失并计算梯度。
+   - `scaler.step(optimizer)` 和 `scaler.update()` 执行优化步骤并更新缩放因子。
+
+5. **测试**：
+   - 在测试集上评估模型准确率，无需 AMP（测试通常用 FP32）。
+
+---
+
+### 关键点
+
+1. **自动精度管理**：
+   - `autocast` 自动选择 FP16 或 FP32，减少手动干预。
+2. **损失缩放**：
+   - `GradScaler` 动态调整缩放因子，避免梯度下溢。
+3. **硬件要求**：
+   - 需要支持 FP16 的 GPU（如 NVIDIA Volta、Ampere 架构）。
+4. **扩展性**：
+   - 可结合 **Curriculum Learning**（参考前文，逐步引入复杂数据）、**Optuna/Ray Tune**（优化超参数）或 **类别不平衡处理**（如加权损失）。
+   - 示例中可加入 `MinMaxScaler` 或 `StandardScaler` 对输入数据预处理（参考前文）。
+
+---
+
+### 实际效果
+
+- **训练速度**：在支持 FP16 的 GPU（如 NVIDIA A100）上，训练速度可提升 1.5-3 倍。
+- **显存节省**：FP16 占用内存减半，可支持更大模型或批次大小。
+- **精度保持**：通过损失缩放，模型精度通常与 FP32 相近（误差 <1%）。
+- **适用性**：适用于大多数深度学习任务，尤其在大规模模型（如 BERT、GPT）中效果显著。
+
