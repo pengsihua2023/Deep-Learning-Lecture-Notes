@@ -1,7 +1,7 @@
 ## 深度学习模型训练技术集成
 - 关键技术和诀窍
   - [自动混合精度（AMP）训练](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%92%8C%E8%AF%80%E7%AA%8D/%E8%87%AA%E5%8A%A8%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%EF%BC%88AMP%EF%BC%89%E8%AE%AD%E7%BB%83.md)
-  - Curriculum Learning
+  - [Curriculum Learning](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%92%8C%E8%AF%80%E7%AA%8D/Curriculum%20Learning.md)
   - Optuna超参数优化方法
   - Ray Tune超参数优化方法
   - 处理类别不平衡处理方法
