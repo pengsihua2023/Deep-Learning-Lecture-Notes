@@ -4,7 +4,7 @@
   - [Curriculum Learning](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%92%8C%E8%AF%80%E7%AA%8D/Curriculum%20Learning.md)
   - [Optuna超参数优化方法](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%92%8C%E8%AF%80%E7%AA%8D/Optuna%E8%B6%85%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95.md)
   - [Ray Tune超参数优化方法](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%92%8C%E8%AF%80%E7%AA%8D/Ray%20Tune%E8%B6%85%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95.md)
-  - 处理类别不平衡处理方法
+  - [处理类别不平衡的两种方法：加权损失函数和过采样]()
   - Min-Max 归一化
   - Z-score 标准化
   - 使用float16加速 （Mixed Precision Training）
