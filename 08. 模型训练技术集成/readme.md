@@ -6,7 +6,7 @@
   - [Ray Tune超参数优化方法](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%92%8C%E8%AF%80%E7%AA%8D/Ray%20Tune%E8%B6%85%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95.md)
   - [处理类别不平衡的两种方法：加权损失函数和过采样](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%92%8C%E8%AF%80%E7%AA%8D/%E5%A4%84%E7%90%86%E7%B1%BB%E5%88%AB%E4%B8%8D%E5%B9%B3%E8%A1%A1%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%9A%E5%8A%A0%E6%9D%83%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E5%92%8C%E8%BF%87%E9%87%87%E6%A0%B7.md)
   - [Min-Max 归一化](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%92%8C%E8%AF%80%E7%AA%8D/Min-Max%20%E5%BD%92%E4%B8%80%E5%8C%96.md)
-  - Z-score 标准化
+  - [Z-score 标准化](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%92%8C%E8%AF%80%E7%AA%8D/Z-score%20%E6%A0%87%E5%87%86%E5%8C%96.md)
   - 使用float16加速 （Mixed Precision Training）
   - 多GPU并行训练 （Distributed Data Parallel (DDP)）
   - [梯度裁剪（clip_grad_norm_)](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%92%8C%E8%AF%80%E7%AA%8D/%E6%A2%AF%E5%BA%A6%E8%A3%81%E5%89%AA.md)
