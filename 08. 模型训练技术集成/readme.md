@@ -1,6 +1,6 @@
 ## 深度学习模型训练技术集成
 - 关键技术和诀窍
-  - Create 自动混合精度（AMP）
+  - 自动混合精度（AMP）训练
   - Curriculum Learning
   - Optuna超参数优化方法
   - Ray Tune超参数优化方法
