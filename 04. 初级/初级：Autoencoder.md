@@ -39,9 +39,9 @@ $$
 =\frac{1}{n}\sum_{i=1}^{n}\bigl(x_i-\hat{x}_i\bigr)^2
 $$
 
-其中， \$n\$ 是样本数，$x_i$ 和 $\hat{x}_i$ 分别是输入和重构输出的第 \$i\$ 个元素。
-where $n$ is the number of samples, and $x_i$ and $\hat{x}_i$ are the $i$-th elements of the input and the reconstructed output, respectively.  
-
+其中， \$n\$ 是样本数，$x_i$ 和 $\hat{x}_i$ 分别是输入和重构输出的第 \$i\$ 个元素。  
+where $n$ is the number of samples, and $x_i$ and $\hat{x}_i$ are the $i$-th elements of the input and the reconstructed output, respectively.    
+其中， $n$ 是样本数, 而 $x_i$ 和 $\hat{x}_i$ are the $i$-th elements of the input and the reconstructed output, respectively.     
 
 ### 3. 参数化
 
