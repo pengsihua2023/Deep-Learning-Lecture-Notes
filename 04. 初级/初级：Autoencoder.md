@@ -252,9 +252,9 @@ Train Epoch: 10 [51200/60000 (85%)]     Loss: 69.532722
 
 <img width="960" height="490" alt="image" src="https://github.com/user-attachments/assets/8d28cf45-b977-4de8-a857-d62f8893be0f" />    
 
-图4 loss曲线  
+图2 loss曲线  
 <img width="274" height="108" alt="image" src="https://github.com/user-attachments/assets/d5769c88-f37c-4d0a-94b9-fb627129abfd" />  
 
 
-图5 输入与输出图像比较
+图2 输入与输出图像比较
 
