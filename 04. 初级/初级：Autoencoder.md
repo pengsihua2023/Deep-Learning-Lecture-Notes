@@ -47,11 +47,11 @@ $$
 
 * **编码器**: \$f(x) = \sigma(W\_e x + b\_e)\$
 
-  * \$W\_e \in \mathbb{R}^{m \times d},\ b\_e \in \mathbb{R}^m\$，\$\sigma\$ 是激活函数（如 ReLU、Sigmoid）。
+  * \$W\_e \in \mathbb{R}^{m \times d},\ b\_e \in \mathbb{R}^m\$，$\sigma$ 是激活函数（如 ReLU、Sigmoid）。
 
 * **解码器**: \$g(z) = \sigma'(W\_d z + b\_d)\$
 
-  * \$W\_d \in \mathbb{R}^{d \times m}, b\_d \in \mathbb{R}^d\$，\$\sigma'\$ 是激活函数。
+  * \$W\_d \in \mathbb{R}^{d \times m}, b\_d \in \mathbb{R}^d\$，$\sigma'$ 是激活函数。
 
 * **优化**: 通过梯度下降调整参数 \$\theta = {W\_e, b\_e, W\_d, b\_d}\$ 来最小化 \$\mathcal{L}\$。
 
