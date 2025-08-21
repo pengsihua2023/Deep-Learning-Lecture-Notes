@@ -7,16 +7,12 @@ Autoencoder 是一种无监督学习模型，用于数据压缩、降噪或特�
 Autoencoder 包含编码器（压缩数据）和解码器（重构数据），目标是让输出尽可能接近输入。  
 比喻：像一个“数据压缩机”，把大文件压缩后再解压，尽量保持原样。  
 - 应用：图像去噪、数据压缩、异常检测（如信用卡欺诈检测）。
-<img width="1400" height="797" alt="image" src="https://github.com/user-attachments/assets/28b89fa6-5c8b-460f-8385-4cd46c7c47cd" />  
+  
 
-图1 第一种表示   
-<img width="700" height="220" alt="image" src="https://github.com/user-attachments/assets/f20e1904-4878-4950-a91f-cbe0d2336f50" />  
-
-图2 第二种表示  
 
 <img width="1200" height="700" alt="image" src="https://github.com/user-attachments/assets/dbd389b4-042e-44bf-a62f-ef736bbebd89" />  
 
-图3 第三种表示  
+图1 架构示意图  
 
 
 ## 自编码器的数学描述
