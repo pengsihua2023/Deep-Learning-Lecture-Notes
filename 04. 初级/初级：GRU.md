@@ -7,7 +7,6 @@
 ### GRU的核心思想
 GRU通过引入更新门（update gate）和重置门（reset gate）来控制信息的流动和遗忘，从而有效捕捉序列中的长期依赖关系。与LSTM相比，GRU将遗忘门和输入门合并为单一的更新门，简化了结构，但仍然保留了强大的建模能力。  
 ### GRU的工作机制
-<img width="801" height="874" alt="image" src="https://github.com/user-attachments/assets/59d92294-65c9-4a36-9d51-91e59337ea1d" />
 <img width="1229" height="866" alt="image" src="https://github.com/user-attachments/assets/0c326801-56ce-4125-adec-ca7403e67332" />
 ### GRU的特点
 - 简化结构：相比LSTM，GRU只有两个门（更新门和重置门），参数更少，计算效率更高。
