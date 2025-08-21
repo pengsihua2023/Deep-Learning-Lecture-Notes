@@ -29,7 +29,7 @@ Autoencoder 由编码器（Encoder）和解码器（Decoder）组成：
 4. 正则化变体
    <img width="1275" height="515" alt="image" src="https://github.com/user-attachments/assets/f4a234df-cbb5-4fa9-8073-36708d5e0787" />
 5. 优化  
-通过反向传播优化：
+通过反向传播优化：  
 <img width="633" height="150" alt="image" src="https://github.com/user-attachments/assets/1879d224-0f1b-4aa9-ab2b-840d01c2e535" />
 6. 应用
 <img width="693" height="234" alt="image" src="https://github.com/user-attachments/assets/fdf6bf90-728b-436d-9d6e-39efa2c51aa2" />  
