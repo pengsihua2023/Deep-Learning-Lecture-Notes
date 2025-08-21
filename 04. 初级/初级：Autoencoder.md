@@ -40,7 +40,7 @@ $$
 $$
 
 其中， \$n\$ 是样本数，$x_i$ 和 $\hat{x}_i$ 分别是输入和重构输出的第 \$i\$ 个元素。
-
+where $n$ is the number of samples, and $x_i$ and $\hat{x}_i$ are the $i$-th elements of the input and the reconstructed output, respectively.  
 
 
 ### 3. 参数化
