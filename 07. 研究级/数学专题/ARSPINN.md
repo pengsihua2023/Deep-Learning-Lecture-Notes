@@ -8,9 +8,9 @@
 
    我们要求解偏微分方程 (PDE)：
 
-   $$
-   \mathcal{N}[u(\mathbf{x}, t)] = f(\mathbf{x}, t), \quad \mathbf{x} \in \Omega, \; t \in [0, T],
-   $$
+$
+\mathcal{N}[u(\mathbf{x}, t)] = f(\mathbf{x}, t), \quad \mathbf{x} \in \Omega, \; t \in [0, T],
+$
 
    其中 $\mathcal{N}$ 是 PDE 的微分算子，$u(\mathbf{x}, t)$ 是未知解，$\Omega$ 是计算域，$f(\mathbf{x}, t)$ 是源项。边界条件和初始条件为：
 
