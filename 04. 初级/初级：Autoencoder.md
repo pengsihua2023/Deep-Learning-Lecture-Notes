@@ -261,9 +261,9 @@ $$
 <img width="274" height="108" alt="image" src="https://github.com/user-attachments/assets/d5769c88-f37c-4d0a-94b9-fb627129abfd" />  
 
 
-$$
-\text{图3 输入与输出图像比较}
-$$
+
+图3 输入与输出图像比较
+
 
 
 
