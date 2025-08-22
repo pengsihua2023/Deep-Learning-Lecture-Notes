@@ -6,8 +6,6 @@
 * **$Q(x)$**：近似分布或模型分布（approximation / model distribution），表示在事件 $x$ 上模型的估计概率。
 * **解释**： $D_{\mathrm{KL}}(P\|Q)$ 衡量在用 $Q$ 来近似 $P$ 时，信息损失的大小。
 
-$D_{\mathrm{KL}}$ 
-
 ---
 
 ### (2) Jensen–Shannon Divergence (JS 散度)
