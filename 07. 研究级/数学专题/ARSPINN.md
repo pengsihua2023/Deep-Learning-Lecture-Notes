@@ -7,13 +7,13 @@
 
 我们要求解偏微分方程 (PDE)：
 
-\$ \mathcal{N}\[u(\mathbf{x}, t)] = f(\mathbf{x}, t), \quad \mathbf{x} \in \Omega, ; t \in \[0, T] \$
+$ \mathcal{N}\[u(\mathbf{x}, t)] = f(\mathbf{x}, t), \quad \mathbf{x} \in \Omega, ; t \in \[0, T] $
 
 边界条件和初始条件为：
 
-\$ \mathcal{B}\[u(\mathbf{x}, t)] = g(\mathbf{x}, t), \quad \mathbf{x} \in \partial\Omega \$
+$ \mathcal{B}\[u(\mathbf{x}, t)] = g(\mathbf{x}, t), \quad \mathbf{x} \in \partial\Omega $
 
-\$ u(\mathbf{x}, 0) = u\_0(\mathbf{x}) \$
+$ u(\mathbf{x}, 0) = u\_0(\mathbf{x}) $
 
 ---
 
