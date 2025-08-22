@@ -10,7 +10,6 @@
 <img width="850" height="253" alt="image" src="https://github.com/user-attachments/assets/4f07aa2a-dd72-4e95-8543-7f71810d8023" />
 
 ## 数学描述
----
 
 ## 1. 网络结构
 
@@ -22,7 +21,7 @@
 
 在全连接结构中，**每一层的每个神经元都与上一层的所有神经元相连**。
 
----
+
 
 ## 2. 数学符号
 
@@ -52,7 +51,7 @@ $$
 \sigma(\cdot)
 $$
 
----
+
 
 ## 3. 前向传播 (Forward Propagation)
 
@@ -82,7 +81,7 @@ $$
 \hat{\mathbf{y}} = \mathbf{h}^{(L)}
 $$
 
----
+
 
 ## 4. 损失函数 (Loss Function)
 
@@ -100,7 +99,7 @@ $$
 \mathcal{L}(\hat{\mathbf{y}}, \mathbf{y}) = - \sum_{k=1}^K y_k \log \hat{y}_k
 $$
 
----
+
 
 ## 5. 参数更新 (Backpropagation + Gradient Descent)
 
@@ -122,7 +121,7 @@ $$
 
 其中 $\eta$ 为学习率。
 
----
+
 
 ### 总结来说，全连接神经网络可以抽象为：
 
@@ -132,7 +131,7 @@ $$
 
 其中 $\Theta = \{\mathbf{W}^{(l)}, \mathbf{b}^{(l)} \mid l=1,\dots,L\}$ 为模型参数。
 
----
+
 
 ## 代码（pytorch）
 ```
