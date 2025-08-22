@@ -12,8 +12,9 @@ Autoencoder 包含编码器（压缩数据）和解码器（重构数据），�
 
 <img width="1200" height="700" alt="image" src="https://github.com/user-attachments/assets/dbd389b4-042e-44bf-a62f-ef736bbebd89" />  
 
-图1 架构示意图  
-
+$$
+\text{图1 架构示意图}  
+$$
 
 ## 自编码器的数学描述
 
@@ -252,9 +253,15 @@ Train Epoch: 10 [51200/60000 (85%)]     Loss: 69.532722
 
 <img width="960" height="490" alt="image" src="https://github.com/user-attachments/assets/8d28cf45-b977-4de8-a857-d62f8893be0f" />    
 
-图2 loss曲线  
+$$
+\text{图2 loss曲线}
+$$
+
 <img width="274" height="108" alt="image" src="https://github.com/user-attachments/assets/d5769c88-f37c-4d0a-94b9-fb627129abfd" />  
 
+$$
+\text{图3 输入与输出图像比较}
+$$
 
-图3 输入与输出图像比较
+
 
