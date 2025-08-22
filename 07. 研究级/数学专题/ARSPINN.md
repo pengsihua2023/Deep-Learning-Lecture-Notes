@@ -10,9 +10,11 @@ ARSPINN 的核心思想是将 PDE 的总残差损失分解为多个子损失项�
 
 1. **PDE 问题定义**：
    假设我们需要求解一个 PDE 问题：
-   \[
+   
+   $
    \mathcal{N}[u(\mathbf{x}, t)] = f(\mathbf{x}, t), \quad \mathbf{x} \in \Omega, \quad t \in [0, T],
-   \]
+   $
+   
    其中 \(\mathcal{N}\) 是 PDE 的微分算子，\(u(\mathbf{x}, t)\) 是待求解的函数，\(\Omega\) 是计算域，\(f(\mathbf{x}, t)\) 是源项。边界条件和初始条件分别为：
    \[
    \mathcal{B}[u(\mathbf{x}, t)] = g(\mathbf{x}, t), \quad \mathbf{x} \in \partial\Omega,
@@ -21,7 +23,7 @@ ARSPINN 的核心思想是将 PDE 的总残差损失分解为多个子损失项�
    u(\mathbf{x}, 0) = u_0(\mathbf{x}).
    \]
 
-2. **传统 PINN 的损失函数**：
+3. **传统 PINN 的损失函数**：
    在传统 PINN 中，神经网络 \(u_\theta(\mathbf{x}, t)\)（参数为 \(\theta\)）用于逼近 \(u(\mathbf{x}, t)\)，损失函数为：
    \[
    \mathcal{L}(\theta) = \mathcal{L}_{\text{PDE}} + \mathcal{L}_{\text{BC}} + \mathcal{L}_{\text{IC}},
@@ -38,7 +40,7 @@ ARSPINN 的核心思想是将 PDE 的总残差损失分解为多个子损失项�
    \]
    其中 \(N_r\)、\(N_b\)、\(N_0\) 分别是 PDE 残差点、边界点和初始点的数量。
 
-3. **ARSPINN 的残差分割**：
+4. **ARSPINN 的残差分割**：
    ARSPINN 将计算域 \(\Omega\) 分割为 \(K\) 个子域 \(\{\Omega_k\}_{k=1}^K\)，并将 PDE 残差损失分解为：
    \[
    \mathcal{L}_{\text{PDE}} = \sum_{k=1}^K w_k \mathcal{L}_{\text{PDE}, k},
@@ -53,14 +55,14 @@ ARSPINN 的核心思想是将 PDE 的总残差损失分解为多个子损失项�
    \]
    其中 \(\alpha\) 是一个超参数，用于控制权重的敏感性。
 
-4. **总损失函数**：
+5. **总损失函数**：
    ARSPINN 的总损失函数为：
    \[
    \mathcal{L}(\theta) = \sum_{k=1}^K w_k \mathcal{L}_{\text{PDE}, k} + \lambda_b \mathcal{L}_{\text{BC}} + \lambda_0 \mathcal{L}_{\text{IC}},
    \]
    其中 \(\lambda_b\)、\(\lambda_0\) 是边界和初始条件的权重（可固定或自适应）。
 
-5. **自适应分割**：
+6. **自适应分割**：
    - 子域 \(\Omega_k\) 的划分可以基于网格（如均匀网格）或自适应方法（如基于残差梯度的聚类）。
    - 在训练过程中，子域和权重 \(w_k\) 可以动态更新，以聚焦于误差较大的区域。
 
