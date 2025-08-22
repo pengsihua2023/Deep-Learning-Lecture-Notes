@@ -1,0 +1,104 @@
+
+# 散度及其在深度学习中的应用
+
+## 目录
+
+1. [什么是散度？](#1-什么是散度)
+
+   * (1) Kullback–Leibler 散度
+   * (2) Jensen–Shannon 散度
+   * (3) Wasserstein 距离
+2. [散度在深度学习中的应用](#2-散度在深度学习中的应用)
+
+   * (1) 损失函数
+   * (2) 生成模型
+   * (3) 分布匹配
+   * (4) 强化学习
+3. [散度比较](#3-散度比较)
+
+---
+
+## 1. 什么是散度？
+
+在数学和信息论中，**散度** 通常指的是两个概率分布之间的差异度量。
+
+### (1) Kullback–Leibler 散度 (KL Divergence)
+
+离散型：
+
+$D_{\mathrm{KL}}(P \parallel Q) = \sum_x P(x) \log \frac{P(x)}{Q(x)}$
+
+连续型：
+
+$D_{\mathrm{KL}}(P \parallel Q) = \int P(x) \log \frac{P(x)}{Q(x)} \, dx$
+
+---
+
+### (2) Jensen–Shannon 散度 (JS Divergence)
+
+$D_{\mathrm{JS}}(P \Vert Q) = \tfrac{1}{2} D_{\mathrm{KL}}(P \Vert M) + \tfrac{1}{2} D_{\mathrm{KL}}(Q \Vert M), \quad M = \tfrac{1}{2}(P+Q)$
+
+**特点：** 对称、有界。
+
+---
+
+### (3) Wasserstein 距离 (Earth Mover’s Distance)
+
+描述为“将一个分布转化为另一个分布所需的最小搬运代价”。常用于生成对抗网络 (WGAN)。
+
+$W(P, Q) = \inf_{\gamma \in \Pi(P,Q)} \mathbb{E}_{(x,y) \sim \gamma} \big[ \lVert x - y \rVert \big]$
+
+---
+
+## 2. 散度在深度学习中的应用
+
+### (1) 损失函数
+
+交叉熵损失：
+
+$H(P,Q) = H(P) + D_{\mathrm{KL}}(P \parallel Q)$
+
+---
+
+### (2) 生成模型
+
+**变分自编码器 (VAE)：**
+
+$\mathcal{L}_{VAE} = \mathbb{E}_{q_\phi(z \mid x)} \left[ \log p_\theta(x \mid z) \right] - D_{\mathrm{KL}}\!\left( q_\phi(z \mid x) \,\Vert\, p(z) \right)$
+
+**生成对抗网络 (GAN)：**
+
+* 原始 GAN：最小化 JS 散度
+* WGAN：最小化 Wasserstein 距离
+
+---
+
+### (3) 分布匹配
+
+知识蒸馏 (Knowledge Distillation)：
+
+$\min_\theta D_{\mathrm{KL}}(P \parallel Q)$
+
+其中 \$P\$ 是教师分布，\$Q\$ 是学生分布。
+
+---
+
+### (4) 强化学习
+
+在策略优化方法（如 TRPO、PPO）中，KL 散度常用于约束新旧策略的差异：
+
+$D_{\mathrm{KL}}(\pi_{\text{old}} \parallel \pi_{\text{new}}) \leq \delta$
+
+---
+
+## 3. 散度比较
+
+| 散度                        | 公式                                                                                                                                                 | 特性                       | 优点               | 缺点                                | 应用                   |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ---------------- | --------------------------------- | -------------------- |
+| **Kullback–Leibler (KL)** | $D_{\mathrm{KL}}(P \,\Vert\, Q) = \sum_x P(x)\log\frac{P(x)}{Q(x)}$                                                                                | 非负、不对称；当 $P=Q$ 时为 0      | 直观、易于计算；与交叉熵紧密相关 | 如果 $Q(x)=0$ 且 $P(x)>0$，结果为无穷大；不对称 | 分类任务（交叉熵损失）、VAE、知识蒸馏 |
+| **Jensen–Shannon (JS)**   | $D_{\mathrm{JS}}(P \,\Vert\, Q) = \tfrac{1}{2}D_{\mathrm{KL}}(P \,\Vert\, M) + \tfrac{1}{2}D_{\mathrm{KL}}(Q \,\Vert\, M), \; M=\tfrac{1}{2}(P+Q)$ | 对称、有界（在 0 和 $\log 2$ 之间） | 对称性好、稳定性强        | 当分布无重叠时，梯度消失                      | 原始 GAN               |
+| **Wasserstein 距离**        | $W(P,Q)=\inf_{\gamma \in \Pi(P,Q)} \mathbb{E}_{(x,y)\sim\gamma}\left[\lVert x-y\rVert\right]$                                                      | 满足度量性质；反映分布的几何差异         | 即使分布不重叠也能提供平滑梯度  | 计算复杂，需要最优传输理论                     | WGAN、分布对齐            |
+
+---
+
+
