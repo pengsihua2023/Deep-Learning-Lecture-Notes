@@ -22,18 +22,16 @@ George Em Karniadakis
 
 设 PDE 为：
 
-$$
-\mathcal{N}[u](x,t) = 0, \quad (x,t)\in \Omega,
-$$
+![equation](https://latex.codecogs.com/png.latex?%5Cmathcal%7BN%7D%5Bu%5D(x%2Ct)%3D0%2C%20%5Cquad%20(x%2Ct)%5Cin%20%5COmega)
+
 
 其中 $\mathcal{N}$ 是微分算子。
 
 * 神经网络：用 $u_\theta(x,t)$（参数 $\theta$）近似解。
 * 残差定义：
 
-$$
-r_\theta(x,t) = \mathcal{N}[u_\theta](x,t).
-$$
+![equation](https://latex.codecogs.com/png.latex?r_%5Ctheta(x%2Ct)%20%3D%20%5Cmathcal%7BN%7D%5Bu_%5Ctheta%5D(x%2Ct))
+
 
 * 损失函数：
 
