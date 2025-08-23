@@ -7,6 +7,10 @@ $$
 $$
 
 $$
+\mathbb{E}_{q_\phi(z \mid x)}[\cdot]
+$$
+
+$$
 \mathbb{E}_{(z \mid x)}[\cdot]
 $$
 
