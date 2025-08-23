@@ -100,13 +100,6 @@ $$
 
 ---
 
-# 总结
-
-一个典型 CNN 前向传播过程可以写作：
-
-$$
-\mathbf{X} \xrightarrow{\text{Conv+Bias}} \mathbf{Y} \xrightarrow{\text{Activation}} \mathbf{Z} \xrightarrow{\text{Pooling}} \mathbf{P} \xrightarrow{\cdots} \mathbf{x} \xrightarrow{\text{Fully Connected}} \mathbf{y} \xrightarrow{\text{Softmax}} \hat{\mathbf{y}}
-$$
 
 ---
 
