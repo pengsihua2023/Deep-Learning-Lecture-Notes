@@ -1,7 +1,8 @@
 <img width="250" height="256" alt="image" src="https://github.com/user-attachments/assets/2c60b75d-afda-4300-aabb-3d47ad562fcb" />
-Maziar Raissi
+  
+Maziar Raissi 
 
-<img width="614" height="614" alt="image" src="https://github.com/user-attachments/assets/ed51a778-660f-4ebc-9a96-ef4cb5180f95" />  
+<img width="614" height="614" alt="image" src="https://github.com/user-attachments/assets/ed51a778-660f-4ebc-9a96-ef4cb5180f95" />    
   
 George Em Karniadakis
 
