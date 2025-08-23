@@ -27,14 +27,6 @@ PINN（Physics-Informed Neural Networks）相关的库和框架主要集中在�
 * **JAX-based PINN 实现**
   一些前沿研究在 JAX 上实现 PINN，利用其自动微分和 GPU/TPU 并行优势。
 
-### 其他科研工具
-
-* **FEniCS + PINN 混合方法**
-  把传统有限元方法和 PINN 结合起来的库。
-
-* **TensorFlow PINN 实现（TFPINN）**
-  社区的一些参考实现，适合入门学习。
-
 ---
 下面这份对比表把常见 PINN 相关库按**语言/后端、擅长领域、几何与方程支持、易用性与生态**做了横向整理，便于选型。
 
