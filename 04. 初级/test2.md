@@ -1,6 +1,6 @@
 ### Jupyter Notebook JSON内容
 
-```json
+```python
 {
  "cells": [
   {
@@ -29,4 +29,4 @@
  "nbformat": 4,
  "nbformat_minor": 4
 }
-
+```
