@@ -13,7 +13,7 @@ PINN（Physics-Informed Neural Networks）相关的库和框架主要集中在�
 
 * **SciANN**
   基于 Keras 的 PINN 库，适合快速原型，主要用于 PDE/ODE 求解。
-  [SciANN GitHub](https://github.com/sciann/sciann)
+  [SciANN GitHub](https://github.com/ehsanhaghighat/sciann)
 
 * **NeuralPDE (Julia)**
   Julia 语言中的 PINN 框架，集成在 SciML 生态下，适合科研和数值计算。
