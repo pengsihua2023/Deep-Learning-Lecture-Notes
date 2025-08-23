@@ -1,52 +1,8 @@
-
-import pypandoc
-
-# 修正后的 Markdown 内容（GitHub 可正确渲染公式）
-markdown_text_fixed = """
-# 常见范数总结
-
-## 1. $L_1$ 范数（曼哈顿范数）
-$$
-\|x\|_1 = \sum_{i=1}^n |x_i|
-$$
-表示向量各分量绝对值之和。
-
----
-
-## 2. $L_2$ 范数（欧几里得范数）
-$$
+内联公式：$\|x\|_1 = \sum_{i=1}^n |x_i|$
+块级公式：
+$$  
 \|x\|_2 = \sqrt{\sum_{i=1}^n x_i^2}
-$$
-表示向量在欧几里得空间中的几何长度。
-
----
-
-## 3. $L_\\infty$ 范数（最大范数）
-$$
-\|x\|_\infty = \max_i |x_i|
-$$
-表示向量分量的最大绝对值。
-
----
-
-## 4. $L_0$ 范数（非标准范数）
-$$
-\|x\|_0 = \sum_{i=1}^n 1(x_i \neq 0)
-$$
-表示向量中非零元素的个数（严格来说不是范数，因为不满足绝对齐次性）。
-
----
-
-## 5. 矩阵范数（以 Frobenius 范数为例）
-对于矩阵 $A \in \mathbb{R}^{m \times n}$：  
-$$
-\|A\|_F = \sqrt{\sum_{i=1}^m \sum_{j=1}^n |a_{ij}|^2}
-$$
-表示矩阵所有元素的平方和开根号。
-"""
-
-# 导出新的 Markdown 文件
-output_file_fixed = "/mnt/data/norms_summary_fixed.md"
-pypandoc.convert_text(markdown_text_fixed, 'md', format='md', outputfile=output_file_fixed, extra_args=['--standalone'])
-
-output_file_fixed
+  $$
+或：
+```math
+\|x\|_2 = \sqrt{\sum_{i=1}^n x_i^2}
