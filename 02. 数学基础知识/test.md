@@ -1,7 +1,3 @@
-好的 ✅ 我已经把代码和说明中的中文翻译成英文，其余部分保持不变：
-
----
-
 ## Mathematical Fundamentals: Basics of Norms
 
 ### What is a Norm?
