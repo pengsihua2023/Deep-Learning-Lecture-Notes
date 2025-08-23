@@ -1,45 +1,116 @@
-$\mathbb{E}_ {q_\phi(z \mid x)}[\cdot]$：在编码器分布 $q_\phi(z \mid x)$ 下的期望； 
-
-
-
-$$
-\mathbb{E}_ {q_{\phi}(z \mid x)}[\cdot]
-$$
-
-$$
-\mathbb{E}_{(z \mid x)}[\cdot]
-$$
-
-### (1) Kullback–Leibler Divergence (KL 散度)
-
-* **$P(x)$**：真实分布（target / data distribution），表示在事件 $x$ 上的真实概率。
-* **$Q(x)$**：近似分布或模型分布（approximation / model distribution），表示在事件 $x$ 上模型的估计概率。
-* **解释**： $D_{\mathrm{KL}}(P\|Q)$ 衡量在用 $Q$ 来近似 $P$ 时，信息损失的大小。
+好的，我来写出卷积神经网络（CNN）的数学描述。
 
 ---
 
-### (2) Jensen–Shannon Divergence (JS 散度)
+# 卷积神经网络（CNN）的数学描述
 
-* **$P, Q$**：两个概率分布。
-* **$M = \frac{1}{2}(P+Q)$**：混合分布，即对两个分布取平均。
-* **解释**：JS 散度是基于 KL 散度的对称化版本，保证了**对称性**（即 $D_{JS}(P\|Q) = D_{JS}(Q\|P)$）和**有界性**（取值在 \[0, 1] 之间，若使用 log base 2）。
+CNN 的核心由以下几个基本运算组成：**卷积层（Convolutional Layer）**、**非线性激活函数（Activation Function）**、**池化层（Pooling Layer）**，以及最后的 **全连接层（Fully Connected Layer）**。我们逐一描述。
 
 ---
 
-### (3) Wasserstein Distance (Earth Mover’s Distance, EMD)
+## 1. 卷积层（Convolutional Layer）
 
-* **$P, Q$**：两个概率分布。
-* **$\Pi(P, Q)$**：所有可能的联合分布（couplings），边缘分布分别为 $P$ 和 $Q$。
-* **$E(x,y) \sim \gamma$**：表示在联合分布 $\gamma$ 下的期望。
-* **$\|x-y\|$**：从点 $x$ 移动到点 $y$ 的“距离”（通常是欧氏距离）。
-* **解释**：Wasserstein 距离衡量将一个分布“搬运”成另一个分布所需的最小代价。
+设输入特征图为
+
+$$
+\mathbf{X} \in \mathbb{R}^{H \times W \times C_{in}}
+$$
+
+其中 $H$ 是高度，$W$ 是宽度，$C_{in}$ 是输入通道数。
+
+卷积核（滤波器）为
+
+$$
+\mathbf{K} \in \mathbb{R}^{k_h \times k_w \times C_{in} \times C_{out}}
+$$
+
+其中 $k_h, k_w$ 为卷积核大小，$C_{out}$ 为输出通道数。
+
+卷积运算定义为：
+
+$$
+Y_{i,j,c_{out}} = \sum_{m=0}^{k_h-1} \sum_{n=0}^{k_w-1} \sum_{c_{in}=0}^{C_{in}-1} 
+X_{i+m, j+n, c_{in}} \cdot K_{m,n,c_{in},c_{out}} + b_{c_{out}}
+$$
+
+其中 $b_{c_{out}}$ 是偏置项。输出特征图为
+
+$$
+\mathbf{Y} \in \mathbb{R}^{H' \times W' \times C_{out}}
+$$
+
+具体尺寸取决于步幅（stride）和填充（padding）。
 
 ---
 
-👉 简单总结：
+## 2. 激活函数（Activation Function）
 
-* **KL 散度**：不对称，衡量分布差异，常用于信息论与概率建模。
-* **JS 散度**：对称化后的 KL 散度，常用于比较两个分布的相似性。
-* **Wasserstein 距离**：考虑“搬运代价”的分布差异度量，常用于生成对抗网络（WGAN）。
+常用激活函数为 ReLU（线性整流单元）：
+
+$$
+f(z) = \max(0, z)
+$$
+
+应用到卷积输出：
+
+$$
+Z_{i,j,c} = f(Y_{i,j,c})
+$$
+
+---
+
+## 3. 池化层（Pooling Layer）
+
+池化操作用于降低特征图尺寸。
+以最大池化（Max Pooling）为例：
+
+$$
+P_{i,j,c} = \max_{0 \leq m < p_h, \; 0 \leq n < p_w} Z_{i \cdot s + m, \; j \cdot s + n, \; c}
+$$
+
+其中 $p_h, p_w$ 为池化窗口大小，$s$ 为步幅。
+
+---
+
+## 4. 全连接层（Fully Connected Layer）
+
+经过若干层卷积和池化后，得到展平的特征向量：
+
+$$
+\mathbf{x} \in \mathbb{R}^d
+$$
+
+全连接层输出为：
+
+$$
+\mathbf{y} = W \mathbf{x} + \mathbf{b}
+$$
+
+其中 $W \in \mathbb{R}^{k \times d}$，$\mathbf{b} \in \mathbb{R}^k$。
+
+---
+
+## 5. 分类层（Softmax）
+
+在分类任务中，最后通过 Softmax 输出概率分布：
+
+$$
+\hat{y}_i = \frac{\exp(y_i)}{\sum_{j=1}^k \exp(y_j)}
+$$
+
+---
+
+# 总结
+
+一个典型 CNN 前向传播过程可以写作：
+
+$$
+\mathbf{X} \xrightarrow{\text{Conv+Bias}} \mathbf{Y} \xrightarrow{\text{Activation}} \mathbf{Z} \xrightarrow{\text{Pooling}} \mathbf{P} \xrightarrow{\cdots} \mathbf{x} \xrightarrow{\text{Fully Connected}} \mathbf{y} \xrightarrow{\text{Softmax}} \hat{\mathbf{y}}
+$$
+
+---
+
+
+
 
 
