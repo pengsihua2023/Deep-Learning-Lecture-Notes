@@ -1,78 +1,103 @@
+好的，我已将中文部分翻译成英文，其余保持不变：
 
 ---
 
-自编码器的数学描述
+## Mathematical Description of Convolutional Neural Networks (CNN)
 
-### 基本结构
+The core of CNNs consists of the following basic operations: **Convolutional Layer**, **Activation Function**, **Pooling Layer**, and finally the **Fully Connected Layer**. Let’s describe them one by one.
 
-自编码器由编码器和解码器组成：
+---
 
-* **编码器**: 将输入 \$x \in \mathbb{R}^d\$ 映射到低维潜在表示 \$z \in \mathbb{R}^m\$ （通常 \$m < d\$）。
-* **解码器**: 将 \$z\$ 重构为输出 \$\hat{x} \in \mathbb{R}^d\$，目标是 \$\hat{x} \approx x\$。
+### 1. Convolutional Layer
 
-### 2. 数学表达式
-
-* **编码**: \$z = f(x)\$
-* **解码**: \$\hat{x} = g(z) = g(f(x))\$
-* **损失函数**: 最小化重构误差，通常为均方误差 (MSE)：
+Input feature map:
 
 $$
-\mathcal{L}(x,\hat{x})=\lVert x-\hat{x}\rVert_2^2
-=\frac{1}{n}\sum_{i=1}^{n}\bigl(x_i-\hat{x}_i\bigr)^2
+\mathbf{X} \in \mathbb{R}^{H \times W \times C_{in}}
 $$
 
-其中，\$n\$ 是样本数，\$x\_i\$ 和 \$\hat{x}\_i\$ 分别是输入和重构输出的第 \$i\$ 个元素。
+where \$H\$ is the height, \$W\$ is the width, and \$C\_{in}\$ is the number of input channels.
 
----
-
-### 3. 参数化
-
-* **编码器**: \$f(x) = \sigma(W\_e x + b\_e)\$
-
-  * \$W\_e \in \mathbb{R}^{m \times d},\ b\_e \in \mathbb{R}^m\$，\$\sigma\$ 是激活函数（如 ReLU、Sigmoid）。
-
-* **解码器**: \$g(z) = \sigma'(W\_d z + b\_d)\$
-
-  * \$W\_d \in \mathbb{R}^{d \times m}, b\_d \in \mathbb{R}^d\$，\$\sigma'\$ 是激活函数。
-
-* **优化**: 通过梯度下降调整参数 \$\theta = {W\_e, b\_e, W\_d, b\_d}\$ 来最小化 \$\mathcal{L}\$。
-
----
-
-### 4. 正则化变体
-
-* 稀疏自编码器：增加稀疏性惩罚以鼓励 \$z\$ 中更少的神经元激活。
-
-* 损失函数：
-
-  $\mathcal{L}_{\text{sparse}} = \mathcal{L}(x, \hat{x}) + \lambda \sum_j \text{KL}(\rho \parallel \hat{\rho}_j)$
-
-  * KL 为 Kullback–Leibler 散度。
-  * \$\rho\$ 是目标稀疏度。
-  * \$\hat{\rho}\_j\$ 是第 \$j\$ 个神经元的平均激活值。
-  * \$\lambda\$ 是正则化系数。
-
-- **去噪自编码器**: 在输入中添加噪声 \$\tilde{x} = x + \epsilon\$ （例如 $\epsilon \sim \mathcal{N}(0, \sigma^2)$），并优化：
-
-  $\mathcal{L}(x, g(f(\tilde{x})))$
-
----
-
-### 5. 优化
-
-通过反向传播进行优化：
+Convolution kernel (filter):
 
 $$
-\theta^{*} = \arg \min_{\theta} \frac{1}{n} \sum_{i=1}^{n} \mathcal{L}\bigl(x_i, g(f(x_i))\bigr)
+\mathbf{K} \in \mathbb{R}^{k_h \times k_w \times C_{in} \times C_{out}}
+$$
+
+where \$k\_h, k\_w\$ are the kernel sizes, and \$C\_{out}\$ is the number of output channels.
+
+The convolution operation is defined as:
+
+$$
+Y_{i,j,c_{out}} = \sum_{m=0}^{k_h-1} \sum_{n=0}^{k_w-1} \sum_{c_{in}=0}^{C_{in}-1} 
+X_{i+m, j+n, c_{in}} \cdot K_{m,n,c_{in},c_{out}} + b_{c_{out}}
+$$
+
+where \$b\_{c\_{out}}\$ is the bias term. The output feature map is:
+
+$$
+\mathbf{Y} \in \mathbb{R}^{H' \times W' \times C_{out}}
+$$
+
+The exact size depends on stride and padding.
+
+---
+
+### 2. Activation Function
+
+A commonly used activation function is ReLU (Rectified Linear Unit):
+
+$$
+f(z) = \max(0, z)
+$$
+
+Applied to the convolution output:
+
+$$
+Z_{i,j,c} = f(Y_{i,j,c})
 $$
 
 ---
 
-### 6. 应用
+### 3. Pooling Layer
 
-* **降维**: \$z\$ 用于特征提取或数据压缩。
-* **去噪**: 从 \$\tilde{x}\$ 恢复 \$x\$。
-* **异常检测**: 重构误差大的样本可能为异常点。
+Pooling is used to reduce the feature map size.
+For example, max pooling:
+
+$$
+P_{i,j,c} = \max_{0 \leq m < p_h, \; 0 \leq n < p_w} Z_{i \cdot s + m, \; j \cdot s + n, \; c}
+$$
+
+where \$p\_h, p\_w\$ are the pooling window sizes, and \$s\$ is the stride.
 
 ---
+
+### 4. Fully Connected Layer
+
+After several convolution and pooling layers, we obtain a flattened feature vector:
+
+$$
+\mathbf{x} \in \mathbb{R}^d
+$$
+
+The fully connected layer output is:
+
+$$
+\mathbf{y} = W \mathbf{x} + \mathbf{b}
+$$
+
+where \$W \in \mathbb{R}^{k \times d}\$, \$\mathbf{b} \in \mathbb{R}^k\$.
+
+---
+
+### 5. Classification Layer (Softmax)
+
+For classification tasks, the final output is passed through Softmax to produce a probability distribution:
+
+![Softmax Formula](https://latex.codecogs.com/png.latex?\hat{y}_i%20=%20\frac{\exp\(y_i\)}{\sum_{j=1}^{k}%20\exp\(y_j\)})
+
+---
+
+要不要我帮你把这些公式和说明整理成 **LaTeX 文档（.tex 文件）**，方便直接编译成 PDF？
+
 
