@@ -7,7 +7,7 @@ $$
 $$
 
 $$
-\mathbb{E}_{(z \mid x)}
+\mathbb{E}_{(z \mid x)}[\cdot]
 $$
 
 ### (1) Kullback–Leibler Divergence (KL 散度)
