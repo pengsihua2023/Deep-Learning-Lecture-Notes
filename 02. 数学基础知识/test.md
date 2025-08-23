@@ -2,9 +2,7 @@ $\mathbb{E}_{q_\phi(z \mid x)}[\cdot]$：在编码器分布 $q_\phi(z \mid x)$ �
 
 $\mathbb{E}_{q_\phi(z \mid x)}[\cdot]$
 
-$$
-\mathbb{E}_{q_\phi(z \mid x)}[\cdot]
-$$
+![equation](https://latex.codecogs.com/svg.latex?\mathbb{E}_{q_\phi(z \mid x)}[\cdot])
 
 $$
 \mathbb{E}_{q_\phi(z \mid x)}[\cdot]
