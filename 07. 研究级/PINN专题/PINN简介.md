@@ -13,15 +13,18 @@ George Em Karniadakis
 
 这样，PINN 既利用了数据驱动的优势，又融入了物理约束，能在数据稀缺或噪声较大时获得更可靠的解。
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/57ad1148-b71b-4291-aabb-0a4589f89ce0" />
+
+
 ---
 
 ## 1. PINN 的基本思想
 
 设 PDE 为：
 
----math
+$$
 \mathcal{N}[u](x,t) = 0, \quad (x,t)\in \Omega,
-```
+$$
 
 其中 $\mathcal{N}$ 是微分算子。
 
