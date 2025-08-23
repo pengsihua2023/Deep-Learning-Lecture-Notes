@@ -1,4 +1,4 @@
-好的，我已将中文部分翻译成英文，其余保持不变：
+
 
 ---
 
@@ -98,6 +98,6 @@ For classification tasks, the final output is passed through Softmax to produce 
 
 ---
 
-要不要我帮你把这些公式和说明整理成 **LaTeX 文档（.tex 文件）**，方便直接编译成 PDF？
+
 
 
