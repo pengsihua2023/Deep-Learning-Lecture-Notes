@@ -1,103 +1,101 @@
-
-
----
-
-## Mathematical Description of Convolutional Neural Networks (CNN)
-
-The core of CNNs consists of the following basic operations: **Convolutional Layer**, **Activation Function**, **Pooling Layer**, and finally the **Fully Connected Layer**. Let’s describe them one by one.
-
----
-
-### 1. Convolutional Layer
-
-Input feature map:
-
-$$
-\mathbf{X} \in \mathbb{R}^{H \times W \times C_{in}}
-$$
-
-where \$H\$ is the height, \$W\$ is the width, and \$C\_{in}\$ is the number of input channels.
-
-Convolution kernel (filter):
-
-$$
-\mathbf{K} \in \mathbb{R}^{k_h \times k_w \times C_{in} \times C_{out}}
-$$
-
-where \$k\_h, k\_w\$ are the kernel sizes, and \$C\_{out}\$ is the number of output channels.
-
-The convolution operation is defined as:
-
-$$
-Y_{i,j,c_{out}} = \sum_{m=0}^{k_h-1} \sum_{n=0}^{k_w-1} \sum_{c_{in}=0}^{C_{in}-1} 
-X_{i+m, j+n, c_{in}} \cdot K_{m,n,c_{in},c_{out}} + b_{c_{out}}
-$$
-
-where \$b\_{c\_{out}}\$ is the bias term. The output feature map is:
-
-$$
-\mathbf{Y} \in \mathbb{R}^{H' \times W' \times C_{out}}
-$$
-
-The exact size depends on stride and padding.
-
----
-
-### 2. Activation Function
-
-A commonly used activation function is ReLU (Rectified Linear Unit):
-
-$$
-f(z) = \max(0, z)
-$$
-
-Applied to the convolution output:
-
-$$
-Z_{i,j,c} = f(Y_{i,j,c})
-$$
-
----
-
-### 3. Pooling Layer
-
-Pooling is used to reduce the feature map size.
-For example, max pooling:
-
-$$
-P_{i,j,c} = \max_{0 \leq m < p_h, \; 0 \leq n < p_w} Z_{i \cdot s + m, \; j \cdot s + n, \; c}
-$$
-
-where \$p\_h, p\_w\$ are the pooling window sizes, and \$s\$ is the stride.
-
----
-
-### 4. Fully Connected Layer
-
-After several convolution and pooling layers, we obtain a flattened feature vector:
-
-$$
-\mathbf{x} \in \mathbb{R}^d
-$$
-
-The fully connected layer output is:
-
-$$
-\mathbf{y} = W \mathbf{x} + \mathbf{b}
-$$
-
-where \$W \in \mathbb{R}^{k \times d}\$, \$\mathbf{b} \in \mathbb{R}^k\$.
-
----
-
-### 5. Classification Layer (Softmax)
-
-For classification tasks, the final output is passed through Softmax to produce a probability distribution:
-
-![Softmax Formula](https://latex.codecogs.com/png.latex?\hat{y}_i%20=%20\frac{\exp\(y_i\)}{\sum_{j=1}^{k}%20\exp\(y_j\)})
-
----
-
-
-
-
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "56c658d9",
+   "metadata": {},
+   "source": [
+    "\n",
+    "# 卷积神经网络（CNN）的数学描述\n",
+    "\n",
+    "卷积神经网络（Convolutional Neural Network, **CNN**）是一类常用于处理图像、时序等具有局部相关性的深度学习模型。它的数学描述可以从 **卷积层、激活函数、池化层、全连接层** 逐步构建。\n",
+    "\n",
+    "---\n",
+    "\n",
+    "## 1. 卷积运算（Convolution）\n",
+    "对于输入张量 $X \\in \\mathbb{R}^{H \\times W \\times C_{in}}$（高度 $H$、宽度 $W$、通道数 $C_{in}$），卷积核（滤波器） $K \\in \\mathbb{R}^{k_h \\times k_w \\times C_{in}}$，输出特征图的某一通道 $Y_{ij}$ 定义为：\n",
+    "\n",
+    "$$\n",
+    "Y_{ij} = \\sum_{m=1}^{k_h}\\sum_{n=1}^{k_w}\\sum_{c=1}^{C_{in}} K_{mnc}\\, X_{(i+m-1)(j+n-1)c} + b\n",
+    "$$\n",
+    "\n",
+    "其中：\n",
+    "- $k_h, k_w$：卷积核的高和宽。  \n",
+    "- $b$：偏置项。  \n",
+    "- $i,j$：输出特征图的位置索引。  \n",
+    "\n",
+    "若有多个卷积核（数量为 $C_{out}$），则输出特征图维度为  \n",
+    "$$\n",
+    "Y \\in \\mathbb{R}^{H' \\times W' \\times C_{out}}\n",
+    "$$  \n",
+    "其中 $H', W'$ 由步幅（stride, $s$）和填充（padding, $p$）决定：  \n",
+    "$$\n",
+    "H' = \\frac{H - k_h + 2p}{s} + 1,\\quad W' = \\frac{W - k_w + 2p}{s} + 1\n",
+    "$$\n",
+    "\n",
+    "---\n",
+    "\n",
+    "## 2. 激活函数（Activation）\n",
+    "卷积层输出经过非线性变换：\n",
+    "$$\n",
+    "Z_{ij}^{(c)} = \\sigma(Y_{ij}^{(c)})\n",
+    "$$\n",
+    "\n",
+    "常见的 $\\sigma(\\cdot)$：  \n",
+    "- ReLU: $\\sigma(x) = \\max(0, x)$  \n",
+    "- Sigmoid: $\\sigma(x) = \\frac{1}{1 + e^{-x}}$  \n",
+    "- Tanh: $\\tanh(x) = \\frac{e^x - e^{-x}}{e^x + e^{-x}}$  \n",
+    "\n",
+    "---\n",
+    "\n",
+    "## 3. 池化层（Pooling）\n",
+    "用于下采样，减少计算量并提取主要特征。  \n",
+    "\n",
+    "常见最大池化（Max Pooling）：  \n",
+    "$$\n",
+    "P_{ij} = \\max_{(m,n) \\in \\Omega_{ij}} Z_{mn}\n",
+    "$$\n",
+    "\n",
+    "其中 $\\Omega_{ij}$ 表示以 $(i,j)$ 为中心的池化窗口区域。  \n",
+    "\n",
+    "平均池化（Average Pooling）：  \n",
+    "$$\n",
+    "P_{ij} = \\frac{1}{|\\Omega_{ij}|} \\sum_{(m,n)\\in\\Omega_{ij}} Z_{mn}\n",
+    "$$\n",
+    "\n",
+    "---\n",
+    "\n",
+    "## 4. 全连接层（Fully Connected, FC）\n",
+    "将特征图展平成向量 $x \\in \\mathbb{R}^d$，经过仿射变换：\n",
+    "$$\n",
+    "h = W x + b\n",
+    "$$\n",
+    "\n",
+    "其中 $W \\in \\mathbb{R}^{k \\times d}, b \\in \\mathbb{R}^k$。  \n",
+    "\n",
+    "输出层通常接 softmax（用于分类问题）：  \n",
+    "$$\n",
+    "\\hat{y}_i = \\frac{e^{h_i}}{\\sum_{j=1}^k e^{h_j}}\n",
+    "$$\n",
+    "\n",
+    "---\n",
+    "\n",
+    "## 5. CNN 整体结构\n",
+    "一个典型 CNN 的前向传播可表述为：\n",
+    "$$\n",
+    "X \\xrightarrow{\\text{Conv+ReLU}} Z_1 \\xrightarrow{\\text{Pooling}} P_1 \n",
+    "\\xrightarrow{\\text{Conv+ReLU}} Z_2 \\xrightarrow{\\text{Pooling}} P_2 \n",
+    "\\xrightarrow{\\text{Flatten}} x \\xrightarrow{\\text{FC+Softmax}} \\hat{y}\n",
+    "$$\n",
+    "\n",
+    "---\n",
+    "\n",
+    "✅ 总结：  \n",
+    "CNN 的数学描述核心是 **卷积（局部加权求和）、激活（非线性变换）、池化（降采样）、全连接层（全局映射）**，最终形成端到端的分类或回归模型。\n"
+   ]
+  }
+ ],
+ "metadata": {},
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
