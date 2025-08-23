@@ -8,9 +8,7 @@ $$
 
 解析解：$u^\*(x)=\cos x$。
 
-```math
-u^\*(x)=\cos x
----
+
 
 
 ```python
