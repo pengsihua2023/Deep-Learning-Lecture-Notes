@@ -1,4 +1,4 @@
-$\mathbb{E}_{q_\phi(z \mid x)}[\cdot]$：在编码器分布 $q_\phi(z \mid x)$ 下的期望； 
+$\mathbb{E}_ {q_\phi(z \mid x)}[\cdot]$：在编码器分布 $q_\phi(z \mid x)$ 下的期望； 
 
 
 
