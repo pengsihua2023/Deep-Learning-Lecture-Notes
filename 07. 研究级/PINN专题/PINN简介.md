@@ -44,6 +44,9 @@ $$
 + \underbrace{\frac{1}{N_d}\sum |u_\theta(x_d,t_d)-u^\text{obs}|^2}_{\text{观测数据 (可选)}}.
 $$
 
+
+
+
 训练就是优化神经网络参数 $\theta$，让解尽可能同时满足物理规律与数据约束。
 
 ---
