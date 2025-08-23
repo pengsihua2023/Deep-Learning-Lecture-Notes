@@ -17,7 +17,7 @@ ${\|x\|}_1 = sum_{i=1}^n |x_i|$
 
 
 $$
-\|x\|_2 = \sqrt\textnormal{{}\sum_{i=1}^n x_i^2}
+\|x\|_2 = \sum_{i=1}^n x_i^2}
 $$
 
 
