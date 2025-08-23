@@ -112,5 +112,5 @@ ${\frac{\exp(y_i)}{\sum_{j=1}^k \exp(y_j)}}$
 
 $$ \hat{y}_i = \frac{\exp(y_i)}{\sum_{j=1}^{k} \exp(y_j)} $$
 
-
+![Softmax 公式](https://latex.codecogs.com/png.latex?\hat{y}_i%20=%20\frac{\exp(y_i)}{\sum_{j=1}^{k}%20\exp(y_j)})
 
