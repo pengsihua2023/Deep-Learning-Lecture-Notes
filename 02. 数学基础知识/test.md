@@ -7,7 +7,7 @@ $$
 $$
 
 $$
-\mathbb{E}_{q_{\phi}(z \mid x)}[\cdot]
+\mathbb{E}_ {{q_{\phi}(z \mid x)}[\cdot]
 $$
 
 $$
