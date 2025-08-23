@@ -7,6 +7,7 @@ $$
 $$
 
 
+
 ### (1) Kullback–Leibler Divergence (KL 散度)
 
 * **$P(x)$**：真实分布（target / data distribution），表示在事件 $x$ 上的真实概率。
