@@ -1,97 +1,38 @@
----
-
-# 卷积神经网络（CNN）的数学描述
-
-CNN 的核心由以下几个基本运算组成：**卷积层（Convolutional Layer）**、**非线性激活函数（Activation Function）**、**池化层（Pooling Layer）**，以及最后的 **全连接层（Fully Connected Layer）**。我们逐一描述。
-
----
-
-## 1. 卷积层（Convolutional Layer）
-
-设输入特征图为
-
+## 1. $L_1$ 范数（曼哈顿范数）
 $$
-\mathbf{X} \in \mathbb{R}^{H \times W \times C_{in}}
+\|x\|_1 = \sum_{i=1}^n |x_i|
 $$
-
-其中 $H$ 是高度，$W$ 是宽度，$C_{in}$ 是输入通道数。
-
-卷积核（滤波器）为
-
-$$
-\mathbf{K} \in \mathbb{R}^{k_h \times k_w \times C_{in} \times C_{out}}
-$$
-
-其中 $k_h, k_w$ 为卷积核大小，$C_{out}$ 为输出通道数。
-
-卷积运算定义为：
-
-$$
-Y_{i,j,c_{out}} = \sum_{m=0}^{k_h-1} \sum_{n=0}^{k_w-1} \sum_{c_{in}=0}^{C_{in}-1} 
-X_{i+m, j+n, c_{in}} \cdot K_{m,n,c_{in},c_{out}} + b_{c_{out}}
-$$
-
-其中 $b_{c_{out}}$ 是偏置项。输出特征图为
-
-$$
-\mathbf{Y} \in \mathbb{R}^{H' \times W' \times C_{out}}
-$$
-
-具体尺寸取决于步幅（stride）和填充（padding）。
+表示向量各分量绝对值之和。
 
 ---
 
-## 2. 激活函数（Activation Function）
-
-常用激活函数为 ReLU（线性整流单元）：
-
+## 2. $L_2$ 范数（欧几里得范数）
 $$
-f(z) = \max(0, z)
+\|x\|_2 = \sqrt{\sum_{i=1}^n x_i^2}
 $$
-
-应用到卷积输出：
-
-$$
-Z_{i,j,c} = f(Y_{i,j,c})
-$$
+表示向量在欧几里得空间中的几何长度。
 
 ---
 
-## 3. 池化层（Pooling Layer）
-
-池化操作用于降低特征图尺寸。
-以最大池化（Max Pooling）为例：
-
+## 3. $L_\\infty$ 范数（最大范数）
 $$
-P_{i,j,c} = \max_{0 \leq m < p_h, \; 0 \leq n < p_w} Z_{i \cdot s + m, \; j \cdot s + n, \; c}
+\|x\|_\infty = \max_i |x_i|
 $$
-
-其中 $p_h, p_w$ 为池化窗口大小，$s$ 为步幅。
+表示向量分量的最大绝对值。
 
 ---
 
-## 4. 全连接层（Fully Connected Layer）
-
-经过若干层卷积和池化后，得到展平的特征向量：
-
+## 4. $L_0$ 范数（非标准范数）
 $$
-\mathbf{x} \in \mathbb{R}^d
+\|x\|_0 = \sum_{i=1}^n 1(x_i \neq 0)
 $$
-
-全连接层输出为：
-
-$$
-\mathbf{y} = W \mathbf{x} + \mathbf{b}
-$$
-
-其中 $W \in \mathbb{R}^{k \times d}$，$\mathbf{b} \in \mathbb{R}^k$。
+表示向量中非零元素的个数（严格来说不是范数，因为不满足绝对齐次性）。
 
 ---
 
-## 5. 分类层（Softmax）
-
-在分类任务中，最后通过 Softmax 输出概率分布：
-
-![Softmax 公式](https://latex.codecogs.com/png.latex?\hat{y}_i%20=%20\frac{\exp(y_i)}{\sum_{j=1}^{k}%20\exp(y_j)})
-
----
+## 5. 矩阵范数（以 Frobenius 范数为例）
+对于矩阵 $A \in \mathbb{R}^{m \times n}$：
+$$
+\|A\|_F = \sqrt{\sum_{i=1}^m \sum_{j=1}^n |a_{ij}|^2}
+$$
+表示矩阵所有元素的平方和开根号。
