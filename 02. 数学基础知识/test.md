@@ -103,7 +103,6 @@ $$
 $$
 
 $\hat{y}_i = $
-
 $\frac{\exp(y_i)}{\sum_{j=1}^k \exp(y_j)}$
 
 
