@@ -2,14 +2,12 @@ $\mathbb{E}_{q_\phi(z \mid x)}[\cdot]$：在编码器分布 $q_\phi(z \mid x)$ �
 
 $\mathbb{E}_{q_\phi(z \mid x)}[\cdot]$
 
-
-
 $$
 \mathbb{E}_{q_\phi(z \mid x)}[\cdot]
 $$
 
 $$
-\mathbb{E}
+\mathbb{E}_{q_\phi(z \mid x)}
 $$
 
 ### (1) Kullback–Leibler Divergence (KL 散度)
