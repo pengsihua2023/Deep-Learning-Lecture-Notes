@@ -8,6 +8,11 @@ $$
 
 解析解：$u^\*(x)=\cos x$。
 
+math
+u^*(x) = \cos(x)
+---
+
+
 ```python
 # pip install deepxde tensorflow matplotlib  (若尚未安装)
 
