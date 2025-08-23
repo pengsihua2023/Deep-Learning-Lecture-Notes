@@ -8,7 +8,7 @@ $$
 
 解析解：$u^\*(x)=\cos x$。
 
-math
+```math
 u^*(x) = \cos(x)
 ---
 
