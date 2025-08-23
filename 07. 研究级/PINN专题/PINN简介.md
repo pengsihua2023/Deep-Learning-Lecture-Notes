@@ -44,7 +44,9 @@ $$
 + \underbrace{\frac{1}{N_d}\sum |u_\theta(x_d,t_d)-u^\text{obs}|^2}_{\text{观测数据 (可选)}}.
 $$
 
-![equation](https://latex.codecogs.com/png.latex?%5Cmathcal%7BN%7D%5Bu%5D(x%2Ct)%3D0%2C%20%5Cquad%20(x%2Ct)%5Cin%20%5COmega)
+![equation](https://latex.codecogs.com/png.latex?%5Cmathcal%7BL%7D(%5Ctheta)%20%3D%20%5Cfrac%7B1%7D%7BN_f%7D%20%5Csum%20%7C%20r_%5Ctheta(x_f%2Ct_f)%20%7C%5E2%20%2B%20%5Cfrac%7B1%7D%7BN_b%7D%20%5Csum%20%7C%20u_%5Ctheta(x_b%2Ct_b)-g_b%20%7C%5E2%20%2B%20%5Cfrac%7B1%7D%7BN_0%7D%20%5Csum%20%7C%20u_%5Ctheta(x_0%2C0)-g_0%20%7C%5E2%20%2B%20%5Cfrac%7B1%7D%7BN_d%7D%20%5Csum%20%7C%20u_%5Ctheta(x_d%2Ct_d)-u%5E%7Bobs%7D%20%7C%5E2)
+
+
 
 
 
