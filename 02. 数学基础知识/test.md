@@ -6,7 +6,9 @@ $$
 \mathbb{E}_{q_\phi(z \mid x)}[\cdot]
 $$
 
-
+$$
+\mathbb{E}_{q_\phi(z \mid x)}[\cdot]
+$$
 
 ### (1) Kullback–Leibler Divergence (KL 散度)
 
