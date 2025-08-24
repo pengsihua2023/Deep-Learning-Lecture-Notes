@@ -31,7 +31,7 @@ $$
 \mathbf{K} \in \mathbb{R}^{k_h \times k_w \times C_{in} \times C_{out}}
 $$
 
-其中 $k_h, k_w$ 为卷积核大小，$C_{out}$ 为输出通道数。
+其中 $k_h, k_w$ 为卷积核大小， $C_{out}$ 为输出通道数。
 
 卷积运算定义为：
 
