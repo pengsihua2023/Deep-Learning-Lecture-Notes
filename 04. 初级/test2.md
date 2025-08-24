@@ -11,39 +11,39 @@ $$
 ---
 
 ### (1) 遗忘门
-\[
+$$
 F_t = \sigma\!\left(Z_t W_f^\top + \mathbf{1} b_f^\top \right)
-\]
+$$
 其中 $W_f \in \mathbb{R}^{H \times (H+d_x)}, \; b_f \in \mathbb{R}^{H} $
 
 ---
 
 ### (2) 输入门
-\[
+$$
 I_t = \sigma\!\left(Z_t W_i^\top + \mathbf{1} b_i^\top \right)
-\]
+$$
 
-\[
+$$
 \tilde{C}_t = \tanh\!\left(Z_t W_c^\top + \mathbf{1} b_c^\top \right)
-\]
+$$
 
 ---
 
 ### (3) 细胞状态更新
-\[
+$$
 C_t = F_t \odot C_{t-1} + I_t \odot \tilde{C}_t
-\]
+$$
 
 ---
 
 ### (4) 输出门
-\[
+$$
 O_t = \sigma\!\left(Z_t W_o^\top + \mathbf{1} b_o^\top \right)
-\]
+$$
 
-\[
+$$
 H_t = O_t \odot \tanh(C_t)
-\]
+$$
 
 ---
 
