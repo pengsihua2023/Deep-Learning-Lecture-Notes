@@ -52,7 +52,7 @@ $$
 \mathcal{L} = - \sum_{t=1}^{T} y_t^\top \log \hat{y}_t
 $$
 
-其中 $y_t$ 为真实标签的 one-hot 向量，$\hat{y}_t$ 为预测概率分布。  
+其中 $y_t$ 为真实标签的 one-hot 向量， $\hat{y}_t$ 为预测概率分布。  
 
 ---
 
