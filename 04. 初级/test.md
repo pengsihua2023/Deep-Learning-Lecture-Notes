@@ -36,7 +36,7 @@ $h_0 = \mathbf{0} \quad (\text{零向量}) \quad \text{或可学习的参数向�
 ### (2) 输出层
 
 $$
-\hat{y}_t = \text{softmax}\!\left(W_y h_t + b_y \right), \quad \hat{y}_t \in \mathbb{R}^{d_y}
+\hat{y}_t = \text{softmax}\left(W_y h_t + b_y \right), \quad \hat{y}_t \in \mathbb{R}^{d_y}
 $$
 
 其中：  
