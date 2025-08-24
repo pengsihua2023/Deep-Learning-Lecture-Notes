@@ -15,7 +15,7 @@ $$
 $$
 F_t = \sigma\!\left(Z_t W_f^\top + \mathbf{1} b_f^\top \right)
 $$
-其中 $W_f \in \mathbb{R}^{H \times (H+d_x)}, \; b_f \in \mathbb{R}^{H} $
+其中 $W_f \mathbb{R}^{H \times (H+d_x)}, \; b_f \in \mathbb{R}^{H} $
 
 ---
 
