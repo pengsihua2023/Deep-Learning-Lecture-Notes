@@ -66,7 +66,7 @@ $$
 其中：  
 
 $$
-\theta \in \{W_x, W_h, W_y, b_h, b_y\}, \quad \eta:\text{学习率}
+\theta \in \{W_x, W_h, W_y, b_h, b_y\}; \quad \eta:\text{学习率}
 $$
 
 ---
