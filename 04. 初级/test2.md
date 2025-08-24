@@ -1,11 +1,3 @@
-
-$$
-\hat{Y}_t \in \mathbb{R}^{B \times d_y}, \quad
-W_y \in \mathbb{R}^{d_y \times H}, \quad
-b_y \in \mathbb{R}^{d_y}
-$$
-
-
 ## 4. 数学形式化（小批量版本）
 
 假设输入批量大小为 $B$，隐藏层维度为 $H$，输入维度为 $d_x$。  
