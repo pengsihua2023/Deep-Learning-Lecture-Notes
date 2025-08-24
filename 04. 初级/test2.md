@@ -48,7 +48,7 @@ $$
 
 ### (4) 输出门
 $$
-O_t = \sigma\!\left(Z_t W_o^\top + \mathbf{1} b_o^\top \right)
+O_t = \sigma\left(Z_t W_o^\top + \mathbf{1} b_o^\top \right)
 $$
 
 $$
