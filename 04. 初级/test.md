@@ -17,7 +17,7 @@ RNN 的核心是 **隐藏状态递推**，它能捕捉序列依赖关系。
 ### (1) 隐藏状态更新
 
 $$
-h_t = \phi\!\left(W_h h_{t-1} + W_x x_t + b_h \right), \quad t=1,2,\dots,T
+h_t = \phi\left(W_h h_{t-1} + W_x x_t + b_h \right), \quad t=1,2,\dots,T
 $$
 
 其中：  
