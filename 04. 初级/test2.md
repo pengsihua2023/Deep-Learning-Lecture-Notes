@@ -1,14 +1,4 @@
-## 4. 数学形式化（小批量版本）
 
-假设输入批量大小为 $B$，隐藏层维度为 $H$，输入维度为 $d_x$。  
-输入矩阵 $X_t \in \mathbb{R}^{B \times d_x}$，隐藏状态矩阵 $H_{t-1} \in \mathbb{R}^{B \times H}$。  
-定义拼接矩阵：
-
-$$
-Z_t = \begin{bmatrix} H_{t-1} & X_t \end{bmatrix} \in \mathbb{R}^{B \times (H+d_x)}
-$$
-
----
 
 ### (1) 遗忘门
 
