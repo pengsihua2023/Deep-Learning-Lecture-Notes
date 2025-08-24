@@ -73,12 +73,14 @@ $$
 
 ## 总结
 RNN 的核心公式：
+
 $$
 \begin{aligned}
 h_t &= \phi(W_h h_{t-1} + W_x x_t + b_h) \\
 \hat{y}_t &= \text{softmax}(W_y h_t + b_y)
 \end{aligned}
 $$
+
 ```
 
 ---
