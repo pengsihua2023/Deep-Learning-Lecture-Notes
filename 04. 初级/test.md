@@ -81,9 +81,6 @@ h_t &= \phi(W_h h_{t-1} + W_x x_t + b_h) \\
 \end{aligned}
 $$
 
-```
 
 ---
-
-
 
