@@ -61,7 +61,7 @@ $$
 对于分类问题：
 
 $$
-\hat{Y}_t = \text{softmax}\!\left(H_t W_y^\top + \mathbf{1} b_y^\top\right)
+\hat{Y}_t = \text{softmax}\left(H_t W_y^\top + \mathbf{1} b_y^\top\right)
 $$
 
 其中
