@@ -66,11 +66,9 @@ $$
 
 其中
 
-$
-\hat{Y}_t \in \mathbb{R}^{B \times d_y}, \quad
+$\hat{Y}_t \in \mathbb{R}^{B \times d_y}, \quad
 W_y \in \mathbb{R}^{d_y \times H}, \quad
-b_y \in \mathbb{R}^{d_y}
-$
+b_y \in \mathbb{R}^{d_y}$
 
 ---
 
