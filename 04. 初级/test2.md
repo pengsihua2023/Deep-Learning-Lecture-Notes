@@ -11,6 +11,7 @@ $$
 ---
 
 ### (1) 遗忘门
+
 $$
 F_t = \sigma\!\left(Z_t W_f^\top + \mathbf{1} b_f^\top \right)
 $$
