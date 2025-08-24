@@ -31,6 +31,7 @@ $$
 ---
 
 ### (3) 细胞状态更新
+
 $$
 C_t = F_t \odot C_{t-1} + I_t \odot \tilde{C}_t
 $$
@@ -50,9 +51,10 @@ $$
 
 ### (5) 输出层
 对于分类问题：
-\[
+
+$$
 \hat{Y}_t = \text{softmax}\!\left(H_t W_y^\top + \mathbf{1} b_y^\top\right)
-\]
+$$
 
 其中 $\hat{Y}_t \in \mathbb{R}^{B \times d_y}$，$W_y \in \mathbb{R}^{d_y \times H}, \; b_y \in \mathbb{R}^{d_y}$。
 
@@ -60,21 +62,25 @@ $$
 
 ### (6) 损失函数
 交叉熵损失在批量上的平均：
-\[
+
+$$
 \mathcal{L} = - \frac{1}{B} \sum_{b=1}^{B} \sum_{t=1}^{T} y_{b,t}^\top \log \hat{y}_{b,t}
-\]
+$$
 
 ---
 
 ### (7) 参数更新
 使用 BPTT 更新参数：
-\[
+
+$$
 \theta \leftarrow \theta - \eta \, \frac{\partial \mathcal{L}}{\partial \theta}
-\]
+$$
+
 其中 
-\[
+
+$$
 \theta \in \{ W_f, W_i, W_c, W_o, W_y, \, b_f, b_i, b_c, b_o, b_y \}
-\]
+$$
 
 ---
 
