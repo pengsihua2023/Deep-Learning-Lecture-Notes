@@ -6,7 +6,7 @@
   - [LSTN：长短期记忆网络](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/04.%20%E5%88%9D%E7%BA%A7/%E5%88%9D%E7%BA%A7%EF%BC%9ALSTM.md)
   - [GRU: 门控循环单元](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/04.%20%E5%88%9D%E7%BA%A7/%E5%88%9D%E7%BA%A7%EF%BC%9AGRU.md)    
   - [Autoencoder: 自编码器](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/04.%20%E5%88%9D%E7%BA%A7/%E5%88%9D%E7%BA%A7%EF%BC%9AAutoencoder.md)
-  - [VAE(Variational Autoencoder）：变分自编码器](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/04.%20%E5%88%9D%E7%BA%A7/%E5%88%9D%E7%BA%A7%EF%BC%9AVAE.md)
+  - [VAE(Variational Autoencoder）：变分自编码器](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/04.%20%E5%88%9D%E7%BA%A7/%E5%88%9D%E7%BA%A7%EF%BC%9AVAE.ipynb)
   - [GAN：生成对抗网络](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/04.%20%E5%88%9D%E7%BA%A7/%E5%88%9D%E7%BA%A7%EF%BC%9AGAN.md) 
    
 
