@@ -8,7 +8,7 @@
 特点：将图像分块（patch）后用Transformer处理，取代传统CNN，适合大数据集。  
 应用：图像分类、目标检测、图像分割。  
 掌握要点：自注意力机制、图像分块处理。  
-<img width="642" height="488" alt="image" src="https://github.com/user-attachments/assets/c3611f64-f4e1-4f03-bbd6-efd480e0cc6e" />
+<img width="320" height="250" alt="image" src="https://github.com/user-attachments/assets/c3611f64-f4e1-4f03-bbd6-efd480e0cc6e" />
 ## 代码
 ```
  主要功能
@@ -41,7 +41,7 @@ CIFAR-10数据集: 50,000张训练图像 + 10,000张测试图像
 高质量输出: 保存为PNG格式
 ```
 ### Python代码
-```
+```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
