@@ -55,8 +55,6 @@ $$
 
 
 ## 2. 前向传播
-<img width="856" height="274" alt="image" src="https://github.com/user-attachments/assets/6405f4f1-36d1-4306-a057-aef01620cd4a" />  
-
 
 ---
 
