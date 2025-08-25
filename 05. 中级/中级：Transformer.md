@@ -69,22 +69,10 @@ Transformer的数学核心在于：
 位置编码：弥补序列顺序信息。  
 残差与归一化：稳定训练并加速收敛。  
 
-
-
-
-
-
-
-
-
-
-
-
-
 ## 一个只有编码器的Transformer
 <img width="753" height="263" alt="image" src="https://github.com/user-attachments/assets/a9203ca4-71c3-4184-89db-8b2b551d0042" />  
 
-```
+```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
