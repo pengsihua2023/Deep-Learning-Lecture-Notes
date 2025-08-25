@@ -32,7 +32,7 @@ DDPM 第一作者：Jonathan Ho
 
 代码支持CPU/GPU运行，确保设备一致性，并输出训练损失和生成样本的形状。最终散点图直观展示模型是否成功学习到数据分布。
 
-```
+```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
