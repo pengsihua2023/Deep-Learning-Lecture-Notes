@@ -41,7 +41,7 @@ ResNet 引入“残差连接”（skip connection），让网络学习“变化�
 代码基于TensorFlow/Keras实现，适用于CIFAR-10图像分类，输出模型结构摘要并进行训练，旨在学习图像的分类特征。
 
  
-```
+```python
 import tensorflow as tf
 from tensorflow.keras import layers, models
 
