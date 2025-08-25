@@ -82,8 +82,7 @@ $$
 ---
 
 ## 4. 反向传播（Backpropagation Through Time, BPTT） 
-<img width="1003" height="752" alt="image" src="https://github.com/user-attachments/assets/4d71329f-a372-476f-bf17-f6b094056b40" />
----
+
 
 RNN 的训练通过反向传播算法沿时间步展开，称为 **BPTT**。目标是最小化损失函数 $L$，通过梯度下降更新权重
 $W_{xh}, W_{hh}, W_{hy}$ 和偏置 $b_h, b_y$。
