@@ -34,7 +34,7 @@ Inception（也称为 GoogLeNet）是由 Christian Szegedy 等人在 2014 年提
 
 代码运行在CPU或GPU上，训练完成后输出测试集准确率，并生成损失曲线和预测结果的可视化图像，用于分析模型性能和分类效果。
 
-```
+```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
