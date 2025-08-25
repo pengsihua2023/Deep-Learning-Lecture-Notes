@@ -93,6 +93,50 @@ $$
 
 
 
+---
+
+RNN 的训练通过反向传播算法沿时间步展开，称为 **BPTT**。目标是最小化损失函数 $L$，通过梯度下降更新权重
+$W_{xh}, W_{hh}, W_{hy}$ 和偏置 $b_h, b_y$。
+
+### 梯度计算
+
+* **对每一时间步 $t$，计算损失对隐藏状态的梯度：**
+
+$$
+\frac{\partial L}{\partial h_t} = \frac{\partial L_t}{\partial h_t} + \frac{\partial L_{t+1}}{\partial h_t} + \cdots + \frac{\partial L_T}{\partial h_t}
+$$
+
+其中，$\frac{\partial L_{t+k}}{\partial h_t}$ 通过链式法则沿时间步递归计算。
+
+* **权重梯度：**
+
+$$
+\frac{\partial L}{\partial W_{xh}} = \sum_{t=1}^{T} \frac{\partial L}{\partial h_t} \cdot \frac{\partial h_t}{\partial W_{xh}}
+$$
+
+类似地计算 $W_{hh}, W_{hy}, b_h, b_y$ 的梯度。
+
+---
+
+### 梯度消失 / 爆炸问题
+
+由于 $h_t$ 依赖 $h_{t-1}$，梯度通过矩阵 $W_{hh}$ 的多次乘法传递，可能导致：
+
+* **梯度消失**：梯度过小，早期时间步的影响难以传递。
+* **梯度爆炸**：梯度过大，训练不稳定。
+
+---
+
+### 解决方法
+
+* **梯度裁剪**（限制梯度大小）；
+* **更先进的结构**：如 LSTM 和 GRU。
+
+---
+
+
+
+
 
 
 ## 代码（Pytorch）
