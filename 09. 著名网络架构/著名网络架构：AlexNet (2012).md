@@ -28,7 +28,7 @@ AlexNet 是一种具有里程碑意义的卷积神经网络（Convolutional Neur
 5. **可视化**：绘制训练过程中的损失曲线，保存为`alexnet_training_curve.png`，支持中文显示（使用SimHei字体）。
 
 代码运行在CPU或GPU上，训练完成后输出测试集准确率并生成损失曲线图，用于分析模型训练效果。
-```
+```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
