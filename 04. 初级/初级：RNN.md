@@ -80,6 +80,18 @@ RNN通常使用损失函数来衡量预测输出与真实标签之间的差距�
 ## 4. 反向传播（Backpropagation Through Time, BPTT） 
 <img width="1003" height="752" alt="image" src="https://github.com/user-attachments/assets/4d71329f-a372-476f-bf17-f6b094056b40" />
 
+
+---
+
+$$
+L = \sum_{t=1}^{T} L_t(\hat{y}_t, y_t)
+$$
+
+其中 $L_t$ 为时间步 $t$ 的损失，$\hat{y}_t$ 为预测输出，$y_t$ 为真实标签。
+
+---
+
+
 ## 代码（Pytorch）
 ```
 import torch
