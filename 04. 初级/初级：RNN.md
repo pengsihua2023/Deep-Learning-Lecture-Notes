@@ -18,7 +18,7 @@ RNN是一种专门处理序列数据的神经网络，通过引入隐藏状态�
 ### 基本公式
 对于时间步t，RNN的计算公式如下： 
 隐藏状态更新  
-<img width="765" height="725" alt="image" src="https://github.com/user-attachments/assets/4e5534a8-9be3-4ae6-8b77-9e139fca05be" />  
+ 
 
 ---
 
