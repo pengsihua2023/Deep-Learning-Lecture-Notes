@@ -73,7 +73,7 @@ $$
 ---
 
 ## 代码 （Pytorch）
-```
+```python
 import os
 import urllib.request
 import zipfile
