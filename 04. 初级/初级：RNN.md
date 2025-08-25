@@ -77,9 +77,6 @@ RNN 通过时间步迭代计算隐藏状态和输出。以序列 $x_1, x_2, \ldo
 ## 3. 损失函数  
 RNN通常使用损失函数来衡量预测输出与真实标签之间的差距。对于序列预测任务，常用交叉熵损失（分类）或均方误差（回归）。总损失为各时间步损失之和：  
 <img width="613" height="152" alt="image" src="https://github.com/user-attachments/assets/fc7b1b5a-b37a-4ae3-aefd-7aefe3f259bd" />  
-## 4. 反向传播（Backpropagation Through Time, BPTT） 
-<img width="1003" height="752" alt="image" src="https://github.com/user-attachments/assets/4d71329f-a372-476f-bf17-f6b094056b40" />
-
 
 ---
 
@@ -90,6 +87,12 @@ $$
 其中 $L_t$ 为时间步 $t$ 的损失，$\hat{y}_t$ 为预测输出，$y_t$ 为真实标签。
 
 ---
+
+## 4. 反向传播（Backpropagation Through Time, BPTT） 
+<img width="1003" height="752" alt="image" src="https://github.com/user-attachments/assets/4d71329f-a372-476f-bf17-f6b094056b40" />
+
+
+
 
 
 ## 代码（Pytorch）
