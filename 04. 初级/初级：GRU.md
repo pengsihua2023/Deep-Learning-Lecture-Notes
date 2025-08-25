@@ -1,7 +1,7 @@
 ## 初级：GRU 门控循环单元
 <img width="552" height="277" alt="image" src="https://github.com/user-attachments/assets/2c7f3eef-f4be-471c-b7df-cd62b479df28" />
 
-<img width="884" height="266" alt="image" src="https://github.com/user-attachments/assets/75186129-08a6-478c-b91e-82a65e0a601f" />  
+<img width="552" height="166" alt="image" src="https://github.com/user-attachments/assets/75186129-08a6-478c-b91e-82a65e0a601f" />  
 
 门控循环单元（Gated Recurrent Unit, GRU）是一种常用于处理序列数据的循环神经网络（RNN）变体，由Kyunghyun Cho等人于2014年提出。GRU旨在解决传统RNN在长序列处理中遇到的梯度消失或爆炸问题，同时简化了长短期记忆网络（LSTM）的结构，具有更低的计算复杂度和更少的参数。  
 ### GRU的核心思想
