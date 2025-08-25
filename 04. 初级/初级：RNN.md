@@ -19,6 +19,41 @@ RNN是一种专门处理序列数据的神经网络，通过引入隐藏状态�
 对于时间步t，RNN的计算公式如下： 
 隐藏状态更新  
 <img width="765" height="725" alt="image" src="https://github.com/user-attachments/assets/4e5534a8-9be3-4ae6-8b77-9e139fca05be" />  
+我用 OCR 提取出了图片中的文字，结果如下（已经帮你整理和校正格式）：
+
+---
+
+$$
+h_t = \sigma(W_{xh}x_t + W_{hh}h_{t-1} + b_h)
+$$
+
+* $x_t$：时间步 $t$ 的输入向量
+* $h_t$：时间步 $t$ 的隐藏状态
+* $h_{t-1}$：前一时间步的隐藏状态
+* $W_{xh}$：输入到隐藏层的权重矩阵
+* $W_{hh}$：隐藏层到隐藏层的权重矩阵
+* $b_h$：隐藏层的偏置
+* $\sigma$：激活函数（通常为 $\tanh$ 或 ReLU）
+
+**输出：**
+
+$$
+y_t = W_{hy}h_t + b_y
+$$
+
+* $y_t$：时间步 $t$ 的输出
+* $W_{hy}$：隐藏层到输出层的权重矩阵
+* $b_y$：输出层的偏置
+
+若需要非线性输出（如分类任务），可对 $y_t$ 施加激活函数（如 softmax）：
+
+$$
+o_t = \text{softmax}(y_t)
+$$
+
+---
+
+要不要我帮你把这个内容再转成 **Markdown 笔记** 或者 **LaTeX 文档** 格式，方便直接用在学习笔记或论文里？
 
 ## 2. 前向传播
 <img width="856" height="274" alt="image" src="https://github.com/user-attachments/assets/6405f4f1-36d1-4306-a057-aef01620cd4a" />  
