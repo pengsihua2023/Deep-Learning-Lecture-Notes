@@ -86,7 +86,7 @@ $$
 * **异常检测**: 重构误差大的样本可能为异常点。
 
 ## 代码 （Pytorch）
-```
+```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
