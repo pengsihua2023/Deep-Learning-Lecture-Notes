@@ -33,7 +33,7 @@ EfficientNet 是一种高效的卷积神经网络（Convolutional Neural Network
 
 代码运行在CPU或GPU上，训练完成后输出测试集准确率，并生成损失曲线和预测结果的可视化图像，用于分析模型性能和分类效果。
 
-```
+```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
