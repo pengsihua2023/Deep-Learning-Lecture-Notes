@@ -123,11 +123,6 @@ $$
 
 ---
 
-
-
-
-
-
 ## 代码（Pytorch）
 ```
 import torch
