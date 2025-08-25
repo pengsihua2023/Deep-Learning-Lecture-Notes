@@ -8,7 +8,7 @@ LeNet 是深度学习领域最早的卷积神经网络之一，专为手写数�
 应用：简单图像分类（如MNIST数据集）。  
 掌握要点：理解卷积操作、池化机制。  
 
-<img width="1416" height="535" alt="image" src="https://github.com/user-attachments/assets/f2ccce70-ad11-40d2-bf71-3651aa4fd10b" />  
+<img width="700" height="270" alt="image" src="https://github.com/user-attachments/assets/f2ccce70-ad11-40d2-bf71-3651aa4fd10b" />  
 
 ## 代码
 
@@ -36,7 +36,7 @@ LeNet 是深度学习领域最早的卷积神经网络之一，专为手写数�
 代码运行在CPU或GPU上，训练完成后输出测试集准确率，并生成损失曲线和预测结果的可视化图像，用于分析模型性能和分类效果。
 
 
-```
+```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
