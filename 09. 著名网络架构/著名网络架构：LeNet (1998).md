@@ -1,6 +1,6 @@
 ## 著名网络架构：LeNet (1998)
 提出者：Yann LeCun  
-<img width="543" height="543" alt="image" src="https://github.com/user-attachments/assets/79c9b12d-ec4d-4f94-b441-ce9439c70eeb" />    
+<img width="270" height="270" alt="image" src="https://github.com/user-attachments/assets/79c9b12d-ec4d-4f94-b441-ce9439c70eeb" />    
    
 LeNet 是深度学习领域最早的卷积神经网络之一，专为手写数字识别设计，广泛应用于 MNIST 数据集的图像分类任务。LeNet 的提出奠定了现代 CNN 的基础，引入了卷积、池化和全连接层等关键组件，对后续的 AlexNet、VGG、ResNet 等模型产生了深远影响。  
   
