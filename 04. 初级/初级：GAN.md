@@ -34,7 +34,7 @@ GAN的训练通过交替优化以下两步进行：
 
 
 ## 代码(Pytorch)
-```
+```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
