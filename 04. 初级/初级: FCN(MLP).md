@@ -7,7 +7,7 @@
 训练是通过“试错”调整权重，使预测更接近真实值（用梯度下降）。  
 - 应用：房价预测、分类任务（如判断图片是猫还是狗）。
 - 为什么教：MLP 是所有深度学习模型的基础，帮助学生理解神经网络的核心机制。  
-<img width="850" height="253" alt="image" src="https://github.com/user-attachments/assets/4f07aa2a-dd72-4e95-8543-7f71810d8023" />
+<img width="600" height="180" alt="image" src="https://github.com/user-attachments/assets/4f07aa2a-dd72-4e95-8543-7f71810d8023" />
 
 ## 数学描述
 
