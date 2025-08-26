@@ -93,7 +93,6 @@ $$
 JS(p_{\text{data}} \parallel p_g) = \frac{1}{2} KL\left(p_{\text{data}} \parallel \frac{p_{\text{data}} + p_g}{2}\right) + \frac{1}{2} KL\left(p_g \parallel \frac{p_{\text{data}} + p_g}{2}\right)
 $$
 
----
 
 * **挑战**：
 
