@@ -10,6 +10,7 @@
 
 <div align="center">
 <img width="256" height="256" alt="image" src="https://github.com/user-attachments/assets/ee589462-59e3-432c-b20d-87b11a0ad85d" />  
+   
 DDPM 第一作者：Jonathan Ho  
 </div>
 
