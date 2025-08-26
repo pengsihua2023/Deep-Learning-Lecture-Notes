@@ -10,8 +10,54 @@
 - 损失函数：结合重建损失（reconstruction loss，如MSE）和KL散度（Kullback-Leibler divergence），用于正则化潜在分布，使其接近先验分布（通常是标准正态分布）。
 VAE的优势在于它能生成连续的潜在空间，支持插值和生成新样本，常用于图像生成、数据增强等领域。相比GAN（生成对抗网络），VAE的训练更稳定，但生成的样本可能更模糊。
 
+### 数学描述
+
+VAE 的目标是最大化边际似然 $p(x)$，但该计算通常难以直接求解。因此，引入证据下界（ELBO）作为代理优化目标。假设条件如下：
+
+* 先验分布:  $p(z) = N(0, I) \quad \text{（标准正态分布）}$
+
+* 近似后验分布: $q(z|x) = N(\mu, \sigma^2 I),$  
+
+  由编码器参数化，其中 $\mu$ 和 $\sigma$ 由神经网络从 $x$ 中计算得到。
+
+* 生成模型: $p(x|z), $
+
+  由解码器参数化，通常假设为 $p(x|z) = N(\text{decoder output}, I)$  
+
+  或者是伯努利分布（针对二值数据）。
 
 
+ELBO 的数学表达式为： 
+
+$$
+\mathcal{L}(\theta, \phi; x) = \mathbb{E}_ {q_\phi(z|x)} [\log p_\theta(x|z)] - D_{KL}(q_\phi(z|x)\|p(z))
+$$
+
+其中：
+
+* $\theta$ 表示解码器参数，$\phi$ 表示编码器参数。  
+* 第一项为重建损失：衡量从 $z$ 重建 $x$ 的准确性，通常实现为负对数似然（例如，对于连续数据：MSE $\|x - \hat{x}\|^2 / 2$）。  
+* 第二项为 KL 散度：正则化 $q(z|x)$ 使其接近 $p(z)$，公式为（假设高斯分布）：  
+
+$$
+D_{KL}(q(z|x)\|p(z)) = -\frac{1}{2} \sum_{j=1}^J \left( 1 + \log(\sigma_j^2) - \mu_j^2 - \sigma_j^2 \right)
+$$
+
+其中 $J$ 为潜在空间的维度。  
+
+
+
+为了实现梯度传播，引入重参数化技巧（reparameterization trick）：  
+
+$$
+z = \mu + \sigma \odot \epsilon, \quad \epsilon \sim N(0, I).
+$$
+
+
+
+**优化过程：** 最大化 ELBO（等价于最小化负的 ELBO），使用随机梯度下降进行优化。
+
+---
 
 ### 代码说明
 以下是一个最简单的VAE实现，使用PyTorch，针对MNIST数据集（28x28灰度图像）。它使用简单的多层感知机（MLP）作为编码器和解码器，潜在维度为2（便于可视化）。代码整合为一个模块，包含模型定义、损失函数、训练循环和样本生成。运行需要安装PyTorch和torchvision（pip install torch torchvision）。  
