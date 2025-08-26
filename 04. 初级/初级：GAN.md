@@ -20,9 +20,14 @@ GAN由两个模型组成：
 GAN的核心是一个最小最大博弈问题，生成器和判别器通过对抗性训练优化。目标函数可以表示为：
 <img width="1058" height="342" alt="image" src="https://github.com/user-attachments/assets/2ac71e60-4723-46ac-8602-1fea4bd4368a" />  
 
-$
+$$
 \min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{\text{data}}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log (1 - D(G(z)))]
-$
+$$
+
+$$
+\min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{\text{data}}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log (1 - D(G(z)))]
+$$
+
 
 
 ### 解释：
