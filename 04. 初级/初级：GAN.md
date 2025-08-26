@@ -45,15 +45,45 @@ $$
 
 在理想情况下，当 $p_g = p_{\text{data}}$，判别器无法区分真假，输出 $D(x) = D(G(z)) = 0.5, $
 此时达到纳什均衡。
-
-
-
-
-
    
 4. 训练过程   
 GAN的训练通过交替优化以下两步进行：  
 <img width="1144" height="524" alt="image" src="https://github.com/user-attachments/assets/11e4dd4d-8a6e-43e3-88a3-1eaa24d4a42d" />
+
+
+
+**1. 优化判别器：**
+
+* 固定生成器 $G$，用真实样本 $x \sim p_{\text{data}}$ 和生成样本 $G(z) \sim p_z$ 训练判别器，最大化：
+
+$$
+V(D) = \mathbb{E}_ {x \sim p_{\text{data}}}[\log D(x)] + \mathbb{E}_{z \sim p_z}[\log (1 - D(G(z)))]
+$$
+
+* 通常使用梯度上升更新 $D$ 的参数。
+
+
+
+**2. 优化生成器：**
+
+* 固定判别器 $D$，用噪声 $z \sim p_z$ 生成样本 $G(z)$，最小化：
+
+$$
+V(G) = \mathbb{E}_{z \sim p_z}[\log (1 - D(G(z)))]
+$$
+
+* 实践中，常优化等价形式
+
+$$
+\max_G \mathbb{E}_{z \sim p_z}[\log D(G(z))]
+$$
+
+因为原始形式梯度可能不稳定（尤其当 $D(G(z)) \approx 0$ 时）。
+
+
+
+
+
 5. 数学性质与挑战  
    <img width="1109" height="424" alt="image" src="https://github.com/user-attachments/assets/eb9fde5f-e3a3-4ff1-a822-5c71343c48a6" />
 6. 总结  
