@@ -1,6 +1,8 @@
 ## 著名网络架构：AlexNet (2012)
 提出者：Alex Krizhevsky 等  
+<div align="center">
 <img width="206" height="245" alt="image" src="https://github.com/user-attachments/assets/062a3e51-cb54-4711-adaa-f68671fca005" />    
+</div>
 
 AlexNet 是一种具有里程碑意义的卷积神经网络（Convolutional Neural Network, CNN）架构，由 Alex Krizhevsky、Ilya Sutskever 和 Geoffrey Hinton 在 2012 年提出，发表在论文《ImageNet Classification with Deep Convolutional Neural Networks》中（NeurIPS 2012）。AlexNet 在 2012 年的 ImageNet 大规模视觉识别挑战赛（ILSVRC）中夺冠，以显著优势超越传统机器学习方法，标志着深度学习在计算机视觉领域的突破。AlexNet 奠定了现代 CNN 的基础，影响了后续模型如 VGG、ResNet 和 YOLO 等。 
    
