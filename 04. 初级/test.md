@@ -3,7 +3,7 @@
 GAN 的数学核心是通过最小最大博弈优化生成器和判别器，使生成分布 $p_g$ 逼近真实分布 $p_{\text{data}}$。其目标函数为：
 
 $$
-\min_G \max_D \, \mathbb{E}_{x \sim p_{\text{data}}}[\log D(x)] + \mathbb{E}_{z \sim p_z}[\log(1 - D(G(z)))]
+\min_G \max_D \, \mathbb{E}_ {x \sim p_{\text{data}}}[\log D(x)] + \mathbb{E}_{z \sim p_z}[\log(1 - D(G(z)))]
 $$
 
 训练过程涉及交替优化，挑战在于平衡两者的性能并避免模式崩塌或梯度问题。改进方法如 WGAN 通过替换距离度量或正则化提升了训练稳定性。
