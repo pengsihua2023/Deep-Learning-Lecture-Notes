@@ -53,6 +53,19 @@ $$
 \mathcal{L}_i = - \log \frac {\exp\big( s(z_i, z_i^+) / \tau \big)} {\sum_{j=1}^N \exp\big( s(z_i, z_j) / \tau \big)}
 $$
 
+$$
+\begin{aligned}
+\mathcal{L}_i 
+&= - \log 
+   \frac{
+      \exp\!\left( \tfrac{s(z_i, z_i^+)}{\tau} \right)
+   }{
+      \sum_{j=1}^N \exp\!\left( \tfrac{s(z_i, z_j)}{\tau} \right)
+   }
+\end{aligned}
+$$
+
+
 其中：
 
 * $z_i^+$ 是与 $z_i$ 配对的正样本
