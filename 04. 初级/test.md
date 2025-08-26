@@ -1,8 +1,6 @@
 明白啦 ✅ 你是想把内容整理成 **GitHub Markdown** 能直接渲染的 LaTeX 格式（即用 `$$...$$` 或 `\[...\]` 的公式表示，而不是完整 `.tex` 文档）。下面我帮你转换：
 
----
 
-````markdown
 ## Variational Autoencoder (VAE)
 
 The Variational Autoencoder (VAE) is a generative deep learning model proposed by Kingma and Welling in 2013. It is a variant of the Autoencoder but incorporates the concept of Variational Inference, enabling it to generate new data rather than merely compressing and reconstructing inputs. The primary goal of VAE is to learn a latent representation of data and generate samples similar to the training data by sampling from the latent space.
@@ -148,9 +146,3 @@ if __name__ == "__main__":
 
 ```
 
----
-
-这样你直接放在 **GitHub README.md** 或 Jupyter Markdown 里，就能正常渲染公式。  
-
-要不要我帮你把 **GAN 和 VAE 的内容**统一整理成一个 **完整的 GitHub Markdown 教程笔记**？
-```
