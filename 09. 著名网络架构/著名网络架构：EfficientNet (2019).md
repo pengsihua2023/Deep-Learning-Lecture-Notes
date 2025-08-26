@@ -1,7 +1,7 @@
 ## 著名网络架构：EfficientNet (2019)
 提出者：Google 
 <div align="center">  
-<img width="256" height="233" alt="image" src="https://github.com/user-attachments/assets/5b194e36-40bf-47ca-a03a-fd24faf436ed" />  
+<img width="220" height="223" alt="image" src="https://github.com/user-attachments/assets/5b194e36-40bf-47ca-a03a-fd24faf436ed" />  
   
 第一作者：Mingxiing Tan   
 </div>
