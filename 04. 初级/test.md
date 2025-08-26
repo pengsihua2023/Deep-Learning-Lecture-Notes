@@ -15,7 +15,7 @@ VAE的优势在于它能生成连续的潜在空间，支持插值和生成新�
 
 
 ### 代码
----python
+```python
 
 import torch
 import torch.nn as nn
@@ -104,4 +104,4 @@ def main():
 if __name__ == "__main__":
     main()
 
----
+```
