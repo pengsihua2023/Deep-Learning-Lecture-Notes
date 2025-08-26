@@ -11,7 +11,7 @@ $$
 
 ---
 
-$\mathbb{E}_{x \sim p_{\text{data}}(x)}[\log D(x)]$
+$\mathbb{E}_ {x \sim p_{\text{data}}(x)}[\log D(x)]$
 
 
 **解释：**
