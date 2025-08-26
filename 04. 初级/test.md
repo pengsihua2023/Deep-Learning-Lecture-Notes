@@ -5,7 +5,7 @@
 * 固定生成器 $G$，用真实样本 $x \sim p_{\text{data}}$ 和生成样本 $G(z) \sim p_z$ 训练判别器，最大化：
 
 $$
-V(D) = \mathbb{E}_{x \sim p_{\text{data}}}[\log D(x)] + \mathbb{E}_{z \sim p_z}[\log (1 - D(G(z)))]
+V(D) = \mathbb{E}_ {x \sim p_{\text{data}}}[\log D(x)] + \mathbb{E}_{z \sim p_z}[\log (1 - D(G(z)))]
 $$
 
 * 通常使用梯度上升更新 $D$ 的参数。
