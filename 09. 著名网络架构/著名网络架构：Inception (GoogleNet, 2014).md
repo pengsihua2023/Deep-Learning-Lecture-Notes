@@ -1,8 +1,11 @@
 ## 著名网络架构：Inception (GoogleNet, 2014)
 提出者：Google  
-第一作者：Christian Szegedy  
+<div align="center">
 <img width="200" height="250" alt="image" src="https://github.com/user-attachments/assets/c4120069-66c0-4625-b257-fc28c310bce6" />   
   
+  第一作者：Christian Szegedy  
+</div>
+
 Inception（也称为 GoogLeNet）是由 Christian Szegedy 等人在 2014 年提出的卷积神经网络（Convolutional Neural Network, CNN）架构，发表在论文《Going Deeper with Convolutions》中（CVPR 2015）。Inception 在 2014 年 ImageNet 大规模视觉识别挑战赛（ILSVRC）中夺冠，以其高效的计算性能和深层架构在计算机视觉领域掀起热潮。GoogLeNet 是第一个使用 Inception 模块 的网络，通过多尺度卷积并行处理提升性能，同时保持较低的计算成本。     
    
 特点：Inception模块并行处理多尺度卷积，优化计算效率，引入1x1卷积降维。  
