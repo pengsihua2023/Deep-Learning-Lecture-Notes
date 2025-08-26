@@ -10,7 +10,7 @@ $$
 \{x_i\}_{i=1}^N, \quad x_i \in \mathcal{X}
 $$
 
-通过一个编码器（如神经网络）$f_\theta: \mathcal{X} \to \mathbb{R}^d$ 将输入映射到特征空间：
+通过一个编码器（如神经网络) $f_\theta: \mathcal{X} \to \mathbb{R}^d$ 将输入映射到特征空间：
 
 $$
 z_i = f_\theta(x_i) \in \mathbb{R}^d
