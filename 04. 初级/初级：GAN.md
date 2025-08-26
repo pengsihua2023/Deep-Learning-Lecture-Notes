@@ -20,24 +20,28 @@ GAN由两个模型组成：
 GAN的核心是一个最小最大博弈问题，生成器和判别器通过对抗性训练优化。目标函数可以表示为：
 <img width="1058" height="342" alt="image" src="https://github.com/user-attachments/assets/2ac71e60-4723-46ac-8602-1fea4bd4368a" />  
 
-$\min_G \max_D V(D, G)$
+好的，我帮你完整提取出图中的文字和公式，并将公式转为 **LaTeX** 格式：
 
+---
+
+### 公式
 
 $$
-\min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{\text{data}}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log (1 - D(G(z)))]
+\min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{\text{data}}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))]
 $$
 
-$$
-\min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{\text{data}}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log (1 - D(G(z)))]
-$$
+---
 
+### 解释
 
+* $\mathbb{E}_{x \sim p_{\text{data}}(x)}[\log D(x)]$：判别器试图最大化对真实样本的正确分类概率。
+* $\mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))]$：判别器试图最大化对生成样本的拒绝概率，而生成器试图让 $D(G(z))$ 接近 1（即欺骗判别器）。
+* 生成器 $G$ 希望最小化 $\log(1 - D(G(z)))$，使生成样本尽可能接近真实数据。
 
-### 解释：
+---
 
-*  $ \mathbb{E}_{x \sim p_{\text{data}}(x)}[\log D(x)]$ ：判别器试图最大化对真实样本的正确分类概率。
-*  $\mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))]$ ：判别器试图最大化对生成样本的拒绝概率，而生成器试图让 $D(G(z))$ 接近 1（即欺骗判别器）。
-* 生成器  $G$ 希望最小化 $\log(1 - D(G(z)))$，使生成样本尽可能接近真实数据。
+要不要我帮你把这一段整理成 **Markdown 笔记**，直接复制就能在支持 LaTeX 的环境里渲染？
+
 
 --- 
 
