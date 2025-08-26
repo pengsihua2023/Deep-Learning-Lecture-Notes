@@ -2,7 +2,7 @@
 提出者：Google  
 第一作者：Alexey Dosovitskiy   
 <div align="center">
-<img width="236" height="256" alt="image" src="https://github.com/user-attachments/assets/e8b41203-25a3-4583-978d-46f29ea2f38c" />  
+<img width="220" height="236" alt="image" src="https://github.com/user-attachments/assets/e8b41203-25a3-4583-978d-46f29ea2f38c" />  
 </div>
 
  Vision Transformer (ViT)，简称 ViT，是由 Alexey Dosovitskiy 等人在 2020 年提出的图像识别模型，发表在论文《An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale》中（ICLR 2021）。ViT 是 Transformer 架构首次大规模应用于计算机视觉领域的里程碑，将自然语言处理中的 Transformer 直接移植到图像任务中，摒弃了传统卷积神经网络（CNN）的卷积操作，转而使用自注意力机制（Self-Attention）处理图像块（Patches）。ViT 在大规模数据集上表现出色，推动了视觉 Transformer 的发展浪潮，并对后续混合模型（如 Swin Transformer、DETR）产生深远影响。  
