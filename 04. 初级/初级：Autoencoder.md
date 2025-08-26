@@ -8,10 +8,9 @@ Autoencoder 包含编码器（压缩数据）和解码器（重构数据），�
 比喻：像一个“数据压缩机”，把大文件压缩后再解压，尽量保持原样。  
 - 应用：图像去噪、数据压缩、异常检测（如信用卡欺诈检测）。
   
-
-
+<div align="center">
 <img width="600" height="350" alt="image" src="https://github.com/user-attachments/assets/dbd389b4-042e-44bf-a62f-ef736bbebd89" />  
-
+</div> 
 
 ## 自编码器的数学描述
 
