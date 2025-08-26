@@ -23,28 +23,28 @@ import torch.optim as optim
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 
-# Set hyperparameters
-input_dim = 28 * 28  # MNIST image size
+# 设置超参数
+input_dim = 28 * 28  # MNIST图像大小
 hidden_dim = 400
-latent_dim = 2  # Latent space dimension
+latent_dim = 2  # 潜在空间维度
 batch_size = 128
 epochs = 10
 lr = 1e-3
 
-# Data loading
+# 数据加载
 transform = transforms.Compose([transforms.ToTensor(), transforms.Lambda(lambda x: x.view(-1))])
 train_dataset = datasets.MNIST(root='./data', train=True, transform=transform, download=True)
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 
-# VAE model
+# VAE模型
 class VAE(nn.Module):
     def __init__(self):
         super(VAE, self).__init__()
-        # Encoder
+        # 编码器
         self.fc1 = nn.Linear(input_dim, hidden_dim)
         self.fc_mu = nn.Linear(hidden_dim, latent_dim)
         self.fc_logvar = nn.Linear(hidden_dim, latent_dim)
-        # Decoder
+        # 解码器
         self.fc3 = nn.Linear(latent_dim, hidden_dim)
         self.fc4 = nn.Linear(hidden_dim, input_dim)
 
@@ -61,26 +61,26 @@ class VAE(nn.Module):
 
     def decode(self, z):
         h = torch.relu(self.fc3(z))
-        return torch.sigmoid(self.fc4(h))  # Output in [0,1], suitable for MNIST
+        return torch.sigmoid(self.fc4(h))  # 输出在[0,1]间，适合MNIST
 
     def forward(self, x):
         mu, logvar = self.encode(x)
         z = self.reparameterize(mu, logvar)
         return self.decode(z), mu, logvar
 
-# Loss function
+# 损失函数
 def loss_function(recon_x, x, mu, logvar):
-    BCE = nn.functional.binary_cross_entropy(recon_x, x, reduction='sum')  # Reconstruction loss
-    KLD = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())  # KL divergence
+    BCE = nn.functional.binary_cross_entropy(recon_x, x, reduction='sum')  # 重建损失
+    KLD = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())  # KL散度
     return BCE + KLD
 
-# Main function: Training and generation
+# 主函数：训练和生成
 def main():
-    # Initialize model and optimizer
+    # 初始化模型和优化器
     model = VAE()
     optimizer = optim.Adam(model.parameters(), lr=lr)
 
-    # Training loop
+    # 训练循环
     for epoch in range(epochs):
         model.train()
         train_loss = 0
@@ -93,15 +93,14 @@ def main():
             optimizer.step()
         print(f'Epoch {epoch+1}, Loss: {train_loss / len(train_loader.dataset):.4f}')
 
-    # Generate samples
+    # 生成样本
     with torch.no_grad():
-        z = torch.randn(64, latent_dim)  # Random sampling
+        z = torch.randn(64, latent_dim)  # 随机采样
         samples = model.decode(z).view(64, 1, 28, 28)
-        # Uncomment the following to save generated images
+        # 可以用以下代码保存生成图像（需取消注释）
         # from torchvision.utils import save_image
         # save_image(samples, 'samples.png')
 
 if __name__ == "__main__":
     main()
-
 ```
