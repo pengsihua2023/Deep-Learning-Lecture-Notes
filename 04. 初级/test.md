@@ -1,32 +1,20 @@
 
 
-**1. 优化判别器：**
+* **全局最优**：当 $p_g = p_{\text{data}}$，目标函数 $V(D,G)$ 达到全局最优，判别器输出 $D(x) = 0.5$。
 
-* 固定生成器 $G$，用真实样本 $x \sim p_{\text{data}}$ 和生成样本 $G(z) \sim p_z$ 训练判别器，最大化：
-
-$$
-V(D) = \mathbb{E}_ {x \sim p_{\text{data}}}[\log D(x)] + \mathbb{E}_{z \sim p_z}[\log (1 - D(G(z)))]
-$$
-
-* 通常使用梯度上升更新 $D$ 的参数。
-
-
-
-**2. 优化生成器：**
-
-* 固定判别器 $D$，用噪声 $z \sim p_z$ 生成样本 $G(z)$，最小化：
+* **JS散度**：GAN 的优化可以看作最小化生成分布 $p_g$ 和真实分布 $p_{\text{data}}$ 之间的 Jensen–Shannon 散度：
 
 $$
-V(G) = \mathbb{E}_{z \sim p_z}[\log (1 - D(G(z)))]
+JS(p_{\text{data}} \parallel p_g) = \frac{1}{2} KL\left(p_{\text{data}} \parallel \frac{p_{\text{data}} + p_g}{2}\right) + \frac{1}{2} KL\left(p_g \parallel \frac{p_{\text{data}} + p_g}{2}\right)
 $$
 
-* 实践中，常优化等价形式
+---
 
-$$
-\max_G \mathbb{E}_{z \sim p_z}[\log D(G(z))]
-$$
+* **挑战**：
 
-因为原始形式梯度可能不稳定（尤其当 $D(G(z)) \approx 0$ 时）。
+  * **模式崩塌**：生成器可能只生成有限的样本模式，忽略真实数据的多样性。
+  * **训练不稳定**：由于对抗性目标，梯度可能震荡或消失。
+  * **梯度消失**：当判别器过强，生成器可能无法有效学习。
 
 
 
