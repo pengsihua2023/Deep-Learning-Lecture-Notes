@@ -72,7 +72,7 @@ $$
 以最大池化（Max Pooling）为例：
 
 $$
-P_{i,j,c} = \max_{0 \leq m < p_h, \; 0 \leq n < p_w} Z_{i \cdot s + m, \; j \cdot s + n, \; c}
+P_{i,j,c} = \max_{0 \leq m < p_h,  0 \leq n < p_w} Z_{i \cdot s + m,  j \cdot s + n,  c}
 $$
 
 其中 $p_h, p_w$ 为池化窗口大小， $s$ 为步幅。
