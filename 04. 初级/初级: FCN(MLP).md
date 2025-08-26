@@ -10,6 +10,7 @@
 <div align="center">
 <img width="600" height="180" alt="image" src="https://github.com/user-attachments/assets/4f07aa2a-dd72-4e95-8543-7f71810d8023" />
 </div>
+
 ## 数学描述
 
 ## 1. 网络结构
