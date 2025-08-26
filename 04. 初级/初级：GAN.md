@@ -18,8 +18,6 @@ GAN由两个模型组成：
 判别器（D）：接收输入（真实样本x 或生成样本G(z)），输出一个标量 D(x) 或  D(G(z)) ，表示输入是真实样本的概率（接近1）还是生成样本（接近0）。
 2. 优化目标  
 GAN的核心是一个最小最大博弈问题，生成器和判别器通过对抗性训练优化。目标函数可以表示为：
-<img width="1058" height="342" alt="image" src="https://github.com/user-attachments/assets/2ac71e60-4723-46ac-8602-1fea4bd4368a" />  
-
 
 $$
 \min_G \max_D V(D, G) = \mathbb{E}_ {x \sim p_{\text{data}}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))]
@@ -35,10 +33,7 @@ $$
 
 
 3. 目标函数的直观理解  
-   <img width="1152" height="191" alt="image" src="https://github.com/user-attachments/assets/73e1b6f2-7dfd-415b-8199-eb5fbad47657" />
-
-
-
+ 
 * 判别器 $D$ 的目标是区分真实数据 $x \sim p_{\text{data}}$ 和生成数据 $G(z) \sim p_g$，最大化上述目标函数。
 
 * 生成器 $G$ 的目标是让生成分布 $p_g$ 尽可能接近真实数据分布 $p_{\text{data}}$，即欺骗判别器，使 $D(G(z)) \approx 1$。
@@ -48,9 +43,6 @@ $$
    
 4. 训练过程   
 GAN的训练通过交替优化以下两步进行：  
-<img width="1144" height="524" alt="image" src="https://github.com/user-attachments/assets/11e4dd4d-8a6e-43e3-88a3-1eaa24d4a42d" />
-
-
 
 **1. 优化判别器：**
 
@@ -81,9 +73,6 @@ $$
 
 
 5. 数学性质与挑战  
-   <img width="1109" height="424" alt="image" src="https://github.com/user-attachments/assets/eb9fde5f-e3a3-4ff1-a822-5c71343c48a6" />
-
-
 
 * **全局最优**：当 $p_g = p_{\text{data}}$，目标函数 $V(D,G)$ 达到全局最优，判别器输出 $D(x) = 0.5$。
 
@@ -105,9 +94,6 @@ $$
 
   
 6. 总结  
-   <img width="1188" height="268" alt="image" src="https://github.com/user-attachments/assets/dc02ea44-ffaa-42a6-95bc-91ef5a349867" />
-
-
 
 GAN 的数学核心是通过最小最大博弈优化生成器和判别器，使生成分布 $p_g$ 逼近真实分布 $p_{\text{data}}$。其目标函数为：
 
