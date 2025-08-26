@@ -11,6 +11,9 @@ $$
 
 ---
 
+$\mathbb{E}_{x \sim p_{\text{data}}(x)}[\log D(x)]$
+
+
 **解释：**
 
 * $\mathbb{E}_{x \sim p_{\text{data}}(x)}[\log D(x)]$：判别器试图最大化对真实样本的正确分类概率。
