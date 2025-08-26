@@ -4,8 +4,9 @@
   
 <div align="center">
 <img width="256" height="256" alt="image" src="https://github.com/user-attachments/assets/06fe6aa7-bb8f-45de-9239-c490de348e6e" />
- 理论最早提出者：Jascha Sohl-Dickstein
-
+理论最早提出者：Jascha Sohl-Dickstein
+</div>
+<div align="center">
 <img width="256" height="256" alt="image" src="https://github.com/user-attachments/assets/ee589462-59e3-432c-b20d-87b11a0ad85d" />  
 DDPM 第一作者：Jonathan Ho  
 </div>
