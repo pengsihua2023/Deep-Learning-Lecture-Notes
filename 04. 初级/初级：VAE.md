@@ -1,6 +1,7 @@
 ## 变分自编码器（Variational Autoencoder, VAE）
 变分自编码器（VAE）是一种生成式深度学习模型，由Kingma和Welling于2013年提出。它是自编码器（Autoencoder）的变体，但引入了变分推断（Variational Inference）的思想，使其能够生成新数据，而不仅仅是压缩和重建输入。VAE的主要目的是学习数据的潜在表示（latent representation），并通过潜在空间的采样来生成类似于训练数据的样本。
 
+<img width="617" height="376" alt="image" src="https://github.com/user-attachments/assets/da34a994-bb28-42a6-81d9-8e64e091059c" />
 
 
 ### VAE的核心组件包括：
