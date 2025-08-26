@@ -72,11 +72,7 @@ $$
 V(G) = \mathbb{E}_{z \sim p_z}[\log (1 - D(G(z)))]
 $$
 
-* 实践中，常优化等价形式
-
-$$
-\max_G \mathbb{E}_{z \sim p_z}[\log D(G(z))]
-$$
+* 实践中，常优化等价形式 $\max_G \mathbb{E}_{z \sim p_z}[\log D(G(z))]$
 
 因为原始形式梯度可能不稳定（尤其当 $D(G(z)) \approx 0$ 时）。
 
