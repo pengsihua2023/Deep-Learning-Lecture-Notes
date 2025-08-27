@@ -25,7 +25,8 @@ $\min_{\theta} \mathbb{E}_ {(x,y)\sim \mathcal{D}} \big[ \mathcal{L}(f_{\theta}(
 ## 2. 多任务学习的扩展形式
 
 假设有 $T$ 个任务，每个任务 $t \in \{1,\dots,T\}$ 对应数据集
-<img width="337" height="93" alt="image" src="https://github.com/user-attachments/assets/9fd37fa9-a76a-4979-b282-041f512d2fe0" />
+
+<img width="160" height="46" alt="image" src="https://github.com/user-attachments/assets/9fd37fa9-a76a-4979-b282-041f512d2fe0" />
 
 $$
 \mathcal{D}_t = \{(x_i^t, y_i^t)\}_{i=1}^{N_t} ,
