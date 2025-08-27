@@ -6,7 +6,7 @@ Transformer 使用“注意力机制”（Attention），关注输入中最重�
 - 应用：聊天机器人（如 Grok）、机器翻译、文本生成。
  为什么教：Transformer 代表 AI 的最新进展。
 <div align="center">
-<img width="480" height="320" alt="image" src="https://github.com/user-attachments/assets/431b0bba-466e-4a24-b27b-8ac0372e5d5e" />  
+<img width="490" height="250" alt="image" src="https://github.com/user-attachments/assets/431b0bba-466e-4a24-b27b-8ac0372e5d5e" />  
 <img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/8d064b02-6166-47ec-bfc6-fb031f94192c" />  
 </div>
 
