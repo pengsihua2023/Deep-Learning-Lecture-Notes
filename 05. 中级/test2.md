@@ -1,8 +1,3 @@
-
-$$
-\mathcal{D}_t = \{(x_i^t, y_i^t)\}_{i=1}^{N_t} ,
-$$
-
 $\mathcal{D}_t \= $  
 
 ${ (x_i^t, y_i^t) \}_{i=1}^{N_t} ,$
