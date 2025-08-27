@@ -9,8 +9,9 @@ $$
 $$
 
 $$
-\mathcal{D}_t = \lbrace (\text{x}_i^t, \text{y}_i^t) \rbrace_{i=1}^{N_t},
+\mathcal{D}_t = \left\lbrace \left( x_i^t, y_i^t \right) \right\rbrace_{i=1}^{N_t},
 $$
+
 
 多任务学习（Multi-Task Learning, MTL）的数学描述通常建立在**机器学习的优化问题**框架下，可以从单任务学习推广而来。下面给出常见的数学形式：
 
