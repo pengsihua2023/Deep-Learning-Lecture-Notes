@@ -26,9 +26,11 @@ BERT（Bidirectional Encoder Representations from Transformers）是 Google 在 
 
 3. **公式**：
    - 输入嵌入：
-     \[
+     
+     $$
      \text{Input} = \text{Token Embedding} + \text{Segment Embedding} + \text{Position Embedding}
-     \]
+     $$
+     
    - 自注意力：
 
 $$
