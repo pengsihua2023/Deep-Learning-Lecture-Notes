@@ -1,8 +1,12 @@
 $
-\mathcal{D}_t =
-\begin {array}{l}
-\ { (x_i^t, y_i^t) \}_{i=1}^{N_t} ,
+\mathcal{D}_t = \left\{
+\begin{array}{l}
+(x_1^t, y_1^t), \\
+(x_2^t, y_2^t), \\
+\;\;\vdots \\
+(x_{N_t}^t, y_{N_t}^t)
 \end{array}
+\right\}
 $
 
 $$
