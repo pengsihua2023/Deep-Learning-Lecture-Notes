@@ -9,7 +9,7 @@ $$
 $$
 
 $$
-\mathcal{D}_t = \lbrace (\text{x}_i^t, \text{y}_i^t) \rbrace_{i=1}^{N_t},
+\mathcal{D}_t = \left\lbrace \left( x_i^t, y_i^t \right) \right\rbrace_{i=1}^{N_t},
 $$
 
 
