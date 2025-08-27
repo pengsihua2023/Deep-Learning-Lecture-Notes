@@ -38,9 +38,7 @@ ${\left[ \mathcal{L}(f_\theta(x), y) \right].}$
 
 假设有 $T$ 个任务，每个任务 $t$ 的数据集为：
 
-$$
-\mathcal{D}_t = \{{(x_i^t, y_i^t)\}_{i=1}^{N_t}},
-$$
+$\mathcal{D}_t = \{(x_i^t, y_i^t)\}_{i=1}^{N_t},$
 
 * $x_i^t$：任务 $t$ 的输入。
 * $y_i^t$：任务 $t$ 的标签。
