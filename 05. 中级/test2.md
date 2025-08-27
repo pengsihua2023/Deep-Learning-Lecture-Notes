@@ -6,6 +6,7 @@ $$
 $$
 \mathbb{E}_{(x,y)}
 $$
+
 $$
 \sim {\mathcal{D}} 
 $$
