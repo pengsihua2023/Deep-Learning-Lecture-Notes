@@ -9,7 +9,7 @@ GNN 专门处理图结构数据（如社交网络、分子结构），在推荐�
 - 应用：推荐系统（如 Netflix 推荐）、分子设计（药物发现）、交通网络分析。
 
 <div align="center">
-<img width="700" height="363" alt="image" src="https://github.com/user-attachments/assets/47f67caf-be26-42b4-928e-b8db05f1afab" />  
+<img width="500" height="263" alt="image" src="https://github.com/user-attachments/assets/47f67caf-be26-42b4-928e-b8db05f1afab" />  
 </div>
 
 编写一个基于PyTorch和PyTorch Geometric的最简单Graph Neural Network（GNN）示例，使用真实数据集（Cora数据集，常用的图分类基准数据集），实现节点分类任务。模型使用简单的Graph Convolutional Network（GCN）。结果将通过可视化节点嵌入（t-SNE降维）和评估分类准确率来展示。
