@@ -1,3 +1,12 @@
+$$
+\begin{aligned}
+\mathcal{L}_i
+&= - \log 
+   \frac{ \exp\!\left( \tfrac{s(z_i, z_i^+)}{\tau} \right) }
+        { \sum_{j=1}^N \exp\!\left( \tfrac{s(z_i, z_j)}{\tau} \right) }
+\end{aligned}
+$$
+
 对比学习（Contrastive Learning）是一类通过 **相似样本“拉近”、不相似样本“推远”** 来学习表示的机器学习方法。下面我给你一个数学化的描述：
 
 ---
