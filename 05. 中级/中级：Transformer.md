@@ -1,6 +1,5 @@
 ## Transformer
 <div align="center">
-<img width="600" height="350" alt="image" src="https://github.com/user-attachments/assets/431b0bba-466e-4a24-b27b-8ac0372e5d5e" />  
 <img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/8d064b02-6166-47ec-bfc6-fb031f94192c" />  
 </div>
 
