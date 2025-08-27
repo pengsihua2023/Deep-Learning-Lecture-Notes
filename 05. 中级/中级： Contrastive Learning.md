@@ -9,8 +9,10 @@
 - 比喻：像“找朋友游戏”，模型学会把“朋友”（相似图片/文本）聚在一起，把“陌生人”（不相似数据）分开。  
 - 应用：
 图像分类（SimCLR、MoCo）：用少量标注数据实现高精度分类。  
-多模态学习（CLIP）：图文搜索、图像生成（如 DALL·E）。  
-<img width="1600" height="919" alt="image" src="https://github.com/user-attachments/assets/5d389da9-c6c7-46d5-a1c5-096422a5328b" />
+多模态学习（CLIP）：图文搜索、图像生成（如 DALL·E）。
+<div align="center")
+<img width="800" height="460" alt="image" src="https://github.com/user-attachments/assets/5d389da9-c6c7-46d5-a1c5-096422a5328b" />
+</div>
 
 编写一个基于PyTorch的最简单Contrastive Learning示例，使用真实数据集（MNIST手写数字数据集），实现对比学习以学习图像特征嵌入。模型将使用SimCLR风格的对比损失（NT-Xent），目标是使相同数字的图像嵌入更接近，不同数字的嵌入更远离。结果将通过可视化嵌入空间（使用t-SNE降维）和评估k-NN分类准确率来展示。
 
