@@ -1,5 +1,5 @@
 
-$\min_{\theta}   \$ 
+$\min_{\theta}   $ 
 $\mathbb{E}_{(x,y)}$ $\sim {\mathcal{D}} $
 
 $\big[ \mathcal{L}(f_{\theta}(x), y) \big]$
