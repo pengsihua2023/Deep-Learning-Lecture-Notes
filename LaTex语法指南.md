@@ -1,7 +1,7 @@
 $\mathbb{Z}$
 
 $$
-\mathbb{E}_{x \sim \mathcal{D}}[f(x)] 
+\mathbb{E}_{x \mathcal{D}}[f(x)] 
 = \int_{\mathbb{R}} f(x)\,p(x)\,dx
 $$
 
