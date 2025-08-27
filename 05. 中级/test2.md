@@ -1,7 +1,7 @@
 
 $\min_\theta \ \sum_{t=1}^T \lambda_t \, \mathbb{E}_{(x,y)\sim \mathcal{D}_t} $
 
-$\left[ \mathcal{L}_t(f_\theta(x), y) \right],$
+$\left[ \mathcal{L}_t(f_ \theta(x), y) \right],$
 
 
 
