@@ -33,6 +33,10 @@ $$
 
 损失函数为 $\mathcal{L}_t$。
 多任务学习的目标是**同时优化多个任务的损失**，一般形式为：
+$\min_{\theta} 
+\sum\nolimits_{t=1}^T \lambda_t 
+\mathbb{E}_{(x,y)\sim \mathcal{D}_t}
+\left[ \mathcal{L}_t\big(f\theta(x), y\big) \right],$
 
 $$
 \min_\theta \ \sum_{t=1}^T \lambda_t \, \mathbb{E}_{(x,y)\sim \mathcal{D}_t} \left[ \mathcal{L}_t(f_\theta(x), y) \right],
