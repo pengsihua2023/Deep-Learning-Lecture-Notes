@@ -1,4 +1,4 @@
-$
+$$
 \mathcal{D}_t = \left\{
 \begin{array}{l}
 (x_1^t, y_1^t), \\
@@ -7,7 +7,7 @@ $
 (x_{N_t}^t, y_{N_t}^t)
 \end{array}
 \right\}
-$
+$$
 
 $$
 \mathcal{D}_t = \{(x_i^t, y_i^t)\}_{i=1}^{N_t} ,
