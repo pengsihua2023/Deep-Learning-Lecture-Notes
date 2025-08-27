@@ -11,6 +11,11 @@ $\min_{\theta} \;
 \mathbb{E}_{(x,y)\sim \mathcal{D}_t}
 \!\left[ \mathcal{L}_t\!\big(f_\theta(x), y\big) \right]$
 
+$\min_{\theta} ;
+\sum\nolimits_{t=1}^T \lambda_t ,
+\mathbb{E}_{(x,y)\sim \mathcal{D}_t}
+!\left[ \mathcal{L}t!\big(f\theta(x), y\big) \right]$
+
 
 多任务学习（Multi-Task Learning, MTL）的数学描述通常建立在**机器学习的优化问题**框架下，可以从单任务学习推广而来。下面给出常见的数学形式：
 
