@@ -3,20 +3,7 @@ $\mathcal{D}_t \= $
 ${ (x_i^t, y_i^t) \}_{i=1}^{N_t} ,$
 
 
-$\mathcal{D}_t = \\{ (x_i^t, y_i^t) \}_{i=1}^{N_t},$
 
-$$
-\begin{aligned}
-\mathcal{D}_t &= \{ (x_i^t, y_i^t) \}_{i=1}^{N_t} ,
-\end{aligned}
-$$
-
-$
-\begin{aligned}
-\mathcal{D}_t &= \\
-&\{ (x_i^t, y_i^t) \}_{i=1}^{N_t} ,
-\end{aligned}
-$
 
 多任务学习（Multi-Task Learning, MTL）的数学描述通常建立在**机器学习的优化问题**框架下，可以从单任务学习推广而来。下面给出常见的数学形式：
 
