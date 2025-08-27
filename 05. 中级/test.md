@@ -50,7 +50,8 @@ $$
 最常见的形式是 **InfoNCE loss**：
 
 $$
-\mathcal{L}_i = - \log \frac {\exp\big( s(z_i, z_i^+) / \tau \big)} {\sum_{j=1}^N \exp\big( s(z_i, z_j) / \tau \big)}
+\mathcal{L}_i = - \log \frac
+{\exp\big( s(z_i, z_i^+) / \tau \big)} {\sum_{j=1}^N \exp\big( s(z_i, z_j) / \tau \big)}
 $$
 
 $$
