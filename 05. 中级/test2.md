@@ -1,4 +1,7 @@
+$\min_W \ \sum_{t=1}^T \mathcal{L}_t(W_t) + $
 
+\lambda \|W\|_*,
+$$
 
 ## 多任务学习（Multi-Task Learning, MTL）的数学描述
 
@@ -77,8 +80,9 @@ $$
 
 可以施加低秩约束（捕捉共享子空间）：
 
-$$
-\min_W \ \sum_{t=1}^T \mathcal{L}_t(W_t) + \lambda \|W\|_*,
+$\min_W \ \sum_{t=1}^T \mathcal{L}_t(W_t) + $
+
+\lambda \|W\|_*,
 $$
 
 其中 $\|W\|_*$ 是核范数。
