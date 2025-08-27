@@ -10,7 +10,7 @@
 - 应用：
 图像分类（SimCLR、MoCo）：用少量标注数据实现高精度分类。  
 多模态学习（CLIP）：图文搜索、图像生成（如 DALL·E）。
-<div align="center")
+<div align="center">
 <img width="800" height="460" alt="image" src="https://github.com/user-attachments/assets/5d389da9-c6c7-46d5-a1c5-096422a5328b" />
 </div>
 
