@@ -25,9 +25,8 @@ $\min_\theta \ \mathbb{E}_{(x,y)\sim \mathcal{D}} $
 $\left[ \mathcal{L}(f_\theta(x), y) \right].$
 
 
-$$
-\min_{\theta}\; \mathbb{E}_{(x,y)\sim D}\big[L(f_{\theta}(x), y)\big].
-$$
+![loss function](https://latex.codecogs.com/svg.latex?\min_{\theta}\;\mathbb{E}_{(x,y)\sim D}[L(f_{\theta}(x),y)])
+
 
 要不要我顺便帮你排版成 **LaTeX 完整公式环境**，方便直接放进论文或文档里？
 
