@@ -13,7 +13,7 @@ $$
 其中 $x_i \in \mathcal {X}$ 为输入，$y_i \in \mathcal{Y}$ 为标签。我们训练一个模型 $f_\theta(x)$，参数为 $\theta$，目标是最小化期望损失：
 
 $$
-\min_\theta \ \mathbb{E}_{(x,y)\sim \mathcal{D}} \left[ \mathcal{L}(f_\theta(x), y) \right]
+\min_\theta \ \mathbb {E}_{(x,y)\sim \mathcal{D}} \left [ \mathcal{L}(f_\theta(x), y) \right]
 $$
 
 ---
