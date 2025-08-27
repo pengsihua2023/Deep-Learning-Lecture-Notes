@@ -1,4 +1,4 @@
-<img width="2961" height="1190" alt="image" src="https://github.com/user-attachments/assets/3f6e0222-c92a-4f1d-bdcb-44bd1b8378ae" />
+<img width="1000" height="380" alt="image" src="https://github.com/user-attachments/assets/3f6e0222-c92a-4f1d-bdcb-44bd1b8378ae" />
 
 
 * **Input $x$** → **Shared representation $\phi_{\theta_s}(x)$**
