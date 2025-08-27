@@ -30,6 +30,7 @@ BERT（Bidirectional Encoder Representations from Transformers）是 Google 在 
      \text{Input} = \text{Token Embedding} + \text{Segment Embedding} + \text{Position Embedding}
      \]
    - 自注意力：
+
 $$
 \text{Attention}(Q, K, V) = \mathrm{softmax}\left(\frac{QK^{T}}{\sqrt{d_k}}\right)V
 $$
