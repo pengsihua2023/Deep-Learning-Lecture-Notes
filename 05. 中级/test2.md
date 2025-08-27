@@ -1,12 +1,8 @@
-$\mathcal{D}_t =$
-
-${ (x_i^t, y_i^t) \}_{i=1}^{N_t} ,$
 
 
+## 多任务学习（Multi-Task Learning, MTL）的数学描述
 
-多任务学习（Multi-Task Learning, MTL）的数学描述通常建立在**机器学习的优化问题**框架下，可以从单任务学习推广而来。下面给出常见的数学形式：
-
----
+多任务学习的数学描述通常建立在**机器学习的优化问题**框架下，可以从单任务学习推广而来。下面给出常见的数学形式：
 
 ## 1. 单任务学习的基本形式
 
@@ -25,8 +21,8 @@ $\min_{\theta} \mathbb{E}_ {(x,y)\sim \mathcal{D}} \big[ \mathcal{L}(f_{\theta}(
 ## 2. 多任务学习的扩展形式
 
 假设有 $T$ 个任务，每个任务 $t \in \{1,\dots,T\}$ 对应数据集
-
-<img width="160" height="46" alt="image" src="https://github.com/user-attachments/assets/9fd37fa9-a76a-4979-b282-041f512d2fe0" />
+<div align="center">
+<img width="160" height="46" alt="image" src="https://github.com/user-attachments/assets/9fd37fa9-a76a-4979-b282-041f512d2fe0" /> </div>
 
 $$
 \mathcal{D}_t = \{(x_i^t, y_i^t)\}_{i=1}^{N_t} ,
