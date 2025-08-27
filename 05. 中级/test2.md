@@ -24,10 +24,6 @@ $\min_{\theta} \mathbb{E}_ {(x,y)\sim \mathcal{D}} \big[ \mathcal{L}(f_{\theta}(
 <div align="center">
 <img width="160" height="46" alt="image" src="https://github.com/user-attachments/assets/9fd37fa9-a76a-4979-b282-041f512d2fe0" /> </div>
 
-$$
-\mathcal{D}_t = \{(x_i^t, y_i^t)\}_{i=1}^{N_t} ,
-$$
-
 损失函数为 $\mathcal{L}_t$。
 多任务学习的目标是**同时优化多个任务的损失**，一般形式为：
 
