@@ -6,10 +6,7 @@ $\left[ \mathcal{L}_ t(f_\theta(x), y) \right],$
 $\min_\theta \; \sum_{t=1}^T \lambda_t \, \mathbb{E}_{(x,y)\sim \mathcal{D}_t} \left[ \mathcal{L}_t(f_\theta(x), y) \right]$
 
 
-$\min_{\theta} \; 
-\sum\nolimits_{t=1}^T \lambda_t \,
-\mathbb{E}_{(x,y)\sim \mathcal{D}_t}
-\!\left[ \mathcal{L}_t\!\big(f_\theta(x), y\big) \right]$
+
 
 $\min_{\theta} 
 \sum\nolimits_{t=1}^T \lambda_t 
