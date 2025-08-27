@@ -1,7 +1,5 @@
 
-$
-\min_{\theta} \
-$
+$\min_{\theta} \$
 
 $$
 \mathbb{E}_{(x,y)}
