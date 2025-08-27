@@ -7,7 +7,7 @@
 设有数据点集合
 
 $$
-\{x_i\}_{i=1}^N, \quad x_i \in \mathcal{X}
+\{x_i\}_{i=1}^N, \quad x_i \in \mathcal {X}
 $$
 
 通过一个编码器（如神经网络) $f_\theta: \mathcal{X} \to \mathbb{R}^d$ 将输入映射到特征空间：
