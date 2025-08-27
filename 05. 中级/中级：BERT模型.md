@@ -38,7 +38,7 @@ BERT（Bidirectional Encoder Representations from Transformers）是 Google 在 
 
 
 $$
-\text{Attention}(Q, K, V) = \mathrm{softmax}\!\left(\frac{QK^{T}}{\sqrt{d_k}}\right)V
+\text{Attention}(Q, K, V) = \mathrm{softmax}\left(\frac{QK^{T}}{\sqrt{d_k}}\right)V
 $$
 
 其中 \(Q, K, V\) 是查询、键、值向量，\(d_k\) 是维度。
