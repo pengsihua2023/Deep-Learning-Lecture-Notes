@@ -20,7 +20,9 @@ $$
 
 目标是最小化期望损失：
 
-${\min_\theta \ \mathbb{E}_{(x,y)\sim \mathcal{D}} }$        ${\left[ \mathcal{L}(f_\theta(x), y) \right].}$
+${\min_\theta \ \mathbb{E}_{(x,y)\sim \mathcal{D}} }$        
+
+${\left[ \mathcal{L}(f_\theta(x), y) \right].}$
 
 
 ![loss function](https://latex.codecogs.com/svg.latex?\min_{\theta}\;\mathbb{E}_{(x,y)\sim D}[L(f_{\theta}(x),y)])
