@@ -117,9 +117,7 @@ $$
 
 显示为：
 
-$$
-\min_{\theta} \; \mathbb{E}_{(x,y)\sim D}\!\left[L(f_{\theta}(x), y)\right]
-$$
+$\min_{\theta} \; \mathbb{E}_{(x,y)\sim D}\!\left[L(f_{\theta}(x), y)\right]$
 
 ---
 
