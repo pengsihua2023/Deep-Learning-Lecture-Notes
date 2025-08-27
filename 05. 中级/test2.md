@@ -12,7 +12,7 @@ $\min_{\theta} \;
 \!\left[ \mathcal{L}_t\!\big(f_\theta(x), y\big) \right]$
 
 $\min_{\theta} 
-\sum\nolimits_{t=1}^T \lambda_t ,
+\sum\nolimits_{t=1}^T \lambda_t 
 \mathbb{E}_{(x,y)\sim \mathcal{D}_t}
 !\left[ \mathcal{L}t!\big(f\theta(x), y\big) \right]$
 
