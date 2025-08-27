@@ -1,5 +1,11 @@
 $\mathbb{Z}$
 
+$$
+\mathbb{E}_{x \sim \mathcal{D}}[f(x)] 
+= \int_{\mathbb{R}} f(x)\,p(x)\,dx
+$$
+
+
 # 📖 LaTeX 常见数学符号速查表
 
 ## 1. 希腊字母
