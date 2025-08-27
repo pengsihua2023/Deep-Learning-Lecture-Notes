@@ -1,8 +1,4 @@
 
-$\min_\theta \ \sum_{t=1}^T \lambda_t \, \mathbb{E}_{(x,y)\sim \mathcal{D}_t} $  
-
-
-
 $\min_{\theta} 
 \sum\nolimits_{t=1}^T \lambda_t 
 \mathbb{E}_{(x,y)\sim \mathcal{D}_t}
