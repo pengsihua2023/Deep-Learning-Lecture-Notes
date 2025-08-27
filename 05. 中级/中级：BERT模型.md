@@ -33,11 +33,17 @@ BERT（Bidirectional Encoder Representations from Transformers）是 Google 在 
 <img width="722" height="133" alt="image" src="https://github.com/user-attachments/assets/4eee741d-26d9-46fc-b073-e05bf8b64055" />
 
 
-```
-Attention(Q, K, V) = softmax( QK^T / √d_k ) V
 
-其中 Q, K, V 是查询、键、值向量，d_k 是维度。
-```
+好的，用 LaTeX 表示如下：
+
+
+$$
+\text{Attention}(Q, K, V) = \mathrm{softmax}\!\left(\frac{QK^{T}}{\sqrt{d_k}}\right)V
+$$
+
+其中 \(Q, K, V\) 是查询、键、值向量，\(d_k\) 是维度。
+
+
 
    - 输出：最后一层 `[CLS]` 表示用于分类，或 token 表示用于序列标注。
 
