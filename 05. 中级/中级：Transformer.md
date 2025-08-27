@@ -5,11 +5,10 @@ Transformer 使用“注意力机制”（Attention），关注输入中最重�
 比 RNN 更高效，适合处理长序列。  
 - 应用：聊天机器人（如 Grok）、机器翻译、文本生成。
  为什么教：Transformer 代表 AI 的最新进展。
-
+<div align="center">
 <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/431b0bba-466e-4a24-b27b-8ac0372e5d5e" />  
-
-
 <img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/8d064b02-6166-47ec-bfc6-fb031f94192c" />  
+</div>
 
 ## Transformer的数学描述
 Transformer架构是自然语言处理和深度学习领域的核心模型，最初由Vaswani等人在2017年论文《Attention is All You Need》中提出。以下是其数学描述，涵盖主要组成部分，包括输入表示、注意力机制、位置编码、前馈网络和层归一化等。    
