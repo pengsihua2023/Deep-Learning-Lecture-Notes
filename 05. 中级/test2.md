@@ -1,4 +1,5 @@
-$\min_W \ \sum_{t=1}^T \mathcal{L}_t (W_t) + \\lambda \|W\|_*,$
+$\min_W \ \sum_{t=1}^T \mathcal{L}_t \(W_t) + $
+\\lambda \|W\|_*,$
 
 ## 多任务学习（Multi-Task Learning, MTL）的数学描述
 
