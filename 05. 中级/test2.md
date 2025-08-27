@@ -23,7 +23,7 @@ $$
 假设有 $T$ 个任务，每个任务 $t \in \{1,\dots,T\}$ 对应数据集
 
 $$
-\mathcal{D}_t = \{(x_i^t, y_i^t)\}_{i=1}^{N_t},
+\mathcal{D}_t = \{(x_i^t, y_i^t)\}_{i=1}^{N_t} ,
 $$
 
 损失函数为 $\mathcal{L}_t$。
