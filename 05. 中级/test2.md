@@ -22,7 +22,7 @@ $$
 
 $\min_\theta \ \mathbb{E}_{(x,y)\sim \mathcal{D}} $
 
-\left[ \mathcal{L}(f_\theta(x), y) \right].$
+$\left[ \mathcal{L}(f_\theta(x), y) \right].$
 
 * $\mathcal{L}(\cdot, \cdot)$：损失函数（如均方误差、交叉熵）。
 * $\mathbb{E}_{(x,y)\sim \mathcal{D}}[\cdot]$：对训练数据分布的期望。
