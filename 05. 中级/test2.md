@@ -28,9 +28,6 @@ $\left[ \mathcal{L}(f_\theta(x), y) \right].$
 ![loss function](https://latex.codecogs.com/svg.latex?\min_{\theta}\;\mathbb{E}_{(x,y)\sim D}[L(f_{\theta}(x),y)])
 
 
-要不要我顺便帮你排版成 **LaTeX 完整公式环境**，方便直接放进论文或文档里？
-
-
 * $\mathcal{L}(\cdot, \cdot)$：损失函数（如均方误差、交叉熵）。
 * $\mathbb{E}_{(x,y)\sim \mathcal{D}}[\cdot]$：对训练数据分布的期望。
 * 含义：学习一个模型，使得它在整体数据分布上预测结果尽可能接近真实标签。
