@@ -21,7 +21,6 @@ $$
 目标是最小化期望损失：
 
 $\min_\theta \ \mathbb{E}_{(x,y)\sim \mathcal{D}} $ 
-
 $\left[ \mathcal{L}(f_\theta(x), y) \right].$
 
 * $\mathcal{L}(\cdot, \cdot)$：损失函数（如均方误差、交叉熵）。
