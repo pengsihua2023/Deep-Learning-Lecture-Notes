@@ -1,76 +1,3 @@
-对比学习（Contrastive Learning）的数学描述通常从“表示学习”的目标出发，核心思想是：**将语义相似的样本拉近，语义不相似的样本推远**。下面我给出比较系统的数学形式化：
-
----
-
-## 1. 表示函数
-
-假设我们有样本集合 $\mathcal{X} = \{x_1, x_2, \dots, x_N\}$。
-我们通过一个编码器（例如神经网络）$f_\theta: \mathcal{X} \to \mathbb{R}^d$，将样本映射到特征空间：
-
-$$
-z_i = f_\theta(x_i), \quad z_i \in \mathbb{R}^d
-$$
-
-通常会加上归一化约束 $\|z_i\|_2 = 1$，使得表示落在单位球面上。
-
----
-
-## 2. 正样本与负样本
-
-* **正样本对（positive pair）**：来自相同语义类别，或同一样本的不同增强（data augmentation）版本，例如 $(x_i, x_j^+)$。
-* **负样本对（negative pair）**：来自不同语义类别的样本对，例如 $(x_i, x_k^-)$。
-
----
-
-## 3. 相似度度量
-
-常用余弦相似度：
-
-$$
-\text{sim}(z_i, z_j) = \frac{z_i^\top z_j}{\|z_i\|\|z_j\|}
-$$
-
-若已归一化，则简化为 $\text{sim}(z_i, z_j) = z_i^\top z_j$。
-
----
-
-## 4. 损失函数（以 InfoNCE 为例）
-
-对比学习的常用目标是 **InfoNCE 损失**。设第 $i$ 个样本的正样本为 $z_j^+$，其余为负样本 $\{z_k^-\}$，则损失为：
-
-$$
-\mathcal{L}_i = - \log \frac{\exp(\text{sim}(z_i, z_j^+)/\tau)}{\sum_{k=1}^{N} \exp(\text{sim}(z_i, z_k)/\tau)}
-$$
-
-其中：
-
-* $\tau > 0$ 是 **温度参数（temperature）**，调节分布的平滑度；
-* 分子项对应 **正样本对**；
-* 分母项包含所有候选（正 + 负），通常是 **softmax 归一化**。
-
----
-
-## 5. 总损失
-
-对一个 batch 中所有样本取平均：
-
-$$
-\mathcal{L} = \frac{1}{N} \sum_{i=1}^N \mathcal{L}_i
-$$
-
----
-
-## 6. 总结
-
-* 对比学习的核心数学公式是 **归一化的 softmax 对数似然目标（InfoNCE）**；
-* 优化目标：最大化正样本相似度，最小化负样本相似度；
-* 扩展：有 **NT-Xent 损失**（SimCLR）、**Triplet Loss**、**Margin Loss** 等变体。
-
----
-
-
-
-
 ## 对比学习（Contrastive Learning）
 <div align="center">
 <img width="600" height="360" alt="image" src="https://github.com/user-attachments/assets/5d389da9-c6c7-46d5-a1c5-096422a5328b" />
@@ -88,6 +15,66 @@ $$
 图像分类（SimCLR、MoCo）：用少量标注数据实现高精度分类。  
 多模态学习（CLIP）：图文搜索、图像生成（如 DALL·E）。
 
+## 对比学习的数学描述
+对比学习（Contrastive Learning）的数学描述通常从“表示学习”的目标出发，核心思想是：**将语义相似的样本拉近，语义不相似的样本推远**。下面我给出比较系统的数学形式化：
+
+## 1. 表示函数
+
+假设我们有样本集合 $\mathcal{X} = \{x_1, x_2, \dots, x_N\}$。
+我们通过一个编码器（例如神经网络）$f_\theta: \mathcal{X} \to \mathbb{R}^d$，将样本映射到特征空间：
+
+$$
+z_i = f_\theta(x_i), \quad z_i \in \mathbb{R}^d
+$$
+
+通常会加上归一化约束 $\|z_i\|_2 = 1$，使得表示落在单位球面上。
+
+## 2. 正样本与负样本
+
+* **正样本对（positive pair）**：来自相同语义类别，或同一样本的不同增强（data augmentation）版本，例如 $(x_i, x_j^+)$。
+* **负样本对（negative pair）**：来自不同语义类别的样本对，例如 $(x_i, x_k^-)$。
+
+## 3. 相似度度量
+
+常用余弦相似度：
+
+$$
+\text{sim}(z_i, z_j) = \frac{z_i^\top z_j}{\|z_i\|\|z_j\|}
+$$
+
+若已归一化，则简化为 $\text{sim}(z_i, z_j) = z_i^\top z_j$。
+
+## 4. 损失函数（以 InfoNCE 为例）
+
+对比学习的常用目标是 **InfoNCE 损失**。设第 $i$ 个样本的正样本为 $z_j^+$，其余为负样本 $\{z_k^-\}$，则损失为：
+
+$$
+\mathcal{L}_i = - \log \frac{\exp(\text{sim}(z_i, z_j^+)/\tau)}{\sum_{k=1}^{N} \exp(\text{sim}(z_i, z_k)/\tau)}
+$$
+
+其中：
+
+* $\tau > 0$ 是 **温度参数（temperature）**，调节分布的平滑度；
+* 分子项对应 **正样本对**；
+* 分母项包含所有候选（正 + 负），通常是 **softmax 归一化**。
+
+## 5. 总损失
+
+对一个 batch 中所有样本取平均：
+
+$$
+\mathcal{L} = \frac{1}{N} \sum_{i=1}^N \mathcal{L}_i
+$$
+
+## 6. 总结
+
+* 对比学习的核心数学公式是 **归一化的 softmax 对数似然目标（InfoNCE）**；
+* 优化目标：最大化正样本相似度，最小化负样本相似度；
+* 扩展：有 **NT-Xent 损失**（SimCLR）、**Triplet Loss**、**Margin Loss** 等变体。
+
+---
+
+## 代码
 
 编写一个基于PyTorch的最简单Contrastive Learning示例，使用真实数据集（MNIST手写数字数据集），实现对比学习以学习图像特征嵌入。模型将使用SimCLR风格的对比损失（NT-Xent），目标是使相同数字的图像嵌入更接近，不同数字的嵌入更远离。结果将通过可视化嵌入空间（使用t-SNE降维）和评估k-NN分类准确率来展示。
 
