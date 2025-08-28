@@ -17,7 +17,7 @@ $$
 * $E \subseteq V \times V$ 为边集合。
 * $X \in \mathbb{R}^{N \times d}$ 为节点特征矩阵，其中第 $i$ 行 $x_i \in \mathbb{R}^d$ 是节点 $i$ 的初始特征。
 
-邻接矩阵表示： $A \in \mathbb{R}^{N \times N}, \quad A_{ij} \neq 0 \;\Leftrightarrow\; (i,j) \in E$
+邻接矩阵表示： $A \in \mathbb{R}^{N \times N}, \quad A_{ij} \neq 0 \text{表示} (i,j) \in E$
 
 
 
