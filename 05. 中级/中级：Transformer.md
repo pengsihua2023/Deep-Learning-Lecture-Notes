@@ -110,7 +110,23 @@ Transformer的数学核心在于：
 残差与归一化：稳定训练并加速收敛。  
 
 ## 一个只有编码器的Transformer
-<img width="753" height="263" alt="image" src="https://github.com/user-attachments/assets/a9203ca4-71c3-4184-89db-8b2b551d0042" />  
+
+**完整的Transformer vs 编码器Transformer**
+
+---
+
+### 表格内容
+
+| 组件   | 完整Transformer | 编码器Transformer |
+| ---- | ------------- | -------------- |
+| 编码器  | ✅             | ✅              |
+| 解码器  | ✅             | ❌              |
+| 适用任务 | 翻译、摘要         | 分类、情感分析        |
+| 输入输出 | 序列→序列         | 序列→类别          |
+
+---
+
+
 
 ```python
 import torch
