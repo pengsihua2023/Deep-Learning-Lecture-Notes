@@ -1,4 +1,4 @@
-#基于PIKAN解SEIR动力学方程
+# 基于PIKAN解SEIR动力学方程
 
 ## 1. SEIR动力学方程
 
