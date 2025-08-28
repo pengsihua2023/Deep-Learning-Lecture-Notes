@@ -80,6 +80,11 @@ $$
 <img width="704" height="70" alt="image" src="https://github.com/user-attachments/assets/38497436-1a0e-4636-a0f8-7eee56bf6d0f" />
 
 
+* PINNs 使用神经网络的自动微分（autograd）计算 PDE 中的导数（如 $\frac{\partial u}{\partial t}, \; \frac{\partial^2 u}{\partial x^2}$），无需显式离散化。
+
+* 网络输入为空间和时间坐标 $(x,t)$，输出为解 $u(x,t)$。
+
+
 5. **优点**：
    - 无需网格划分，适合高维或复杂几何。
    - 灵活，易于融入物理约束。
