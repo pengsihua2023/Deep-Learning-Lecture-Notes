@@ -257,7 +257,6 @@ $$
 
 #### **注意事项**
 1. **超参数**：
-<img width="661" height="129" alt="image" src="https://github.com/user-attachments/assets/c33a8fa0-368a-4796-ad97-afcedd7452f7" />
 
 
 * 采样点数 $(N_f, N_i, N_b)$：增加点数提高精度，但增加计算成本。
