@@ -14,7 +14,6 @@ $$
 \text{SelfAttention}(X) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
 $$
 
----
 
 ### Intuition
 
