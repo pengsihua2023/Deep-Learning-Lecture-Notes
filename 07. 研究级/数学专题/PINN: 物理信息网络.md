@@ -263,6 +263,13 @@ $$
 1. **超参数**：
 <img width="661" height="129" alt="image" src="https://github.com/user-attachments/assets/c33a8fa0-368a-4796-ad97-afcedd7452f7" />
 
+
+* 采样点数 $(N_f, N_i, N_b)$：增加点数提高精度，但增加计算成本。
+
+* 网络结构：层数和神经元数需根据 PDE 复杂性调整。
+
+* 损失权重：复杂 PDE 可能需调整 $\lambda_1, \lambda_2, \lambda_3$。
+
 2. **自动微分**：
    - 使用 `requires_grad_(True)` 确保计算高阶导数。
    - 确保输入张量格式正确（形状为 `[N, 1]`）。
