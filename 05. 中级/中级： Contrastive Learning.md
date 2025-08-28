@@ -28,9 +28,7 @@ $f_\theta: \mathcal{X} \to \mathbb {R}^d$ ，
 
 将样本映射到特征空间：
 
-$$
-z_i = f_\theta(x_i), \quad z_i \in \mathbb{R}^d
-$$
+$z_i = f_\theta(x_i), \quad z_i \in \mathbb{R}^d$
 
 通常会加上归一化约束 $\|z_i\|_2 = 1$，使得表示落在单位球面上。
 
