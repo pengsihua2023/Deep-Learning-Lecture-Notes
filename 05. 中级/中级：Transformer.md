@@ -26,16 +26,12 @@ Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分�
 * **位置编码**：由于 Transformer 不具备序列顺序信息，需加入位置编码（Positional Encoding）以捕捉词的位置。
   位置编码 $PE$ 可通过固定公式生成：
 
-  $$
-  PE(pos, 2i) = \sin\left(\frac{pos}{10000^{2i/d}}\right), \quad 
-  PE(pos, 2i+1) = \cos\left(\frac{pos}{10000^{2i/d}}\right)
-  $$
 
 
 $$
-PE_{(pos, 2i)} = \sin\!\left(\frac{pos}{10000^{\frac{2i}{d}}}\right), 
+PE{(pos, 2i)} = \sin\left(\frac{pos}{10000^{\frac{2i}{d}}}\right), 
 \quad
-PE_{(pos, 2i+1)} = \cos\!\left(\frac{pos}{10000^{\frac{2i}{d}}}\right)
+PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{\frac{2i}{d}}}\right)
 $$
 
 其中 $pos$ 是词在序列中的位置， $i$ 是维度索引。最终输入为：
