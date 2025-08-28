@@ -212,7 +212,6 @@ print("预测结果形状:", u_pred.shape)  # 输出：torch.Size([100, 1])
 
 ##### **代码说明**
 - **模型**：
-<img width="627" height="89" alt="image" src="https://github.com/user-attachments/assets/6d6be84c-d5d6-4e07-8798-b1b4d2d761a7" />
 
 
 * 定义一个简单全连接神经网络，输入为 $(x,t)$，输出为 $u(x,t)$。
@@ -221,7 +220,6 @@ print("预测结果形状:", u_pred.shape)  # 输出：torch.Size([100, 1])
 
 - **损失函数**：
   - `compute_loss` 计算三部分损失：
-<img width="828" height="141" alt="image" src="https://github.com/user-attachments/assets/1d70749d-14df-4136-ad55-d37a062de996" />
 
 
 * **PDE 残差：** 使用 `torch.autograd.grad` 计算 $u_t, u_x, u_{xx}$，构造 Burgers 方程残差。
@@ -240,7 +238,6 @@ $$
 
   - 总损失是三部分的加权和（这里权重设为 1，实际可调）。
 - **数据**：
-<img width="751" height="88" alt="image" src="https://github.com/user-attachments/assets/84132386-7ff5-44c3-8c0e-2c207cf76352" />
 
 
 * 随机采样 PDE 点 $(x_f, t_f)$、初始点 $(x_i, t_i)$ 和边界点 $(x_b, t_b)$。
@@ -251,7 +248,6 @@ $$
   - 使用 Adam 优化器（更适合 PINNs，SGD 或 Adagrad 也可试）。
   - 训练 1000 次，打印损失。
 - **测试**：
-<img width="527" height="46" alt="image" src="https://github.com/user-attachments/assets/d3067031-2f34-48a7-b73e-5f5dff6c7dc1" />
 
 
 * 在 $t = 0.5,  x \in [-1,1]$ 上预测解，验证输出形状。
@@ -281,7 +277,6 @@ $$
    - 加入观测数据，解决反问题。
    - 使用 GPU 加速训练：`model.cuda(), x_f.cuda(), ...`。
 5. **可视化**：
-<img width="485" height="49" alt="image" src="https://github.com/user-attachments/assets/1048e018-8bfa-40fb-b18d-69bd36457dd8" />
 
 
 * 可添加 matplotlib 代码绘制 $u(x,t)$ 的预测结果：
@@ -309,7 +304,6 @@ PINNs 是一种强大的方法，通过将物理方程嵌入神经网络损失�
 
 #### 1. **多维 PDE 示例：二维热传导方程**
 二维热传导方程（简化 Laplace 方程）：  
-<img width="716" height="279" alt="image" src="https://github.com/user-attachments/assets/1502430f-1ab7-4586-b80c-3d10dfdf61ea" />
 
 
 $$
@@ -450,7 +444,6 @@ plt.show()
 - **可视化**：损失曲线 + 预测解的 2D 热图，使用 `imshow` 显示温度分布。
 
 #### 2. **反问题示例：参数估计**
-<img width="951" height="47" alt="image" src="https://github.com/user-attachments/assets/7d2f8d41-8fe8-4c8f-a250-f4f30cf79cf0" />
 
 
 在 Burgers 方程中，假设粘性系数 $\nu$ 未知，使用观测数据估计 $\nu$。添加观测损失，并将 $\nu$ 作为可学习参数。
