@@ -37,9 +37,6 @@ $$
 
 <img width="160" height="43" alt="image" src="https://github.com/user-attachments/assets/c9628b49-a5b5-42cf-b2d6-f155d10432e1" />
 
-
-
-
 ## 3. 图级表示
 
 若任务需要对整个图进行预测（如图分类），则在最后一层节点表示的基础上定义图表示：
@@ -65,18 +62,15 @@ $$
 
 ### GraphSAGE
 
-$$
-h_i^{(k)} = \sigma\!\left(W^{(k)} \cdot 
-\mathrm{concat}\!\Big(h_i^{(k-1)},\;
-\phi^{(k)}\!\left(\{\,h_j^{(k-1)} \mid j \in \mathcal{N}(i)\,\}\right)\Big)\right)
-$$
+<img width="500" height="52" alt="image" src="https://github.com/user-attachments/assets/e5fa2b76-2764-4686-8a1d-dc873abfb520" />
+
 
 
 
 ### GAT (Graph Attention Network)
 
 $$
-h_i^{(k)} = \sigma\!\left(\sum_{j \in \mathcal{N}(i)} 
+h_i^{(k)} = \sigma\left(\sum_{j \in \mathcal{N}(i)} 
 \alpha_{ij}^{(k)} W^{(k)} h_j^{(k-1)}\right)
 $$
 
