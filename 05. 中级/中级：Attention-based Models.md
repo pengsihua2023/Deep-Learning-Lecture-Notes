@@ -1,10 +1,10 @@
-
+---
 
 # Attention 机制的数学描述
 
 Attention 机制的核心思想是：**在信息序列中为不同元素分配不同的权重，从而突出“重要”信息，抑制“无关”信息**。
 
----
+
 
 ## 1. 输入表示
 
@@ -25,7 +25,7 @@ $$
 * $W^Q, W^K, W^V \in \mathbb{R}^{d \times d_k}$ 为可学习参数；
 * $Q, K, V \in \mathbb{R}^{n \times d_k}$。
 
----
+
 
 ## 2. 注意力打分函数
 
@@ -37,7 +37,7 @@ $$
 
 其中 $\sqrt{d_k}$ 是缩放因子，防止数值过大。
 
----
+
 
 ## 3. 权重分布（Softmax）
 
@@ -49,7 +49,7 @@ $$
 
 其中 $\alpha_{ij}$ 表示第 $i$ 个 Query 对第 $j$ 个 Key 的注意力权重。
 
----
+
 
 ## 4. 上下文向量（加权求和）
 
@@ -61,7 +61,7 @@ $$
 
 得到最终的上下文表示 $z_i$。
 
----
+
 
 ## 5. 矩阵形式（Scaled Dot-Product Attention）
 
@@ -71,7 +71,7 @@ $$
 \text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right) V
 $$
 
----
+
 
 ## 6. 多头注意力（Multi-Head Attention）
 
@@ -87,7 +87,7 @@ $$
 \text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 $$
 
----
+
 
 ## 7. 总结
 
