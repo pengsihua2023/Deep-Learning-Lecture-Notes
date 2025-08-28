@@ -5,11 +5,9 @@
 
 一个图定义为三元组：
 
-
 $$
 G = (V, E, X)
 $$
-
 
 其中：
 
@@ -19,14 +17,11 @@ $$
 
 邻接矩阵表示： $A \in \mathbb{R}^{N \times N}, \quad A_{ij} \neq 0 \text{表示} (i,j) \in E$
 
-
-
 ## 2. 节点表示的迭代更新
 
 消息传递 (Message Passing) 的一般形式：
 
 <img width="500" height="52" alt="image" src="https://github.com/user-attachments/assets/e3732160-4870-4514-a875-7afaf4907056" />
-
 
 说明：
 
@@ -46,8 +41,6 @@ $$
 
 其中 $\rho$ 是读出函数 (readout)，常见取法为 sum、mean、max pooling 或注意力加权。
 
-
-
 ## 4. 特例：常见 GNN 实现
 
 ### GCN (Graph Convolutional Network)
@@ -58,14 +51,9 @@ $$
 
 其中 $\tilde{A} = A + I$，$\tilde{D}$ 是 $\tilde{A}$ 的度矩阵。
 
-
-
 ### GraphSAGE
 
 <img width="500" height="52" alt="image" src="https://github.com/user-attachments/assets/e5fa2b76-2764-4686-8a1d-dc873abfb520" />
-
-
-
 
 ### GAT (Graph Attention Network)
 
@@ -75,10 +63,6 @@ h_i^{(k)} = \sigma\left(\sum_{j \in \mathcal{N}(i)}
 $$
 
 其中 $\alpha_{ij}^{(k)}$ 是注意力权重：
-
-
-
-
 
 ## 5. 总结
 
@@ -91,21 +75,6 @@ GNN 的一般数学定义可以概括为：
 
 
 3. **输出**：节点嵌入 $H^{(K)}$ 或图嵌入 $h_G$。
-
-
-## 图神经网络 (GNN) 数学定义对照表
-
-| 符号                                                                                  | 定义                                                                                                               | 说明                                                           |
-| ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
-| $G = (V,E,X)$                                                                       | 图结构                                                                                                              | $V$ 为节点集合，$E$ 为边集合，$X \in \mathbb{R}^{N \times d}$ 为初始节点特征矩阵 |
-| $h_i^{(0)} = x_i$                                                                   | 节点初始表示                                                                                                           | 节点 $i$ 的特征向量                                                 |
-| $\mathcal{N}(i)$                                                                    | 节点邻居集合                                                                                                           | 与节点 $i$ 相连的所有节点（可含自身）                                        |
-| $\phi^{(k)}: \mathcal{P}(\mathbb{R}^{d_{k-1}}) \to \mathbb{R}^{d_{k-1}}$            | 聚合函数 (Aggregation)                                                                                               | 从邻居节点嵌入集合中提取信息，例如 sum、mean、max、attention                     |
-| $\psi^{(k)}: \mathbb{R}^{d_{k-1}} \times \mathbb{R}^{d_{k-1}} \to \mathbb{R}^{d_k}$ | 更新函数 (Update)                                                                                                    | 将节点自身表示与邻居聚合结果结合，通常是 MLP                                     |
-| 节点更新规则                                                                              | $\displaystyle h_i^{(k)} = \psi^{(k)}\Big(h_i^{(k-1)}, \;\phi^{(k)}(\{h_j^{(k-1)}: j \in \mathcal{N}(i)\})\Big)$ | **消息传递公式**：第 $k$ 层节点表示由自身和邻居共同决定                             |
-| $H^{(K)} = \{h_i^{(K)}\}_{i=1}^N$                                                   | 节点最终表示                                                                                                           | 经过 $K$ 层传播后的节点嵌入矩阵                                           |
-| $\rho: \mathcal{P}(\mathbb{R}^{d_K}) \to \mathbb{R}^{d_G}$                          | 读出函数 (Readout)                                                                                                   | 将所有节点嵌入映射为图级表示，常用 sum/mean/max pooling 或注意力                  |
-| 图表示                                                                                 | $\displaystyle h_G = \rho(\{h_i^{(K)}: i \in V\})$                                                               | 得到整个图的全局表示，用于图分类等任务                                          |
 
 ---
 
