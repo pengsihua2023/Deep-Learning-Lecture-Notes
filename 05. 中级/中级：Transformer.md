@@ -37,6 +37,13 @@ Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分�
 ### 3. 前馈神经网络（FFN） 
 每个编码器和解码器层包含一个逐位置的前馈网络，应用于每个词的向量：
 <img width="966" height="165" alt="image" src="https://github.com/user-attachments/assets/0230124d-f977-4ae3-8f37-d55d796c2182" />  
+
+$$
+\mathrm{FFN}(x) = \mathrm{ReLU}(x W_1 + b_1) W_2 + b_2
+$$  
+
+其中 $W_1 \in \mathbb{R}^{d \times d_{ff}}$, $W_2 \in \mathbb{R}^{d_{ff} \times d}$， $d_{ff}$ 通常远大于 $d$（如 $d_{ff} = 4d$）。
+
   
 ### 4. 残差连接与层归一化  
 每个子模块（自注意力或FFN）后接残差连接和层归一化：  
