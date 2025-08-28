@@ -35,7 +35,8 @@ $$
 * $\psi^{(k)}$：更新函数 (update)。
 * 节点最终嵌入：
 
-$H^{(K)} =$ } $h_i^{(K)} \mid i \in V\,\}$
+<img width="160" height="43" alt="image" src="https://github.com/user-attachments/assets/c9628b49-a5b5-42cf-b2d6-f155d10432e1" />
+
 
 
 
