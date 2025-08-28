@@ -17,7 +17,7 @@ $$
 假设 PIKAN / PINN 网络输出为：
 
 $$
-\hat{S}(t),\; \hat{E}(t),\; \hat{I}(t),\; \hat{R}(t).
+\hat{S}(t), \hat{E}(t), \hat{I}(t), \hat{R}(t).
 $$
 
 并通过自动微分得到它们的导数：
