@@ -223,6 +223,21 @@ print("预测结果形状:", u_pred.shape)  # 输出：torch.Size([100, 1])
   - `compute_loss` 计算三部分损失：
 <img width="828" height="141" alt="image" src="https://github.com/user-attachments/assets/1d70749d-14df-4136-ad55-d37a062de996" />
 
+
+* **PDE 残差：** 使用 `torch.autograd.grad` 计算 $u_t, u_x, u_{xx}$，构造 Burgers 方程残差。
+
+* **初始条件：** 确保
+
+$$
+u(x,0) \approx -\sin(\pi x)。
+$$
+
+* **边界条件：** 确保
+
+$$
+u(-1,t) = u(1,t) = 0。
+$$
+
   - 总损失是三部分的加权和（这里权重设为 1，实际可调）。
 - **数据**：
 <img width="751" height="88" alt="image" src="https://github.com/user-attachments/assets/84132386-7ff5-44c3-8c0e-2c207cf76352" />
