@@ -47,7 +47,7 @@ $$
 
 对比学习的常用目标是 **InfoNCE 损失**。设第 $i$ 个样本的正样本为 $z_j^+$，其余为负样本 $\{z_k^-\}$ ，则损失为：
 
-<img width="774" height="219" alt="image" src="https://github.com/user-attachments/assets/c8502645-6c4c-4ae2-b370-07e2d4d0e73d" />
+<img width="258" height="71" alt="image" src="https://github.com/user-attachments/assets/c8502645-6c4c-4ae2-b370-07e2d4d0e73d" />
 
 其中：
 
