@@ -81,7 +81,7 @@ GNN 的一般数学定义可以概括为：
 
 ## GNN
 <div align="center">
-<img width="450" height="160" alt="image" src="https://github.com/user-attachments/assets/6c67a274-3a8c-4282-80ab-076bf0d47b61" />
+<img width="500" height="180" alt="image" src="https://github.com/user-attachments/assets/6c67a274-3a8c-4282-80ab-076bf0d47b61" />
   
 </div>
 
