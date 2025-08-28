@@ -23,7 +23,11 @@
 假设我们有样本集合 
 $\mathcal{X} = \{x_1, x_2, \dots, x_N\}$ 
 
-我们通过一个编码器（例如神经网络）$f_\theta: \mathcal{X} \to \mathbb {R}^d$， 将样本映射到特征空间：
+我们通过一个编码器（例如神经网络）
+
+$f_\theta: \mathcal{X} \to \mathbb {R}^d$ ， 
+
+将样本映射到特征空间：
 
 $$
 z_i = f_\theta(x_i), \quad z_i \in \mathbb{R}^d
