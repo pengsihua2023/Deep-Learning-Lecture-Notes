@@ -312,6 +312,28 @@ PINNs 是一种强大的方法，通过将物理方程嵌入神经网络损失�
 <img width="716" height="279" alt="image" src="https://github.com/user-attachments/assets/1502430f-1ab7-4586-b80c-3d10dfdf61ea" />
 
 
+$$
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0, 
+\quad (x,y) \in [0,1] \times [0,1]
+$$
+
+**边界条件：**
+
+* $$
+  $$
+
+u(0,y) = 0, \quad u(1,y) = 0
+]
+
+* $$
+  $$
+
+u(x,0) = 0, \quad u(x,1) = \sin(\pi x)
+]
+
+这是一个稳态问题（无时间维度），PINN 通过残差最小化求解。
+
+
 ##### **代码示例**
 ```python
 import torch
