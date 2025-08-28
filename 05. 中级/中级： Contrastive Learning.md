@@ -1,8 +1,6 @@
-$$
-\mathcal{L}_i = - \log 
+$\mathcal{L}_i = - \log 
 \frac{\exp\!\left(\text{sim}(z_i, z_j^+)/\tau\right)}
-{\sum_{k=1}^{N} \exp\!\left(\text{sim}(z_i, z_k)/\tau\right)}
-$$
+{\sum_{k=1}^{N} \exp\!\left(\text{sim}(z_i, z_k)/\tau\right)}$
 
 
 
