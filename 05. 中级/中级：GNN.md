@@ -1,7 +1,7 @@
 ## 图神经网络 Graph Neural Network (GNN）
 <div align="center">
 <img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/6c67a274-3a8c-4282-80ab-076bf0d47b61" /> 
-</div>
+</div>  
   
 - 重要性：
 GNN 专门处理图结构数据（如社交网络、分子结构），在推荐系统、化学建模和知识图谱中应用广泛。  
