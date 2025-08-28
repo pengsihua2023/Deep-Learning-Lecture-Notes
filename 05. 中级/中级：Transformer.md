@@ -31,7 +31,7 @@ Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分�
   PE(pos, 2i+1) = \cos\left(\frac{pos}{10000^{2i/d}}\right)
   $$
 
-  其中 $pos$ 是词在序列中的位置，$i$ 是维度索引。最终输入为：
+  其中 $pos$ 是词在序列中的位置， $i$ 是维度索引。最终输入为：
 
   $  x_i = E(w_i) + PE(pos_i)  $
 
