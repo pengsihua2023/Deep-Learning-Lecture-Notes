@@ -58,7 +58,7 @@ $$
 <img width="1109" height="644" alt="image" src="https://github.com/user-attachments/assets/0ebc34f6-2940-498e-a1f2-541c907b8197" />
 
 
-对于输入序列 $X \in \mathbb{R}^{n \times d}$ （$n$ 为序列长度，$d$ 为嵌入维度），计算注意力分数的步骤如下：
+对于输入序列 $X \in \mathbb{R}^{n \times d}$ （ $n$ 为序列长度， $d$ 为嵌入维度），计算注意力分数的步骤如下：
 
 ---
 
