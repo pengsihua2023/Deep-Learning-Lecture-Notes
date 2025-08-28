@@ -254,6 +254,9 @@ $$
 <img width="527" height="46" alt="image" src="https://github.com/user-attachments/assets/d3067031-2f34-48a7-b73e-5f5dff6c7dc1" />
 
 
+* 在 $t = 0.5, \; x \in [-1,1]$ 上预测解，验证输出形状。
+
+
 ---
 
 #### **注意事项**
