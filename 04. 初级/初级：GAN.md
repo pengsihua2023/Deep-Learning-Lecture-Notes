@@ -7,7 +7,7 @@ GAN 有两个网络：生成器（造假图片）和判别器（判断真假）�
 - 应用：生成艺术作品、修复老照片、游戏角色设计。  
 
 <div align="center">
- <img width="600" height="260" alt="image" src="https://github.com/user-attachments/assets/8cca8f1f-73ad-4df2-9b66-55353dd7b7c8" />
+ <img width="300" height="130" alt="image" src="https://github.com/user-attachments/assets/8cca8f1f-73ad-4df2-9b66-55353dd7b7c8" />
 </div>
 
 这张图片展示了生成对抗网络（GAN）这一机器学习模型的概念。它包含两个主要组成部分：  
