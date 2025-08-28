@@ -22,11 +22,9 @@ $$
 
 邻接矩阵表示：
 
-```latex
-\[
+$$
 A \in \mathbb{R}^{N \times N}, \quad A_{ij} \neq 0 \;\Leftrightarrow\; (i,j) \in E
-\]
-```
+$$
 
 ---
 
@@ -34,12 +32,10 @@ A \in \mathbb{R}^{N \times N}, \quad A_{ij} \neq 0 \;\Leftrightarrow\; (i,j) \in
 
 消息传递 (Message Passing) 的一般形式：
 
-```latex
-\[
+$$
 h_i^{(k)} = \psi^{(k)}\!\left(h_i^{(k-1)},\;\phi^{(k)}\!\left(\{\,h_j^{(k-1)} \mid j \in \mathcal{N}(i)\,\}\right)\right),
 \quad h_i^{(0)} = x_i
-\]
-```
+$$
 
 说明：
 
