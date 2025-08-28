@@ -41,6 +41,41 @@ $$
 <img width="562" height="477" alt="image" src="https://github.com/user-attachments/assets/113895c6-df38-4dd9-afdf-c9f434d16f16" />
 
 
+* **PDE 残差损失：**
+
+$$
+L_{\text{PDE}} = \frac{1}{N_f} \sum_{i=1}^{N_f} \left| \mathcal{N}[u(x_i, t_i; \theta)] - f(x_i, t_i) \right|^2
+$$
+
+在采样点 $\{x_i, t_i\}$ 上计算 PDE 残差。
+
+---
+
+* **初始条件损失：**
+
+$$
+L_{\text{init}} = \frac{1}{N_i} \sum_{i=1}^{N_i} \left| u(x_i, 0; \theta) - u_0(x_i) \right|^2
+$$
+
+---
+
+* **边界条件损失：**
+
+$$
+L_{\text{bc}} = \frac{1}{N_b} \sum_{i=1}^{N_b} \left| u(x_i, t_i; \theta) - g(x_i, t_i) \right|^2
+$$
+
+---
+
+* **总损失：**
+
+$$
+L = \lambda_1 L_{\text{PDE}} + \lambda_2 L_{\text{init}} + \lambda_3 L_{\text{bc}}
+$$
+
+其中 $\lambda_1, \lambda_2, \lambda_3$ 是权重，平衡各部分损失。
+
+
 4. **自动微分**：
 <img width="704" height="70" alt="image" src="https://github.com/user-attachments/assets/38497436-1a0e-4636-a0f8-7eee56bf6d0f" />
 
