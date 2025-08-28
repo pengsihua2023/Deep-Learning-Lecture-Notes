@@ -45,11 +45,9 @@ $$
 
 ## 4. 损失函数（以 InfoNCE 为例）
 
-对比学习的常用目标是 **InfoNCE 损失**。设第 $i$ 个样本的正样本为 $z_j^+$，其余为负样本 $\{z_k^-\}$，则损失为：
+对比学习的常用目标是 **InfoNCE 损失**。设第 $i$ 个样本的正样本为 $z_j^+$，其余为负样本 $\{z_k^-\}$ ，则损失为：
 
-$$
-\mathcal{L}_i = - \log \frac{\exp(\text{sim}(z_i, z_j^+)/\tau)}{\sum_{k=1}^{N} \exp(\text{sim}(z_i, z_k)/\tau)}
-$$
+$\mathcal{L}_i = - \log \frac{\exp(\text{sim}(z_i, z_j^+)/\tau)}{\sum_{k=1}^{N} \exp(\text{sim}(z_i, z_k)/\tau)}$
 
 其中：
 
