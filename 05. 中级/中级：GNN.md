@@ -44,11 +44,9 @@ $$
 * $\psi^{(k)}$：更新函数 (update)。
 * 节点最终嵌入：
 
-```latex
-\[
+$$
 H^{(K)} = \{\,h_i^{(K)} \mid i \in V\,\}
-\]
-```
+$$
 
 ---
 
@@ -56,11 +54,9 @@ H^{(K)} = \{\,h_i^{(K)} \mid i \in V\,\}
 
 如果任务需要图级嵌入（例如图分类），则：
 
-```latex
-\[
+$$
 h_G = \rho\!\left(\{\,h_i^{(K)} \mid i \in V\,\}\right)
-\]
-```
+$$
 
 其中 $\rho$ 是读出函数 (readout)，常见取法为 sum、mean、max pooling 或注意力加权。
 
@@ -70,11 +66,9 @@ h_G = \rho\!\left(\{\,h_i^{(K)} \mid i \in V\,\}\right)
 
 ### GCN (Graph Convolutional Network)
 
-```latex
-\[
+$$
 H^{(k)} = \sigma\!\left(\tilde{D}^{-\tfrac{1}{2}} \,\tilde{A}\, \tilde{D}^{-\tfrac{1}{2}} H^{(k-1)} W^{(k)}\right)
-\]
-```
+$$
 
 其中 $\tilde{A} = A + I$，$\tilde{D}$ 是 $\tilde{A}$ 的度矩阵。
 
@@ -82,34 +76,28 @@ H^{(k)} = \sigma\!\left(\tilde{D}^{-\tfrac{1}{2}} \,\tilde{A}\, \tilde{D}^{-\tfr
 
 ### GraphSAGE
 
-```latex
-\[
+$$
 h_i^{(k)} = \sigma\!\left(W^{(k)} \cdot 
 \mathrm{concat}\!\Big(h_i^{(k-1)},\;
 \phi^{(k)}\!\left(\{\,h_j^{(k-1)} \mid j \in \mathcal{N}(i)\,\}\right)\Big)\right)
-\]
-```
+$$
 
 ---
 
 ### GAT (Graph Attention Network)
 
-```latex
-\[
+$$
 h_i^{(k)} = \sigma\!\left(\sum_{j \in \mathcal{N}(i)} 
 \alpha_{ij}^{(k)} W^{(k)} h_j^{(k-1)}\right)
-\]
-```
+$$
 
 其中注意力权重：
 
-```latex
-\[
+$$
 \alpha_{ij}^{(k)} =
 \frac{\exp\!\Big(\mathrm{LeakyReLU}\!\big(a^\top [W^{(k)}h_i^{(k-1)} \,\Vert\, W^{(k)}h_j^{(k-1)}]\big)\Big)}
 {\sum_{l \in \mathcal{N}(i)} \exp\!\Big(\mathrm{LeakyReLU}\!\big(a^\top [W^{(k)}h_i^{(k-1)} \,\Vert\, W^{(k)}h_l^{(k-1)}]\big)\Big)}
-\]
-```
+$$
 
 ---
 
@@ -120,27 +108,15 @@ GNN 的一般数学定义可以概括为：
 1. **输入**：图 $G=(V,E,X)$。
 2. **传播规则**：
 
-```latex
-\[
+$$
 h_i^{(k)} = \psi^{(k)}\!\left(h_i^{(k-1)},\;\phi^{(k)}\!\left(\{\,h_j^{(k-1)} \mid j \in \mathcal{N}(i)\,\}\right)\right)
-\]
-```
+$$
 
 3. **输出**：节点嵌入 $H^{(K)}$ 或图嵌入 $h_G$。
 
 ---
 
-✅ 关键修正：
 
-* 把集合符号写成 `\{\,h_j ... \mid ... \,\}` 避免 MathJax 渲染错误。
-* 把分隔符统一改成 `\mid`（集合的“使得”符号）。
-* `concat` 改成 `\mathrm{concat}`，防止当作变量。
-* 分数指数写成 `\tfrac{1}{2}`，排版更美观。
-* 注意力公式里的拼接写成 `\Vert` 而不是 `||`。
-
----
-
-要不要我再给你输出一份 **最小可运行的 LaTeX 文档模板**（带 `\documentclass{article}`），你直接复制粘贴就能编译出 PDF？
 
 
 
