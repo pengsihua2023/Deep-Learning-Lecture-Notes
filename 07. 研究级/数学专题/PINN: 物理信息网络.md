@@ -47,7 +47,7 @@ $$
 L_{\text{PDE}} = \frac{1}{N_f} \sum_{i=1}^{N_f} \left| \mathcal{N}[u(x_i, t_i; \theta)] - f(x_i, t_i) \right|^2
 $$
 
-在采样点 $\{x_i, t_i\}$ 上计算 PDE 残差。
+在采样点{ $\{x_i, t_i\}$ }上计算 PDE 残差。
 
 ---
 
