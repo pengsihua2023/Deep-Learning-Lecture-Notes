@@ -1,43 +1,8 @@
-你写的这个式子是 **InfoNCE 损失**（对比学习里常用），不过确实不完全正确。主要有两点问题：
-
----
-
-### 1. 分母范围
-
-标准形式中，分母的求和范围是 **所有正负样本**，通常包含 **\$2N-1\$** 个候选（如果有 \$N\$ 对样本）。你写的是从 \$k=1\$ 到 \$N\$，这会遗漏掉一半。
-
-正确写法一般是：
-
 $$
-\mathcal{L}_i = - \log \frac {\exp(\text{sim}(z_i, z_j^+)/\tau)}{\sum_{k=1}^{2N} \mathbf{1}_{[k \neq i]}\exp(\text{sim}(z_i, z_k)/\tau)}
+\mathcal{L}_i = - \log 
+\frac{\exp\!\left(\text{sim}(z_i, z_j^+)/\tau\right)}
+{\sum_{k=1}^{N} \exp\!\left(\text{sim}(z_i, z_k)/\tau\right)}
 $$
-
-其中：
-
-* \$z\_i\$ 是 anchor 向量，
-* \$z\_j^+\$ 是与 \$z\_i\$ 配对的正样本，
-* \$k\$ 遍历 **所有样本**（除了自己），
-* \$\tau\$ 是温度参数。
-
----
-
-### 2. 正样本标记
-
-你的分子是没问题的，但分母需要明确去掉 \$i\$ 本身，否则会出现 \$\text{sim}(z\_i, z\_i)\$。
-
----
-
-✅ **最终常见写法**
-
-$$
-\mathcal{L}_i = - \log \frac \{\exp(\text{sim}(z_i, z_j^+)/\tau)}{\sum_{k=1}^{2N} \mathbf{1}_{[k \neq i]}\exp(\text{sim}(z_i, z_k)/\tau)}
-$$
-
-这才是对比学习里最常用的 InfoNCE 损失。
-
----
-
-要不要我给你推导一下，从**二分类的 softmax 交叉熵**怎么一步步推到这个形式？
 
 
 
