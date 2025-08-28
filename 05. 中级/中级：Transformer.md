@@ -61,6 +61,11 @@ Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分�
 ### 8. 损失函数 
 训练时通常使用交叉熵损失，优化目标是最大化正确输出序列的概率：
 <img width="909" height="208" alt="image" src="https://github.com/user-attachments/assets/15f18713-2da0-4dea-8173-4ac2205ad792" />
+
+$\mathcal{L} = -\sum_{i=1}^{T} \log P(y_i \mid y_{<i}, X)$  
+
+其中 $T$ 是输出序列长度，$y_{<i}$ 是已生成的词。
+
 ### 9. 总结  
 Transformer的数学核心在于：   
 
