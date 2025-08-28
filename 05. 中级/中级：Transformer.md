@@ -56,7 +56,37 @@ $$
 自注意力是Transformer的核心，允许模型在处理每个词时关注序列中的其他词。  
 缩放点积注意力（Scaled Dot-Product Attention）
 <img width="1109" height="644" alt="image" src="https://github.com/user-attachments/assets/0ebc34f6-2940-498e-a1f2-541c907b8197" />
-多头机制
+
+
+对于输入序列 $X \in \mathbb{R}^{n \times d}$ （$n$ 为序列长度，$d$ 为嵌入维度），计算注意力分数的步骤如下：
+
+---
+
+**1. 生成查询、键和值：**
+
+$$
+Q = XW^Q, \quad K = XW^K, \quad V = XW^V
+$$
+
+其中 $W^Q, W^K, W^V \in \mathbb{R}^{d \times d_k}$ 是可学习的投影矩阵，$d_k$ 是注意力头的维度。
+
+---
+
+**2. 计算注意力权重：**
+
+$$
+Attention(Q, K, V) = \text{softmax}\!\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+$$
+
+* $QK^T \in \mathbb{R}^{n \times n}$ 表示查询和键的点积，衡量词之间的相关性。
+* $\sqrt{d_k}$ 是缩放因子，防止点积过大导致 softmax 饱和。
+* softmax 操作对每行归一化，得到注意力权重，应用于值向量 $V$。
+
+
+
+
+
+### 多头机制
 <img width="1180" height="634" alt="image" src="https://github.com/user-attachments/assets/8f46e5e3-645e-4d3a-9fad-2fa525721a79" />
 
 
