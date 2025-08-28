@@ -59,9 +59,7 @@ $$
 
 对一个 batch 中所有样本取平均：
 
-$$
-\mathcal{L} = \frac{1}{N} \sum_{i=1}^N \mathcal{L}_i
-$$
+$\mathcal{L} = \frac{1}{N} \sum_{i=1}^N \mathcal{L}_i$
 
 ## 6. 总结
 
