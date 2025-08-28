@@ -31,12 +31,37 @@ Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分�
   PE(pos, 2i+1) = \cos\left(\frac{pos}{10000^{2i/d}}\right)
   $$
 
-  其中 $pos$ 是词在序列中的位置， $i$ 是维度索引。最终输入为：
+你说得很对 👌
+我来帮你修正位置编码公式的 **LaTeX 表达**。
 
-  $  x_i = E(w_i) + PE(pos_i)  $
-
+在原始 Transformer 论文中，位置编码公式是这样的：
 
 $$
+PE_{(pos, 2i)} = \sin\!\left(\frac{pos}{10000^{\frac{2i}{d}}}\right), 
+\quad
+PE_{(pos, 2i+1)} = \cos\!\left(\frac{pos}{10000^{\frac{2i}{d}}}\right)
+$$
+
+---
+
+### 完整 LaTeX 代码（可直接放进文档里）
+
+```latex
+\[
+PE_{(pos, 2i)} = \sin\left(\frac{pos}{10000^{\frac{2i}{d}}}\right), 
+\quad 
+PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{\frac{2i}{d}}}\right)
+\]
+```
+
+这样就和公式中 **分母指数部分要有分数 $\frac{2i}{d}$** 一致了，而不是之前写的 $10000^{2i/d}$ 那种歧义形式。
+
+要不要我帮你把 **词嵌入 + 位置编码 + 最终输入** 三个公式整理成一个完整的 LaTeX 小节？
+
+
+  其中 $pos$ 是词在序列中的位置， $i$ 是维度索引。最终输入为：
+
+ $$
 x_i = E_i + PE(pos_i)
 $$
 
