@@ -1,3 +1,8 @@
+# PIKAN（Physics-Informed Kolmogorov–Arnold Network）
+
+## 1. 背景
+
+* **Kolmogorov–Arnold 表示定理**（1957）：任意多元连续函数 $f(x_1,...,x_n)$ 可以用有限个一维连续函数的和来表示。
 
 $$
 f(x_1, \ldots, x_n) = \sum_{q=0}^{2n} \Phi_q\left( \sum_{p=1}^n \psi_p(x_p) + q \cdot c \right).
@@ -6,18 +11,6 @@ $$
 * 外层： $\Phi_q$ 是针对目标函数 $f$ 的特定一维函数；
 * 内层： $\psi_p$ 是“通用基函数”，对所有函数 $f$ 都适用；
 * 常数偏移： $q \cdot c$ 用来保证分离。
-
-
-
-# PIKAN（Physics-Informed Kolmogorov–Arnold Network）
-
-## 1. 背景
-
-* **Kolmogorov–Arnold 表示定理**（1957）：任意多元连续函数 $f(x_1,...,x_n)$ 可以用有限个一维连续函数的和来表示。
-
-  $$
-  f(x_1,\ldots,x_n) = \sum_{q=1}^{2n+1} \Phi_q\!\left(\sum_{p=1}^n \psi_{qp}(x_p)\right)
-  $$
 
   这为高维函数逼近提供了理论基础。
 
