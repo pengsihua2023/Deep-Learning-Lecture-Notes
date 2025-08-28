@@ -117,7 +117,7 @@ $$
 
 $$
 \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} = \nu \frac{\partial^2 u}{\partial x^2}, 
-\quad x \in [-1,1], \; t \in [0,1]
+\quad x \in [-1,1], t \in [0,1]
 $$
 
 **初始条件：**
