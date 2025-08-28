@@ -1,10 +1,6 @@
 * 这里的 **$d_k$** 表示 **Key 向量的维度**（通常也等于 Query 的维度）。
 
-$$
-d_k = \frac{d_{\text{model}}}{h}, \quad \text{缩放因子} = \sqrt{d_k}
-$$
-
-
+$d_k = \frac{d_{\text{model}}}{h}, \quad \text{缩放因子} = \sqrt{d_k}$
 
 ---
 
