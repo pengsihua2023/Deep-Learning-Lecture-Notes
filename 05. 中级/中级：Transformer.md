@@ -68,7 +68,7 @@ $$
 Q = XW^Q, \quad K = XW^K, \quad V = XW^V
 $$
 
-其中 $W^Q, W^K, W^V \in \mathbb{R}^{d \times d_k}$ 是可学习的投影矩阵，$d_k$ 是注意力头的维度。
+其中 $W^Q, W^K, W^V \in \mathbb{R}^{d \times d_k}$ 是可学习的投影矩阵， $d_k$ 是注意力头的维度。
 
 ---
 
