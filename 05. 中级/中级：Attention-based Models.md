@@ -87,20 +87,19 @@ Transformer 的注意力机制是现代深度学习的基石，衍生出如 BERT
 深度学习中的注意力机制（Attention Mechanism）是一种模仿人类视觉和认知系统的方法，它允许神经网络在处理输入数据时集中注意力于相关的部分。通过引入注意力机制，神经网络能够自动地学习并选择性地关注输入中的重要信息，提高模型的性能和泛化能力。  
 上面这张图可以较好地去理解注意力机制，其展示了人类在看到一幅图像时如何高效分配有限注意力资源的，其中红色区域表明视觉系统更加关注的目标，从图中可以看出：人们会把注意力更多的投入到人的脸部。
 
+# 注意力机制的数学描述
 
-# Attention 机制的数学描述
-
-Attention 机制的核心思想是：**在信息序列中为不同元素分配不同的权重，从而突出“重要”信息，抑制“无关”信息**。
+注意力机制的核心思想是：**在信息序列中为不同元素分配不同的权重，从而突出“重要”信息并抑制“无关”信息**。
 
 ## 1. 输入表示
 
-给定输入向量序列：
+给定一个输入向量序列：
 
 $$
 X = [x_1, x_2, \dots, x_n], \quad x_i \in \mathbb{R}^d
 $$
 
-通过线性变换映射为 **查询（Query）、键（Key）、值（Value）** 向量：
+通过线性变换将其映射为 **查询（Query）、键（Key）、值（Value）** 向量：
 
 $$
 Q = XW^Q, \quad K = XW^K, \quad V = XW^V
@@ -108,12 +107,11 @@ $$
 
 其中：
 
-* $W^Q, W^K, W^V \in \mathbb{R}^{d \times d_k}$ 为可学习参数；
-* $Q, K, V \in \mathbb{R}^{n \times d_k}$;
-* 这里的 **$d_k$** 表示 **Key 向量的维度**（通常也等于 Query 的维度）;
+* $W^Q, W^K, W^V \in \mathbb{R}^{d \times d_k}$ 是可学习参数；
+* $Q, K, V \in \mathbb{R}^{n \times d_k}$；
+* 这里 **$d_k$** 表示 **Key 向量的维度**（通常也等于 Query 的维度）；
 
-* $d_k = \frac{d_{\text{model}}}{h}, \quad \text{缩放因子} = \sqrt{d_k}$ .
-
+* $d_k = \frac{d_{\text{model}}}{h}, \quad \text{缩放因子} = \sqrt{d_k}$ 。
 
 ## 2. 注意力打分函数
 
@@ -123,7 +121,7 @@ $$
 \text{score}(q_i, k_j) = \frac{q_i \cdot k_j^\top}{\sqrt{d_k}}
 $$
 
-其中 $\sqrt{d_k}$ 是缩放因子，防止数值过大。
+其中 $\sqrt{d_k}$ 是缩放因子，用于防止数值过大。
 
 ## 3. 权重分布（Softmax）
 
@@ -137,7 +135,7 @@ $$
 
 ## 4. 上下文向量（加权求和）
 
-根据注意力权重对 Value 加权：
+根据注意力权重对 Value 向量加权：
 
 $$
 z_i = \sum_{j=1}^n \alpha_{ij} v_j
@@ -145,36 +143,82 @@ $$
 
 得到最终的上下文表示 $z_i$。
 
-## 5. 矩阵形式（Scaled Dot-Product Attention）
+## 5. 矩阵形式（缩放点积注意力）
 
-将上面步骤写成紧凑的矩阵形式：
+上述步骤可以写成紧凑的矩阵形式：
 
 $$
 \text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right) V
 $$
 
-## 6. 多头注意力（Multi-Head Attention）
+## 6. 自注意力（Self-Attention）
 
-为了捕捉不同子空间的信息，使用 $h$ 个独立的注意力头：
+自注意力是注意力机制的一种特例，其中 **Query (Q)、Key (K)、Value (V)** 都来自同一个序列 $X$。
+
+形式化表示为：
+
+$$
+Q = XW^Q, \quad K = XW^K, \quad V = XW^V
+$$
+
+注意力输出为：
+
+$$
+\text{SelfAttention}(X) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
+$$
+
+### 直观理解
+
+- **目的**：  
+  自注意力使序列中的每个位置能够关注到所有其他位置，从而捕捉上下文依赖关系。  
+
+- **示例**：  
+  在句子 *“The cat sat on the mat”* 中，词 *“cat”* 可以关注到 *“sat”* 和 *“mat”*，从而更好地理解上下文。  
+
+- **优势**：  
+  不同于循环网络，自注意力可以并行处理所有 token，在捕捉长程依赖时更高效。  
+
+## 7. 多头注意力（Multi-Head Attention）
+
+与其只计算单一的注意力函数，多头注意力允许模型在不同位置的不同表示子空间中共同关注信息。
+
+形式化表示为：
 
 $$
 \text{MultiHead}(Q,K,V) = \text{Concat}(\text{head}_1, \dots, \text{head}_h) W^O
 $$
 
-其中：
+其中每个注意力头定义为：
 
 $$
 \text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 $$
 
-## 7. 总结
+其中 $W_i^Q, W_i^K, W_i^V \in \mathbb{R}^{d_{\text{model}} \times d_k}$，而 $W^O \in \mathbb{R}^{hd_v \times d_{\text{model}}}$ 是可学习的投影矩阵。
+
+### 直观理解
+
+- **为什么要有多个头？**  
+  单一注意力函数可能在捕捉关系类型上受到限制。  
+  多个头允许模型同时关注序列的不同部分（或不同类型的依赖关系）。  
+
+- **工作原理**：  
+  每个头将输入投影到一个低维子空间，应用缩放点积注意力，并输出上下文向量。  
+  所有头的结果被拼接后，再通过线性投影形成最终表示。  
+
+- **优势**：  
+  多头注意力增强了模型的表示能力，有助于捕捉数据中的多样化关系。  
+
+## 8. 总结
 
 * **Query–Key**：决定关注什么；
 * **Softmax 权重**：分配注意力；
 * **Value**：承载信息；
+* **Self-Attention**：当 Q、K、V 来自同一序列时，用于捕捉序列内部依赖；
+* **Multi-Head Attention**：并行使用多个注意力头，以捕捉多样化模式；
 * **最终输出**：输入的加权表示。
 
-公式核心是：
+核心公式为：
 
 $$
 \boxed{  \text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right) V  }
