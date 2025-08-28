@@ -9,6 +9,11 @@
 <img width="600" height="102" alt="image" src="https://github.com/user-attachments/assets/3229c1ce-599f-4f03-9153-0b8d649f7baf" />
 
 
+* PINNs 使用神经网络 $u(x,t;\theta)$（参数为 $\theta$）逼近 PDE 的解 $u(x,t)$。
+* 通过在损失函数中加入 PDE 残差、初始条件和边界条件，约束网络输出满足物理规律。
+* 优化目标是最小化损失函数，使网络输出接近真实解。
+
+
 2. **PDE 形式**：考虑一般形式的 PDE：   
 <img width="517" height="258" alt="image" src="https://github.com/user-attachments/assets/530507c3-2e1a-4779-8c11-44bdc3a3a1f1" />
 
