@@ -54,9 +54,16 @@ Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分�
 <img width="931" height="213" alt="image" src="https://github.com/user-attachments/assets/71e989cc-cec3-4b65-9c01-187dd5190c77" />
 
 
+
+
+
 ### 7. 输出层
 解码器最后一层通过线性变换和softmax生成输出概率：
 <img width="925" height="165" alt="image" src="https://github.com/user-attachments/assets/74539e82-e297-4605-9960-d5dcdf8e79bc" />  
+
+$P(y_i) = \mathrm{softmax}(z W_{\text{out}} + b_{\text{out}})$  
+
+其中 $z$ 是解码器最后一层的输出， $W_{\text{out}} \in \mathbb{R}^{d \times |V|}$。
   
 ### 8. 损失函数 
 训练时通常使用交叉熵损失，优化目标是最大化正确输出序列的概率：
