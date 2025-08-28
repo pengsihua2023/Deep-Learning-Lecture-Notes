@@ -116,7 +116,7 @@ $$
 正确的 **消息传递形式**应该是：
 
 $$
-h_i^{(k)} = \psi^{(k)}\!\left( h_i^{(k-1)},  \phi^{(k)}\big(\{h_j^{(k-1)} : j \in \mathcal{N}(i)\}\big) \right)
+h_i^{(k)} = \psi^{(k)}\!\left( h_i^{(k-1)},  \phi^{(k)}{\big(\{h_j^{(k-1)} : j \in \mathcal{N}(i)}\}\big) \right)
 $$
 
 ---
