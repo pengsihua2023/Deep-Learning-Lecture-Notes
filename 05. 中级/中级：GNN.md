@@ -14,9 +14,9 @@ GNN 专门处理图结构数据（如社交网络、分子结构），在推荐�
 
 ---
 
-# 图神经网络的数学描述
+## 图神经网络的数学描述
 
-## 1. 图的基本结构
+### 1. 图的基本结构
 
 一个图定义为三元组：
 
@@ -32,7 +32,7 @@ $$
 
 邻接矩阵表示： $A \in \mathbb{R}^{N \times N}, \quad A_{ij} \neq 0 \text{表示} (i,j) \in E$
 
-## 2. 节点表示的迭代更新
+### 2. 节点表示的迭代更新
 
 消息传递 (Message Passing) 的一般形式：
 
@@ -47,7 +47,7 @@ $$
 
 <img width="160" height="43" alt="image" src="https://github.com/user-attachments/assets/c9628b49-a5b5-42cf-b2d6-f155d10432e1" />
 
-## 3. 图级表示
+### 3. 图级表示
 
 若任务需要对整个图进行预测（如图分类），则在最后一层节点表示的基础上定义图表示：
 
@@ -56,7 +56,7 @@ $$
 
 其中 $\rho$ 是读出函数 (readout)，常见取法为 sum、mean、max pooling 或注意力加权。
 
-## 4. 特例：常见 GNN 实现
+### 4. 特例：常见 GNN 实现
 
 ### GCN (Graph Convolutional Network)
 
@@ -79,7 +79,7 @@ $$
 
 其中 $\alpha_{ij}^{(k)}$ 是注意力权重：
 
-## 5. 总结
+### 5. 总结
 
 GNN 的一般数学定义可以概括为：
 
