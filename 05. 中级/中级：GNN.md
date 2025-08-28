@@ -138,7 +138,7 @@ $$
 * 若任务是图分类，还需读出函数：
 
   $$
-  h_G = \rho\big(\{h_i^{(K)} : i \in V\}\big)
+  \h_G = \rho\big(\{h_i^{(K)} : i \in V\}\big)
   $$
 
 ---
