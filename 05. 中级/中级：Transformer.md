@@ -21,7 +21,7 @@ Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分�
 
 
 * **词嵌入**：将每个词映射为固定维度的向量 $x_i \in \mathbb{R}^d$，通常通过嵌入矩阵
-  $E \in \mathbb{R}^{|V|\times d}$ 实现，其中 $|V|$ 是词汇表大小，$d$ 是嵌入维度。
+  $E \in \mathbb{R}^{|V|\times d}$ 实现，其中 $|V|$ 是词汇表大小， $d$ 是嵌入维度。
 
 * **位置编码**：由于 Transformer 不具备序列顺序信息，需加入位置编码（Positional Encoding）以捕捉词的位置。
   位置编码 $PE$ 可通过固定公式生成：
@@ -40,7 +40,7 @@ Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分�
 
 
 
-编码器  
+- 编码器  
 每个编码器层包含两个主要子模块： 
 
 多头自注意力机制（Multi-Head Self-Attention）  
