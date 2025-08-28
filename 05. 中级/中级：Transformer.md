@@ -69,11 +69,11 @@ $$
 其中：
 
 $$
-head_i = Attention(QW_i^Q, \; KW_i^K, \; VW_i^V)
+head_i = Attention(QW_i^Q, \; KW_i^K, VW_i^V)
 $$
 
 $$
-W_i^Q, W_i^K, W_i^V \in \mathbb{R}^{d \times d_k}, \quad W^O \in \mathbb{R}^{h \cdot d_k \times d}, \quad h \text{是头数}, \; d_k = \frac{d}{h}
+W_i^Q, W_i^K, W_i^V \in \mathbb{R}^{d \times d_k}, \quad W^O \in \mathbb{R}^{h \cdot d_k \times d}, \quad h \text{是头数}, d_k = \frac{d}{h}
 $$
 
 ---
@@ -83,7 +83,7 @@ $$
 在解码器中，为防止当前词关注后续词，引入掩码矩阵 $M$，使未来位置的注意力权重为 $-\infty$：
 
 $$
-Attention(Q, K, V) = \text{softmax}\!\left(\frac{QK^T}{\sqrt{d_k}} + M\right)V
+Attention(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}} + M\right)V
 $$
 
 
