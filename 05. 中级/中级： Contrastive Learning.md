@@ -30,7 +30,7 @@ $$
 ✅ **最终常见写法**
 
 $$
-\mathcal{L}_i = - \log \frac {\exp(\text{sim}(z_i, z_j^+)/\tau)}{\sum_{k=1}^{2N} \mathbf{1}_{[k \neq i]}\exp(\text{sim}(z_i, z_k)/\tau)}
+\mathcal{L}_i = - \log \frac \{\exp(\text{sim}(z_i, z_j^+)/\tau)}{\sum_{k=1}^{2N} \mathbf{1}_{[k \neq i]}\exp(\text{sim}(z_i, z_k)/\tau)}
 $$
 
 这才是对比学习里最常用的 InfoNCE 损失。
