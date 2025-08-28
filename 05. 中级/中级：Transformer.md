@@ -55,7 +55,7 @@ $$
 ### 2. 多头自注意力机制 
 自注意力是Transformer的核心，允许模型在处理每个词时关注序列中的其他词。  
 缩放点积注意力（Scaled Dot-Product Attention）
-<img width="1109" height="644" alt="image" src="https://github.com/user-attachments/assets/0ebc34f6-2940-498e-a1f2-541c907b8197" />
+
 
 
 对于输入序列 $X \in \mathbb{R}^{n \times d}$ （ $n$ 为序列长度， $d$ 为嵌入维度），计算注意力分数的步骤如下：
@@ -83,8 +83,6 @@ $$
 
 
 ### 多头机制
-<img width="1180" height="634" alt="image" src="https://github.com/user-attachments/assets/8f46e5e3-645e-4d3a-9fad-2fa525721a79" />
-
 
 多头注意力将 $Q, K, V$ 分成 $h$ 个头（head），每个头独立计算注意力：
 
