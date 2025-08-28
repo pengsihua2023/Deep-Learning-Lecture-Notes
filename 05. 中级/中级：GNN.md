@@ -81,7 +81,8 @@ GNN 的一般数学定义可以概括为：
 
 ## GNN
 <div align="center">
-<img width="500" height="263" alt="image" src="https://github.com/user-attachments/assets/47f67caf-be26-42b4-928e-b8db05f1afab" />  
+<img width="450" height="160" alt="image" src="https://github.com/user-attachments/assets/6c67a274-3a8c-4282-80ab-076bf0d47b61" />
+  
 </div>
 
 Graph Neural Network (GNN, 图神经网络)  
