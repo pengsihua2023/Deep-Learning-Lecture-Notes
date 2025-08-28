@@ -453,6 +453,9 @@ plt.show()
 <img width="951" height="47" alt="image" src="https://github.com/user-attachments/assets/7d2f8d41-8fe8-4c8f-a250-f4f30cf79cf0" />
 
 
+在 Burgers 方程中，假设粘性系数 $\nu$ 未知，使用观测数据估计 $\nu$。添加观测损失，并将 $\nu$ 作为可学习参数。
+
+
 ##### **代码示例**
 ```python
 import torch
