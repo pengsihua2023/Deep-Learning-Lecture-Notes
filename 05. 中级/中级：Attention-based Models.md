@@ -68,7 +68,7 @@ $$
 将上面步骤写成紧凑的矩阵形式：
 
 $$
-\text{Attention}(Q,K,V) = \text{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right) V
+\text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right) V
 $$
 
 ---
@@ -99,7 +99,7 @@ $$
 公式核心是：
 
 $$
-\boxed{ \;\; \text{Attention}(Q,K,V) = \text{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right) V \;\; }
+\boxed{ \;\; \text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right) V \;\; }
 $$
 
 ---
