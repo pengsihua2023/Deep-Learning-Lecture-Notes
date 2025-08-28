@@ -42,11 +42,10 @@ $$
 
 ## 3. 图级表示
 
-如果任务需要图级嵌入（例如图分类），则：
+若任务需要对整个图进行预测（如图分类），则在最后一层节点表示的基础上定义图表示：
 
-$$
-h_G = \rho\!\left(\{\,h_i^{(K)} \mid i \in V\,\}\right)
-$$
+<img width="220" height="48" alt="image" src="https://github.com/user-attachments/assets/f0325b8f-b158-4ee5-aef0-d67f6c046c4b" />
+
 
 其中 $\rho$ 是读出函数 (readout)，常见取法为 sum、mean、max pooling 或注意力加权。
 
