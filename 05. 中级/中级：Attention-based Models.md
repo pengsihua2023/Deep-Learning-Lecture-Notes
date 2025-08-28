@@ -99,7 +99,7 @@ $$
 公式核心是：
 
 $$
-\boxed{ \;\; \text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right) V \;\; }
+\boxed{  \text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right) V  }
 $$
 
 ---
