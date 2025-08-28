@@ -37,9 +37,7 @@
 
 常用余弦相似度：
 
-$
-\text{sim}(z_i, z_j) = \frac{z_i^\top z_j}{\|z_i\|\|z_j\|}
-$
+$\text{sim}(z_i, z_j) = \frac{z_i^\top z_j}{\|z_i\|\|z_j\|}$
 
 若已归一化，则简化为 $\text{sim}(z_i, z_j) = z_i^\top z_j$。
 
