@@ -87,9 +87,8 @@ GNN 的一般数学定义可以概括为：
 1. **输入**：图 $G=(V,E,X)$。
 2. **传播规则**：
 
-$$
-h_i^{(k)} = \psi^{(k)}\!\left(h_i^{(k-1)},\;\phi^{(k)}\!\left(\{\,h_j^{(k-1)} \mid j \in \mathcal{N}(i)\,\}\right)\right)
-$$
+<img width="400" height="50" alt="image" src="https://github.com/user-attachments/assets/422ed3a2-ad2e-4800-8cdb-4a6c3e42f741" />
+
 
 3. **输出**：节点嵌入 $H^{(K)}$ 或图嵌入 $h_G$。
 
