@@ -18,6 +18,28 @@ Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分�
 输入表示  
 输入序列（如单词或标记）首先被转换为向量表示：
 <img width="1390" height="474" alt="image" src="https://github.com/user-attachments/assets/fb62a0e3-59d9-41e0-b322-d4d5c2c06904" />
+
+
+* **词嵌入**：将每个词映射为固定维度的向量 $x_i \in \mathbb{R}^d$，通常通过嵌入矩阵
+  $E \in \mathbb{R}^{|V|\times d}$ 实现，其中 $|V|$ 是词汇表大小，$d$ 是嵌入维度。
+
+* **位置编码**：由于 Transformer 不具备序列顺序信息，需加入位置编码（Positional Encoding）以捕捉词的位置。
+  位置编码 $PE$ 可通过固定公式生成：
+
+  $$
+  PE(pos, 2i) = \sin\left(\frac{pos}{10000^{2i/d}}\right), \quad 
+  PE(pos, 2i+1) = \cos\left(\frac{pos}{10000^{2i/d}}\right)
+  $$
+
+  其中 $pos$ 是词在序列中的位置，$i$ 是维度索引。最终输入为：
+
+  $$
+  x_i = E(w_i) + PE(pos_i)
+  $$
+
+
+
+
 编码器  
 每个编码器层包含两个主要子模块： 
 
