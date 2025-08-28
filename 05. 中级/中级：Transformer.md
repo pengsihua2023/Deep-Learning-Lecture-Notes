@@ -64,15 +64,14 @@ $\mu$ 和 $\sigma^2$ 是输入向量的均值和方差， $\gamma, \beta$ 是可
 ### 5. 编码器-解码器注意力  
 解码器中的额外注意力层使用编码器的输出K, V和解码器的Q：  
   
-<img width="414" height="65" alt="image" src="https://github.com/user-attachments/assets/f04b36f5-657d-4091-ae1d-4a7f9c71cfec" />    
+   
 
 $\mathrm{Attention}(Q_{\text{dec}}, K_{\text{enc}}, V_{\text{enc}})$
   
 这允许解码器关注输入序列的上下文。  
  
 ### 6. 输出层
-   
-<img width="931" height="213" alt="image" src="https://github.com/user-attachments/assets/71e989cc-cec3-4b65-9c01-187dd5190c77" />
+
 
 解码器最后一层通过线性变换和 softmax 生成输出概率：  
 
@@ -88,7 +87,7 @@ $$
 
 ### 7. 输出层
 解码器最后一层通过线性变换和softmax生成输出概率：
-<img width="925" height="165" alt="image" src="https://github.com/user-attachments/assets/74539e82-e297-4605-9960-d5dcdf8e79bc" />  
+
 
 $P(y_i) = \mathrm{softmax}(z W_{\text{out}} + b_{\text{out}})$  
 
@@ -96,7 +95,7 @@ $P(y_i) = \mathrm{softmax}(z W_{\text{out}} + b_{\text{out}})$
   
 ### 8. 损失函数 
 训练时通常使用交叉熵损失，优化目标是最大化正确输出序列的概率：
-<img width="909" height="208" alt="image" src="https://github.com/user-attachments/assets/15f18713-2da0-4dea-8173-4ac2205ad792" />
+
 
 $\mathcal{L} = -\sum_{i=1}^{T} \log P(y_i \mid y_{<i}, X)$  
 
