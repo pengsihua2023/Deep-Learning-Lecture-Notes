@@ -1,75 +1,13 @@
-好问题 👍。你提到的这个式子是 **Kolmogorov–Arnold 表示定理（Kolmogorov Superposition Theorem, KST）** 的一个常见写法，但确实容易被误写。我们来澄清一下。
-
----
-
-## 1. Kolmogorov–Arnold 表示定理的正确表述
-
-Kolmogorov 在 1957 年证明：
-
-任意一个连续的多元函数
 
 $$
-f:[0,1]^n \to \mathbb{R}
+f(x_1, \ldots, x_n) = \sum_{q=0}^{2n} \Phi_q\left( \sum_{p=1}^n \psi_p(x_p) + q \cdot c \right).
 $$
 
-都可以表示为**有限个一维连续函数的叠加**：
+* 外层： $\Phi_q$ 是针对目标函数 $f$ 的特定一维函数；
+* 内层： $\psi_p$ 是“通用基函数”，对所有函数 $f$ 都适用；
+* 常数偏移： $q \cdot c$ 用来保证分离。
 
-$$
-f(x_1,\ldots,x_n) 
-= \sum_{q=0}^{2n} \Phi_q\!\left(\sum_{p=1}^n \psi_{p}(x_p) + q \cdot c \right).
-$$
 
-其中：
-
-* $\psi_p : [0,1] \to \mathbb{R}$ 为与函数 $f$ **无关的通用一维连续函数**（只依赖于维度 $n$）。
-* $\Phi_q : \mathbb{R} \to \mathbb{R}$ 为与 $f$ 有关的一维连续函数。
-* $c$ 是一个常数，用来确保内层求和的参数彼此分离（避免退化）。
-
----
-
-## 2. 和你写的式子的区别
-
-你写的是：
-
-$$
-f(x_1,\ldots,x_n) = \sum_{q=1}^{2n+1} \Phi_q\!\left(\sum_{p=1}^n \psi_{qp}(x_p)\right)
-$$
-
-区别主要在两点：
-
-1. **$\psi$ 的下标**：
-
-   * 正确的表述里，$\psi_p$ 与 $q$ 无关（即所有 $q$ 共享同一组 $\psi_p$），只依赖维度。
-   * 你写的式子里是 $\psi_{qp}$，意味着每个外层 $\Phi_q$ 对应一套不同的 $\psi$，这比 Kolmogorov 原定理更宽松。
-
-2. **常数偏移项**：
-
-   * 在严格的 Kolmogorov 定理中，需要在内层和式中加上偏移 $q \cdot c$ 来避免函数重叠。
-   * 你写的版本里缺少这个项。
-
----
-
-## 3. 正确的经典形式
-
-一种更标准的写法是：
-
-$$
-f(x_1, \ldots, x_n) = \sum_{q=0}^{2n} \Phi_q\!\left( \sum_{p=1}^n \psi_p(x_p) + q \cdot c \right).
-$$
-
-* 外层：$\Phi_q$ 是针对目标函数 $f$ 的特定一维函数；
-* 内层：$\psi_p$ 是“通用基函数”，对所有函数 $f$ 都适用；
-* 常数偏移：$q \cdot c$ 用来保证分离。
-
----
-
-✅ 总结：
-
-* 你写的公式形式上类似，但严格的 Kolmogorov–Arnold 定理里 **内层函数 $\psi$ 与外层索引 $q$ 无关**，并且需要加上一个偏移常数项。
-
----
-
-要不要我帮你画一个 **示意图**，展示「输入变量 $(x_1,\ldots,x_n)$ → 共享的一维函数 $\psi_p$ → 加和 + 偏移 → 外层函数 $\Phi_q$ → 加和得到 $f$」的结构？
 
 # PIKAN（Physics-Informed Kolmogorov–Arnold Network）
 
