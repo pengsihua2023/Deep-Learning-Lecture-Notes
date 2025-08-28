@@ -1,3 +1,46 @@
+好 👌 我来帮你在之前的 Markdown 框架里补充 **Self-Attention（自注意力）的数学形式**，并保持风格统一：
+
+```markdown
+## 8. Self-Attention
+
+Self-Attention is a special case of the attention mechanism where **Query (Q), Key (K), and Value (V) all come from the same sequence** $X$.
+
+Formally:
+
+$$
+Q = XW^Q, \quad K = XW^K, \quad V = XW^V
+$$
+
+The attention output is:
+
+$$
+\text{SelfAttention}(X) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
+$$
+
+---
+
+### Intuition
+
+- **Purpose**:  
+  Self-Attention enables each position in the sequence to attend to all other positions, thus capturing contextual dependencies.  
+
+- **Example**:  
+  In a sentence like *“The cat sat on the mat”*, the word *“cat”* can attend to *“sat”* and *“mat”* to better understand the context.  
+
+- **Benefit**:  
+  Unlike recurrent networks, Self-Attention processes all tokens in parallel, making it highly efficient and effective at capturing long-range dependencies.
+```
+
+现在你的 **Attention 数学描述文档** 已经包含：
+
+* Scaled Dot-Product Attention
+* Multi-Head Attention（公式 + 直观解释）
+* Self-Attention（公式 + 直观解释）
+
+要不要我帮你把这些部分整合成一个 **完整的英文版 Attention 数学描述文档**，方便直接放进笔记或论文？
+
+
+
 ## Attention-based Models (注意力机制模型, 扩展 Transformer)
 <div align="center">
 <img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/a78ff1d6-3d30-43e6-b8e2-40acad211a7f" />
