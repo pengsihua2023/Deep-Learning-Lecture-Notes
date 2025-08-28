@@ -1,5 +1,20 @@
+## GNN
+<div align="center">
+<img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/6c67a274-3a8c-4282-80ab-076bf0d47b61" /> 
+</div>
 
-# 图神经网络的数学化定义
+Graph Neural Network (GNN, 图神经网络)  
+- 重要性：
+GNN 专门处理图结构数据（如社交网络、分子结构），在推荐系统、化学建模和知识图谱中应用广泛。  
+它是深度学习向非欧几里得数据（如图、网络）扩展的关键，代表了现代 AI 的前沿方向。  
+- 核心概念：
+图由节点（点）和边（连接）组成，GNN 通过“消息传递”让节点聚合邻居信息，学习图的结构和特征。  
+比喻：像“朋友圈信息传播”，每个节点（人）根据朋友的信息更新自己的状态。  
+- 应用：推荐系统（如 Netflix 推荐）、分子设计（药物发现）、交通网络分析。
+
+---
+
+# 图神经网络的数学描述
 
 ## 1. 图的基本结构
 
@@ -78,24 +93,7 @@ GNN 的一般数学定义可以概括为：
 
 ---
 
-
-## GNN
-<div align="center">
-<img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/6c67a274-3a8c-4282-80ab-076bf0d47b61" />
-  
-</div>
-
-Graph Neural Network (GNN, 图神经网络)  
-- 重要性：
-GNN 专门处理图结构数据（如社交网络、分子结构），在推荐系统、化学建模和知识图谱中应用广泛。  
-它是深度学习向非欧几里得数据（如图、网络）扩展的关键，代表了现代 AI 的前沿方向。  
-- 核心概念：
-图由节点（点）和边（连接）组成，GNN 通过“消息传递”让节点聚合邻居信息，学习图的结构和特征。  
-比喻：像“朋友圈信息传播”，每个节点（人）根据朋友的信息更新自己的状态。  
-- 应用：推荐系统（如 Netflix 推荐）、分子设计（药物发现）、交通网络分析。
-
-
-
+## 代码
 编写一个基于PyTorch和PyTorch Geometric的最简单Graph Neural Network（GNN）示例，使用真实数据集（Cora数据集，常用的图分类基准数据集），实现节点分类任务。模型使用简单的Graph Convolutional Network（GCN）。结果将通过可视化节点嵌入（t-SNE降维）和评估分类准确率来展示。
 
 ```python
