@@ -58,6 +58,37 @@ $$
 <img width="1109" height="644" alt="image" src="https://github.com/user-attachments/assets/0ebc34f6-2940-498e-a1f2-541c907b8197" />
 多头机制
 <img width="1180" height="634" alt="image" src="https://github.com/user-attachments/assets/8f46e5e3-645e-4d3a-9fad-2fa525721a79" />
+
+
+多头注意力将 $Q, K, V$ 分成 $h$ 个头（head），每个头独立计算注意力：
+
+$$
+MultiHead(Q, K, V) = Concat(head_1, \ldots, head_h)W^O
+$$
+
+其中：
+
+$$
+head_i = Attention(QW_i^Q, \; KW_i^K, \; VW_i^V)
+$$
+
+$$
+W_i^Q, W_i^K, W_i^V \in \mathbb{R}^{d \times d_k}, \quad W^O \in \mathbb{R}^{h \cdot d_k \times d}, \quad h \text{是头数}, \; d_k = \frac{d}{h}
+$$
+
+---
+
+### 掩码自注意力（解码器特有）
+
+在解码器中，为防止当前词关注后续词，引入掩码矩阵 $M$，使未来位置的注意力权重为 $-\infty$：
+
+$$
+Attention(Q, K, V) = \text{softmax}\!\left(\frac{QK^T}{\sqrt{d_k}} + M\right)V
+$$
+
+
+
+
 ### 3. 前馈神经网络（FFN） 
 每个编码器和解码器层包含一个逐位置的前馈网络，应用于每个词的向量：
 
