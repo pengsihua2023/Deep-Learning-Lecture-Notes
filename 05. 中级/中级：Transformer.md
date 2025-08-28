@@ -74,7 +74,7 @@ $$
 **2. 计算注意力权重：**
 
 $$
-Attention(Q, K, V) = \text{softmax}\!\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+Attention(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
 $$
 
 * $QK^T \in \mathbb{R}^{n \times n}$ 表示查询和键的点积，衡量词之间的相关性。
