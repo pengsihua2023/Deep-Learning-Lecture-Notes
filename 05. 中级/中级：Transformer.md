@@ -46,6 +46,8 @@ Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分�
 解码器中的额外注意力层使用编码器的输出K, V和解码器的Q：  
   
 <img width="414" height="65" alt="image" src="https://github.com/user-attachments/assets/f04b36f5-657d-4091-ae1d-4a7f9c71cfec" />    
+
+$\mathrm{Attention}(Q_{\text{dec}}, K_{\text{enc}}, V_{\text{enc}})$
   
 这允许解码器关注输入序列的上下文。  
  
