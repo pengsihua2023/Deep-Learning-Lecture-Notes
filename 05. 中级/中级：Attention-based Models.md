@@ -1,3 +1,43 @@
+
+## 6. Multi-Head Attention (Extended)
+
+Instead of computing a single attention function, Multi-Head Attention allows the model to jointly attend to information from different representation subspaces at different positions.
+
+Formally:
+
+$$
+\text{MultiHead}(Q,K,V) = \text{Concat}(\text{head}_1, \dots, \text{head}_h) W^O
+$$
+
+where each attention head is defined as:
+
+$$
+\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
+$$
+
+with $W_i^Q, W_i^K, W_i^V \in \mathbb{R}^{d_{\text{model}} \times d_k}$ and $W^O \in \mathbb{R}^{hd_v \times d_{\text{model}}}$ being learnable projection matrices.
+
+---
+
+### Intuition
+
+- **Why multiple heads?**  
+  A single attention function may be limited in its ability to capture different types of relationships.  
+  Multiple heads allow the model to focus on different parts of the sequence (or different kinds of dependencies) simultaneously.
+
+- **How it works?**  
+  Each head projects the input into a lower-dimensional subspace, applies scaled dot-product attention, and outputs a context vector.  
+  The results of all heads are concatenated and linearly projected to form the final representation.
+
+- **Benefit**:  
+  Multi-Head Attention enriches the model’s representational power and helps capture diverse relationships in the data.
+
+---
+
+
+
+
+
 ## 8. Self-Attention
 
 Self-Attention is a special case of the attention mechanism where **Query (Q), Key (K), and Value (V) all come from the same sequence** $X$.
