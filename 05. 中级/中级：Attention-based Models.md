@@ -17,7 +17,6 @@ $$
 
 with $W_i^Q, W_i^K, W_i^V \in \mathbb{R}^{d_{\text{model}} \times d_k}$ and $W^O \in \mathbb{R}^{hd_v \times d_{\text{model}}}$ being learnable projection matrices.
 
----
 
 ### Intuition
 
