@@ -283,6 +283,9 @@ $$
 5. **可视化**：
 <img width="485" height="49" alt="image" src="https://github.com/user-attachments/assets/1048e018-8bfa-40fb-b18d-69bd36457dd8" />
 
+
+* 可添加 matplotlib 代码绘制 $u(x,t)$ 的预测结果：
+
      ```python
      import matplotlib.pyplot as plt
      plt.plot(x_test, u_pred.detach().numpy(), label='Predicted u(x, 0.5)')
