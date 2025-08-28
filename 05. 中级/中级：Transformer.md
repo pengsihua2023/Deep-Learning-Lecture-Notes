@@ -36,6 +36,20 @@ Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分�
   $  x_i = E(w_i) + PE(pos_i)  $
 
 
+$$
+x_i = E_i + PE(pos_i)
+$$
+
+其中：
+
+* $E_i$ 表示词 $w_i$ 的嵌入向量（即从嵌入矩阵 $E$ 中查到的结果）；
+* $PE(pos_i)$ 表示位置编码向量；
+* 两者逐元素相加后作为 Transformer 的输入。
+
+
+
+
+
 
 
 - 编码器  
