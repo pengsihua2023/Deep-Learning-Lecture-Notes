@@ -56,7 +56,7 @@ $$
 ### GCN (Graph Convolutional Network)
 
 $$
-H^{(k)} = \sigma\!\left(\tilde{D}^{-\tfrac{1}{2}} \,\tilde{A}\, \tilde{D}^{-\tfrac{1}{2}} H^{(k-1)} W^{(k)}\right)
+H^{(k)} = \sigma\left(\tilde{D}^{-\tfrac{1}{2}} \tilde{A} \tilde{D}^{-\tfrac{1}{2}} H^{(k-1)} W^{(k)}\right)
 $$
 
 其中 $\tilde{A} = A + I$，$\tilde{D}$ 是 $\tilde{A}$ 的度矩阵。
