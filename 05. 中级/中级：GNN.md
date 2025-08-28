@@ -74,7 +74,7 @@ h_i^{(k)} = \sigma\left(\sum_{j \in \mathcal{N}(i)}
 \alpha_{ij}^{(k)} W^{(k)} h_j^{(k-1)}\right)
 $$
 
-其中 $\alpha_{ij}^{(k)} $ 是注意力权重：
+其中 $\alpha_{ij}^{(k)}$ 是注意力权重：
 
 
 
