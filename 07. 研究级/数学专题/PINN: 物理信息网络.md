@@ -94,6 +94,11 @@ $$
 <img width="532" height="137" alt="image" src="https://github.com/user-attachments/assets/4531f7e6-3c8a-4535-9c3e-466ac5b9a795" />
 
 
+* 训练可能较慢，优化复杂 PDE 时可能不稳定。
+* 损失函数的权重 $\lambda_i$ 需调参。
+* 对复杂非线性 PDE 的求解精度可能不如传统数值方法。
+
+
 7. **适用场景**：
    - 求解 PDE（如热传导、波动方程、流体力学）。
    - 数据驱动的物理建模（如结合实验数据）。
