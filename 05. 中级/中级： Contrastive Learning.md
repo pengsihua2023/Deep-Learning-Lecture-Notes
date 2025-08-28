@@ -1,9 +1,3 @@
-$\mathcal{L}_i = - \log 
-\frac{\exp\!\left(\text{sim}(z_i, z_j^+)/\tau\right)}
-{\sum_{k=1}^{N} \exp\!\left(\text{sim}(z_i, z_k)/\tau\right)}$
-
-
-
 ## 对比学习（Contrastive Learning）
 <div align="center">
 <img width="600" height="360" alt="image" src="https://github.com/user-attachments/assets/5d389da9-c6c7-46d5-a1c5-096422a5328b" />
@@ -53,7 +47,7 @@ $$
 
 对比学习的常用目标是 **InfoNCE 损失**。设第 $i$ 个样本的正样本为 $z_j^+$，其余为负样本 $\{z_k^-\}$ ，则损失为：
 
-$\mathcal{L}_i = - \log \frac {\exp(\text{sim}(z_i, z_j^+)/\tau)}{\sum_{k=1}^{N} \exp(\text{sim}(z_i, z_k)/\tau)}$
+<img width="774" height="219" alt="image" src="https://github.com/user-attachments/assets/c8502645-6c4c-4ae2-b370-07e2d4d0e73d" />
 
 其中：
 
