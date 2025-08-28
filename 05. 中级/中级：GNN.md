@@ -74,13 +74,9 @@ h_i^{(k)} = \sigma\left(\sum_{j \in \mathcal{N}(i)}
 \alpha_{ij}^{(k)} W^{(k)} h_j^{(k-1)}\right)
 $$
 
-其中注意力权重：
+其中 $\alpha_{ij}^{(k)} $ 是注意力权重：
 
-$$
-\alpha_{ij}^{(k)} =
-\frac{\exp\!\Big(\mathrm{LeakyReLU}\!\big(a^\top [W^{(k)}h_i^{(k-1)} \,\Vert\, W^{(k)}h_j^{(k-1)}]\big)\Big)}
-{\sum_{l \in \mathcal{N}(i)} \exp\!\Big(\mathrm{LeakyReLU}\!\big(a^\top [W^{(k)}h_i^{(k-1)} \,\Vert\, W^{(k)}h_l^{(k-1)}]\big)\Big)}
-$$
+
 
 
 
