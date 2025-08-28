@@ -214,6 +214,11 @@ print("预测结果形状:", u_pred.shape)  # 输出：torch.Size([100, 1])
 - **模型**：
 <img width="627" height="89" alt="image" src="https://github.com/user-attachments/assets/6d6be84c-d5d6-4e07-8798-b1b4d2d761a7" />
 
+
+* 定义一个简单全连接神经网络，输入为 $(x,t)$，输出为 $u(x,t)$。
+
+* 使用 $\tanh$ 激活函数，确保输出平滑，适合 PDE 解。
+
 - **损失函数**：
   - `compute_loss` 计算三部分损失：
 <img width="828" height="141" alt="image" src="https://github.com/user-attachments/assets/1d70749d-14df-4136-ad55-d37a062de996" />
