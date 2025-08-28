@@ -17,9 +17,6 @@ Transformer架构是自然语言处理和深度学习领域的核心模型，最
 Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分包含多个堆叠的层（通常是 $ N $ 层）。编码器处理输入序列，解码器生成输出序列。核心创新是自注意力机制（Self-Attention），取代了传统循环神经网络（RNN）的序列处理方式。  
 输入表示  
 输入序列（如单词或标记）首先被转换为向量表示：
-<img width="1390" height="474" alt="image" src="https://github.com/user-attachments/assets/fb62a0e3-59d9-41e0-b322-d4d5c2c06904" />
-
-
 * **词嵌入**：将每个词映射为固定维度的向量 $x_i \in \mathbb{R}^d$，通常通过嵌入矩阵
   $E \in \mathbb{R}^{|V|\times d}$ 实现，其中 $|V|$ 是词汇表大小， $d$ 是嵌入维度。
 
@@ -45,13 +42,6 @@ $$
 * $E_i$ 表示词 $w_i$ 的嵌入向量（即从嵌入矩阵 $E$ 中查到的结果）；
 * $PE(pos_i)$ 表示位置编码向量；
 * 两者逐元素相加后作为 Transformer 的输入。
-
-
-
-
-
-
-
 - 编码器  
 每个编码器层包含两个主要子模块： 
 
@@ -59,7 +49,7 @@ $$
 前馈神经网络（Feed-Forward Neural Network, FFN）  
 
 每个子模块后接残差连接（Residual Connection）和层归一化（Layer Normalization）。  
-解码器  
+- 解码器  
 解码器与编码器类似，但多了掩码自注意力（Masked Self-Attention，用于避免未来信息的泄露）和编码器-解码器注意力（Encoder-Decoder Attention）。  
 
 ### 2. 多头自注意力机制 
