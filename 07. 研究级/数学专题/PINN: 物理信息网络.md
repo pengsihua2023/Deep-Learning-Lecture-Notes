@@ -113,6 +113,28 @@ $$
 <img width="758" height="382" alt="image" src="https://github.com/user-attachments/assets/6399f215-6598-43db-b06f-274c0a1dbdce" />
 
 
+**Burgers 方程：**
+
+$$
+\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} = \nu \frac{\partial^2 u}{\partial x^2}, 
+\quad x \in [-1,1], \; t \in [0,1]
+$$
+
+**初始条件：**
+
+$$
+u(x,0) = -\sin(\pi x)
+$$
+
+**边界条件：**
+
+$$
+u(-1,t) = u(1,t) = 0
+$$
+
+其中 $\nu = \frac{0.01}{\pi}$ 是粘性系数。
+
+
 ##### **代码示例**
 ```python
 import torch
