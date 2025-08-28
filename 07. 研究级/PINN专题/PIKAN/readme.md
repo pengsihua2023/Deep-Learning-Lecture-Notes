@@ -34,12 +34,6 @@ PIKAN 的设计目标是：
 
 2. **物理残差损失**：
 
-   $$
-   L = L_{\text{data}} + \lambda \, L_{\text{physics}}
-   $$
-
-你说得很对 👍。我之前写的公式里用了一个逗号，确实不符合标准的数学写法。正确的物理信息神经网络（PINN / PIKAN）损失函数应该是 **加法**，写成：
-
 $$
 L = L_{\text{data}} + \lambda \, L_{\text{physics}}
 $$
@@ -55,13 +49,6 @@ $$
 $$
 L = L_{\text{data}} + \lambda_{\text{phys}} L_{\text{physics}} + \lambda_{\text{cons}} L_{\text{conservation}}
 $$
-
-这样写才是规范的。
-
-要不要我帮你推导一个 **针对 SEIR 模型的 $L_{\text{physics}}$ 具体形式**，让公式更直观？
-
-
-   其中 $L_{\text{physics}}$ 来自把网络输出代入微分方程（如 SEIR、Navier–Stokes）的残差。
 
 4. **参数可解释性更强**：因为网络是建立在函数分解基础上的，而不是黑箱式的深层 MLP。
 
