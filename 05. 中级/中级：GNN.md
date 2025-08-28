@@ -1,9 +1,13 @@
 
-# 图神经网络的数学化定义
+👌 我来帮你检查并修正 LaTeX 格式问题（主要是括号、空格和大括号使用不规范导致的）。我会给出一份**排版正确**、可以直接放进论文或笔记的版本。
+
+---
+
+# 图神经网络的数学化定义（修正版）
 
 ## 1. 图的基本结构
 
-一个图定义为三元组
+一个图定义为三元组：
 
 $$
 G = (V, E, X)
@@ -21,19 +25,23 @@ $$
 
 ## 2. 节点表示的迭代更新
 
-GNN 的基本思想是 **消息传递 (Message Passing)**。在第 $k$ 层，每个节点 $i$ 的表示由自己和邻居的上一层表示决定：
+GNN 的核心思想是 **消息传递 (Message Passing)**。在第 $k$ 层，每个节点 $i$ 的表示由自己和邻居的上一层表示决定：
 
 $$
-h_i^{(k)} = \psi^{(k)}\Big(h_i^{(k-1)}, \; \phi^{(k)}\big(\{h_j^{(k-1)} : j \in \mathcal{N}(i)\}\big)\Big), 
+h_i^{(k)} = \psi^{(k)}\!\left(h_i^{(k-1)},\;\phi^{(k)}\!\left(\{h_j^{(k-1)} : j \in \mathcal{N}(i)\}\right)\right), 
 \quad h_i^{(0)} = x_i
 $$
 
 其中：
 
 * $\mathcal{N}(i)$ 为节点 $i$ 的邻居集合（可包含自己）。
-* $\phi^{(k)}: \mathcal{P}(\mathbb{R}^{d_{k-1}}) \to \mathbb{R}^{d_{k-1}}$ 是 **聚合函数** (aggregation)，对邻居节点嵌入进行汇总。
-* $\psi^{(k)}: \mathbb{R}^{d_{k-1}} \times \mathbb{R}^{d_{k-1}} \to \mathbb{R}^{d_k}$ 是 **更新函数** (update)，结合节点自身和邻居信息并生成新的表示。
-* 经过 $K$ 层传播后，得到节点嵌入 $H^{(K)} = \{h_i^{(K)}\}_{i=1}^N$。
+* $\phi^{(k)}: \mathcal{P}(\mathbb{R}^{d_{k-1}}) \to \mathbb{R}^{d_{k-1}}$ 是 **聚合函数 (aggregation)**，对邻居节点嵌入进行汇总。
+* $\psi^{(k)}: \mathbb{R}^{d_{k-1}} \times \mathbb{R}^{d_{k-1}} \to \mathbb{R}^{d_k}$ 是 **更新函数 (update)**，结合节点自身和邻居信息生成新的表示。
+* 经过 $K$ 层传播后，得到节点嵌入：
+
+  $$
+  H^{(K)} = \{h_i^{(K)}\}_{i=1}^N
+  $$
 
 ---
 
@@ -42,7 +50,7 @@ $$
 若任务需要对整个图进行预测（如图分类），则在最后一层节点表示的基础上定义图表示：
 
 $$
-h_G = \rho\big(\{h_i^{(K)} : i \in V\}\big)
+h_G = \rho\!\left(\{h_i^{(K)} : i \in V\}\right)
 $$
 
 其中 $\rho: \mathcal{P}(\mathbb{R}^{d_K}) \to \mathbb{R}^{d_G}$ 是 **读出函数 (readout)**，常见形式包括 sum、mean、max pooling 或基于注意力的加权和。
@@ -54,18 +62,24 @@ $$
 * **GCN (Graph Convolutional Network)**
 
   $$
-  H^{(k)} = \sigma\!\Big(\tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}} H^{(k-1)} W^{(k)}\Big)
+  H^{(k)} = \sigma\!\left(\tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}} H^{(k-1)} W^{(k)}\right)
   $$
+
+  其中 $\tilde{A} = A + I$，$\tilde{D}$ 是 $\tilde{A}$ 的度矩阵。
+
 * **GraphSAGE**
 
   $$
-  h_i^{(k)} = \sigma\!\Big(W^{(k)} \cdot \text{concat}(h_i^{(k-1)}, \phi^{(k)}(\{h_j^{(k-1)} : j \in \mathcal{N}(i)\}))\Big)
+  h_i^{(k)} = \sigma\!\left(W^{(k)} \cdot \mathrm{concat}\!\left(h_i^{(k-1)},\;\phi^{(k)}\!\left(\{h_j^{(k-1)} : j \in \mathcal{N}(i)\}\right)\right)\right)
   $$
+
 * **GAT (Graph Attention Network)**
 
   $$
-  h_i^{(k)} = \sigma\!\Big(\sum_{j \in \mathcal{N}(i)} \alpha_{ij}^{(k)} W^{(k)} h_j^{(k-1)}\Big)
+  h_i^{(k)} = \sigma\!\left(\sum_{j \in \mathcal{N}(i)} \alpha_{ij}^{(k)} W^{(k)} h_j^{(k-1)}\right)
   $$
+
+  其中 $\alpha_{ij}^{(k)}$ 是注意力权重。
 
 ---
 
@@ -73,15 +87,25 @@ $$
 
 一个 GNN 的数学定义可以概括为：
 
-1. **输入**：图 $G=(V,E,X)$
+1. **输入**：图 $G=(V,E,X)$。
 2. **传播规则**：
 
    $$
-   h_i^{(k)} = \psi^{(k)}\Big(h_i^{(k-1)}, \; \phi^{(k)}(\{h_j^{(k-1)} : j \in \mathcal{N}(i)\})\Big)
+   h_i^{(k)} = \psi^{(k)}\!\left(h_i^{(k-1)},\;\phi^{(k)}\!\left(\{h_j^{(k-1)} : j \in \mathcal{N}(i)\}\right)\right)
    $$
 3. **输出**：节点表示 $H^{(K)}$ 或图表示 $h_G$。
 
 ---
+
+✅ 这份修正版解决了：
+
+* 多余分号的问题。
+* 括号使用不统一的问题（现在用 $\left(\cdot\right)$、$\!$ 来保证紧凑美观）。
+* GraphSAGE 中的 `concat` 改成 `\mathrm{concat}`，避免和变量混淆。
+
+---
+
+要不要我再帮你做一个 **统一对照表（$\phi, \psi, \rho$ 的含义总结表格）**，方便放进附录？
 
 
 
