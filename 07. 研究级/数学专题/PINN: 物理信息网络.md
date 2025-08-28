@@ -6,7 +6,7 @@
 
 #### **原理**
 1. **核心思想**：
-<img width="600" height="102" alt="image" src="https://github.com/user-attachments/assets/3229c1ce-599f-4f03-9153-0b8d649f7baf" />
+
 
 
 * PINNs 使用神经网络 $u(x,t;\theta)$（参数为 $\theta$）逼近 PDE 的解 $u(x,t)$。
@@ -15,7 +15,7 @@
 
 
 2. **PDE 形式**：考虑一般形式的 PDE：   
-<img width="517" height="258" alt="image" src="https://github.com/user-attachments/assets/530507c3-2e1a-4779-8c11-44bdc3a3a1f1" />
+
 
 
 
@@ -38,7 +38,7 @@ $$
 
 3. **损失函数**：
    PINNs 的损失函数由三部分组成：
-<img width="562" height="477" alt="image" src="https://github.com/user-attachments/assets/113895c6-df38-4dd9-afdf-c9f434d16f16" />
+
 
 
 * **PDE 残差损失：**
@@ -49,7 +49,7 @@ $$
 
 在采样点{ $\{x_i, t_i\}$ }上计算 PDE 残差。
 
----
+
 
 * **初始条件损失：**
 
@@ -57,7 +57,7 @@ $$
 L_{\text{init}} = \frac{1}{N_i} \sum_{i=1}^{N_i} \left| u(x_i, 0; \theta) - u_0(x_i) \right|^2
 $$
 
----
+
 
 * **边界条件损失：**
 
@@ -65,7 +65,7 @@ $$
 L_{\text{bc}} = \frac{1}{N_b} \sum_{i=1}^{N_b} \left| u(x_i, t_i; \theta) - g(x_i, t_i) \right|^2
 $$
 
----
+
 
 * **总损失：**
 
@@ -77,7 +77,7 @@ $$
 
 
 4. **自动微分**：
-<img width="704" height="70" alt="image" src="https://github.com/user-attachments/assets/38497436-1a0e-4636-a0f8-7eee56bf6d0f" />
+
 
 
 * PINNs 使用神经网络的自动微分（autograd）计算 PDE 中的导数（如 $\frac{\partial u}{\partial t}, \frac{\partial^2 u}{\partial x^2}$），无需显式离散化。
@@ -91,7 +91,7 @@ $$
    - 可结合少量观测数据和物理规律。
 
 6. **缺点**：
-<img width="532" height="137" alt="image" src="https://github.com/user-attachments/assets/4531f7e6-3c8a-4535-9c3e-466ac5b9a795" />
+
 
 
 * 训练可能较慢，优化复杂 PDE 时可能不稳定。
@@ -104,13 +104,13 @@ $$
    - 数据驱动的物理建模（如结合实验数据）。
    - 反问题（如参数估计）。
 
----
+
 
 #### **PyTorch 用法**
 以下是最简洁的 PyTorch 代码示例，展示如何使用 PINNs 求解一维 Burgers 方程（一个非线性 PDE），并说明其原理和使用方法。
 
 ##### **问题描述**
-<img width="758" height="382" alt="image" src="https://github.com/user-attachments/assets/6399f215-6598-43db-b06f-274c0a1dbdce" />
+
 
 
 **Burgers 方程：**
@@ -134,6 +134,7 @@ $$
 
 其中 $\nu = \frac{0.01}{\pi}$ 是粘性系数。
 
+---
 
 ##### **代码示例**
 ```python
