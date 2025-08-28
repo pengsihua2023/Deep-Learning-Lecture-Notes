@@ -1,6 +1,4 @@
-* 这里的 **$d_k$** 表示 **Key 向量的维度**（通常也等于 Query 的维度）。
 
-* $d_k = \frac{d_{\text{model}}}{h}, \quad \text{缩放因子} = \sqrt{d_k}$
 
 ---
 
@@ -27,8 +25,10 @@ $$
 其中：
 
 * $W^Q, W^K, W^V \in \mathbb{R}^{d \times d_k}$ 为可学习参数；
-* $Q, K, V \in \mathbb{R}^{n \times d_k}$。
+* $Q, K, V \in \mathbb{R}^{n \times d_k}$;
+* 这里的 **$d_k$** 表示 **Key 向量的维度**（通常也等于 Query 的维度）;
 
+* $d_k = \frac{d_{\text{model}}}{h}, \quad \text{缩放因子} = \sqrt{d_k}$ .
 
 
 ## 2. 注意力打分函数
