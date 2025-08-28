@@ -3,6 +3,7 @@
 <img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/6c67a274-3a8c-4282-80ab-076bf0d47b61" /> 
 </div>  
   
+    
 - 重要性：
 GNN 专门处理图结构数据（如社交网络、分子结构），在推荐系统、化学建模和知识图谱中应用广泛。  
 它是深度学习向非欧几里得数据（如图、网络）扩展的关键，代表了现代 AI 的前沿方向。  
