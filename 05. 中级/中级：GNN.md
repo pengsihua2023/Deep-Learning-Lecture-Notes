@@ -25,10 +25,8 @@ $$
 
 消息传递 (Message Passing) 的一般形式：
 
-$$
-h_i^{(k)} = \psi^{(k)}\left(h_i^{(k-1)},\phi^{(k)}\left(\{h_j^{(k-1)} \mid j \in \mathcal{N}(i)\}\}\right)\right),
-\quad h_i^{(0)} = x_i
-$$
+<img width="500" height="52" alt="image" src="https://github.com/user-attachments/assets/e3732160-4870-4514-a875-7afaf4907056" />
+
 
 说明：
 
