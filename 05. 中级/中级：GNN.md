@@ -1,3 +1,119 @@
+
+# 图神经网络的数学化定义
+
+## 1. 图的基本结构
+
+一个图定义为三元组
+
+$$
+G = (V, E, X)
+$$
+
+其中：
+
+* $V = \{1, 2, \dots, N\}$ 为节点集合，节点数为 $N$。
+* $E \subseteq V \times V$ 为边集合。
+* $X \in \mathbb{R}^{N \times d}$ 为节点特征矩阵，其中第 $i$ 行 $x_i \in \mathbb{R}^d$ 是节点 $i$ 的初始特征。
+
+若采用邻接矩阵表示，则 $A \in \mathbb{R}^{N \times N}$，其中 $A_{ij} \neq 0$ 表示 $(i,j) \in E$。
+
+---
+
+## 2. 节点表示的迭代更新
+
+GNN 的基本思想是 **消息传递 (Message Passing)**。在第 $k$ 层，每个节点 $i$ 的表示由自己和邻居的上一层表示决定：
+
+$$
+h_i^{(k)} = \psi^{(k)}\Big(h_i^{(k-1)}, \; \phi^{(k)}\big(\{h_j^{(k-1)} : j \in \mathcal{N}(i)\}\big)\Big), 
+\quad h_i^{(0)} = x_i
+$$
+
+其中：
+
+* $\mathcal{N}(i)$ 为节点 $i$ 的邻居集合（可包含自己）。
+* $\phi^{(k)}: \mathcal{P}(\mathbb{R}^{d_{k-1}}) \to \mathbb{R}^{d_{k-1}}$ 是 **聚合函数** (aggregation)，对邻居节点嵌入进行汇总。
+* $\psi^{(k)}: \mathbb{R}^{d_{k-1}} \times \mathbb{R}^{d_{k-1}} \to \mathbb{R}^{d_k}$ 是 **更新函数** (update)，结合节点自身和邻居信息并生成新的表示。
+* 经过 $K$ 层传播后，得到节点嵌入 $H^{(K)} = \{h_i^{(K)}\}_{i=1}^N$。
+
+---
+
+## 3. 图级表示
+
+若任务需要对整个图进行预测（如图分类），则在最后一层节点表示的基础上定义图表示：
+
+$$
+h_G = \rho\big(\{h_i^{(K)} : i \in V\}\big)
+$$
+
+其中 $\rho: \mathcal{P}(\mathbb{R}^{d_K}) \to \mathbb{R}^{d_G}$ 是 **读出函数 (readout)**，常见形式包括 sum、mean、max pooling 或基于注意力的加权和。
+
+---
+
+## 4. 特例：常见 GNN 实现
+
+* **GCN (Graph Convolutional Network)**
+
+  $$
+  H^{(k)} = \sigma\!\Big(\tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}} H^{(k-1)} W^{(k)}\Big)
+  $$
+* **GraphSAGE**
+
+  $$
+  h_i^{(k)} = \sigma\!\Big(W^{(k)} \cdot \text{concat}(h_i^{(k-1)}, \phi^{(k)}(\{h_j^{(k-1)} : j \in \mathcal{N}(i)\}))\Big)
+  $$
+* **GAT (Graph Attention Network)**
+
+  $$
+  h_i^{(k)} = \sigma\!\Big(\sum_{j \in \mathcal{N}(i)} \alpha_{ij}^{(k)} W^{(k)} h_j^{(k-1)}\Big)
+  $$
+
+---
+
+## 5. 总结
+
+一个 GNN 的数学定义可以概括为：
+
+1. **输入**：图 $G=(V,E,X)$
+2. **传播规则**：
+
+   $$
+   h_i^{(k)} = \psi^{(k)}\Big(h_i^{(k-1)}, \; \phi^{(k)}(\{h_j^{(k-1)} : j \in \mathcal{N}(i)\})\Big)
+   $$
+3. **输出**：节点表示 $H^{(K)}$ 或图表示 $h_G$。
+
+---
+
+
+
+# 图神经网络 (GNN) 数学定义对照表
+
+| 符号                                                                                  | 定义                                                                                                               | 说明                                                           |
+| ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| $G = (V,E,X)$                                                                       | 图结构                                                                                                              | $V$ 为节点集合，$E$ 为边集合，$X \in \mathbb{R}^{N \times d}$ 为初始节点特征矩阵 |
+| $h_i^{(0)} = x_i$                                                                   | 节点初始表示                                                                                                           | 节点 $i$ 的特征向量                                                 |
+| $\mathcal{N}(i)$                                                                    | 节点邻居集合                                                                                                           | 与节点 $i$ 相连的所有节点（可含自身）                                        |
+| $\phi^{(k)}: \mathcal{P}(\mathbb{R}^{d_{k-1}}) \to \mathbb{R}^{d_{k-1}}$            | 聚合函数 (Aggregation)                                                                                               | 从邻居节点嵌入集合中提取信息，例如 sum、mean、max、attention                     |
+| $\psi^{(k)}: \mathbb{R}^{d_{k-1}} \times \mathbb{R}^{d_{k-1}} \to \mathbb{R}^{d_k}$ | 更新函数 (Update)                                                                                                    | 将节点自身表示与邻居聚合结果结合，通常是 MLP                                     |
+| 节点更新规则                                                                              | $\displaystyle h_i^{(k)} = \psi^{(k)}\Big(h_i^{(k-1)}, \;\phi^{(k)}(\{h_j^{(k-1)}: j \in \mathcal{N}(i)\})\Big)$ | **消息传递公式**：第 $k$ 层节点表示由自身和邻居共同决定                             |
+| $H^{(K)} = \{h_i^{(K)}\}_{i=1}^N$                                                   | 节点最终表示                                                                                                           | 经过 $K$ 层传播后的节点嵌入矩阵                                           |
+| $\rho: \mathcal{P}(\mathbb{R}^{d_K}) \to \mathbb{R}^{d_G}$                          | 读出函数 (Readout)                                                                                                   | 将所有节点嵌入映射为图级表示，常用 sum/mean/max pooling 或注意力                  |
+| 图表示                                                                                 | $\displaystyle h_G = \rho(\{h_i^{(K)}: i \in V\})$                                                               | 得到整个图的全局表示，用于图分类等任务                                          |
+
+---
+
+✨ 这样，一个 GNN 的完整数学定义可以总结为：
+
+1. **输入**：图 $G=(V,E,X)$
+2. **传播**：消息传递迭代
+
+   $$
+   h_i^{(k)} = \psi^{(k)}\Big(h_i^{(k-1)}, \;\phi^{(k)}(\{h_j^{(k-1)}: j \in \mathcal{N}(i)\})\Big)
+   $$
+3. **输出**：节点嵌入 $H^{(K)}$ 或图嵌入 $h_G$。
+
+---
+
+
 ## GNN
 <div align="center">
 <img width="500" height="263" alt="image" src="https://github.com/user-attachments/assets/47f67caf-be26-42b4-928e-b8db05f1afab" />  
