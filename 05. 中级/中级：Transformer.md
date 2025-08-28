@@ -42,6 +42,19 @@ Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分�
 每个子模块（自注意力或FFN）后接残差连接和层归一化：  
 <img width="962" height="334" alt="image" src="https://github.com/user-attachments/assets/fc2bff13-19c6-4c30-9413-c39e72a662da" />
 
+$$
+y = \mathrm{LayerNorm}(x + \mathrm{Sublayer}(x))
+$$  
+
+其中 Sublayer 是注意力或 FFN，LayerNorm 定义为：  
+
+$$
+\mathrm{LayerNorm}(x) = \gamma \cdot \frac{x - \mu}{\sqrt{\sigma^2 + \epsilon}} + \beta
+$$  
+
+$\mu$ 和 $\sigma^2$ 是输入向量的均值和方差， $\gamma, \beta$ 是可学习参数。
+
+
 ### 5. 编码器-解码器注意力  
 解码器中的额外注意力层使用编码器的输出K, V和解码器的Q：  
   
