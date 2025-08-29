@@ -3,7 +3,13 @@
 https://notebooklm.google.com/notebook/1d146776-cbb0-44cb-bfa5-13ff50ee9e9f/audio  
 World Model技术是指通过人工智能（特别是机器学习和深度学习）构建一个能够模拟、理解和预测复杂环境动态的计算模型。它旨在让AI系统通过学习环境的状态、规则和因果关系，生成一个内部表示（即“世界模型”），从而支持推理、规划和决策。World Model广泛应用于机器人、自动驾驶、游戏AI、科学模拟等领域，是AI Agent和自主系统的重要组成部分。以下是对World Model技术的简介，包括核心概念、主要方法、应用场景、挑战及简单代码示例。
 
----
+<div align="center">
+<img width="400" height="332" alt="image" src="https://github.com/user-attachments/assets/33e277b6-6e58-46b1-8d35-4b4989fdd37e" />
+</div>
+
+<div align="center">
+(This figure was obtained from Internet)
+</div>
 
 ### 核心概念
 - **世界模型定义**：World Model是AI对环境的抽象表示，捕获环境的动态、状态转移和奖励机制。它可以是显式的（如基于规则的模型）或隐式的（如神经网络学习的表示）。
