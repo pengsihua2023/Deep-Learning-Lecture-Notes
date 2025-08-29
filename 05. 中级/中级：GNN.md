@@ -1,4 +1,41 @@
 ## 图神经网络 Graph Neural Network (GNN）
+**Graph Neural Network (GNN)** 是一种专门用于处理图结构数据（Graph-structured Data）的神经网络模型。
+在图中，节点（nodes/vertices）表示实体，边（edges）表示实体之间的关系。与传统神经网络不同，GNN 能够捕捉 **节点之间的依赖关系** 和 **图的拓扑结构**，从而学习到节点、边或整个图的有效表示（embedding）。
+
+### 核心思想
+
+1. **消息传递（Message Passing）**：
+   每个节点从其邻居节点收集信息，并结合自身特征进行更新。
+
+2. **聚合（Aggregation）**：
+   使用某种函数（如求和、平均、最大池化）将邻居信息聚合起来，保证结果对节点邻居的顺序不敏感。
+
+3. **更新（Update）**：
+   将聚合后的邻居信息与节点自身特征结合，通过神经网络（如 MLP）更新节点表示。
+
+4. **迭代传播（Propagation）**：
+   重复上述过程多层次传播，使得节点能够捕捉到更远距离的邻居信息。
+
+### 常见任务
+
+* **节点分类 (Node Classification)**：预测节点的类别，例如社交网络中用户的兴趣标签。
+* **链路预测 (Link Prediction)**：预测图中缺失或未来可能出现的边，例如推荐系统中的“朋友推荐”。
+* **图分类 (Graph Classification)**：对整个图进行分类，例如分子结构图的药物活性预测。
+
+### 数学形式（简化版）
+
+给定一个节点 $v$ 及其邻居集合 $\mathcal{N}(v)$，GNN 的更新规则可以写为：
+
+$$
+h_v^{(k)} = \text{UPDATE}^{(k)} \left( h_v^{(k-1)}, \ \text{AGGREGATE}^{(k)} \left( \{ h_u^{(k-1)} \ | \ u \in \mathcal{N}(v) \} \right) \right)
+$$
+
+其中：
+
+* $h_v^{(k)}$ 表示第 $k$ 层中节点 $v$ 的表示。
+* **AGGREGATE**：聚合邻居节点信息。
+* **UPDATE**：结合节点自身和邻居信息更新表示。
+
 <div align="center">
 <img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/6c67a274-3a8c-4282-80ab-076bf0d47b61" /> 
 </div>  
