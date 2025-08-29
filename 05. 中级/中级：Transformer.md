@@ -4,7 +4,9 @@
 <div align="center">
 <img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/8d064b02-6166-47ec-bfc6-fb031f94192c" />  
 </div>
-
+<div align="center">
+(此图引自Internet。)
+</div>
 
 ### 核心思想
 
