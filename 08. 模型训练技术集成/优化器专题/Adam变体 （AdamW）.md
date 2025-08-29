@@ -39,7 +39,6 @@ $$
 \theta_{t+1} = \theta_t - \eta \left( \frac{m_t}{\sqrt{v_t} + \epsilon} + \lambda \theta_t \right)
 $$
 
----
 
 * 其中：
 
@@ -48,7 +47,7 @@ $$
   * $\epsilon$：防止除零（通常 $1e^{-8}$）。
   * $\lambda$：权重衰减系数（通过 *weight\_decay* 设置）。
 
----
+
 
 AdamW 直接对参数施加 $\lambda \theta_t$ 的衰减，而不是将其作为梯度的一部分，从而更好地平衡优化和正则化。
 
