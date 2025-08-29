@@ -4,7 +4,9 @@ BERT（Bidirectional Encoder Representations from Transformers）是 Google 在 
 <div align="center"> 
 <img width="350" height="280" alt="image" src="https://github.com/user-attachments/assets/313fa320-c931-4fb3-8fcb-5d81de615a21" />
 </div>
-
+<div align="center">
+(此图引自Internet。)
+</div>
 
 
 ## BERT模型的数学描述
