@@ -44,13 +44,17 @@ $$
    - **缺点**：
 <img width="366" height="93" alt="image" src="https://github.com/user-attachments/assets/dd3b020f-dc22-4821-9148-c2940d5b3c46" />
 
+
+* 梯度噪声大，可能导致收敛不稳定。
+* 需手动调整学习率 $\eta$ 和动量 $\gamma$。
+
    - **适用场景**：图像分类、文本分类、回归等深度学习任务，适合简单优化或作为基准算法。
 
 3. **与 Adadelta 的对比**：
    - SGD 需要手动设置学习率，Adadelta 自适应调整学习率。
    - SGD 简单直接，Adadelta 引入梯度平方和更新平方的指数移动平均，计算更复杂但更鲁棒。
 
----
+
 
 #### **PyTorch 用法**
 PyTorch 提供了内置的 `torch.optim.SGD` 优化器，支持基础 SGD 和带动量的变体。以下是最简洁的代码示例，展示如何在图像分类任务中使用 SGD 优化器训练一个简单的 CNN。
