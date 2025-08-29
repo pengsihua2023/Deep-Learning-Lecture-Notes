@@ -60,7 +60,11 @@ $$
    - **收敛稳定**：避免了 Adagrad 学习率过快衰减的问题。
 
 4. **缺点**：
-<img width="521" height="97" alt="image" src="https://github.com/user-attachments/assets/129dbbcf-b299-4e91-88cd-945ead570b74" />
+
+---
+
+* 计算复杂度略高于 SGD。
+* 超参数 $\rho$ 和 $\epsilon$ 需小心选择（通常默认值效果良好）。
 
 
 #### **适用场景**
