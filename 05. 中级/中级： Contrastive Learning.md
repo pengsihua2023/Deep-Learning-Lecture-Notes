@@ -22,23 +22,19 @@
 
 * **负样本对**在特征空间中的距离尽可能远离：
 
-  $$
-  \text{sim}(f(x_i), f(x_k)) \ \text{minimize}
-  $$
+  $\text{sim}(f(x_i), f(x_k)) \ \text{minimize}$
 
 其中 \$\text{sim}(\cdot,\cdot)\$ 通常是 **余弦相似度** 或 **内积**。
 
----
 
-## 典型方法
+### 典型方法
 
 * **SimCLR**：通过大规模数据增强构造正负样本对，使用 InfoNCE 损失函数训练。
 * **MoCo**（Momentum Contrast）：引入动量更新机制，维持一个大的动态负样本库。
 * **BYOL**（Bootstrap Your Own Latent）：不显式使用负样本，仅通过两个网络（在线网络 & 目标网络）的交互来学习。
 
----
 
-## 总结
+### 总结
 
 对比学习的本质是：
 
