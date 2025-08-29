@@ -10,9 +10,12 @@ CNN 使用“卷积”操作，像一个“放大镜”扫描图片，提取特�
 <div align="center">
 <img width="708" height="353" alt="image" src="https://github.com/user-attachments/assets/c404062e-9dc5-4c41-bf8d-93cf080c6181" />
 </div>
+
 <div align="center">
 (此图引自Internet。)
-</div>    
+</div>
+
+
 ---
 
 ## 卷积神经网络（CNN）的数学描述
