@@ -5,8 +5,6 @@ Adam优化器（Adaptive Moment Estimation，适应性矩估计）是一种在�
 
 #### 核心原理
 Adam通过跟踪梯度的一阶矩（均值）和二阶矩（方差）的指数移动平均值来动态调整每个参数的学习率。主要步骤：
-<img width="934" height="689" alt="image" src="https://github.com/user-attachments/assets/a993a703-7bc3-4970-ac37-ff01800f932f" />
-
 
 1. **计算梯度**：对损失函数求参数的梯度 $g_t$。
 
