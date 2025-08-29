@@ -22,20 +22,6 @@
 * **链路预测 (Link Prediction)**：预测图中缺失或未来可能出现的边，例如推荐系统中的“朋友推荐”。
 * **图分类 (Graph Classification)**：对整个图进行分类，例如分子结构图的药物活性预测。
 
-### 数学形式（简化版）
-
-给定一个节点 $v$ 及其邻居集合 $\mathcal{N}(v)$，GNN 的更新规则可以写为：
-
-$$
-h_v^{(k)} = \text{UPDATE}^{(k)} \left( h_v^{(k-1)}, \ \text{AGGREGATE}^{(k)} \left( \{ h_u^{(k-1)} \ | \ u \in \mathcal{N}(v) \} \right) \right)
-$$
-
-其中：
-
-* $h_v^{(k)}$ 表示第 $k$ 层中节点 $v$ 的表示。
-* **AGGREGATE**：聚合邻居节点信息。
-* **UPDATE**：结合节点自身和邻居信息更新表示。
-
 <div align="center">
 <img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/6c67a274-3a8c-4282-80ab-076bf0d47b61" /> 
 </div>  
