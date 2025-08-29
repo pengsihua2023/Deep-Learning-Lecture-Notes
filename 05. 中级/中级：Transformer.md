@@ -1,4 +1,40 @@
 ## Transformer
+
+**Transformer** 是一种基于 **注意力机制（Attention Mechanism）** 的深度学习模型架构，由 Vaswani 等人在 2017 年的论文 *“Attention is All You Need”* 中提出。它最初用于自然语言处理（NLP）任务，但如今已经广泛应用于计算机视觉（CV）、语音处理、多模态学习等领域。
+
+### 核心思想
+
+1. **自注意力机制（Self-Attention）**：
+   每个元素（如词向量）与序列中其他元素计算相关性，动态获取上下文信息，从而捕捉长距离依赖。
+
+2. **位置编码（Positional Encoding）**：
+   由于 Transformer 不使用循环（RNN）或卷积（CNN），通过位置编码显式注入序列顺序信息。
+
+3. **多头注意力（Multi-Head Attention）**：
+   并行计算多组注意力，关注不同的特征子空间，从而提升模型表达能力。
+
+4. **编码器-解码器结构（Encoder-Decoder Architecture）**：
+
+   * **编码器 (Encoder)**：将输入序列映射为上下文表示。
+   * **解码器 (Decoder)**：基于编码器的表示和已生成的输出，逐步预测目标序列。
+
+### 常见应用
+
+* **自然语言处理 (NLP)**：机器翻译（如 Google 翻译）、文本生成（GPT 系列）、问答系统、文本摘要。
+* **计算机视觉 (CV)**：Vision Transformer (ViT) 用于图像分类、目标检测。
+* **语音处理**：语音识别、语音合成。
+* **多模态学习**：CLIP、DALL·E、GPT-4V 等跨模态模型。
+
+### 数学形式（自注意力机制）
+
+给定输入序列表示为矩阵 $X$，通过线性变换得到 Query ($Q$)、Key ($K$)、Value ($V$)：
+
+$$
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+$$
+
+其中 $d_k$ 是 Key 的维度，用于缩放。
+
 <div align="center">
 <img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/8d064b02-6166-47ec-bfc6-fb031f94192c" />  
 </div>
