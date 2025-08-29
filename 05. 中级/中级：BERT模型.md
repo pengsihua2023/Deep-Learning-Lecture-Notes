@@ -1,12 +1,8 @@
 
 
+## BERT模型的数学描述
 
-
-好的，我们来用数学公式形式（LaTeX）描述 **BERT 模型（Bidirectional Encoder Representations from Transformers）**。
-
----
-
-# 1. 输入表示（Input Representation）
+### 1. 输入表示（Input Representation）
 
 对于输入序列
 
@@ -26,13 +22,13 @@ $$
 * $P(i)$：位置嵌入。
 * $S(s_i)$：句子片段嵌入（用于区分句子 A/B）。
 
----
 
-# 2. Transformer 编码器层（Encoder Layer）
+
+### 2. Transformer 编码器层（Encoder Layer）
 
 BERT 由 $L$ 层 Transformer Encoder 堆叠而成。第 $l$ 层输入为 $\{h_1^{(l-1)}, \dots, h_n^{(l-1)}\}$，输出为 $\{h_1^{(l)}, \dots, h_n^{(l)}\}$。
 
-## (a) 多头自注意力（Multi-Head Self-Attention）
+- (a) 多头自注意力（Multi-Head Self-Attention）
 
 首先计算每个 token 的查询（Query）、键（Key）、值（Value）向量：
 
@@ -58,7 +54,7 @@ $$
 \text{head}_i = \text{Attention}(Q W_Q^{(i)}, K W_K^{(i)}, V W_V^{(i)}).
 $$
 
-## (b) 前馈网络（Feed Forward Network）
+- (b) 前馈网络（Feed Forward Network）
 
 每个位置独立通过两层前馈网络：
 
@@ -68,7 +64,7 @@ $$
 
 ---
 
-# 3. 残差连接与层归一化（Residual + LayerNorm）
+### 3. 残差连接与层归一化（Residual + LayerNorm）
 
 每个子层后有残差和归一化：
 
@@ -80,9 +76,9 @@ $$
 H^{(l)} = \text{LayerNorm}(\tilde{H}^{(l)} + \text{FFN}(\tilde{H}^{(l)})).
 $$
 
----
 
-# 4. 预训练目标（Pre-training Objectives）
+
+### 4. 预训练目标（Pre-training Objectives）
 
 BERT 有两个主要预训练任务：
 
@@ -110,7 +106,7 @@ $\mathcal{L} = \mathcal{L}_ {MLM} + \mathcal{L}_ {NSP}. $
 
 ---
 
-要不要我帮你把这些公式整理成一份 **完整的 LaTeX 模板**（可以直接编译成 PDF 的那种）？
+
 
 
 
