@@ -9,8 +9,6 @@ Adagrad（Adaptive Gradient Algorithm）是一种自适应学习率的优化算�
    - 梯度较大的参数（频繁更新）学习率逐渐减小，梯度较小的参数（稀疏更新）保持较大的学习率，从而加速稀疏特征的收敛。
 
 2. **更新公式**：
-<img width="665" height="516" alt="image" src="https://github.com/user-attachments/assets/247300fc-5c0d-4923-afa8-785abd50fbb9" />
-
 
 * **梯度平方的累积**:
 
