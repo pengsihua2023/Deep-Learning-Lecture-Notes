@@ -1,3 +1,113 @@
+好的，我们来写出 **BERT 模型的数学描述**，并用 LaTeX 渲染。BERT（Bidirectional Encoder Representations from Transformers）本质上是一个基于 **Transformer Encoder** 堆叠的深层双向语言模型。
+
+---
+
+## 1. 输入表示 (Input Representation)
+
+每个输入 token 首先被映射为三种嵌入的和：
+
+$$
+\mathbf{h}_i^{(0)} = \mathbf{E}_{\text{token}}(x_i) + \mathbf{E}_{\text{segment}}(x_i) + \mathbf{E}_{\text{position}}(i)
+$$
+
+其中：
+
+* $\mathbf{E}_{\text{token}}$ 是 token embedding，
+* $\mathbf{E}_{\text{segment}}$ 区分句子 A/B，
+* $\mathbf{E}_{\text{position}}$ 是位置编码。
+
+---
+
+## 2. Transformer Encoder 层
+
+BERT 堆叠 $L$ 层 Transformer Encoder，每层包含 **多头自注意力 (Multi-Head Self-Attention, MHSA)** 和 **前馈网络 (FFN)**。
+
+### (a) 自注意力 (Scaled Dot-Product Attention)
+
+$$
+\text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
+$$
+
+其中：
+
+* $Q = H W^Q$，$K = H W^K$，$V = H W^V$，
+* $H \in \mathbb{R}^{n \times d}$ 表示上一层的隐藏状态。
+
+### (b) 多头注意力 (Multi-Head)
+
+$$
+\text{MHSA}(H) = \text{Concat}(\text{head}_1, \dots, \text{head}_h) W^O
+$$
+
+其中：
+
+$$
+\text{head}_j = \text{Attention}(H W_j^Q, H W_j^K, H W_j^V)
+$$
+
+### (c) 前馈网络 (FFN)
+
+$$
+\text{FFN}(x) = \max(0, x W_1 + b_1) W_2 + b_2
+$$
+
+### (d) 残差与层归一化
+
+每层都有残差连接和层归一化：
+
+$$
+H' = \text{LayerNorm}(H + \text{MHSA}(H))
+$$
+
+$$
+H^{(l)} = \text{LayerNorm}(H' + \text{FFN}(H'))
+$$
+
+---
+
+## 3. 堆叠 L 层
+
+最终输出为：
+
+$$
+H^{(L)} = \text{TransformerEncoder}(H^{(0)})
+$$
+
+---
+
+## 4. 预训练任务
+
+### (a) 掩码语言模型 (Masked Language Model, MLM)
+
+随机掩码 token $x_i$，预测其原始词：
+
+$$
+\mathcal{L}_{\text{MLM}} = - \sum_{i \in \mathcal{M}} \log P(x_i \mid H^{(L)})
+$$
+
+其中 $\mathcal{M}$ 是被掩码的位置集合。
+
+### (b) 下一句预测 (Next Sentence Prediction, NSP)
+
+将 $[CLS]$ 的表示 $h_{\text{CLS}}$ 输入到分类器，预测两句是否相邻：
+
+$$
+\mathcal{L}_{\text{NSP}} = - \big[ y \log P(\text{IsNext} \mid h_{\text{CLS}}) + (1-y) \log P(\text{NotNext} \mid h_{\text{CLS}}) \big]
+$$
+
+---
+
+## 5. 总损失函数
+
+$$
+\mathcal{L} = \mathcal{L}_{\text{MLM}} + \mathcal{L}_{\text{NSP}}
+$$
+
+---
+
+要不要我帮你把这些 **LaTeX 源码整理成一份完整的可编译文档（含导言区与公式环境）**，这样你可以直接拿去跑？
+
+
 ## BERT：Bidirectional Encoder Representations from Transformers
 <div align="center"> 
 <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/313fa320-c931-4fb3-8fcb-5d81de615a21" />
