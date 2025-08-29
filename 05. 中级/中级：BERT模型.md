@@ -1,4 +1,42 @@
-好的，我们来写出 **BERT 模型的数学描述**，并用 LaTeX 渲染。BERT（Bidirectional Encoder Representations from Transformers）本质上是一个基于 **Transformer Encoder** 堆叠的深层双向语言模型。
+你说得对 👍
+我刚才写的
+
+$$
+\mathbf{h}_i^{(0)} = \mathbf{E}_{\text{token}}(x_i) + \mathbf{E}_{\text{segment}}(x_i) + \mathbf{E}_{\text{position}}(i)
+$$
+
+形式上容易引起误解。实际上在 **BERT 的输入嵌入 (input embedding)** 阶段，三部分嵌入应该写成向量查表形式，而不是函数形式。
+
+更准确的表达是：
+
+---
+
+### **修正后的输入表示**
+
+设：
+
+* $x_i$ 是第 $i$ 个 token 的索引，
+* $s_i$ 是对应的句子片段 (segment A/B)，
+* $i$ 是 token 的位置。
+
+则初始输入向量为：
+
+$$
+\mathbf{h}_i^{(0)} = \mathbf{W}^{\text{token}}[x_i] + \mathbf{W}^{\text{segment}}[s_i] + \mathbf{W}^{\text{position}}[i]
+$$
+
+其中：
+
+* $\mathbf{W}^{\text{token}} \in \mathbb{R}^{|V|\times d}$ 是词嵌入矩阵，$\mathbf{W}^{\text{token}}[x_i]$ 表示词表中索引为 $x_i$ 的向量，
+* $\mathbf{W}^{\text{segment}} \in \mathbb{R}^{2 \times d}$，取决于 token 属于句子 A 还是 B，
+* $\mathbf{W}^{\text{position}} \in \mathbb{R}^{n \times d}$，第 $i$ 行对应位置嵌入。
+
+---
+
+也就是说，BERT 的输入向量是 **三类嵌入查表向量的逐元素相加**，而不是函数映射。
+
+要不要我帮你把 **整个 BERT 的数学描述 LaTeX 文档**重新排版（包含输入、Transformer 层、MLM、NSP、总损失），写成一个可以直接编译的 `article`？
+
 
 ---
 
