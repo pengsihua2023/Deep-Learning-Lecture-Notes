@@ -103,7 +103,13 @@ $$
 ## (c) 总损失
 
 $$
-\mathcal{L} = \mathcal{L}_{MLM} + \mathcal{L}_{NSP}.
+\begin{equation}
+\begin{split}
+\mathcal{L} &= \mathcal{L}_{MLM} \\
+            &\quad + \mathcal{L}_{NSP}
+\end{split}
+\end{equation}
+
 $$
 
 ---
