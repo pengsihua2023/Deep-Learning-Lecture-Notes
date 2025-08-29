@@ -6,8 +6,6 @@ AdamW（Adaptive Moment Estimation with Weight Decay）是Adam优化器的一种
 #### 核心原理
 Adam优化器结合了一阶动量（梯度均值）和二阶动量（梯度平方均值）来调整学习率（见前述Adam问题）。原始Adam将权重衰减直接融入梯度更新，相当于在损失函数中添加L2正则化项：
 
-<img width="909" height="833" alt="image" src="https://github.com/user-attachments/assets/c7a8fc23-4407-4990-b537-b4b6756d2d5f" />
-
 
 $$
 Loss_{Adam} = Loss_{original} + \frac{\lambda}{2} \sum w_i^2
