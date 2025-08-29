@@ -6,7 +6,7 @@ World Model技术是指通过人工智能（特别是机器学习和深度学习
 </div>
 
 <div align="center">
-(This figure was obtained from Internet)
+(本图来自Internet)
 </div>
 
 ### 核心概念
