@@ -1,27 +1,4 @@
 
-设：
-
-* $x_i$ 是第 $i$ 个 token 的索引，
-* $s_i$ 是对应的句子片段 (segment A/B)，
-* $i$ 是 token 的位置。
-
-则初始输入向量为：
-
-$$
-\mathbf{h}_i^{(0)} = \mathbf{W}^{\text{token}}[x_i] + \mathbf{W}^{\text{segment}}[s_i] + \mathbf{W}^{\text{position}}[i]
-$$
-
-其中：
-
-* $\mathbf{W}^{\text{token}} \in \mathbb{R}^{|V|\times d}$ 是词嵌入矩阵，$\mathbf{W}^{\text{token}}[x_i]$ 表示词表中索引为 $x_i$ 的向量，
-* $\mathbf{W}^{\text{segment}} \in \mathbb{R}^{2 \times d}$，取决于 token 属于句子 A 还是 B，
-* $\mathbf{W}^{\text{position}} \in \mathbb{R}^{n \times d}$，第 $i$ 行对应位置嵌入。
-
----
-
-也就是说，BERT 的输入向量是 **三类嵌入查表向量的逐元素相加**，而不是函数映射。
-
-要不要我帮你把 **整个 BERT 的数学描述 LaTeX 文档**重新排版（包含输入、Transformer 层、MLM、NSP、总损失），写成一个可以直接编译的 `article`？
 
 
 ---
