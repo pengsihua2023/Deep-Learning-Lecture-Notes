@@ -23,11 +23,8 @@ Adadelta（Adaptive Delta）是一种自适应学习率的优化算法，旨在�
 <img width="636" height="112" alt="image" src="https://github.com/user-attachments/assets/6c86702f-2710-40f3-ad13-7f419583cf37" />
 
 
+<img width="270" height="45" alt="image" src="https://github.com/user-attachments/assets/1a3b1fd4-27ce-4eda-977d-cbc729c83301" />
 
-
-$$
-E[g^2]_t = \rho E [g^2]_{t-1} + (1 - \rho) g_t^2
-$$
 
 其中， $g_t$ 是当前梯度， $\rho$ 是衰减率（通常接近 1，如 0.9）。
 
