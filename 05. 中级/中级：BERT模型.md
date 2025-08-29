@@ -1,121 +1,115 @@
-$$
-\mathbf{h}_i^{(0)} 
-= \mathbf{E}_{\text{token},\,x_i} 
-+ \mathbf{E}_{\text{segment},\,s_i} 
-+ \mathbf{E}_{\text{position},\,i}
-$$
-
+好的，我们来用数学公式形式（LaTeX）描述 **BERT 模型（Bidirectional Encoder Representations from Transformers）**。
 
 ---
 
-## 1. 输入表示 (Input Representation)
+# 1. 输入表示（Input Representation）
 
-每个输入 token 首先被映射为三种嵌入的和：
-
-
-
----
-
-也就是说，BERT 的输入向量是 **三类嵌入查表向量的逐元素相加**，而不是函数映射。
-
-要不要我帮你把 **整个 BERT 的数学描述 LaTeX 文档**重新排版（包含输入、Transformer 层、MLM、NSP、总损失），写成一个可以直接编译的 `article`？
-
-其中：
-
-* $\mathbf{E}_{\text{token}}$ 是 token embedding，
-* $\mathbf{E}_{\text{segment}}$ 区分句子 A/B，
-* $\mathbf{E}_{\text{position}}$ 是位置编码。
-
----
-
-## 2. Transformer Encoder 层
-
-BERT 堆叠 $L$ 层 Transformer Encoder，每层包含 **多头自注意力 (Multi-Head Self-Attention, MHSA)** 和 **前馈网络 (FFN)**。
-
-### (a) 自注意力 (Scaled Dot-Product Attention)
+对于输入序列
 
 $$
-\text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
+x = \{x_1, x_2, \dots, x_n\},
+$$
+
+BERT 的输入向量由 **词嵌入**、**位置嵌入**和**Segment嵌入**组成：
+
+$$
+h_i^{(0)} = E(x_i) + P(i) + S(s_i),
 $$
 
 其中：
 
-* $Q = H W^Q$，$K = H W^K$，$V = H W^V$，
-* $H \in \mathbb{R}^{n \times d}$ 表示上一层的隐藏状态。
+* $E(x_i)$：词嵌入向量，维度为 $d$。
+* $P(i)$：位置嵌入。
+* $S(s_i)$：句子片段嵌入（用于区分句子 A/B）。
 
-### (b) 多头注意力 (Multi-Head)
+---
 
-$$
-\text{MHSA}(H) = \text{Concat}(\text{head}_1, \dots, \text{head}_h) W^O
-$$
+# 2. Transformer 编码器层（Encoder Layer）
 
-其中：
+BERT 由 $L$ 层 Transformer Encoder 堆叠而成。第 $l$ 层输入为 $\{h_1^{(l-1)}, \dots, h_n^{(l-1)}\}$，输出为 $\{h_1^{(l)}, \dots, h_n^{(l)}\}$。
 
-$$
-\text{head}_j = \text{Attention}(H W_j^Q, H W_j^K, H W_j^V)
-$$
+## (a) 多头自注意力（Multi-Head Self-Attention）
 
-### (c) 前馈网络 (FFN)
+首先计算每个 token 的查询（Query）、键（Key）、值（Value）向量：
 
 $$
-\text{FFN}(x) = \max(0, x W_1 + b_1) W_2 + b_2
+Q = H^{(l-1)} W_Q, \quad K = H^{(l-1)} W_K, \quad V = H^{(l-1)} W_V,
 $$
 
-### (d) 残差与层归一化
+其中 $H^{(l-1)} \in \mathbb{R}^{n \times d}$，投影矩阵 $W_Q, W_K, W_V \in \mathbb{R}^{d \times d_k}$。
 
-每层都有残差连接和层归一化：
-
-$$
-H' = \text{LayerNorm}(H + \text{MHSA}(H))
-$$
+单头注意力计算为：
 
 $$
-H^{(l)} = \text{LayerNorm}(H' + \text{FFN}(H'))
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right) V.
+$$
+
+多头注意力为：
+
+$$
+\text{MultiHead}(Q,K,V) = \text{Concat}(\text{head}_1, \dots, \text{head}_h) W_O,
+$$
+
+$$
+\text{head}_i = \text{Attention}(Q W_Q^{(i)}, K W_K^{(i)}, V W_V^{(i)}).
+$$
+
+## (b) 前馈网络（Feed Forward Network）
+
+每个位置独立通过两层前馈网络：
+
+$$
+\text{FFN}(h) = \text{GELU}(h W_1 + b_1) W_2 + b_2.
 $$
 
 ---
 
-## 3. 堆叠 L 层
+# 3. 残差连接与层归一化（Residual + LayerNorm）
 
-最终输出为：
-
-$$
-H^{(L)} = \text{TransformerEncoder}(H^{(0)})
-$$
-
----
-
-## 4. 预训练任务
-
-### (a) 掩码语言模型 (Masked Language Model, MLM)
-
-随机掩码 token $x_i$，预测其原始词：
+每个子层后有残差和归一化：
 
 $$
-\mathcal{L}_{\text{MLM}} = - \sum_{i \in \mathcal{M}} \log P(x_i \mid H^{(L)})
+\tilde{H}^{(l)} = \text{LayerNorm}(H^{(l-1)} + \text{MultiHead}(Q,K,V)),
 $$
 
-其中 $\mathcal{M}$ 是被掩码的位置集合。
-
-### (b) 下一句预测 (Next Sentence Prediction, NSP)
-
-将 $[CLS]$ 的表示 $h_{\text{CLS}}$ 输入到分类器，预测两句是否相邻：
-
 $$
-\mathcal{L}_{\text{NSP}} = - \big[ y \log P(\text{IsNext} \mid h_{\text{CLS}}) + (1-y) \log P(\text{NotNext} \mid h_{\text{CLS}}) \big]
+H^{(l)} = \text{LayerNorm}(\tilde{H}^{(l)} + \text{FFN}(\tilde{H}^{(l)})).
 $$
 
 ---
 
-## 5. 总损失函数
+# 4. 预训练目标（Pre-training Objectives）
+
+BERT 有两个主要预训练任务：
+
+## (a) 掩码语言模型（Masked Language Model, MLM）
+
+随机掩码输入的 15% token，预测被掩码的词：
 
 $$
-\mathcal{L} = \mathcal{L}_{\text{MLM}} + \mathcal{L}_{\text{NSP}}
+\mathcal{L}_{MLM} = - \sum_{i \in M} \log P(x_i \mid x_{\setminus M}),
+$$
+
+其中 $M$ 为被掩码位置集合。
+
+## (b) 下一句预测（Next Sentence Prediction, NSP）
+
+判别输入的两个句子是否为相邻句子：
+
+$$
+\mathcal{L}_{NSP} = - \big[ y \log P(\text{IsNext}) + (1-y)\log P(\text{NotNext}) \big].
+$$
+
+## (c) 总损失
+
+$$
+\mathcal{L} = \mathcal{L}_{MLM} + \mathcal{L}_{NSP}.
 $$
 
 ---
 
-要不要我帮你把这些 **LaTeX 源码整理成一份完整的可编译文档（含导言区与公式环境）**，这样你可以直接拿去跑？
+要不要我帮你把这些公式整理成一份 **完整的 LaTeX 模板**（可以直接编译成 PDF 的那种）？
+
 
 
 ## BERT：Bidirectional Encoder Representations from Transformers
