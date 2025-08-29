@@ -1,9 +1,4 @@
-$$
-\begin{aligned}
-\mathcal{L} &= \mathcal{L}_{MLM} \\
-            &\quad + \mathcal{L}_{NSP}
-\end{aligned}
-$$
+$\mathcal{L} = \mathcal{L}_{MLM} + \mathcal{L}_{NSP}. $
 
 
 
