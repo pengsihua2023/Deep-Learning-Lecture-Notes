@@ -9,6 +9,13 @@ Adadelta（Adaptive Delta）是一种自适应学习率的优化算法，旨在�
    - 它引入了两个累积量：
 <img width="714" height="103" alt="image" src="https://github.com/user-attachments/assets/2dba7b30-7464-4751-8dfb-090fad2e73af" />
 
+
+---
+
+* 梯度平方的 EMA $(E[g^2])$：用于自适应地缩放学习率。
+
+* 参数更新平方的 EMA $(E[\Delta x^2])$：用于归一化更新步长，模拟动量效应。
+
    - 通过这两者，Adadelta 实现了无需手动设置全局学习率的自适应更新。
 
 2. **更新公式**：
