@@ -38,7 +38,7 @@ $$
 \Delta x_t = - \frac{\sqrt{E[\Delta x^2]_{t-1} + \epsilon}}{\sqrt{E[g^2]_t + \epsilon}} \cdot g_t
 $$
 
-其中，$\epsilon$ 是一个小常数（防止除零），$E[\Delta x^2]$ 是更新平方的 EMA。
+其中， $\epsilon$ 是一个小常数（防止除零）， $E[\Delta x^2]$ 是更新平方的 EMA。
 
 ---
 
