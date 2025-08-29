@@ -91,7 +91,7 @@ BERT 有两个主要预训练任务：
 随机掩码输入的 15% token，预测被掩码的词：
 
 $$
-\mathcal{L}_{MLM} = - \sum_{i \in M} \log P(x_i \mid x_{\setminus M}),
+\mathcal{L}_ {MLM} = - \sum_{i \in M} \log P(x_i \mid x_{\setminus M}),
 $$
 
 其中 $M$ 为被掩码位置集合。
