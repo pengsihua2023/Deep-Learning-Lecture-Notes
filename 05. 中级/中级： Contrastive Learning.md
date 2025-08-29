@@ -43,7 +43,7 @@
 * 在计算机视觉、自然语言处理、语音等领域都有广泛应用。
 
 <div align="center">
-<img width="600" height="360" alt="image" src="https://github.com/user-attachments/assets/5d389da9-c6c7-46d5-a1c5-096422a5328b" />
+<img width="420" height="250" alt="image" src="https://github.com/user-attachments/assets/5d389da9-c6c7-46d5-a1c5-096422a5328b" />
 </div>
 
 - 重要性：
