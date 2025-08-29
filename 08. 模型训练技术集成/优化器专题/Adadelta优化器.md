@@ -10,7 +10,7 @@ Adadelta（Adaptive Delta）是一种自适应学习率的优化算法，旨在�
 <img width="714" height="103" alt="image" src="https://github.com/user-attachments/assets/2dba7b30-7464-4751-8dfb-090fad2e73af" />
 
 
----
+
 
 * 梯度平方的 EMA $(E[g^2])$ ：用于自适应地缩放学习率。
 
@@ -22,7 +22,7 @@ Adadelta（Adaptive Delta）是一种自适应学习率的优化算法，旨在�
    - 梯度平方的 EMA：
 <img width="636" height="112" alt="image" src="https://github.com/user-attachments/assets/6c86702f-2710-40f3-ad13-7f419583cf37" />
 
-
+  
 <img width="270" height="45" alt="image" src="https://github.com/user-attachments/assets/1a3b1fd4-27ce-4eda-977d-cbc729c83301" />
 
 
