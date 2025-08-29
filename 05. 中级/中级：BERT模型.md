@@ -62,7 +62,7 @@ $$
 \text{FFN}(h) = \text{GELU}(h W_1 + b_1) W_2 + b_2.
 $$
 
----
+
 
 ### 3. 残差连接与层归一化（Residual + LayerNorm）
 
@@ -82,7 +82,7 @@ $$
 
 BERT 有两个主要预训练任务：
 
-## (a) 掩码语言模型（Masked Language Model, MLM）
+ - (a) 掩码语言模型（Masked Language Model, MLM）
 
 随机掩码输入的 15% token，预测被掩码的词：
 
@@ -92,7 +92,7 @@ $$
 
 其中 $M$ 为被掩码位置集合。
 
-## (b) 下一句预测（Next Sentence Prediction, NSP）
+- (b) 下一句预测（Next Sentence Prediction, NSP）
 
 判别输入的两个句子是否为相邻句子：
 
@@ -100,14 +100,11 @@ $$
 \mathcal{L}_{NSP} = - \big[ y \log P(\text{IsNext}) + (1-y)\log P(\text{NotNext}) \big].
 $$
 
-## (c) 总损失
+### (c) 总损失
 
 $\mathcal{L} = \mathcal{L}_ {MLM} + \mathcal{L}_ {NSP}. $
 
 ---
-
-
-
 
 
 ## BERT：Bidirectional Encoder Representations from Transformers
