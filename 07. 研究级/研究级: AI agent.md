@@ -1,5 +1,7 @@
 ## AI agent
+<div align="center">
 <img width="550" height="270" alt="image" src="https://github.com/user-attachments/assets/45392af5-22a7-4092-9102-587e80f06486" />
+</div>
 <div align="center">
 (此图引自Internet.)
 </div>
