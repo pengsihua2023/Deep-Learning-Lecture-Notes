@@ -1,7 +1,13 @@
 ## AI4science: AI应用于科学
 AI for Science（AI4Science）是指利用人工智能技术（尤其是机器学习和深度学习）加速科学发现、优化实验设计和解决复杂科学问题的跨学科领域。它结合AI的强大计算能力与传统科学方法，推动物理、化学、生物、天文学、材料科学等领域的研究效率和精度。以下是对AI4Science技术的简介，包括核心概念、主要方法、应用场景、挑战及简单代码示例。
 
----
+<div align="center">
+<img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/21f64e06-8b2a-4454-aaf0-3103ee79b03f" />
+</div>
+
+<div align="center">
+(This figure was obtained from Internet)
+</div>
 
 ### 核心概念
 - **加速科学发现**：AI通过分析海量数据、预测结果或优化实验流程，缩短传统科学研究的周期。
