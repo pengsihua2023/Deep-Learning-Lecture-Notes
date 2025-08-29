@@ -1,3 +1,12 @@
+$$
+\begin{aligned}
+\mathcal{L} &= \mathcal{L}_{MLM} \\
+            &\quad + \mathcal{L}_{NSP}
+\end{aligned}
+$$
+
+
+
 好的，我们来用数学公式形式（LaTeX）描述 **BERT 模型（Bidirectional Encoder Representations from Transformers）**。
 
 ---
