@@ -1,4 +1,9 @@
-
+$$
+\mathbf{h}_i^{(0)} 
+= \mathbf{E}_{\text{token},\,x_i} 
++ \mathbf{E}_{\text{segment},\,s_i} 
++ \mathbf{E}_{\text{position},\,i}
+$$
 
 
 ---
@@ -7,12 +12,13 @@
 
 每个输入 token 首先被映射为三种嵌入的和：
 
-$$
-\mathbf{h}_i^{(0)} 
-= \mathbf{E}_{\text{token},\,x_i} 
-+ \mathbf{E}_{\text{segment},\,s_i} 
-+ \mathbf{E}_{\text{position},\,i}
-$$
+
+
+---
+
+也就是说，BERT 的输入向量是 **三类嵌入查表向量的逐元素相加**，而不是函数映射。
+
+要不要我帮你把 **整个 BERT 的数学描述 LaTeX 文档**重新排版（包含输入、Transformer 层、MLM、NSP、总损失），写成一个可以直接编译的 `article`？
 
 其中：
 
