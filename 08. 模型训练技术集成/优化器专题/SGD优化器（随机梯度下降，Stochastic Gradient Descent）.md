@@ -42,8 +42,6 @@ $$
      - 计算效率高，适合大规模数据集。
      - 随机性有助于逃离局部最小值。
    - **缺点**：
-<img width="366" height="93" alt="image" src="https://github.com/user-attachments/assets/dd3b020f-dc22-4821-9148-c2940d5b3c46" />
-
 
 * 梯度噪声大，可能导致收敛不稳定。
 * 需手动调整学习率 $\eta$ 和动量 $\gamma$。
