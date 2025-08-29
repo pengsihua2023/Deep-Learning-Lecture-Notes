@@ -50,6 +50,11 @@ $$
 <img width="670" height="127" alt="image" src="https://github.com/user-attachments/assets/08adbbd8-249f-4400-ab11-271d01dec7f6" />
 
 
+
+* 在某些任务上可能不如 SGD + 动量 收敛到最优解。
+* 超参数（如 $\beta_1, \beta_2$）仍需适当选择。
+
+
 ---
 
 ### Python代码示例
