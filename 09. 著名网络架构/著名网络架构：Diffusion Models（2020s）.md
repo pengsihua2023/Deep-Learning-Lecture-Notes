@@ -25,7 +25,6 @@ DDPM 第一作者：Jonathan Ho
 - 核心概念：
 扩散模型通过“加噪-去噪”过程学习数据分布，先把数据加噪到随机噪声，再逐步还原。  
 - 应用：图像生成（艺术、游戏设计）、视频生成、科学模拟。  
-<img width="700" height="320" alt="image" src="https://github.com/user-attachments/assets/427d35b9-10d1-4bca-b74c-b5e166d7613d" />
 
 ## 代码
 该代码实现了一个简单的**扩散模型（DDPM，Denoising Diffusion Probabilistic Model）**，使用PyTorch库，主要功能如下：  
