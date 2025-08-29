@@ -32,7 +32,7 @@ Adadelta（Adaptive Delta）是一种自适应学习率的优化算法，旨在�
 <img width="686" height="360" alt="image" src="https://github.com/user-attachments/assets/14694fee-d0a3-492d-8a60-02ed16330bd9" />
 
 
----
+
 
 $$
 \Delta x_t = - \frac{\sqrt{E[\Delta x^2]_{t-1} + \epsilon}}{\sqrt{E[g^2]_t + \epsilon}} \cdot g_t
