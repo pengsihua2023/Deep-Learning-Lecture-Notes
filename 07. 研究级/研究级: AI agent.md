@@ -1,5 +1,8 @@
 ## AI agent
-<img width="1100" height="535" alt="image" src="https://github.com/user-attachments/assets/45392af5-22a7-4092-9102-587e80f06486" />
+<img width="5500" height="270" alt="image" src="https://github.com/user-attachments/assets/45392af5-22a7-4092-9102-587e80f06486" />
+<div align="center">
+(此图引自Internet.)
+</div>
 AI Agent（人工智能代理）是指能够感知环境、自主决策并采取行动以实现特定目标的智能系统。它们通过结合感知、推理、学习和执行能力，模拟人类在复杂任务中的行为。AI Agent技术广泛应用于自动化、机器人、虚拟助手、游戏AI等领域，是人工智能发展的重要方向。以下是对AI Agent技术的简介，包括核心概念、类型、构建方法、应用场景及简单代码示例。
 
 ---
