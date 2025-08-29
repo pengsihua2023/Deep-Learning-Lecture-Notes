@@ -1,5 +1,9 @@
-
-
+## BERT：Bidirectional Encoder Representations from Transformers
+<div align="center"> 
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/313fa320-c931-4fb3-8fcb-5d81de615a21" />
+</div>
+  
+BERT（Bidirectional Encoder Representations from Transformers）是 Google 在 2018 年提出的预训练语言模型，广泛应用于自然语言处理（NLP）任务，如文本分类、问答、命名实体识别等。BERT 的核心在于使用 **双向 Transformer Encoder**，通过大规模无监督预训练捕获深层语义信息，然后微调以适配特定任务。
 ## BERT模型的数学描述
 
 ### 1. 输入表示（Input Representation）
@@ -62,8 +66,6 @@ $$
 \text{FFN}(h) = \text{GELU}(h W_1 + b_1) W_2 + b_2.
 $$
 
-
-
 ### 3. 残差连接与层归一化（Residual + LayerNorm）
 
 每个子层后有残差和归一化：
@@ -107,62 +109,8 @@ $\mathcal{L} = \mathcal{L}_ {MLM} + \mathcal{L}_ {NSP}. $
 ---
 
 
-## BERT：Bidirectional Encoder Representations from Transformers
-<div align="center"> 
-<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/313fa320-c931-4fb3-8fcb-5d81de615a21" />
-</div>
-
-### BERT原理和具体问题的实现
-
-#### **介绍**
-BERT（Bidirectional Encoder Representations from Transformers）是 Google 在 2018 年提出的预训练语言模型，广泛应用于自然语言处理（NLP）任务，如文本分类、问答、命名实体识别等。BERT 的核心在于使用 **双向 Transformer Encoder**，通过大规模无监督预训练捕获深层语义信息，然后微调以适配特定任务。
-
-#### **原理**
-1. **核心思想**：
-   - BERT 使用 Transformer 的 Encoder 部分，通过双向自注意力机制（Multi-Head Self-Attention）建模单词的上下文。
-   - **预训练**：
-     - **Masked Language Model (MLM)**：随机掩盖 15% 的输入词，预测这些词，学习语义表示。
-     - **Next Sentence Prediction (NSP)**：预测两个句子是否连续，学习句子间关系。
-   - **微调**：替换最后一层（如全连接层），在特定任务数据集上微调模型。
-   - 输入包括 token、段落和位置嵌入，输出为每个 token 的上下文表示。
-
-2. **网络结构**：
-   - **输入**：
-     - 文本通过分词器（Tokenizer）转换为 token IDs，添加 `[CLS]`（分类 token）和 `[SEP]`（分隔 token）。
-     - 嵌入层：Token Embedding（词向量） + Segment Embedding（区分句子） + Position Embedding（位置信息）。
-   - **Transformer Encoder**：多层（BERT-base 为 12 层），包含自注意力机制和前馈网络。
-   - **输出**：`[CLS]` token 的表示用于分类任务；每个 token 的表示用于序列任务（如 NER）。
-
-3. **公式**：
-   - 输入嵌入：
-     
-     $$
-     \text{Input} = \text{Token Embedding} + \text{Segment Embedding} + \text{Position Embedding}
-     $$
-     
-   - 自注意力：
-
-$$
-\text{Attention}(Q, K, V) = \mathrm{softmax}\left(\frac{QK^{T}}{\sqrt{d_k}}\right)V
-$$
-
-其中 \(Q, K, V\) 是查询、键、值向量，\(d_k\) 是维度。
-
-
-
-   - 输出：最后一层 `[CLS]` 表示用于分类，或 token 表示用于序列标注。
-
-4. **优点**：
-   - 双向上下文建模，捕获深层语义。
-   - 预训练 + 微调，适配多种 NLP 任务。
-   - 预训练模型开箱即用，性能强大。
-
-5. **缺点**：
-   - 计算成本高，参数量大（BERT-base：110M 参数）。
-   - 微调需要小心调参，避免过拟合。
-
-6. **适用场景**：
-   - 文本分类、问答、NER、翻译等。
+### 适用场景：
+文本分类、问答、NER、翻译等。
 
 ---
 
