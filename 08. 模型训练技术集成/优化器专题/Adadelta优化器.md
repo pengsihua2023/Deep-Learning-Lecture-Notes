@@ -50,9 +50,8 @@ $$
 
 * **更新平方的 EMA**:
 
-$$
-E[\Delta x^2]_t = \rho E[\Delta x^2]_{t-1} + (1 - \rho)\Delta x_t^2
-$$
+<img width="323" height="40" alt="image" src="https://github.com/user-attachments/assets/0fa804b2-af48-407a-9463-09167cc55b6a" />
+
 
 
 3. **优点**：
