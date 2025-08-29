@@ -1,17 +1,3 @@
-你说得对 👍
-我刚才写的
-
-$$
-\mathbf{h}_i^{(0)} = \mathbf{E}_{\text{token}}(x_i) + \mathbf{E}_{\text{segment}}(x_i) + \mathbf{E}_{\text{position}}(i)
-$$
-
-形式上容易引起误解。实际上在 **BERT 的输入嵌入 (input embedding)** 阶段，三部分嵌入应该写成向量查表形式，而不是函数形式。
-
-更准确的表达是：
-
----
-
-### **修正后的输入表示**
 
 设：
 
@@ -45,7 +31,10 @@ $$
 每个输入 token 首先被映射为三种嵌入的和：
 
 $$
-\mathbf{h}_i^{(0)} = \mathbf{E}_{\text{token}}(x_i) + \mathbf{E}_{\text{segment}}(x_i) + \mathbf{E}_{\text{position}}(i)
+\mathbf{h}_i^{(0)} 
+= \mathbf{E}_{\text{token},\,x_i} 
++ \mathbf{E}_{\text{segment},\,s_i} 
++ \mathbf{E}_{\text{position},\,i}
 $$
 
 其中：
