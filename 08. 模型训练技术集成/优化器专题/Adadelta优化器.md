@@ -7,10 +7,6 @@ Adadelta（Adaptive Delta）是一种自适应学习率的优化算法，旨在�
 1. **核心思想**：
    - Adadelta 不直接累积所有历史梯度的平方（如 Adagrad），而是使用**滑动窗口**来计算梯平方的**指数移动平均**（Exponential Moving Average, EMA），限制历史信息的影响。
    - 它引入了两个累积量：
-<img width="714" height="103" alt="image" src="https://github.com/user-attachments/assets/2dba7b30-7464-4751-8dfb-090fad2e73af" />
-
-
-
 
 * 梯度平方的 EMA $(E[g^2])$ ：用于自适应地缩放学习率。
 
@@ -20,8 +16,6 @@ Adadelta（Adaptive Delta）是一种自适应学习率的优化算法，旨在�
 
 2. **更新公式**：
    - 梯度平方的 EMA：
-<img width="636" height="112" alt="image" src="https://github.com/user-attachments/assets/6c86702f-2710-40f3-ad13-7f419583cf37" />
-
   
 <img width="270" height="45" alt="image" src="https://github.com/user-attachments/assets/1a3b1fd4-27ce-4eda-977d-cbc729c83301" />
 
@@ -29,10 +23,6 @@ Adadelta（Adaptive Delta）是一种自适应学习率的优化算法，旨在�
 其中， $g_t$ 是当前梯度， $\rho$ 是衰减率（通常接近 1，如 0.9）。
 
    - 参数更新步长：
-<img width="686" height="360" alt="image" src="https://github.com/user-attachments/assets/14694fee-d0a3-492d-8a60-02ed16330bd9" />
-
-
-
 
 $$
 \Delta x_t = - \frac{\sqrt{E[\Delta x^2]_{t-1} + \epsilon}}{\sqrt{E[g^2]_t + \epsilon}} \cdot g_t
@@ -61,7 +51,7 @@ $$
 
 4. **缺点**：
 
----
+
 
 * 计算复杂度略高于 SGD。
 * 超参数 $\rho$ 和 $\epsilon$ 需小心选择（通常默认值效果良好）。
