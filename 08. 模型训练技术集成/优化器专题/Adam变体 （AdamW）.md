@@ -9,6 +9,51 @@ Adam优化器结合了一阶动量（梯度均值）和二阶动量（梯度平�
 <img width="909" height="833" alt="image" src="https://github.com/user-attachments/assets/c7a8fc23-4407-4990-b537-b4b6756d2d5f" />
 
 
+$$
+Loss_{Adam} = Loss_{original} + \frac{\lambda}{2} \sum w_i^2
+$$
+
+然而，这种方式与 Adam 的自适应学习率机制（基于梯度平方均值）相互干扰，导致正则化效果不佳。
+AdamW 通过解耦权重衰减，直接在参数更新步骤中减去权重衰减项，而不是将其融入梯度计算：
+
+---
+
+1. **计算梯度**：对原始损失函数求梯度 $g_t$。
+
+2. **更新一阶动量**：
+
+$$
+m_t = \beta_1 m_{t-1} + (1 - \beta_1) g_t
+$$
+
+3. **更新二阶动量**：
+
+$$
+v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2
+$$
+
+4. **偏差校正**：对 $m_t$ 和 $v_t$ 进行校正以消除初始化偏差。
+
+5. **参数更新（AdamW 的区别在此）**：
+
+$$
+\theta_{t+1} = \theta_t - \eta \left( \frac{m_t}{\sqrt{v_t} + \epsilon} + \lambda \theta_t \right)
+$$
+
+---
+
+* 其中：
+
+  * $\eta$：初始学习率（通常 0.001）。
+  * $\beta_1, \beta_2$：动量参数（通常 0.9 和 0.999）。
+  * $\epsilon$：防止除零（通常 $1e^{-8}$）。
+  * $\lambda$：权重衰减系数（通过 *weight\_decay* 设置）。
+
+---
+
+AdamW 直接对参数施加 $\lambda \theta_t$ 的衰减，而不是将其作为梯度的一部分，从而更好地平衡优化和正则化。
+
+
 #### 优势
 - **更好的正则化**：解耦权重衰减提高泛化能力，优于原始Adam的L2正则化。
 - **收敛更快**：在许多任务（如Transformer、CNN）中，AdamW比Adam更稳定。
