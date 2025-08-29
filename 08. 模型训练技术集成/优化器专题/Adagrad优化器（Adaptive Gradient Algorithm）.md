@@ -12,6 +12,32 @@ Adagrad（Adaptive Gradient Algorithm）是一种自适应学习率的优化算�
 <img width="665" height="516" alt="image" src="https://github.com/user-attachments/assets/247300fc-5c0d-4923-afa8-785abd50fbb9" />
 
 
+* **梯度平方的累积**:
+
+$$
+G_t = G_{t-1} + g_t^2
+$$
+
+其中，$g_t$ 是当前梯度，$G_t$ 是历史梯度平方的累积和。
+
+
+
+* **参数更新**:
+
+$$
+\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{G_t} + \epsilon} \cdot g_t
+$$
+
+
+
+* **其中**:
+
+  * $\theta_t$：当前参数。
+  * $\eta$：初始学习率（通常 0.01）。
+  * $\epsilon$：小常数（防止除零，通常 $1e^{-8}$）。
+  * $\sqrt{G_t} + \epsilon$：自适应缩放因子，确保学习率随梯度累积而减小。
+
+
 3. **特点**：
    - **优点**：
      - 自适应学习率，无需过多手动调参。
