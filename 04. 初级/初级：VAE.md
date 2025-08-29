@@ -3,9 +3,12 @@
 <div align="center">
 <img width="617" height="376" alt="image" src="https://github.com/user-attachments/assets/da34a994-bb28-42a6-81d9-8e64e091059c" />
 </div>
+
 <div align="center">
 (此图引自Internet。)
 </div>
+
+
 ### VAE的核心组件包括：
 - 编码器（Encoder）：将输入数据x映射到潜在空间的分布参数（通常是高斯分布的均值μ和方差σ²）。
 - 采样（Sampling）：从潜在分布中采样潜在变量z，使用重参数化技巧（reparameterization trick）使采样过程可微分。
