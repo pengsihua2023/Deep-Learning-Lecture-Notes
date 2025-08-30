@@ -15,6 +15,10 @@ EfficientNet 是一种高效的卷积神经网络（Convolutional Neural Network
 <img width="600" height="3200" alt="image" src="https://github.com/user-attachments/assets/f88060f1-8ac4-4b2c-8cc7-6186af74255c" />  
 </div>
 
+<div align="center">
+(此图引自Internet。)
+</div>
+
 ## 代码
 该代码实现了一个**简化的EfficientNet模型**，用于在**CIFAR-10数据集**上进行图像分类任务。主要功能如下：
 
