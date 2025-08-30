@@ -20,9 +20,9 @@ $$
 
 3. **参数更新**：
 
-   $$
-   \theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2]_t} + \epsilon} g_t
-   $$
+$$
+\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2]_t} + \epsilon} g_t
+$$
 
    * $\eta$ 是初始学习率（通常 0.001）。
    * $\epsilon$ 是一个小常数（通常 $1\text{e-}8$），防止除零。
