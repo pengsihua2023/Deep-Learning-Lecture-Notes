@@ -15,6 +15,10 @@ Inception（也称为 GoogLeNet）是由 Christian Szegedy 等人在 2014 年提
 <img width="850" height="240" alt="image" src="https://github.com/user-attachments/assets/7944d7cd-6b8f-4753-a453-38146ed9b160" />  
 </div>
 
+<div align="center">
+(此图引自Internet。)
+</div>
+
 ## 代码
 该代码实现了一个**简化的Inception模型**（基于GoogLeNet的Inception架构），用于在**CIFAR-10数据集**上进行图像分类任务。主要功能如下：
 
