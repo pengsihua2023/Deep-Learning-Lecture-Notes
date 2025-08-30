@@ -11,7 +11,7 @@ RMSprop通过维护梯度平方的指数移动平均来缩放学习率，具体�
 
 2. **更新梯度平方均值**：
 
-<img width="189" height="32" alt="image" src="https://github.com/user-attachments/assets/28de9382-ff6b-4837-9e47-6cd6199a3e2b" />
+<img width="200" height="35" alt="image" src="https://github.com/user-attachments/assets/28de9382-ff6b-4837-9e47-6cd6199a3e2b" />
 
 
    * $\rho$ 是衰减率（通常为 0.9），控制历史梯度的权重。
