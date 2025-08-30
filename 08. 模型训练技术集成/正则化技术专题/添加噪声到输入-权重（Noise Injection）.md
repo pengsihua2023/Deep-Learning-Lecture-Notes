@@ -31,7 +31,7 @@
 
 以下是一个使用PyTorch实现Noise Injection的简单示例，基于MNIST手写数字分类任务。代码展示如何在输入数据和权重上添加高斯噪声，结合Adam优化器和早停（参考前述问题）。
 
-<xaiArtifact artifact_id="974bc6a7-c112-4f57-a0ea-5539455bce1c" artifact_version_id="96083e17-407d-43ad-b41c-4c14555768f3" title="noise_injection.py" contentType="text/python">
+```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -157,7 +157,7 @@ if early_stopping.best_model_state:
 # 步骤9: 测试最佳模型
 test_accuracy = test()
 print(f'Test Accuracy: {test_accuracy:.2f}%')
-</xaiArtifact>
+```
 
 ---
 
