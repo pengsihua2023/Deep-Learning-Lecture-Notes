@@ -9,7 +9,6 @@
    - Xavier 初始化根据层的输入维度（`fan_in`）和输出维度（`fan_out`）设置权重的分布范围或标准差。
 
 2. **公式**：
-<img width="809" height="388" alt="image" src="https://github.com/user-attachments/assets/6f88cc62-a351-43e1-8334-c6dbbefaf00a" />
 
 
 * **均匀分布初始化**：权重从以下均匀分布中采样：
@@ -48,7 +47,6 @@ $$
    - 对非常深的网络可能需要其他调整（如批量归一化）。
 
 6. **与 He 初始化对比**：
-<img width="779" height="107" alt="image" src="https://github.com/user-attachments/assets/4db2d23b-4d1d-471b-b3a6-b5111b4d76d4" />
 
 
 * **He 初始化**（专为 ReLU 设计）使用标准差 $\sqrt{\frac{2}{\text{fan}_{\text{in}}}}$ ，考虑 ReLU 的单侧激活特性。
