@@ -4,7 +4,6 @@
 #### **原理**
 正态分布初始化（Normal Initialization）是一种深度神经网络权重初始化的方法，通过从正态分布（Gaussian Distribution）中随机采样权重来初始化模型参数。其目标是确保权重具有适当的分布，以避免梯度消失或爆炸，促进网络的稳定训练。
 
-<img width="953" height="619" alt="image" src="https://github.com/user-attachments/assets/74746f2b-3b5c-4a86-a578-7cff6ada4e67" />
 
 
 ### 1. 核心思想：
@@ -52,8 +51,6 @@ $$
    - 缺乏自适应性，需手动调整 \( \sigma \)。
 
 6. **与 Xavier 初始化对比**：
-<img width="943" height="108" alt="image" src="https://github.com/user-attachments/assets/cfbaec3a-a6ac-4473-aba2-2a205e56ef2d" />
-
 
 * **Xavier 初始化**：标准差基于层输入和输出维度 $\sqrt{\frac{2}{\text{fan}_ {\text{in}} + \text{fan}_{\text{out}}}}$ ，更自适应，适合 tanh/sigmoid。
 
