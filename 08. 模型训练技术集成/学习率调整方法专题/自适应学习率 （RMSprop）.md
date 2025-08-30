@@ -8,12 +8,12 @@ RMSprop通过维护梯度平方的指数移动平均来缩放学习率，具体�
 <img width="847" height="557" alt="image" src="https://github.com/user-attachments/assets/10861619-a441-4986-a6f3-fd193bccb66d" />
 
 
-1. **计算梯度**：对损失函数求参数的梯度 $g_t$
+1. **计算梯度**：对损失函数求参数的梯度 $g_t$ 。
 
 2. **更新梯度平方均值**：
 
    $$
-   E[g^2]_t = \rho E[g^2]_{t-1} + (1 - \rho) g_t^2
+   E[g^2]_t = \rho  E [g^2]_{t-1} + (1 - \rho) g_t^2
    $$
 
    * $\rho$ 是衰减率（通常为 0.9），控制历史梯度的权重。
