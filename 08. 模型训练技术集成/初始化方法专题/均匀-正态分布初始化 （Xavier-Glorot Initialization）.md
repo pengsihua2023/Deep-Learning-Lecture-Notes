@@ -12,6 +12,27 @@
 <img width="809" height="388" alt="image" src="https://github.com/user-attachments/assets/6f88cc62-a351-43e1-8334-c6dbbefaf00a" />
 
 
+* **均匀分布初始化**：权重从以下均匀分布中采样：
+
+  $$
+  W \sim U\left(-\sqrt{\frac{6}{\text{fan}_{\text{in}} + \text{fan}_{\text{out}}}}, \; \sqrt{\frac{6}{\text{fan}_{\text{in}} + \text{fan}_{\text{out}}}}\right)
+  $$
+
+  其中，$\text{fan}_{\text{in}}$ 是输入神经元数量，$\text{fan}_{\text{out}}$ 是输出神经元数量。
+
+* **正态分布初始化**：权重从正态分布中采样，均值为 0，标准差为：
+
+  $$
+  \sigma = \sqrt{\frac{2}{\text{fan}_{\text{in}} + \text{fan}_{\text{out}}}}
+  $$
+
+  $$
+  W \sim \mathcal{N}(0, \sigma^2)
+  $$
+
+
+
+
 3. **适用场景**：
    - 适合激活函数为 **tanh** 或 **sigmoid** 的网络，因为这些函数在输入接近零时近似线性，Xavier 初始化能保持梯度稳定性。
    - 对于 ReLU 激活函数，通常使用 **He 初始化**（稍后提及），但 Xavier 也可尝试。
