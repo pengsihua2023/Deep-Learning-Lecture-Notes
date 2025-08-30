@@ -13,7 +13,12 @@ AlexNet 是一种具有里程碑意义的卷积神经网络（Convolutional Neur
 图1 AlexNet 架构图 （现代的架构，现在GPU内存很大了，无需分支。）
 <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/e27296cb-2aee-4389-a119-7c2ac8120d4d" />  
 图2 同图1
-<img width="700" height="250" alt="image" src="https://github.com/user-attachments/assets/7b145c0e-205a-4c61-ad7f-b477203e8db6" />  
+<img width="700" height="250" alt="image" src="https://github.com/user-attachments/assets/7b145c0e-205a-4c61-ad7f-b477203e8db6" /> 
+
+<div align="center">
+(以上三个图均引自Internet。)
+</div>
+
  图3 最先的双GPU计算架构。 在AlexNet的原始设计中，第二层卷积（CONV2）到第三层卷积（CONV3）的“交叉”指的是跨GPU连接，即CONV3的内核会从前一层（CONV2）的所有内核地图（kernel maps，包括两个GPU上的）获取输入。这种设计是为了在多GPU并行训练时，确保模型能够捕获更全面的特征信息，同时控制计算开销。原论文中指出，这种连接模式是通过交叉验证（cross-validation）实验选择的，以平衡GPU间的通信量和整体性能——如果所有层都交叉，通信开销会过高，成为训练瓶颈；如果完全无交叉，则模型准确率会下降（实验显示，相比单GPU一半内核的版本，这种设计降低了top-1错误率1.7%和top-5错误率1.2%）。 
 
 ### 代码
