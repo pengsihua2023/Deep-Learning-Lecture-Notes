@@ -4,7 +4,6 @@
 标准化批次输入（Batch Normalization，简称BN）是一种在深度学习中广泛使用的正则化技术，通过在每一层对输入进行标准化来加速训练并提高模型稳定性。BN在每个小批量（mini-batch）上对激活值进行归一化处理，使其均值为0、方差为1，然后通过可学习的缩放和平移参数进行线性变换。
 
 #### 核心原理
-<img width="750" height="677" alt="image" src="https://github.com/user-attachments/assets/04b3c841-d2b6-4a49-918f-fe093a8ff201" />
 
 
 对于每一层的输入（激活值）$x$，BN 执行以下步骤：
