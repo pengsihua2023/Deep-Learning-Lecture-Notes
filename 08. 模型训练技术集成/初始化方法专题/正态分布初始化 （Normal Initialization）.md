@@ -55,7 +55,11 @@ $$
 <img width="943" height="108" alt="image" src="https://github.com/user-attachments/assets/cfbaec3a-a6ac-4473-aba2-2a205e56ef2d" />
 
 
----
+* **Xavier 初始化**：标准差基于层输入和输出维度 $\sqrt{\frac{2}{\text{fan}_ {\text{in}} + \text{fan}_{\text{out}}}}$ ，更自适应，适合 tanh/sigmoid。
+
+* **正态分布初始化**：标准差通常固定（如 0.01），简单但对层大小不敏感，可能不适合深层网络。
+
+
 
 #### **PyTorch 用法**
 PyTorch 的 `torch.nn.init` 模块提供了 `normal_` 函数，用于正态分布初始化。以下是最简洁的代码示例，展示如何在全连接层和卷积层中使用正态分布初始化。
