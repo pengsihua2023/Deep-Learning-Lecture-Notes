@@ -7,6 +7,40 @@
 <img width="887" height="615" alt="image" src="https://github.com/user-attachments/assets/209f969e-8120-4362-bfdf-1194da545b06" />  
 
 
+对于每个样本的输入 $x \in \mathbb{R}^d$（$d$ 是特征维度，如隐藏层大小），LN 执行以下步骤：
+
+**1. 计算均值和方差：**
+
+* 均值：
+
+$$
+\mu = \frac{1}{d} \sum_{i=1}^d x_i
+$$
+
+* 方差：
+
+$$
+\sigma^2 = \frac{1}{d} \sum_{i=1}^d (x_i - \mu)^2
+$$
+
+**2. 归一化：**
+
+$$
+\hat{x}_i = \frac{x_i - \mu}{\sqrt{\sigma^2 + \epsilon}}
+$$
+
+* $\epsilon$ 是一个小常数，防止除零。
+
+**3. 缩放和平移：**
+
+$$
+y_i = \gamma \hat{x}_i + \beta
+$$
+
+* $\gamma$ 和 $\beta$ 是可学习的参数，分别控制缩放和平移。
+
+
+
 - **训练与测试一致**：LN的归一化基于单个样本的特征维度，无需像BN那样在测试时使用全局统计量。
 - **适用场景**：LN对序列模型（如RNN、Transformer）或小批量场景表现优异，因为它不依赖批量统计量。
 
