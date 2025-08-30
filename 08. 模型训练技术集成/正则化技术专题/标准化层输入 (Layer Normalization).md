@@ -55,7 +55,7 @@ $$
 
 以下是一个使用PyTorch实现Layer Normalization的简单示例，基于MNIST手写数字分类任务。代码在全连接神经网络中添加LN层，并结合Adam优化器和早停（参考前述问题）。
 
-```
+```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
