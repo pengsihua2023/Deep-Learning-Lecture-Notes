@@ -7,6 +7,46 @@
 <img width="750" height="677" alt="image" src="https://github.com/user-attachments/assets/04b3c841-d2b6-4a49-918f-fe093a8ff201" />
 
 
+对于每一层的输入（激活值）$x$，BN 执行以下步骤：
+
+**1. 计算批量统计量：**
+
+* 批量均值：
+
+$$
+\mu_B = \frac{1}{m} \sum_{i=1}^m x_i
+$$
+
+* 批量方差：
+
+$$
+\sigma_B^2 = \frac{1}{m} \sum_{i=1}^m (x_i - \mu_B)^2
+$$
+
+* 其中 $m$ 是批量大小。
+
+
+
+**2. 归一化：**
+
+$$
+\hat{x}_i = \frac{x_i - \mu_B}{\sqrt{\sigma_B^2 + \epsilon}}
+$$
+
+* $\epsilon$ 是一个小常数，防止除零。
+
+
+
+**3. 缩放和平移：**
+
+$$
+y_i = \gamma \hat{x}_i + \beta
+$$
+
+* $\gamma$ 和 $\beta$ 是可学习的参数，分别控制缩放和平移。
+
+
+
 - **训练阶段**：使用当前批量的统计量（均值和方差）进行归一化。
 - **测试阶段**：使用训练过程中累积的全局均值和方差（通常通过指数移动平均计算）。
 
