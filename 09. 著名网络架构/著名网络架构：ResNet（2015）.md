@@ -19,6 +19,10 @@ ResNet 引入“残差连接”（skip connection），让网络学习“变化�
  <img width="420" height="300" alt="image" src="https://github.com/user-attachments/assets/ee800edc-db6e-4cde-84d9-0d396ca69e58" />  
 </div>
 
+<div align="center">
+(此图引自Internet。)
+</div>
+
 ## 代码
 
 该代码实现了一个**简化的ResNet模型**，用于在**CIFAR-10数据集**上进行图像分类任务。主要功能如下：
