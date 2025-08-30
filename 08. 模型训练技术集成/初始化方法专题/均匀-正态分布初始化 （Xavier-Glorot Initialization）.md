@@ -14,21 +14,21 @@
 
 * **均匀分布初始化**：权重从以下均匀分布中采样：
 
-  $$
-  W \sim U\left(-\sqrt{\frac{6}{\text{fan}_{\text{in}} + \text{fan}_{\text{out}}}}, \; \sqrt{\frac{6}{\text{fan}_{\text{in}} + \text{fan}_{\text{out}}}}\right)
-  $$
+$$
+W \sim U\left(-\sqrt{\frac{6}{\text{fan}_{\text{in}} + \text{fan}_{\text{out}}}}, \; \sqrt{\frac{6}{\text{fan}_{\text{in}} + \text{fan}_{\text{out}}}}\right)
+$$
 
-  其中，$\text{fan}_{\text{in}}$ 是输入神经元数量，$\text{fan}_{\text{out}}$ 是输出神经元数量。
+  其中， $\text{fan}_{\text{in}}$ 是输入神经元数量， $\text{fan}_{\text{out}}$ 是输出神经元数量。
 
 * **正态分布初始化**：权重从正态分布中采样，均值为 0，标准差为：
 
-  $$
-  \sigma = \sqrt{\frac{2}{\text{fan}_{\text{in}} + \text{fan}_{\text{out}}}}
-  $$
+$$
+\sigma = \sqrt{\frac{2}{\text{fan}_{\text{in}} + \text{fan}_{\text{out}}}}
+$$
 
-  $$
-  W \sim \mathcal{N}(0, \sigma^2)
-  $$
+$$
+W \sim \mathcal{N}(0, \sigma^2)
+$$
 
 
 
