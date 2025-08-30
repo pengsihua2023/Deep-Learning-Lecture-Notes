@@ -53,18 +53,11 @@ $$
 
 * **He 初始化**（专为 ReLU 设计）使用标准差
 
-$$
-\sqrt{\frac{2}{\text{fan}_{\text{in}}}}
-$$
-
-  ，考虑 ReLU 的单侧激活特性。
+$\sqrt{\frac{2}{\text{fan}_{\text{in}}}}$ ，考虑 ReLU 的单侧激活特性。
 
 * **Xavier 初始化**假定激活函数对称（如 tanh），方差基于
 
-$$
-\text{fan}_ {\text{in}} + \text{fan}_{\text{out}}
-\]。  
-  $$
+$\text{fan}_ {\text{in}} + \text{fan}_{\text{out}}$
 
 
 
