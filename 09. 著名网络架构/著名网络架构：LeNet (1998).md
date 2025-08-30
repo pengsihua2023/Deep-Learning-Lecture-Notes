@@ -1,5 +1,6 @@
 ## 著名网络架构：LeNet (1998)
 提出者：Yann LeCun  
+
 <div align="center">
 <img width="220" height="220" alt="image" src="https://github.com/user-attachments/assets/79c9b12d-ec4d-4f94-b441-ce9439c70eeb" />    
 </div>
@@ -11,6 +12,10 @@ LeNet 是深度学习领域最早的卷积神经网络之一，专为手写数�
 掌握要点：理解卷积操作、池化机制。  
 <div align="center">
 <img width="700" height="270" alt="image" src="https://github.com/user-attachments/assets/f2ccce70-ad11-40d2-bf71-3651aa4fd10b" />  
+</div>
+
+<div align="center">
+(此图引自Internet。)
 </div>
 
 ## 代码
