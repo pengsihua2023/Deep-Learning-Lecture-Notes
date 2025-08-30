@@ -7,7 +7,7 @@
 <img width="887" height="615" alt="image" src="https://github.com/user-attachments/assets/209f969e-8120-4362-bfdf-1194da545b06" />  
 
 
-对于每个样本的输入 $x \in \mathbb{R}^d$（$d$ 是特征维度，如隐藏层大小），LN 执行以下步骤：
+对于每个样本的输入 $x \in \mathbb{R}^d$（ $d$ 是特征维度，如隐藏层大小），LN 执行以下步骤：
 
 **1. 计算均值和方差：**
 
