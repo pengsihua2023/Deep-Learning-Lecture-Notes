@@ -4,7 +4,6 @@
 层标准化（Layer Normalization，简称LN）是一种在深度学习中用于归一化神经网络输入的正则化技术，特别适用于循环神经网络（RNN）、Transformer等模型。与批量标准化（Batch Normalization，BN）不同，LN在每一层的输入上对**单个样本的特征维度**进行归一化，而不是跨批量归一化。这使得LN对批量大小不敏感，尤其适合小批量或序列任务。
 
 #### 核心原理
-<img width="887" height="615" alt="image" src="https://github.com/user-attachments/assets/209f969e-8120-4362-bfdf-1194da545b06" />  
 
 
 对于每个样本的输入 $x \in \mathbb{R}^d$（ $d$ 是特征维度，如隐藏层大小），LN 执行以下步骤：
