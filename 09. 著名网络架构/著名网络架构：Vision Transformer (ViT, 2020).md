@@ -13,6 +13,11 @@
 <div align="center">
 <img width="320" height="250" alt="image" src="https://github.com/user-attachments/assets/c3611f64-f4e1-4f03-bbd6-efd480e0cc6e" />
 </div>
+
+<div align="center">
+(此图引自Internet。)
+</div>
+
  
  ## 代码
 ```
