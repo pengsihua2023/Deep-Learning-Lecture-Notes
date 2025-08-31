@@ -5,6 +5,35 @@
 <img width="982" height="671" alt="image" src="https://github.com/user-attachments/assets/ff261a8f-9397-4c75-a14e-f93170346591" />
 
 
+神经算子旨在近似一个算子 $G : \mathcal{A} \to \mathcal{U}\$，其中 $\mathcal{A}\$ 和 \$\mathcal{U}\$ 是 Banach 空间（通常是函数空间，如 $L^2(D)\$），\$D \subset \mathbb{R}^d\$ 是域。给定输入函数 $a \in \mathcal{A}\$ ，目标是预测输出函数 $u = G(a) \in \mathcal{U}\$ 。
+
+神经算子 $G^\theta\$ （参数为 $\theta\$ ）被设计为网格无关的，即它不依赖于输入函数的离散化分辨率。形式上，它可以表示为层级结构：
+
+$$
+v_0(x) = P(a(x)), \quad v_{t+1}(x) = \sigma \big( W v_t(x) + (\mathcal{K}(a;\phi) v_t)(x) \big), \quad t = 0, \ldots, T-1,
+$$
+
+$$
+G^\theta(a)(x) = Q(v_T(x)),
+$$
+
+其中：
+
+* $P : \mathbb{R}^{d\_a} \to \mathbb{R}^{d\_v}\$ 是提升映射（lifting），将输入维度从 $d\_a\$ 提升到更高维度 \$d\_v\$ 。
+* $Q : \mathbb{R}^{d\_v} \to \mathbb{R}^{d\_u}\$ 是投影映射（projection），将隐藏维度投影到输出维度 $d\_u\$ 。
+* $W\$ 是局部线性变换（点到点）。
+* $\mathcal{K}\$ 是非局部积分核算子：
+
+$$
+(\mathcal{K}(a;\phi)v)(x) = \int_D \kappa_\phi(x,y,a(x),a(y)) v(y)\, dy,
+$$
+
+其中 \$\kappa\_\phi\$ 是由神经网络参数化的核函数。
+
+* $\sigma\$ 是激活函数（如 GELU）。
+
+
+
 <img width="1021" height="523" alt="image" src="https://github.com/user-attachments/assets/8f275f27-a9f9-4b14-b635-ebcd5720c1c2" />
 
 
