@@ -6,8 +6,6 @@ Discontinuous Galerkin (DG) Based Neural Networks 是一种新兴的混合方法
 - **Local Randomized Neural Networks with DG (LRNN-DG)**：结合随机化 NN 在子域上逼近，并用 DG 耦合，提高效率。
 - **DG-PINNs**：使用 Physics-Informed Neural Networks (PINN) 丰富 DG 基函数，实现近似 well-balanced 属性，适用于平衡律。
 
-<img width="901" height="1010" alt="image" src="https://github.com/user-attachments/assets/ddb806a9-7648-407f-8a3b-c352b6685ef8" />
-
 ### 数学描述
 
 考虑一个一般 PDE，例如 Poisson 方程：
