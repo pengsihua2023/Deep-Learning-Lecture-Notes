@@ -37,7 +37,7 @@ $$
 
 测试空间保持为分段多项式 $V\_h^k\$ 。弱形式类似，但通过最小化残差损失训练：
 
-<img width="7543" height="74" alt="image" src="https://github.com/user-attachments/assets/96c73b51-a207-4110-abfe-3296c8ff0526" />
+<img width="754" height="74" alt="image" src="https://github.com/user-attachments/assets/96c73b51-a207-4110-abfe-3296c8ff0526" />
 
 
 其中积分通过蒙特卡罗采样或正交点测近似，梯度用自动微分计算。训练最小化 $J(\theta)\$ 以优化 \$\theta\$ 。
