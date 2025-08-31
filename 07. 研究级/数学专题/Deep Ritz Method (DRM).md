@@ -3,8 +3,6 @@ Deep Ritz Method (DRM) 是一种基于深度学习的数值方法，用于求解
 
 DRM 的优势在于能处理高维问题（如金融中的期权定价或量子力学），并已被扩展到分数阶 PDE、线性弹性等。它的局限性包括对能量泛函的依赖（不是所有 PDE 都有变分形式）和训练时的数值积分误差。
 
-<img width="932" height="982" alt="image" src="https://github.com/user-attachments/assets/33a8a6e4-6900-4473-9614-93f8673dfb8b" />
-
 ### 数学描述
 
 考虑一个典型的椭圆型 PDE，例如 Poisson 方程：在域 $\Omega \subset \mathbb{R}^d\$ 上，
