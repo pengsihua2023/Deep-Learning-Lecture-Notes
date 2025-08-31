@@ -5,6 +5,75 @@ DRM 的优势在于能处理高维问题（如金融中的期权定价或量子�
 
 <img width="932" height="982" alt="image" src="https://github.com/user-attachments/assets/33a8a6e4-6900-4473-9614-93f8673dfb8b" />
 
+### 数学描述
+
+考虑一个典型的椭圆型 PDE，例如 Poisson 方程：在域 $\Omega \subset \mathbb{R}^d\$ 上，
+
+$$
+-\Delta u(x) = f(x), \quad x \in \Omega,
+$$
+
+伴随 Dirichlet 边界条件：
+
+$$
+u(x) = g(x), \quad x \in \partial \Omega.
+$$
+
+其变分形式是通过最小化能量泛函 \$I\[u]\$ 在 Sobolev 空间 \$H^1\_g(\Omega)\$ （满足边界条件的函数空间）上实现的：
+
+$$
+I[u] = \int_\Omega \left( \frac{1}{2} |\nabla u(x)|^2 - f(x)u(x) \right) dx,
+$$
+
+其中最小化器 $u\$ 即为 PDE 的弱解（根据 Ritz 定理）。
+
+在 DRM 中，使用参数化神经网络 $u\_\theta(x)\$ （ $\theta\$ 为网络参数）逼近 $u(x)\$ 。由于直接计算积分困难，采用蒙特卡罗采样近似损失函数：
+
+$$
+J(\theta) = \frac{1}{N_\Omega} \sum_{i=1}^{N_\Omega} \left( \frac{1}{2} |\nabla u_\theta(x_i)|^2 - f(x_i)u_\theta(x_i) \right) 
++ \frac{\lambda}{N_{\partial \Omega}} \sum_{j=1}^{N_{\partial \Omega}} |u_\theta(y_j) - g(y_j)|^2,
+$$
+
+其中：
+
+* $x\_i \sim \mathcal{U}(\Omega)\$ 是从内部域均匀随机采样的点（ $N\_\Omega\$ 个样本）。
+* $y\_j \sim \mathcal{U}(\partial \Omega)\$ 是从边界均匀随机采样的点（ $N\_{\partial \Omega}\$ 个样本）。
+* $\lambda > 0\$ 是罚项权重，用于软强制边界条件（也可用硬约束，如修改网络架构）。
+* 梯度 $\nabla u\_\theta\$ 通过自动微分计算。
+
+训练通过随机梯度下降（SGD）最小化 $J(\theta)\$ 。对于更一般的变分问题，泛函可为
+
+$$
+I[u] = \int_\Omega F(x, u, \nabla u) dx,
+$$
+
+损失类似地构造。DRM 的收敛性在某些条件下已分析，如对于线性 PDE 的两层网络。
+
+---
+
+### 代码实现
+
+下面是用 PyTorch 实现的一个简单 1D DRM 例子，用于求解 Poisson 方程：
+
+$$
+-u''(x) = \pi^2 \sin(\pi x), \quad x \in [0,1],
+$$
+
+边界条件：
+
+$$
+u(0) = u(1) = 0.
+$$
+
+真实解为：
+
+$$
+u(x) = \sin(\pi x).
+$$
+
+代码包括神经网络定义、变分损失计算和训练循环。
+
+
 
 ```python
 import torch
