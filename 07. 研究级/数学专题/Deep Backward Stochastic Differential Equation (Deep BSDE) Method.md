@@ -7,6 +7,58 @@ Deep Backward Stochastic Differential Equation (Deep BSDE) Method 是一种基�
 <img width="1010" height="922" alt="image" src="https://github.com/user-attachments/assets/9c3ef52c-b02b-447d-b2ae-d460053c66cf" />
 
 
+考虑一个一般的半线性抛物型 PDE:
+
+$$
+\partial_t u(t,x) + \mu(t,x) \cdot \nabla_x u(t,x) + \tfrac{1}{2} \text{Tr}\big(\sigma(t,x)\sigma(t,x)^* \text{Hess}_x u(t,x)\big) 
++ f(t,x,u(t,x),[\sigma(t,x)]^* \nabla_x u(t,x)) = 0,
+$$
+
+对于 $t \in \[0,T], x \in \mathbb{R}^d\$ ， 终端条件 $u(T,x) = g(x)\$ 。
+其中 \$\mu : \[0,T] \times \mathbb{R}^d \to \mathbb{R}^d\$ 是漂移项，
+$\sigma : \[0,T] \times \mathbb{R}^d \to \mathbb{R}^{d \times d}\$ 是扩散矩阵，
+$f\$ 是非线性项， \$T r(\cdot)\$ 表示迹运算， $A^\*\$ 表示转置，\$\text{Hess}\_x u\$ 是 Hessian 矩阵。
+
+通过 Feynman-Kac 定理，该 PDE 可表示为前向–后向随机微分方程 (FBSDE) 系统：
+
+* **前向 SDE (路径过程)**:
+
+$$
+X_t = x + \int_0^t \mu(s,X_s) ds + \int_0^t \sigma(s,X_s) dW_s,
+$$
+
+其中 $W\_s\$ 是 $d\$ 维 Wiener 过程。
+
+* **后向 SDE (值过程)**:
+
+$$
+Y_t = g(X_T) + \int_t^T f(s,X_s,Y_s,Z_s) ds - \int_t^T Z_s^* dW_s,
+$$
+
+其中 $Y\_t = u(t,X\_t), \quad Z\_t = \[\sigma(t,X\_t)]^\* \nabla\_x u(t,X\_t)\$ (梯度过程)。
+
+
+Deep BSDE 通过时间离散化 (Euler 方案) 逼近 BSDE：
+将时间区间 $\[0,T]\$ 分成 \$N\$ 步，步长 \$\Delta t = T/N\$，
+模拟 Brownian 增量 \$\Delta W\_n \sim \mathcal{N}(0,\Delta t I\_d)\$。
+然后，使用神经网络参数化初始估计 \$Y\_0^\theta\$ (标量) 和梯度过程 \$Z\_n^\theta(t\_n,X\_n)\$ (对于每个时间步的 NN)。
+
+算法问题转化为最小化经验损失:
+
+$$
+J(\theta) = \mathbb{E}\Big[ \big| Y_T^\theta - g(X_T) \big|^2 \Big],
+$$
+
+其中 \$Y\_T^\theta\$ 通过向后迭代计算：
+
+$$
+Y_{n+1}^\theta = Y_n^\theta - f(t_n, X_n, Y_n^\theta, Z_n^\theta)\Delta t + (Z_n^\theta)^* \Delta W_n,
+$$
+
+从 \$Y\_0^\theta\$ 开始。期望通过迭代与罗采近似 (批量模拟路径) 逼近，使用 Adam 等优化器训练 \$\theta\$。这相当于求解一个随机控制问题，其中 \$Z\$ 是控制变量。
+
+
+
 ### 代码实现
 <img width="888" height="115" alt="image" src="https://github.com/user-attachments/assets/8f855fa3-dac5-411d-8a32-6d289a76d75e" />
 
