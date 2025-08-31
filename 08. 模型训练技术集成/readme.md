@@ -31,15 +31,15 @@
   - [Adam优化器](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E4%BC%98%E5%8C%96%E5%99%A8%E4%B8%93%E9%A2%98/Adam%20Optimizer.md)
   - [Adam变体 （AdamW）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E4%BC%98%E5%8C%96%E5%99%A8%E4%B8%93%E9%A2%98/Adam%E5%8F%98%E4%BD%93%20%EF%BC%88AdamW%EF%BC%89.md)
   - [SGD优化器（随机梯度下降，Stochastic Gradient Descent）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E4%BC%98%E5%8C%96%E5%99%A8%E4%B8%93%E9%A2%98/SGD%E4%BC%98%E5%8C%96%E5%99%A8%EF%BC%88%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%EF%BC%8CStochastic%20Gradient%20Descent%EF%BC%89.md)
-  - [RMSProp优化器（Root Mean Square Propagation）]()
+  - RMSProp优化器（Root Mean Square Propagation）
   - [Adagrad优化器（Adaptive Gradient Algorithm）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E4%BC%98%E5%8C%96%E5%99%A8%E4%B8%93%E9%A2%98/Adagrad%E4%BC%98%E5%8C%96%E5%99%A8%EF%BC%88Adaptive%20Gradient%20Algorithm%EF%BC%89.md)
   - [Adadelta优化器](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E4%BC%98%E5%8C%96%E5%99%A8%E4%B8%93%E9%A2%98/Adadelta%E4%BC%98%E5%8C%96%E5%99%A8.md)  
   - [AMSGrad优化器](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E4%BC%98%E5%8C%96%E5%99%A8%E4%B8%93%E9%A2%98/AMSGrad%E4%BC%98%E5%8C%96%E5%99%A8.md)
-  - [Nadam优化器]
-  - [L-BFGS优化器（Limited-memory Broyden–Fletcher–Goldfarb–Shanno）]
-  - [Rprop优化器（Resilient Backpropagation）]
-  - [SparseAdam优化器]
-  - [ASGD优化器（Averaged Stochastic Gradient Descent）]
+  - Nadam优化器
+  - L-BFGS优化器（Limited-memory Broyden–Fletcher–Goldfarb–Shanno）
+  - Rprop优化器（Resilient Backpropagation）
+  - SparseAdam优化器
+  - ASGD优化器（Averaged Stochastic Gradient Descent）
 - [初始化方法概述](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E6%B3%95%E4%B8%93%E9%A2%98/%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E6%B3%95%E6%A6%82%E8%BF%B0.md)
   - [均匀/正态分布初始化 （Xavier/Glorot Initialization](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E6%B3%95%E4%B8%93%E9%A2%98/%E5%9D%87%E5%8C%80-%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E5%88%9D%E5%A7%8B%E5%8C%96%20%EF%BC%88Xavier-Glorot%20Initialization%EF%BC%89.md)
   - 考虑ReLU的方差的初始化 （He Initialization）
