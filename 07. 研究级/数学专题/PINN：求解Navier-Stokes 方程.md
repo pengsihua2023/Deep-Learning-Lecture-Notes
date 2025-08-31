@@ -286,7 +286,8 @@ plt.show()
 * **三维问题**：扩展输入为 \$(x, y, z, t)\$，输出为 \$(u, v, w, p)\$ 。
 
 **扩展：反问题**
-若要估计 \$\nu\$，可修改 `PINN` 类：
+  
+若要估计 \$\nu\$，可修改 `PINN` 类：  
 
 ```python
 class PINN(nn.Module):
