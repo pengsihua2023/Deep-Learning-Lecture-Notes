@@ -29,11 +29,7 @@ $$
 
 其中 ${ \cdot }\$ 是平均和跳跃算子， $\alpha\$ 是罚项参数（IPDG）。
 
-在 DG Based Neural Networks 中（如 DGNet），试验空间替换为分段神经网络空间
-
-$\mathcal{N}_ {\Omega_h} = \{ u_\theta: u_\theta|_ {E_i} \in \mathcal{N}_{l,\text{nn}}(\theta_i) \},$ 
-
-其中 $\mathcal{N}\_{l,\text{nn}}(\theta\_i)\$ 是浅层 NN（层数 $L \leq 2\$ ，隐藏单元 r）在元素 $E\_i\$ 上空间，每个元素有独立参数 $\theta\_i\$ :
+在 DG Based Neural Networks 中（如 DGNet），试验空间替换为分段神经网络空间 $\mathcal{N}_ {\Omega_h} = \{ u_\theta: u_\theta|_ {E_i} \in \mathcal{N}_{l,\text{nn}}(\theta_i) \},$ , 其中 $\mathcal{N}\_{l,\text{nn}}(\theta\_i)\$ 是浅层 NN（层数 $L \leq 2\$ ，隐藏单元 r）在元素 $E\_i\$ 上空间，每个元素有独立参数 $\theta\_i\$ :
 
 $$
 u_\theta(x) = \sum_{i=1}^N u^i_{\text{NN}}(x; \theta_i) \chi_{E_i}(x),
