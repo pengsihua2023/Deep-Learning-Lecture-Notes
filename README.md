@@ -21,7 +21,7 @@
 - [09. 著名网络架构](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/09.%20%E8%91%97%E5%90%8D%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84)
 
 - [10. 深度学习常用数据集](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/10.%20%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E9%9B%86)
-- [11. 数学知识总集篇](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/11.%20%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86%E4%B8%AD%E7%BA%A7%E7%AF%87)
+- [11. 数学知识中级篇](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/11.%20%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86%E4%B8%AD%E7%BA%A7%E7%AF%87)
 
 - 外部链接
   - [矩阵知识](https://www.bilibili.com/video/BV1h7pteyEww?spm_id_from=333.788.videopod.episodes&p=57)
