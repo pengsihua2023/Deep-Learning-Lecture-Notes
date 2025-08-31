@@ -48,9 +48,7 @@ $$
 
 * $\mathcal{F}\$ 是傅里叶变换：
 
-  $$
-  (\mathcal{F}v)_k = \int_D v(x)e^{-2\pi i k \cdot x} dx \quad (\text{离散时用 FFT})
-  $$
+  $(\mathcal{F}v)_k = \int_D v(x)e^{-2\pi i k \cdot x} dx \quad (\text{离散时用 FFT})$
 
 * $\mathcal{F}^{-1}\$ 是逆傅里叶变换。
 
