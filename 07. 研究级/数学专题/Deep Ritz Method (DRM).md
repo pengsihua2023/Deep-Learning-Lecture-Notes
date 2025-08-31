@@ -31,7 +31,7 @@ $$
 
 $$
 J(\theta) = \frac{1}{N_\Omega} \sum_{i=1}^{N_\Omega} \left( \frac{1}{2} |\nabla u_\theta(x_i)|^2 - f(x_i)u_\theta(x_i) \right) 
-+ \frac{\lambda}{N_{\partial \Omega}} \sum_{j=1}^{N_{\partial \Omega}} |u_\theta(y_j) - g(y_j)|^2,
+ +  \frac{\lambda}{N_{\partial \Omega}} \sum_{j=1}^{N_{\partial \Omega}} |u_\theta(y_j) - g(y_j)|^2,
 $$
 
 其中：
