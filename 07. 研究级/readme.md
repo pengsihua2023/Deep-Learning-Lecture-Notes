@@ -25,6 +25,22 @@
   - 化学与材料科学专题
     - [DeepMD-kit库用于铜金属的宏观热-力学过程模拟](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E5%8C%96%E5%AD%A6%E4%B8%8E%E6%9D%90%E6%96%99%E7%A7%91%E5%AD%A6%E4%B8%93%E9%A2%98/DeepMD-kit%E5%BA%93%E7%94%A8%E4%BA%8E%E9%93%9C%E9%87%91%E5%B1%9E%E7%9A%84%E5%AE%8F%E8%A7%82%E7%83%AD-%E5%8A%9B%E5%AD%A6%E8%BF%87%E7%A8%8B%E6%A8%A1%E6%8B%9F.md)
     - [DeepMD-kit库用于模拟气相水分子（H₂O）的分子动力学过程](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/%E5%8C%96%E5%AD%A6%E4%B8%8E%E6%9D%90%E6%96%99%E7%A7%91%E5%AD%A6%E4%B8%93%E9%A2%98/DeepMD-kit%E5%BA%93%E7%94%A8%E4%BA%8E%E6%A8%A1%E6%8B%9F%E6%B0%94%E7%9B%B8%E6%B0%B4%E5%88%86%E5%AD%90%EF%BC%88H%E2%82%82O%EF%BC%89%E7%9A%84%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6%E8%BF%87%E7%A8%8B.md)
+  - PINN专题
+    - PIKAN
+      - [基于PIKAN解SEIR动力学方程求解]([https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/PINN%E4%B8%93%E9%A2%98/PIKAN/%E5%9F%BA%E4%BA%8EPIKAN%E8%A7%A3SEIR%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%96%B9%E7%A8%8B.md)
+    - 偏微分方程求解及逆问题
+      - [一阶偏微分方程求解](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/PINN%E4%B8%93%E9%A2%98/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E5%8F%8A%E9%80%86%E9%97%AE%E9%A2%98/%E5%9F%BA%E4%BA%8E%20DeepXDE%20%E5%BA%93%E7%9A%84%E4%B8%80%E9%98%B6%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E4%BE%8B%E5%AD%90.md)
+      - [二维空间的一阶偏微分方程求解](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/PINN%E4%B8%93%E9%A2%98/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E5%8F%8A%E9%80%86%E9%97%AE%E9%A2%98/%E5%9F%BA%E4%BA%8E%20DeepXDE%20%E5%BA%93%E7%9A%84%E4%BA%8C%E7%BB%B4%E7%A9%BA%E9%97%B4%E7%9A%84%E4%B8%80%E9%98%B6%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B.md)
+    - 常微分方程求解及逆问题
+      - [一阶常微分方程求解例子](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/PINN%E4%B8%93%E9%A2%98/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E5%8F%8A%E9%80%86%E9%97%AE%E9%A2%98/%E5%9F%BA%E4%BA%8E%20DeepXDE%20%E5%BA%93%E7%9A%84%E4%B8%80%E9%98%B6%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E4%BE%8B%E5%AD%90.md)
+      - [二阶常微分方程求解例子](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/PINN%E4%B8%93%E9%A2%98/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E5%8F%8A%E9%80%86%E9%97%AE%E9%A2%98/%E5%9F%BA%E4%BA%8E%20DeepXDE%20%E5%BA%93%E7%9A%84%E4%BA%8C%E9%98%B6%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E4%BE%8B%E5%AD%90.md)
+    - 病毒传播动力学专题
+    - [PINN相关的库](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/PINN%E4%B8%93%E9%A2%98/PINN%E7%9B%B8%E5%85%B3%E7%9A%84%E5%BA%93.md)
+    - [PINN简介](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/PINN%E4%B8%93%E9%A2%98/PINN%E7%AE%80%E4%BB%8B.md)
+    
+     
+
+
     
 
 
