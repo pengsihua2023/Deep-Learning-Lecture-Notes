@@ -26,7 +26,6 @@ $$
 \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0
 $$
 
----
 
 其中：
 
@@ -34,9 +33,8 @@ $$
 * \$p\$: 压力。
 * \$\rho\$: 流体密度（常设为 1）。
 * \$\nu\$: 动黏性系数。
-* 定义域：\$(x,y) \in \Omega, , t \in \[0, T]\$。
+* 定义域： \$(x,y) \in \Omega, , t \in \[0, T]\$。
 
----
 
 ### 初始和边界条件：
 
