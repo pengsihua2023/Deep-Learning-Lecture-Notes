@@ -6,8 +6,54 @@
 ### 1. **Navier-Stokes 方程简介**
 <img width="996" height="841" alt="image" src="https://github.com/user-attachments/assets/4ea5b9ed-db47-4f80-b31e-03c081bcace6" />
 
+Navier–Stokes 方程描述流体的速度场 \$\mathbf{u} = (u, v)\$ 和压力场 \$p\$。对于二维不可压缩流体，Navier–Stokes 方程的形式为：
+
+### 动量方程：
+
+$$
+\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} 
+= -\frac{1}{\rho} \frac{\partial p}{\partial x} + \nu \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} \right)
+$$
+
+$$
+\frac{\partial v}{\partial t} + u \frac{\partial v}{\partial x} + v \frac{\partial v}{\partial y} 
+= -\frac{1}{\rho} \frac{\partial p}{\partial y} + \nu \left( \frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2} \right)
+$$
+
+### 连续性方程（不可压缩条件）：
+
+$$
+\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0
+$$
 
 ---
+
+其中：
+
+* \$u, v\$: 速度分量（沿 \$x, y\$ 方向）。
+* \$p\$: 压力。
+* \$\rho\$: 流体密度（常设为 1）。
+* \$\nu\$: 动黏性系数。
+* 定义域：\$(x,y) \in \Omega, , t \in \[0, T]\$。
+
+---
+
+### 初始和边界条件：
+
+* **初始条件**:
+
+$$
+u(x,y,0) = u_0(x,y), \quad v(x,y,0) = v_0(x,y)
+$$
+
+* **边界条件**: 例如 Dirichlet 条件
+
+$$
+u = g_u, \quad v = g_v
+$$
+
+或 Neumann 条件。
+
 
 ### 2. **PINNs 求解 Navier-Stokes 方程的原理**
 <img width="886" height="424" alt="image" src="https://github.com/user-attachments/assets/4c9894da-9101-4002-afdc-fc1ae24a933a" />
