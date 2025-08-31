@@ -78,6 +78,25 @@ PINNs 使用神经网络逼近速度场 \$u(x,y,t), v(x,y,t)\$ 和压力场 \$p(
 ### 3. **简单代码示例：二维 Navier-Stokes 方程**
 <img width="995" height="271" alt="image" src="https://github.com/user-attachments/assets/3bd349fd-08c2-4bb5-a1c6-a25ab09cc218" />
 
+以下是一个简化的 PyTorch 代码示例，求解二维不可压缩 Navier–Stokes 方程在一个矩形区域 $\[0,1] \times \[0,1]\$，时间范围 $\[0,1]\$。我们假设：
+
+* **初始条件**:
+
+  $$
+  u(x,y,0) = \sin(\pi x) \cos(\pi y), \quad v(x,y,0) = -\cos(\pi x) \sin(\pi y).
+  $$
+
+* **边界条件**: 无滑移边界，\$u=v=0\$ 在边界。
+
+* **参数**:
+
+  $$
+  \rho = 1, \quad \nu = 0.01.
+  $$
+
+* **问题**: 稳态或瞬态流体运动，连续性方程确保不可压缩性。
+
+
 
 #### **代码**
 ```python
