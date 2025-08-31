@@ -10,7 +10,7 @@ Deep Backward Stochastic Differential Equation (Deep BSDE) Method 是一种基�
 考虑一个一般的半线性抛物型 PDE:
 
 $\partial_t u(t,x) + \mu(t,x) \cdot \nabla_x u(t,x) + \tfrac{1}{2} \text{Tr}\big(\sigma(t,x)\sigma(t,x)^* \text{Hess}_x u(t,x)\big) 
-+ f(t,x,u(t,x),[\sigma(t,x)]^* \nabla_x u(t,x)) = 0,$ 
++ \f(t,x,u(t,x),[\sigma(t,x)]^* \nabla_x u(t,x)) = 0,$ 
 
 对于 $t \in \[0,T], x \in \mathbb{R}^d\$ ， 终端条件 $u(T,x) = g(x)\$ 。
 其中 \$\mu : \[0,T] \times \mathbb{R}^d \to \mathbb{R}^d\$ 是漂移项，
