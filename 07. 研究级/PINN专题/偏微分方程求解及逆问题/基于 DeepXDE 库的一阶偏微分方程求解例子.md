@@ -1,4 +1,6 @@
-下面给你一个用 **DeepXDE**（基于 PyTorch）求解一阶偏微分方程的完整示例：线性对流方程
+## 采用DeepXDE求解一阶偏微分方程
+
+下面给出一个用 **DeepXDE**（基于 PyTorch）求解一阶偏微分方程的完整示例：线性对流方程
 
 $$
 u_t + cu_x = 0,\quad (x,t)\in(0,1)\times(0,1],\quad
