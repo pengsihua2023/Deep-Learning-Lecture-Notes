@@ -4,7 +4,6 @@ Deep Backward Stochastic Differential Equation (Deep BSDE) Method 是一种基�
 与 Deep Galerkin Method (DGM) 或 Deep Ritz Method (DRM) 相比，Deep BSDE 更适合时间相关的抛物型 PDE，并自然处理随机性，但需要模拟随机路径，可能引入方差。
 
 ### 数学描述
-<img width="1010" height="922" alt="image" src="https://github.com/user-attachments/assets/9c3ef52c-b02b-447d-b2ae-d460053c66cf" />
 
 
 考虑一个一般的半线性抛物型 PDE:
@@ -57,7 +56,6 @@ $$
 
 
 ### 代码实现
-<img width="888" height="115" alt="image" src="https://github.com/user-attachments/assets/8f855fa3-dac5-411d-8a32-6d289a76d75e" />
 
 
 下面是用 PyTorch 实现的一个简单 1D Deep BSDE 例子，用于求解非线性 PDE: $\partial_t u + \tfrac{1}{2} \partial_{xx} u + u^3 = 0,$ 
