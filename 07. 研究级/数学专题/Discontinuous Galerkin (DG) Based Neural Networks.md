@@ -24,12 +24,8 @@ $$
 
 在经典 DG 方法中，域 $\Omega\_h\$ 离散化为网格 $\Omega\_h = \bigcup\_{i=1}^N E\_i\$ （元素 $E\_i\$ ），试验和测试空间均为分段多项式 $V\_h^k = { v: v|\_{E\_i} \in \mathcal{P}\_k(E\_i) }\$ ，允许边界不连续。通过弱形式求解：找 $u\_h \in V\_h^k\$ ，使得 $\forall v\_h \in V\_h^k\$ :
 
-$$
-\sum_{E_i} \int_{E_i} \nabla u_h \cdot \nabla v_h \, dx 
-- \sum_{e \subset \partial E_i} \int_e \{ \nabla u_h \} \cdot [v_h] \, ds 
-+ \alpha \sum_{e \subset \partial E_i} \int_e [u_h] \cdot [v_h] \, ds
-= \sum_{E_i} \int_{E_i} f v_h \, dx,
-$$
+<img width="724" height="70" alt="image" src="https://github.com/user-attachments/assets/634cae4e-29b9-48a8-9b6c-bb9d8c1f6441" />
+
 
 其中 ${ \cdot }\$ 是平均和跳跃算子， $\alpha\$ 是罚项参数（IPDG）。
 
@@ -49,12 +45,8 @@ $$
 
 测试空间保持为分段多项式 $V\_h^k\$ 。弱形式类似，但通过最小化残差损失训练：
 
-$$
-J(\theta) = \sum_{E_i} \left[ \int_{E_i} (\nabla u_\theta \cdot \nabla v - f v) dx 
-- \int_{\partial E_i} \{ \nabla u_\theta \} \cdot [v] ds 
-+ \alpha \int_{\partial E_i} [u_\theta] \cdot [v] ds \right]^2_{V_h^k} 
-+ \lambda \sum_{\partial \Omega} |u_\theta - g|^2,
-$$
+<img width="7543" height="74" alt="image" src="https://github.com/user-attachments/assets/96c73b51-a207-4110-abfe-3296c8ff0526" />
+
 
 其中积分通过蒙特卡罗采样或正交点测近似，梯度用自动微分计算。训练最小化 $J(\theta)\$ 以优化 \$\theta\$ 。
 
