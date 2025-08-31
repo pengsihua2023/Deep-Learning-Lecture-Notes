@@ -31,7 +31,7 @@ $$
 
 在 DG Based Neural Networks 中（如 DGNet），试验空间替换为分段神经网络空间
 
-$\mathcal{N}_ {\text{nn}} = \{ u_\theta: u_\theta|_ {E_i} \in \mathcal{N}_{l,\text{nn}}(\theta_i) \},$ 
+$\mathcal{N}_ {\Omega_h} = \{ u_\theta: u_\theta|_ {E_i} \in \mathcal{N}_{l,\text{nn}}(\theta_i) \},$ 
 
 其中 $\mathcal{N}\_{l,\text{nn}}(\theta\_i)\$ 是浅层 NN（层数 $L \leq 2\$ ，隐藏单元 r）在元素 $E\_i\$ 上空间，每个元素有独立参数 $\theta\_i\$ :
 
