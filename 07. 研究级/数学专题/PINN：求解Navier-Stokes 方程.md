@@ -262,6 +262,19 @@ plt.show()
    - 这里使用解析初始条件，实际应用可从实验数据或数值模拟获取。
 <img width="772" height="404" alt="image" src="https://github.com/user-attachments/assets/6fc65d92-229d-4769-8bdb-114fc8e456db" />
 
+* **网络：**
+
+  * 输入：\$(x, y, t)\$，输出：\$(u, v, p)\$。
+  * 使用 3 层全连接网络，50 个神经元，Tanh 激活函数。
+
+* **损失函数：**
+
+  * PDE 残差：动量方程（\$x\$ 和 \$y\$ 方向）+ 连续性方程。
+  * 初始条件：\$u(x, y, 0) = \sin(\pi x) \cos(\pi y), ; v(x, y, 0) = - \cos(\pi x) \sin(\pi y)\$。
+  * 边界条件：无滑移，边界上 \$u = v = 0\$。
+  * 损失加权：初始和边界损失权重设为 \$10\$，加强约束。
+
+
 ```python
 class PINN(nn.Module):
     def __init__(self):
