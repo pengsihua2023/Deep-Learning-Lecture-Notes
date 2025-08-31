@@ -60,17 +60,9 @@ $$
 <img width="888" height="115" alt="image" src="https://github.com/user-attachments/assets/8f855fa3-dac5-411d-8a32-6d289a76d75e" />
 
 
-下面是用 PyTorch 实现的一个简单 1D Deep BSDE 例子，用于求解非线性 PDE:
+下面是用 PyTorch 实现的一个简单 1D Deep BSDE 例子，用于求解非线性 PDE: $\partial_t u + \tfrac{1}{2} \partial_{xx} u + u^3 = 0,$ 
 
-$$
-\partial_t u + \tfrac{1}{2} \partial_{xx} u + u^3 = 0,
-$$
-
-在 \$t \in \[0,1], ; x \in \mathbb{R}\$，终端条件
-
-$$
-u(1,x) = \cos\left(\tfrac{\pi x}{2}\right).
-$$
+在 \$t \in \[0,1], ; x \in \mathbb{R}\$，终端条件 $u(1,x) = \cos\left(\tfrac{\pi x}{2}\right).$ 
 
 这是一个简化版本的 Allen-Cahn 方程变体，真实解近似为一个平滑函数。代码包括神经网络定义、路径模拟和训练循环。
 
