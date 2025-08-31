@@ -66,19 +66,11 @@ PINNs 使用神经网络逼近速度场 \$u(x,y,t), v(x,y,t)\$ 和压力场 \$p(
    * **PDE 残差**: 计算动量方程和连续性方程的残差。
    * **初始条件**: 确保 \$t=0\$ 时满足初始速度场。
    * **边界条件**: 确保边界上满足指定条件（如无滑移边界）。
-   * **总损失**:
-
-   $$
-   L = L_{\text{PDE}} + L_{\text{init}} + L_{\text{bc}}
-   $$
+   * **总损失**: $L = L_{\text{PDE}} + L_{\text{init}} + L_{\text{bc}}$ 
 
 3. **自动微分**: 使用 PyTorch 的 `torch.autograd` 计算偏导数（如
 
-   $$
-   \frac{\partial u}{\partial t}, \quad \frac{\partial^2 u}{\partial x^2}
-   $$
-
-   ）。
+   $$\frac{\partial u}{\partial t}, \quad \frac{\partial^2 u}{\partial x^2}$ ）。
 
 4. **优化**: 通过优化器（如 Adam）最小化损失函数，调整网络参数。
 
