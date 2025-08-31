@@ -15,7 +15,7 @@ $\partial_t u(t,x) + \mu(t,x) \cdot \nabla_x u(t,x) + \tfrac{1}{2} \text{Tr}\big
 对于 $t \in \[0,T], x \in \mathbb{R}^d\$ ， 终端条件 $u(T,x) = g(x)\$ 。
 其中 \$\mu : \[0,T] \times \mathbb{R}^d \to \mathbb{R}^d\$ 是漂移项，
 $\sigma : \[0,T] \times \mathbb{R}^d \to \mathbb{R}^{d \times d}\$ 是扩散矩阵，
-$f\$ 是非线性项， \$T r(\cdot)\$ 表示迹运算， $A^\*\$ 表示转置，\$\text{Hess}\_x u\$ 是 Hessian 矩阵。
+$f\$ 是非线性项， \$T r(\cdot)\$ 表示迹运算， $A^\*\$ 表示转置， $\text{Hess}\_x u\$ 是 Hessian 矩阵。
 
 通过 Feynman-Kac 定理，该 PDE 可表示为前向–后向随机微分方程 (FBSDE) 系统：
 
