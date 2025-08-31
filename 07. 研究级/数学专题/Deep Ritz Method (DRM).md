@@ -29,7 +29,8 @@ $$
 
 在 DRM 中，使用参数化神经网络 $u\_\theta(x)\$ （ $\theta\$ 为网络参数）逼近 $u(x)\$ 。由于直接计算积分困难，采用蒙特卡罗采样近似损失函数：
 
-$J(\theta) = \frac{1}{N_\Omega} \sum_{i=1}^{N_\Omega} \left( \frac{1}{2} |\nabla u_\theta(x_i)|^2 - f(x_i)u_\theta(x_i) \right) $  + $\frac{\lambda}{N_{\partial \Omega}} \sum_{j=1}^{N_{\partial \Omega}} |u_\theta(y_j) - g(y_j)|^2,$ 
+<img width="625" height="84" alt="image" src="https://github.com/user-attachments/assets/ab7591a7-798b-43aa-9aff-bb6a6574b2ea" />
+
 
 其中：
 
