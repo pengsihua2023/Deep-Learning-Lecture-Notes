@@ -4,7 +4,6 @@
 ---
 
 ### 1. **Navier-Stokes 方程简介**
-<img width="996" height="841" alt="image" src="https://github.com/user-attachments/assets/4ea5b9ed-db47-4f80-b31e-03c081bcace6" />
 
 Navier–Stokes 方程描述流体的速度场 \$\mathbf{u} = (u, v)\$ 和压力场 \$p\$。对于二维不可压缩流体，Navier–Stokes 方程的形式为：
 
@@ -54,7 +53,6 @@ $$
 
 
 ### 2. **PINNs 求解 Navier-Stokes 方程的原理**
-<img width="886" height="424" alt="image" src="https://github.com/user-attachments/assets/4c9894da-9101-4002-afdc-fc1ae24a933a" />
 
 
 PINNs 使用神经网络逼近速度场 \$u(x,y,t), v(x,y,t)\$ 和压力场 \$p(x,y,t)\$， 通过以下步骤求解：
@@ -76,7 +74,6 @@ PINNs 使用神经网络逼近速度场 \$u(x,y,t), v(x,y,t)\$ 和压力场 \$p(
 
 
 ### 3. **简单代码示例：二维 Navier-Stokes 方程**
-<img width="995" height="271" alt="image" src="https://github.com/user-attachments/assets/3bd349fd-08c2-4bb5-a1c6-a25ab09cc218" />
 
 以下是一个简化的 PyTorch 代码示例，求解二维不可压缩 Navier–Stokes 方程在一个矩形区域 $\[0,1] \times \[0,1]\$，时间范围 $\[0,1]\$。我们假设：
 
