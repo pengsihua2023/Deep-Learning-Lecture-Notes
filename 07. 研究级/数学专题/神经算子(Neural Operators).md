@@ -2,8 +2,6 @@
 神经算子（Neural Operators）是一种特殊的神经网络架构，用于学习从一个函数空间到另一个函数空间的映射（即学习“算子”）。传统的神经网络通常处理点到点的映射（如图像分类中的像素到标签），而神经算子可以处理函数到函数的映射，例如在科学计算中快速近似求解偏微分方程（PDE），它具有网格无关性（resolution-invariant），意味着训练时用一种分辨率的数据，推理时可以用不同的分辨率。
 
 ### 数学描述
-<img width="982" height="671" alt="image" src="https://github.com/user-attachments/assets/ff261a8f-9397-4c75-a14e-f93170346591" />
-
 
 神经算子旨在近似一个算子 $G : \mathcal{A} \to \mathcal{U}\$，其中 $\mathcal{A}\$ 和 \$\mathcal{U}\$ 是 Banach 空间（通常是函数空间，如 $L^2(D)\$），\$D \subset \mathbb{R}^d\$ 是域。给定输入函数 $a \in \mathcal{A}\$ ，目标是预测输出函数 $u = G(a) \in \mathcal{U}\$ 。
 
@@ -34,7 +32,6 @@ $$
 
 
 
-<img width="1021" height="523" alt="image" src="https://github.com/user-attachments/assets/8f275f27-a9f9-4b14-b635-ebcd5720c1c2" />
 
 
 一个经典的实现是傅里叶神经算子（Fourier Neural Operator, FNO），它利用傅里叶变换在频域中高效参数化
