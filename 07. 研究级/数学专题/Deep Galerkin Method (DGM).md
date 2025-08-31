@@ -19,14 +19,12 @@ $$
 \mathcal{B}u(x) = g(x), \quad x \in \partial \Omega,
 $$
 
-其中 \$\mathcal{L}\$ 是微分算子（可能非线性），\$\mathcal{B}\$ 是边界算子，\$u(x)\$ 是待求解函数。
+其中 $\mathcal{L}\$ 是微分算子（可能非线性）， $\mathcal{B}\$ 是边界算子， $u(x)\$ 是待求解函数。
 
-DGM 使用一个参数化神经网络 \$u\_\theta(x)\$（\$\theta\$ 为网络参数）来逼近 \$u(x)\$。类似于 Galerkin 方法，它通过最小化残差的积分形式来求解，但积分通过蒙特卡罗采样近似。具体地，损失函数定义为：
+DGM 使用一个参数化神经网络 $u\_\theta(x)\$ （ $\theta\$ 为网络参数）来逼近 $u(x)\$ 。类似于 Galerkin 方法，它通过最小化残差的积分形式来求解，但积分通过蒙特卡罗采样近似。具体地，损失函数定义为：
 
-$$
-J(\theta) = \frac{1}{N_\Omega} \sum_{i=1}^{N_\Omega} \big| \mathcal{L}u_\theta(x_i) - f(x_i) \big|^2 
-+ \frac{\lambda}{N_{\partial \Omega}} \sum_{j=1}^{N_{\partial \Omega}} \big| \mathcal{B}u_\theta(y_j) - g(y_j) \big|^2,
-$$
+$J(\theta) = \frac{1}{N_\Omega} \sum_{i=1}^{N_\Omega} \big| \mathcal{L}u_\theta(x_i) - f(x_i) \big|^2 
++ \frac{\lambda}{N_{\partial \Omega}} \sum_{j=1}^{N_{\partial \Omega}} \big| \mathcal{B}u_\theta(y_j) - g(y_j) \big|^2,$ 
 
 其中：
 
