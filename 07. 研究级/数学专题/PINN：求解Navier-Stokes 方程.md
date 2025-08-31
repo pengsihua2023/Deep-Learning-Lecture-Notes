@@ -240,8 +240,7 @@ plt.show()
 ```
 
 #### **代码说明**
-<img width="804" height="364" alt="image" src="https://github.com/user-attachments/assets/856b5c44-c6dd-4820-883a-8e632df4b674" />
-  
+
 * **网络：**
 
   * 输入： \$(x, y, t)\$，输出： \$(u, v, p)\$。
@@ -271,7 +270,6 @@ plt.show()
    - 确保边界点均匀分布，避免偏向。
 3. **初始条件**：
    - 这里使用解析初始条件，实际应用可从实验数据或数值模拟获取。
-<img width="772" height="404" alt="image" src="https://github.com/user-attachments/assets/6fc65d92-229d-4769-8bdb-114fc8e456db" />
 
 
 **4. 可视化：**
