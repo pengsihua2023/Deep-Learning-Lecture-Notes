@@ -8,6 +8,86 @@ Discontinuous Galerkin (DG) Based Neural Networks 是一种新兴的混合方法
 
 <img width="901" height="1010" alt="image" src="https://github.com/user-attachments/assets/ddb806a9-7648-407f-8a3b-c352b6685ef8" />
 
+### 数学描述
+
+考虑一个一般 PDE，例如 Poisson 方程：
+
+$$
+-\Delta u = f \quad \text{在域 } \Omega \subset \mathbb{R}^d 上,
+$$
+
+伴随 Dirichlet 边界条件
+
+$$
+u = g \quad \text{在 } \partial \Omega 上.
+$$
+
+在经典 DG 方法中，域 $\Omega\_h\$ 离散化为网格 $\Omega\_h = \bigcup\_{i=1}^N E\_i\$ （元素 $E\_i\$ ），试验和测试空间均为分段多项式 $V\_h^k = { v: v|\_{E\_i} \in \mathcal{P}\_k(E\_i) }\$ ，允许边界不连续。通过弱形式求解：找 $u\_h \in V\_h^k\$ ，使得 $\forall v\_h \in V\_h^k\$ :
+
+$$
+\sum_{E_i} \int_{E_i} \nabla u_h \cdot \nabla v_h \, dx 
+- \sum_{e \subset \partial E_i} \int_e \{ \nabla u_h \} \cdot [v_h] \, ds 
++ \alpha \sum_{e \subset \partial E_i} \int_e [u_h] \cdot [v_h] \, ds
+= \sum_{E_i} \int_{E_i} f v_h \, dx,
+$$
+
+其中 ${ \cdot }\$ 是平均和跳跃算子， $\alpha\$ 是罚项参数（IPDG）。
+
+在 DG Based Neural Networks 中（如 DGNet），试验空间替换为分段神经网络空间
+
+$$
+\mathcal{N}_{\text{nn}} = \{ u_\theta: u_\theta|_{E_i} \in \mathcal{N}_{i,\text{nn}}(\theta_i) \},
+$$
+
+其中 \$\mathcal{N}\_{i,\text{nn}}(\theta\_i)\$ 是浅层 NN（层数 \$L \leq 2\$，隐藏单元 r）在元素 \$E\_i\$ 上空间，每个元素有独立参数 \$\theta\_i\$:
+
+$$
+u_\theta(x) = \sum_{i=1}^N u^i_{\text{NN}}(x; \theta_i) \chi_{E_i}(x),
+$$
+
+其中 $u^i\_{\text{NN}}\$ 是 NN， $\chi\_{E\_i}\$ 是指示函数。
+
+测试空间保持为分段多项式 $V\_h^k\$ 。弱形式类似，但通过最小化残差损失训练：
+
+$$
+J(\theta) = \sum_{E_i} \left[ \int_{E_i} (\nabla u_\theta \cdot \nabla v - f v) dx 
+- \int_{\partial E_i} \{ \nabla u_\theta \} \cdot [v] ds 
++ \alpha \int_{\partial E_i} [u_\theta] \cdot [v] ds \right]^2_{V_h^k} 
++ \lambda \sum_{\partial \Omega} |u_\theta - g|^2,
+$$
+
+其中积分通过蒙特卡罗采样或正交点测近似，梯度用自动微分计算。训练最小化 $J(\theta)\$ 以优化 \$\theta\$ 。
+
+对于时间相关 PDE（如抛物方程 $u\_t - \Delta u = f\$ ），可扩展到时空 DG，或使用时间步法。
+
+在 DG-PINNs 中，DG 基函数通过 PINN 形式替换：标准 DG 基 $\phi\_j\$ 加上 NN 逼近的稳定项 $\psi\_\theta\$ ，以实现 well-balanced（稳态解的精确捕捉）。
+
+---
+
+### 代码实现
+
+下面是用 PyTorch 实现的一个简单 1D DGNet 例子，用于求解 Poisson 方程：
+
+$$
+-u''(x) = \pi^2 \sin(\pi x), \quad x \in [0,1],
+$$
+
+边界条件
+
+$$
+u(0) = u(1) = 0.
+$$
+
+真实解为
+
+$$
+u(x) = \sin(\pi x).
+$$
+
+我们将域划分成 4 个元素，每个元素一个独立浅层 NN（单隐藏层），使用 IPDG 弱形式作为损失。测试函数为分段线性多项式（k=1），积分用蒙特卡罗采样近似。
+
+
+
 ```python
 import torch
 import torch.nn as nn
