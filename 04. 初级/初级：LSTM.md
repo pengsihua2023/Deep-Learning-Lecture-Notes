@@ -222,6 +222,9 @@ Epoch [10/10], Loss: 0.0003
 批量测试准确率: 98.71%  
 <div align="center">
 <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/983ef728-8e77-4cb7-9553-43494e967bda" /> 
+</div>
+
+<div align="center">   
 图2 训练损失曲线
 </div>
 
