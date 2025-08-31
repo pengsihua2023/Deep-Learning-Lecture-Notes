@@ -274,7 +274,19 @@ plt.show()
 <img width="772" height="404" alt="image" src="https://github.com/user-attachments/assets/6fc65d92-229d-4769-8bdb-114fc8e456db" />
 
 
+**4. 可视化：**
 
+* 需要安装 `matplotlib` 和 `imagemagick`（用于保存 GIF）。
+* 可添加 \$v\$ 和 \$p\$ 的热图，或绘制速度矢量场（`plt.quiver`）。
+
+**5. 扩展：**
+
+* **反问题**：将 \$\nu\$ 或 \$p\$ 设为可学习参数（`nn.Parameter`），加入观测数据。
+* **复杂几何**：定义复杂边界条件（如圆形障碍物）。
+* **三维问题**：扩展输入为 \$(x, y, z, t)\$，输出为 \$(u, v, w, p)\$ 。
+
+**扩展：反问题**
+若要估计 \$\nu\$，可修改 `PINN` 类：
 
 ```python
 class PINN(nn.Module):
