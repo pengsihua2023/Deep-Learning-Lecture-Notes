@@ -1,4 +1,4 @@
-# AR-SPINN 数学描述
+## AR-SPINN的数学描述
 
 AR-SPINN 结合了 **脉冲神经元（Spiking Neurons）** 的动态、**循环结构（RNN）** 的时间依赖性，以及 **自适应阈值机制（Adaptive Threshold Mechanism）**。
 它可以用以下方程来描述：
