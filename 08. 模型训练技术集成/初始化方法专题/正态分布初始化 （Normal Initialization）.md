@@ -122,7 +122,7 @@ print("全连接层权重标准差:", model.fc.weight.std().item())
 #### **注意事项**
 1. **标准差选择**：
    - `std=0.01` 是常见值，但对深层网络可能过小，导致梯度消失。
-   - 可尝试 `std=0.1` 或基于 Xavier/He 公式的标准差（如 $\(\sqrt{\frac{2}{\text{fan_in} + \text{fan_out}}}\)$ ）。
+   - 可尝试 `std=0.1` 或基于 Xavier/He 公式的标准差（如 \(\sqrt{\frac{2}{\text{fan_in} + \text{fan_out}}}\) ）。
 2. **激活函数匹配**：
    - 正态分布初始化适合 `tanh` 或 `sigmoid` 激活函数。
    - 若使用 ReLU，推荐 `init.kaiming_normal_`（He 初始化）。
