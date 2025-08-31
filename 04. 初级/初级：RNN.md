@@ -269,7 +269,7 @@ Epoch [20/20], Loss: 0.3664
 Testing started...  
 Test Accuracy: 79.00%  
 <div align="center">
-<img width="791" height="385" alt="image" src="https://github.com/user-attachments/assets/ea2bbd16-e1b1-4334-a856-d1e91223a8a7" /> 
+<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/ea2bbd16-e1b1-4334-a856-d1e91223a8a7" /> 
 </div>
 
 <div align="center">
