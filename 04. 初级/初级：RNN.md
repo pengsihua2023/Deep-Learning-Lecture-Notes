@@ -268,13 +268,21 @@ Epoch [20/20], Loss: 0.3664
 
 Testing started...  
 Test Accuracy: 79.00%  
-
+<div align="center">
 <img width="791" height="385" alt="image" src="https://github.com/user-attachments/assets/ea2bbd16-e1b1-4334-a856-d1e91223a8a7" /> 
+</div>
+
+<div align="center">
 图2 训练损失曲线
+</div>
 
+<div align="center">
 <img width="396" height="295" alt="image" src="https://github.com/user-attachments/assets/4c5c3a4d-986f-4b42-8612-9a05ed4e3f87" />  
+</div>
 
+<div align="center">
 图3 混淆矩阵
+</div>
 
 ## 代码功能简述
 这段代码实现的功能简述如下：
