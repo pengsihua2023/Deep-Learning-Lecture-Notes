@@ -46,9 +46,7 @@ $$
 
 其中：
 
-* $\mathcal{F}\$ 是傅里叶变换：
-
-  $(\mathcal{F}v)_k = \int_D v(x)e^{-2\pi i k \cdot x} dx \quad (\text{离散时用 FFT})$
+* $\mathcal{F}\$ 是傅里叶变换： $(\mathcal{F}v)_k = \int_D v(x)e^{-2\pi i k \cdot x} dx \quad (\text{离散时用 FFT})$
 
 * $\mathcal{F}^{-1}\$ 是逆傅里叶变换。
 
@@ -60,8 +58,6 @@ FNO 的优势在于分辨率无关性：训练时用粗网格，推理时可用�
 
 下面是用 PyTorch 从零实现的一个最简单的 1D FNO 例子。我们假设任务是学习一个简单的算子：将输入函数
 $f(x) = \sin(kx)\$ 映射到其积分形式（累积积分）。代码包括谱卷积层（SpectralConv1d）和 FNO 模型，生成随机数据进行训练演示。
-
-
 
 
 ```python
