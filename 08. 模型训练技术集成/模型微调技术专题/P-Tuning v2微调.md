@@ -21,9 +21,9 @@
 * 预训练 Transformer 模型为 $f_\theta$，参数 $\theta$ 冻结。
 * 输入序列 embedding：
 
-  $$
-  X = (x_1, x_2, \dots, x_n), \quad x_i \in \mathbb{R}^d
-  $$
+$$
+X = (x_1, x_2, \dots, x_n), \quad x_i \in \mathbb{R}^d
+$$
 
 在每一层 $l \in \{1, \dots, L\}$，引入 **prefix 向量**：
 
