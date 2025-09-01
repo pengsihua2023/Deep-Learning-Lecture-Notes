@@ -77,9 +77,10 @@ print("Output shape:", y.shape)  # (2, 6)
 * **定义**：LoRA 通过低秩分解，仅训练增量参数矩阵，而冻结原始权重。
 * **公式**：
 
-  $$
-  W' = W + BA, \quad A \in \mathbb{R}^{r \times k}, \; B \in \mathbb{R}^{d \times r}, \; r \ll \min(d,k)
-  $$
+$$
+W' = W + BA, \quad A \in \mathbb{R}^{r \times k}, \; B \in \mathbb{R}^{d \times r}, \; r \ll \min(d,k)
+$$
+
 * **特点**：
 
   * 显著减少可训练参数量。
