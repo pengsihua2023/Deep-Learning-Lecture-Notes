@@ -61,7 +61,7 @@
   - [SHAP](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A8%A1%E5%9E%8B%E8%A7%A3%E9%87%8A%E6%96%B9%E6%B3%95%E4%B8%93%E9%A2%98/SHAP%E6%A8%A1%E5%9E%8B%E8%A7%A3%E9%87%8A%E6%96%B9%E6%B3%95.md)
   - LIME
   - Saliency Maps
-  - Integrated Gradients
+  - [Integrated Gradients](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A8%A1%E5%9E%8B%E8%A7%A3%E9%87%8A%E6%96%B9%E6%B3%95%E4%B8%93%E9%A2%98/Integrated%20Gradients.md)
   - Grad-CAM
   - [DeepLIFT](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A8%A1%E5%9E%8B%E8%A7%A3%E9%87%8A%E6%96%B9%E6%B3%95%E4%B8%93%E9%A2%98/DeepLIFT%20%E6%A8%A1%E5%9E%8B%E8%A7%A3%E9%87%8A%E6%96%B9%E6%B3%95.md)
   - t-SNE 
