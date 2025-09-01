@@ -1,5 +1,6 @@
 
-# IA³ 微调（Infused Adapter by Inhibiting and Amplifying Inner Activations）
+# IA³ 微调
+（Infused Adapter by Inhibiting and Amplifying Inner Activations）  
 
 ## 1. 定义
 
