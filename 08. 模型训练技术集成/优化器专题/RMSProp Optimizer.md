@@ -16,7 +16,8 @@ RMSProp（Root Mean Square Propagation）是一种常用的**自适应学习率�
 1. 计算梯度 $g_t$。
 2. 更新梯度平方的移动平均：
 
-$E[g^2]_t = \rho \cdot E[g^2]_{t-1} + (1-\rho) \cdot g_t^2$
+<img width="305" height="50" alt="image" src="https://github.com/user-attachments/assets/88440188-10d0-4f98-bb9e-fede2630bfba" />
+
 
    其中 $\rho$ 通常取 0.9。
   
