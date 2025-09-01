@@ -1,4 +1,4 @@
-8L-BFGS（Limited-memory Broyden–Fletcher–Goldfarb–Shanno）优化器是一种拟牛顿法（Quasi-Newton method）的变体，主要用于解决大规模无约束优化问题。它常见于机器学习、深度学习和数值优化中。下面我帮你分几个方面讲清楚：
+L-BFGS（Limited-memory Broyden–Fletcher–Goldfarb–Shanno）优化器是一种拟牛顿法（Quasi-Newton method）的变体，主要用于解决大规模无约束优化问题。它常见于机器学习、深度学习和数值优化中。下面我帮你分几个方面讲清楚：
 
 ---
 L-BFGS（Limited-memory Broyden–Fletcher–Goldfarb–Shanno）优化器是一种拟牛顿法优化算法，它通过近似海森矩阵的逆来加速梯度下降，适用于高维问题，但只需有限的内存。
@@ -48,7 +48,7 @@ $H_{k+1} = \left(I - \frac{s_k y_k^T}{y_k^T s_k}\right) H_k \left(I - \frac{y_k 
 完整 BFGS 需要存储和更新  矩阵，代价过高。L-BFGS 通过只保存最近  步的  向量对，利用“两次循环递归”（two-loop recursion）高效计算 ：
 
 
----
+
 
 两次循环递归
 
@@ -83,9 +83,7 @@ $\beta = \frac{y_i^T r}{y_i^T s_i}, \quad r \leftarrow r + s_i (\alpha_i - \beta
 $p_k = -r.$ 
 
 
----
-
-总结
+### 特点
 
 目标：近似二阶信息，加快收敛。
 
@@ -93,14 +91,8 @@ $p_k = -r.$
 
 核心：通过两次循环递归避免显式存储逆海森矩阵。
 
-
-
 ---
 
-要不要我帮你画一张 L-BFGS 更新流程的数学结构图（含两次循环递归），让逻辑更直观？
-
-
----
 
 1. 基本原理
 
@@ -111,18 +103,12 @@ $p_k = -r.$
 L-BFGS做法：不显式存储整个海森矩阵，而是通过有限的历史信息（梯度和变量的更新）来近似其逆矩阵，因此称为“limited-memory”。
 
 
-
----
-
 2. 算法核心
 
 在每一步迭代中，L-BFGS会利用最近的 m 步的变量更新  和梯度更新  来构建一个近似的逆海森矩阵。
 
 用这个近似矩阵来计算下降方向，比单纯的梯度下降更高效、更快收敛。
 
-
-
----
 
 3. 优势
 
@@ -132,9 +118,6 @@ L-BFGS做法：不显式存储整个海森矩阵，而是通过有限的历史�
 
 广泛应用：尤其在机器学习中的逻辑回归、条件随机场（CRF）、词向量训练（如word2vec）中应用广泛。
 
-
-
----
 
 4. 应用举例
 
@@ -159,8 +142,6 @@ for i in range(20):
 ```
 这里需要提供一个 closure函数，因为L-BFGS每一步迭代会多次计算目标函数和梯度。
 
-
----
 
 5. 适用场景
 
