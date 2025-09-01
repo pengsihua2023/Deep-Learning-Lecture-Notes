@@ -33,9 +33,9 @@ $$
 
 其中：
 
-* $A \in \mathbb{R}^{r \times k}$，$B \in \mathbb{R}^{d \times r}$，$r \ll \min(d,k)$。
+* $A \in \mathbb{R}^{r \times k}$，$B \in \mathbb{R}^{d \times r}$，$r \ll \min(d,k)$ 。
 * 初始时 $BA = 0$，确保不会影响预训练模型。
-* 只训练 $A, B$，冻结 $W$。
+* 只训练 $A, B$，冻结 $W$ 。
 
 应用在 Transformer 中，LoRA 通常作用在 **注意力层的投影矩阵** $W_Q, W_V$。
 
