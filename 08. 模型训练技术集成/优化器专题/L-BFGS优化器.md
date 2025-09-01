@@ -12,13 +12,13 @@ L-BFGS（Limited-memory Broyden–Fletcher–Goldfarb–Shanno）优化器是一
 
 L-BFGS 用于求解无约束优化问题：
 
-\min_{x \in \mathbb{R}^n} f(x),
+$\min_{x \in \mathbb{R}^n} f(x),$
 
 2. 迭代更新
 
 在迭代  步时，算法更新规则为：
 
-x_{k+1} = x_k + \alpha_k p_k,
+$x_{k+1} = x_k + \alpha_k p_k,$
 
  是搜索方向，
 
