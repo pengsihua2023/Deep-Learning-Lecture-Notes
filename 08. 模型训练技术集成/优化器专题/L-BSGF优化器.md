@@ -41,7 +41,7 @@ L-BFGS做法：不显式存储整个海森矩阵，而是通过有限的历史�
 
 在深度学习框架 PyTorch 中，可以直接使用：
 
-'''python
+```python
 import torch
 from torch.optim import LBFGS
 
@@ -57,7 +57,7 @@ def closure():
 for i in range(20):
     optimizer.step(closure)
 
-'''
+```
 这里需要提供一个 closure函数，因为L-BFGS每一步迭代会多次计算目标函数和梯度。
 
 
