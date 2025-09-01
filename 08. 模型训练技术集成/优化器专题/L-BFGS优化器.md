@@ -1,6 +1,4 @@
-L-BFGS（Limited-memory Broyden–Fletcher–Goldfarb–Shanno）优化器是一种拟牛顿法（Quasi-Newton method）的变体，主要用于解决大规模无约束优化问题。它常见于机器学习、深度学习和数值优化中。下面我帮你分几个方面讲清楚：
 
----
 L-BFGS（Limited-memory Broyden–Fletcher–Goldfarb–Shanno）优化器是一种拟牛顿法优化算法，它通过近似海森矩阵的逆来加速梯度下降，适用于高维问题，但只需有限的内存。
 
 
