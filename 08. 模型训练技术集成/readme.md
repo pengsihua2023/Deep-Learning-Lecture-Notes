@@ -50,7 +50,7 @@
   - 零初始化 （Zero Initialization）
 - 模型微调技术概述
   - [PEFT 库简介](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83%E6%8A%80%E6%9C%AF%E4%B8%93%E9%A2%98/PEFT%20%E5%BA%93%E6%A6%82%E8%BF%B0.md)
-  - [IA³微调]()
+  - [IA³微调](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83%E6%8A%80%E6%9C%AF%E4%B8%93%E9%A2%98/IA%C2%B3%E5%BE%AE%E8%B0%83.md)
   - 少参数微调 （LoRA）
   - 微调提示嵌入 （Prompt Tuning）
   - 重启LoRA （ReLoRA）
