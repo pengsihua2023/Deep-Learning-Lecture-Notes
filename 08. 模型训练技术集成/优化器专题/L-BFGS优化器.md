@@ -1,5 +1,104 @@
 L-BFGS（Limited-memory Broyden–Fletcher–Goldfarb–Shanno）优化器是一种拟牛顿法（Quasi-Newton method）的变体，主要用于解决大规模无约束优化问题。它常见于机器学习、深度学习和数值优化中。下面我帮你分几个方面讲清楚：
 
+---
+L-BFGS（Limited-memory Broyden–Fletcher–Goldfarb–Shanno）优化器是一种拟牛顿法优化算法，它通过近似海森矩阵的逆来加速梯度下降，适用于高维问题，但只需有限的内存。
+
+
+---
+
+## 数学描述
+
+1. 优化问题
+
+L-BFGS 用于求解无约束优化问题：
+
+\min_{x \in \mathbb{R}^n} f(x),
+
+2. 迭代更新
+
+在迭代  步时，算法更新规则为：
+
+x_{k+1} = x_k + \alpha_k p_k,
+
+ 是搜索方向，
+
+ 是步长（通常由线搜索确定）。
+
+
+3. 搜索方向
+
+搜索方向由近似的逆海森矩阵  与梯度决定：
+
+p_k = - H_k \nabla f(x_k).
+
+4. 差分向量
+
+定义：
+
+s_k = x_{k+1} - x_k, \quad y_k = \nabla f(x_{k+1}) - \nabla f(x_k).
+
+5. BFGS 更新公式
+
+经典 BFGS 公式对逆海森矩阵的更新为：
+
+H_{k+1} = \left(I - \frac{s_k y_k^T}{y_k^T s_k}\right) H_k \left(I - \frac{y_k s_k^T}{y_k^T s_k}\right) + \frac{s_k s_k^T}{y_k^T s_k}.
+
+6. L-BFGS 的有限记忆思想
+
+完整 BFGS 需要存储和更新  矩阵，代价过高。L-BFGS 通过只保存最近  步的  向量对，利用“两次循环递归”（two-loop recursion）高效计算 ：
+
+
+---
+
+两次循环递归
+
+给定最近的  对，计算搜索方向：
+
+1. 初始化：
+
+
+
+q = \nabla f(x_k).
+
+2. 第一次循环（向后）：
+
+
+
+\alpha_i = \frac{s_i^T q}{y_i^T s_i}, \quad q \leftarrow q - \alpha_i y_i.
+
+3. 设置初始矩阵：
+
+
+
+H_0^k = \frac{s_{k-1}^T y_{k-1}}{y_{k-1}^T y_{k-1}} I.
+
+4. 第二次循环（向前）：
+
+
+
+\beta = \frac{y_i^T r}{y_i^T s_i}, \quad r \leftarrow r + s_i (\alpha_i - \beta).
+
+最终：
+
+p_k = -r.
+
+
+---
+
+总结
+
+目标：近似二阶信息，加快收敛。
+
+存储：只保存有限步的 ，适合大规模问题。
+
+核心：通过两次循环递归避免显式存储逆海森矩阵。
+
+
+
+---
+
+要不要我帮你画一张 L-BFGS 更新流程的数学结构图（含两次循环递归），让逻辑更直观？
+
 
 ---
 
