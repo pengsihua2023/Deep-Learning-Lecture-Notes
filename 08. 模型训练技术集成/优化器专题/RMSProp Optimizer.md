@@ -23,9 +23,7 @@ RMSProp（Root Mean Square Propagation）是一种常用的**自适应学习率�
   
 3. 使用调整后的学习率更新参数：
 
-$$
-\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2]_t + \epsilon}} \cdot g_t
-$$
+$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2]_t + \epsilon}} \cdot g_t$
 
    * $\eta$：全局学习率（通常在 0.001 左右）。
    * $\epsilon$：防止除零的常数（如 $1e-8$）。
