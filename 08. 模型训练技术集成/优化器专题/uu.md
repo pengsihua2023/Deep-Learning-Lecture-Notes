@@ -18,43 +18,43 @@ $$
 2. **迭代更新**
    在第 $k$ 步迭代时，更新规则为：
 
-   $$
-   x_{k+1} = x_k + \alpha_k p_k
-   $$
+$$
+x_{k+1} = x_k + \alpha_k p_k
+$$
 
    其中，$\alpha_k$ 为步长（由线搜索确定），$p_k$ 为搜索方向。
 
 3. **搜索方向**
    搜索方向由近似的逆海森矩阵决定：
 
-   $$
-   p_k = - H_k \nabla f(x_k)
-   $$
+$$
+p_k = - H_k \nabla f(x_k)
+$$
 
 4. **差分向量**
    定义变量和梯度的增量：
 
-   $$
-   s_k = x_{k+1} - x_k, \quad y_k = \nabla f(x_{k+1}) - \nabla f(x_k)
-   $$
+$$
+s_k = x_{k+1} - x_k, \quad y_k = \nabla f(x_{k+1}) - \nabla f(x_k)
+$$
 
 5. **BFGS 更新公式**
    经典 BFGS 的逆海森矩阵更新公式为：
 
-   $$
-   H_{k+1} = \left(I - \frac{s_k y_k^T}{y_k^T s_k}\right) H_k \left(I - \frac{y_k s_k^T}{y_k^T s_k}\right) + \frac{s_k s_k^T}{y_k^T s_k}
-   $$
+$$
+H_{k+1} = \left(I - \frac{s_k y_k^T}{y_k^T s_k}\right) H_k \left(I - \frac{y_k s_k^T}{y_k^T s_k}\right) + \frac{s_k s_k^T}{y_k^T s_k}
+$$
 
 6. **L-BFGS 的有限记忆思想**
    完整 BFGS 需存储整个矩阵，代价过高。L-BFGS 仅保存最近 $m$ 步的 $(s_i, y_i)$ 向量对，并通过 **两次循环递归（two-loop recursion）** 高效计算搜索方向，而无需显式存储逆海森矩阵。
 
    **两次循环递归：**
 
-   * 初始化：$q = \nabla f(x_k)$
-   * 向后循环：$\alpha_i = \frac{s_i^T q}{y_i^T s_i}, \quad q \leftarrow q - \alpha_i y_i$
-   * 设置初始矩阵：$H_0^k = \frac{s_{k-1}^T y_{k-1}}{y_{k-1}^T y_{k-1}} I$
-   * 向前循环：$\beta = \frac{y_i^T r}{y_i^T s_i}, \quad r \leftarrow r + s_i(\alpha_i - \beta)$
-   * 最终得到：$p_k = -r$
+   * 初始化： $q = \nabla f(x_k)$
+   * 向后循环： $\alpha_i = \frac{s_i^T q}{y_i^T s_i}, \quad q \leftarrow q - \alpha_i y_i$
+   * 设置初始矩阵： $H_0^k = \frac{s_{k-1}^T y_{k-1}}{y_{k-1}^T y_{k-1}} I$
+   * 向前循环： $\beta = \frac{y_i^T r}{y_i^T s_i}, \quad r \leftarrow r + s_i(\alpha_i - \beta)$
+   * 最终得到： $p_k = -r$
 
 ---
 
