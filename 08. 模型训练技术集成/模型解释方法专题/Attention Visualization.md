@@ -99,9 +99,9 @@ plt.show()
 * **Attention Visualization 定义**：通过展示注意力权重，解释模型在预测时“看哪里”。
 * **数学描述**：基于
 
-  $$
-  A = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)
-  $$
+$$
+A = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)
+$$
 * **代码示例**：
 
   * NLP → 用热力图展示词与词之间的注意关系。
