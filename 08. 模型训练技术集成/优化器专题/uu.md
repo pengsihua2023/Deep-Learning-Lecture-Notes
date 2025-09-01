@@ -11,9 +11,9 @@ L-BFGS（Limited-memory Broyden–Fletcher–Goldfarb–Shanno）是一种拟牛
 1. **优化目标**
    L-BFGS 用于求解无约束优化问题：
 
-   $$
-   \min_{x \in \mathbb{R}^n} f(x)
-   $$
+$$
+\min_{x \in \mathbb{R}^n} f(x)
+$$
 
 2. **迭代更新**
    在第 $k$ 步迭代时，更新规则为：
