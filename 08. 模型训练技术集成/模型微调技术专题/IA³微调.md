@@ -122,13 +122,14 @@ print("Output shape:", out.shape)  # (2, 5, 16)
 * **定义**：IA³ 是一种参数高效微调方法，通过在注意力和前馈层中引入缩放向量调节激活值。
 * **公式**：
 
-  $$
-  \text{Attn}(Q,K,V) = \text{softmax}\Big(\frac{Q (K \odot l_k)^T}{\sqrt{d_k}}\Big)(V \odot l_v)
-  $$
+$$
+\text{Attn}(Q,K,V) = \text{softmax}\Big(\frac{Q (K \odot l_k)^T}{\sqrt{d_k}}\Big)(V \odot l_v)
+$$
 
-  $$
-  \text{FFN}(X) = (X W_1 \odot l_{ff}) W_2
-  $$
+$$
+\text{FFN}(X) = (X W_1 \odot l_{ff}) W_2
+$$
+
 * **特点**：
 
   * 只训练少量参数（缩放向量）。
