@@ -57,6 +57,10 @@
   - [P-Tuning v2微调](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83%E6%8A%80%E6%9C%AF%E4%B8%93%E9%A2%98/P-Tuning%20v2%E5%BE%AE%E8%B0%83.md)
   - 重启LoRA （ReLoRA）
   - 量化+LoRA （QLoRA）
+  - [Adapter 微调]（）
+  - [LoHA微调]()
+  - [LoKr微调]()
+  - [Prefix Tuning微调]()  - 
   - [差异化剪枝 （Diff Pruning）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83%E6%8A%80%E6%9C%AF%E4%B8%93%E9%A2%98/%E5%B7%AE%E5%BC%82%E5%8C%96%E5%89%AA%E6%9E%9D%20(Diff%20Pruning)z.md)
   - 添加小型适配器层 （Adapter Modules）
   - [模型剪枝（Model Pruning）](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83%E6%8A%80%E6%9C%AF%E4%B8%93%E9%A2%98/%E6%A8%A1%E5%9E%8B%E5%89%AA%E6%9E%9D%E5%BE%AE%E8%B0%83.md)
