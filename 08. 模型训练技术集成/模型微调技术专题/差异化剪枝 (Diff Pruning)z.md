@@ -110,15 +110,15 @@ print(model.delta)
 * **定义**：Diff Pruning 通过学习 **稀疏差分参数** 来高效微调预训练模型。
 * **数学公式**：
 
-  $$
-  \theta' = \theta + \Delta \theta, \quad 
-  \mathcal{L} = \mathcal{L}_{task} + \lambda \|\Delta \theta\|_1
-  $$
+$$
+\theta' = \theta + \Delta \theta, \quad 
+\mathcal{L} = \mathcal{L}_{task} + \lambda \|\Delta \theta\|_1
+$$
 * **特点**：
 
   * 节省显存和计算量（只更新少量参数）。
   * 保留预训练模型的泛化能力。
   * 剪枝后得到稀疏可解释的差分更新。
-* **代码**：通过冻结原始参数，仅训练 $\Delta \theta$，并加上 L1 正则实现稀疏化。
+* **代码**：通过冻结原始参数，仅训练 $\Delta \theta$ ，并加上 L1 正则实现稀疏化。
 
 
