@@ -29,19 +29,19 @@ $x_{k+1} = x_k + \alpha_k p_k,$
 
 搜索方向由近似的逆海森矩阵  与梯度决定：
 
-p_k = - H_k \nabla f(x_k).
+$p_k = - H_k \nabla f(x_k)$ .
 
 4. 差分向量
 
 定义：
 
-s_k = x_{k+1} - x_k, \quad y_k = \nabla f(x_{k+1}) - \nabla f(x_k).
+$s_k = x_{k+1} - x_k, \quad y_k = \nabla f(x_{k+1}) - \nabla f(x_k)$ .
 
 5. BFGS 更新公式
 
 经典 BFGS 公式对逆海森矩阵的更新为：
 
-H_{k+1} = \left(I - \frac{s_k y_k^T}{y_k^T s_k}\right) H_k \left(I - \frac{y_k s_k^T}{y_k^T s_k}\right) + \frac{s_k s_k^T}{y_k^T s_k}.
+$H_{k+1} = \left(I - \frac{s_k y_k^T}{y_k^T s_k}\right) H_k \left(I - \frac{y_k s_k^T}{y_k^T s_k}\right) + \frac{s_k s_k^T}{y_k^T s_k}$ .
 
 6. L-BFGS 的有限记忆思想
 
@@ -58,29 +58,29 @@ H_{k+1} = \left(I - \frac{s_k y_k^T}{y_k^T s_k}\right) H_k \left(I - \frac{y_k s
 
 
 
-q = \nabla f(x_k).
+$q = \nabla f(x_k)$ .
 
 2. 第一次循环（向后）：
 
 
 
-\alpha_i = \frac{s_i^T q}{y_i^T s_i}, \quad q \leftarrow q - \alpha_i y_i.
+$\alpha_i = \frac{s_i^T q}{y_i^T s_i}, \quad q \leftarrow q - \alpha_i y_i$ .
 
 3. 设置初始矩阵：
 
 
 
-H_0^k = \frac{s_{k-1}^T y_{k-1}}{y_{k-1}^T y_{k-1}} I.
+$H_0^k = \frac{s_{k-1}^T y_{k-1}}{y_{k-1}^T y_{k-1}} I$ .
 
 4. 第二次循环（向前）：
 
 
 
-\beta = \frac{y_i^T r}{y_i^T s_i}, \quad r \leftarrow r + s_i (\alpha_i - \beta).
+$\beta = \frac{y_i^T r}{y_i^T s_i}, \quad r \leftarrow r + s_i (\alpha_i - \beta$ ).
 
 最终：
 
-p_k = -r.
+$p_k = -r$ .
 
 
 ---
