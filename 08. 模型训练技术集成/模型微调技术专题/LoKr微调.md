@@ -6,9 +6,9 @@
 
 不同之处在于：
 
-* **LoRA**：$\Delta W = BA$，低秩近似。
-* **LoHA**：$\Delta W = (BA) \odot (DC)$，用 Hadamard 积增强表达能力。
-* **LoKr**：$\Delta W$ 使用 **Kronecker 积 (⊗)** 表示，即：
+* **LoRA**： $\Delta W = BA$ ，低秩近似。
+* **LoHA**： $\Delta W = (BA) \odot (DC)$ ，用 Hadamard 积增强表达能力。
+* **LoKr**： $\Delta W$ 使用 **Kronecker 积 (⊗)** 表示，即：
 
   $$
   \Delta W = A \otimes B
