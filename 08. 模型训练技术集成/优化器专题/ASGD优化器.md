@@ -35,7 +35,7 @@ $$
 2. **平均参数更新**（从某个迭代 $t_0$ 开始）：
 
 $$
-\bar{\theta}_{t+1} = \frac{1}{t - t_0 + 1} \sum_{k=t_0}^{t} \theta_k
+\bar{\theta}_ {t+1} = \frac{1}{t - t_0 + 1} \sum_{k=t_0}^{t} \theta_k
 $$
 
 最后得到的模型参数为：
