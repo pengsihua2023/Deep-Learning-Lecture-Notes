@@ -13,10 +13,10 @@ Kaiming 初始化由何凯明（Kaiming He）等人在 2015 年论文 *Delving D
 
 ## 数学描述
 
-假设某一层的输入维度为 $n_\text{in}$（即 $fan_in$ ，输入神经元个数），则权重 $W$ 来自区间：
+假设某一层的输入维度为 $n_\text{in}$（即 $fan_\text{in}$ ，输入神经元个数），则权重 $W$ 来自区间：
 
 $$
-W \sim U\left(-\text{bound}, \; \text{bound}\right)
+W \sim U\left(-\text{bound}, \text{bound}\right)
 $$
 
 其中：
