@@ -1,4 +1,4 @@
-# LoHA (Low-rank Hadamard Product Approximation) 微调方法
+# LoHA微调方法 (Low-rank Hadamard Product Approximation) 
 
 ## 1. 定义
 
