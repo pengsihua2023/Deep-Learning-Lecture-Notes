@@ -1,4 +1,4 @@
-# LoKr (Low-rank Kronecker Product Adaptation) 微调方法
+# LoKr微调方法 (Low-rank Kronecker Product Adaptation) 
 
 ## 1. 定义
 
