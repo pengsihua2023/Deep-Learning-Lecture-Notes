@@ -18,9 +18,9 @@
 
 设：
 
-* 原始权重矩阵：$W \in \mathbb{R}^{d \times k}$
-* 量化后的权重：$\hat{W} = Q(W)$，其中 $Q(\cdot)$ 表示量化函数（如 4-bit NF4）
-* LoRA 参数：$A \in \mathbb{R}^{r \times k}, B \in \mathbb{R}^{d \times r}, r \ll \min(d,k)$
+* 原始权重矩阵： $W \in \mathbb{R}^{d \times k}$
+* 量化后的权重： $\hat{W} = Q(W)$，其中 $Q(\cdot)$ 表示量化函数（如 4-bit NF4）
+* LoRA 参数： $A \in \mathbb{R}^{r \times k}, B \in \mathbb{R}^{d \times r}, r \ll \min(d,k)$
 
 **QLoRA 有效权重表示**：
 
