@@ -25,7 +25,7 @@ $$
 \text{bound} = \sqrt{\frac{6}{n_\text{in} \cdot (1 + a^2)}}
 $$
 
-* $a$ 是 ReLU 的 **负半轴斜率**（对于标准 ReLU，$a = 0$；对于 Leaky ReLU，$a$ 是泄露系数）。
+* $a$ 是 ReLU 的 **负半轴斜率**（对于标准 ReLU， $a = 0$ ；对于 Leaky ReLU，$a$ 是泄露系数）。
 * 当 $a = 0$（标准 ReLU）时，公式化简为：
 
 $$
