@@ -26,9 +26,9 @@ $$
 
 * 对每一层 $l$，引入 prefix key 和 prefix value：
 
-  $$
-  K' = [P_k^l; K], \quad V' = [P_v^l; V]
-  $$
+$$
+K' = [P_k^l; K], \quad V' = [P_v^l; V]
+$$
 
 其中：
 
@@ -110,9 +110,7 @@ $$
 
 ---
 
-下面使用 Hugging Face PEFT 在 BERT 上进行 Prefix Tuning 微调** 的完整示例。我们用一个小型文本分类任务（SST-2 情感分类）来演示。
-
----
+下面使用 Hugging Face PEFT 在 BERT 上进行 Prefix Tuning 微调 的完整示例。我们用一个小型文本分类任务（SST-2 情感分类）来演示。
 
 ## Prefix Tuning with Hugging Face PEFT
 
@@ -181,7 +179,6 @@ pred = outputs.logits.argmax(dim=-1).item()
 print(f"输入: {text} → 预测类别: {pred}")
 ```
 
----
 
 ## 说明
 
