@@ -32,7 +32,7 @@ $$
 W \sim U\left(-\sqrt{\frac{6}{n_\text{in}}}, \; \sqrt{\frac{6}{n_\text{in}}}\right)
 $$
 
-> 这个范围比 Xavier Uniform 更大，因为 ReLU 会丢掉一半输入（负数部分变 0），所以要加大权重的方差。
+这个范围比 Xavier Uniform 更大，因为 ReLU 会丢掉一半输入（负数部分变 0），所以要加大权重的方差。
 
 
 
