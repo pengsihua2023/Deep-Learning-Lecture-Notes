@@ -7,7 +7,7 @@
 **Uniform Initialization** 是深度学习中一种参数初始化方法，它将神经网络的权重初始化为在一个均匀分布区间 $[a, b]$ 内随机采样的值。
 其核心思想是通过合理选择区间范围，避免网络在训练开始时出现梯度消失或梯度爆炸的问题。
 
----
+
 
 ## 数学描述
 
@@ -28,25 +28,25 @@ $$
 1. **简单均匀分布**：
    手动指定一个常数范围，如：
 
-   $$
-   W \sim U(-0.05, 0.05)
-   $$
+$$
+W \sim U(-0.05, 0.05)
+$$
 
 2. **Xavier/Glorot Uniform Initialization**（常用于Sigmoid/Tanh 激活）：
 
-   $$
-   W \sim U\Big(-\sqrt{\frac{6}{n_\text{in}+n_\text{out}}}, \; \sqrt{\frac{6}{n_\text{in}+n_\text{out}}}\Big)
-   $$
+$$
+W \sim U\Big(-\sqrt{\frac{6}{n_\text{in}+n_\text{out}}}, \; \sqrt{\frac{6}{n_\text{in}+n_\text{out}}}\Big)
+$$
 
-   其中 $n_\text{in}$ 是输入维度，$n_\text{out}$ 是输出维度。
+   其中 $n_\text{in}$ 是输入维度， $n_\text{out}$ 是输出维度。
 
 3. **He/Kaiming Uniform Initialization**（常用于ReLU 激活）：
 
-   $$
-   W \sim U\Big(-\sqrt{\frac{6}{n_\text{in}}}, \; \sqrt{\frac{6}{n_\text{in}}}\Big)
-   $$
+$$
+W \sim U\Big(-\sqrt{\frac{6}{n_\text{in}}}, \; \sqrt{\frac{6}{n_\text{in}}}\Big)
+$$
 
----
+
 
 ## 最简单的代码例子
 
