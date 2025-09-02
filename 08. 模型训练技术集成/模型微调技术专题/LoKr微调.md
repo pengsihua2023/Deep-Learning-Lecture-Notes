@@ -10,9 +10,9 @@
 * **LoHA**： $\Delta W = (BA) \odot (DC)$ ，用 Hadamard 积增强表达能力。
 * **LoKr**： $\Delta W$ 使用 **Kronecker 积 (⊗)** 表示，即：
 
-  $$
-  \Delta W = A \otimes B
-  $$
+$$
+\Delta W = A \otimes B
+$$
 
   其中 $A, B$ 是较小的矩阵。
 
