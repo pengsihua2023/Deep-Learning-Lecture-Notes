@@ -13,7 +13,7 @@ Kaiming 初始化由何凯明（Kaiming He）等人在 2015 年论文 *Delving D
 
 ## 数学描述
 
-假设某一层的输入维度为 $n_\text{in}$（即 fan\_in，输入神经元个数），则权重 $W$ 来自区间：
+假设某一层的输入维度为 $n_\text{in}$（即 $fan\_in$ ，输入神经元个数），则权重 $W$ 来自区间：
 
 $$
 W \sim U\left(-\text{bound}, \; \text{bound}\right)
@@ -25,7 +25,7 @@ $$
 \text{bound} = \sqrt{\frac{6}{n_\text{in} \cdot (1 + a^2)}}
 $$
 
-* $a$ 是 ReLU 的 **负半轴斜率**（对于标准 ReLU， $a = 0$ ；对于 Leaky ReLU，$a$ 是泄露系数）。
+* $a$ 是 ReLU 的 **负半轴斜率**（对于标准 ReLU， $a = 0$ ；对于 Leaky ReLU， $a$ 是泄露系数）。
 * 当 $a = 0$（标准 ReLU）时，公式化简为：
 
 $$
