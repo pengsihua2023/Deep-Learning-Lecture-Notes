@@ -1,6 +1,4 @@
-LSUV初始化 (Layer-Sequential Unit-Variance Initialization)
-
-
+# LSUV初始化 (Layer-Sequential Unit-Variance Initialization)
 
 ## 定义
 
@@ -25,36 +23,36 @@ $$
 y = W x + b
 $$
 
-其中 $x$ 是输入，$W$ 是权重矩阵。
+其中 $x$ 是输入， $W$ 是权重矩阵。
 
 LSUV 的步骤：
 
 1. **初始权重**
    使用正交初始化：
 
-   $$
-   W_0 = \text{orthogonal}(shape)
-   $$
+$$
+W_0 = \text{orthogonal}(shape)
+$$
 
 2. **前向传播**
    用一小批数据（mini-batch）计算输出：
 
-   $$
-   y = f(Wx + b)
-   $$
+$$
+y = f(Wx + b)
+$$
 
 3. **调整方差**
    计算当前输出的方差：
 
-   $$
-   \sigma^2 = \text{Var}(y)
-   $$
+$$
+\sigma^2 = \text{Var}(y)
+$$
 
    更新权重：
 
-   $$
-   W \leftarrow \frac{W}{\sqrt{\sigma^2}}
-   $$
+$$
+W \leftarrow \frac{W}{\sqrt{\sigma^2}}
+$$
 
 4. **重复** 直到输出方差接近 1（容忍范围 $\epsilon$，如 $|\sigma^2 - 1| < 0.1$）。
 
