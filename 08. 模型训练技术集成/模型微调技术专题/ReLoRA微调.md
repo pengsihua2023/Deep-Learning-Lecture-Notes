@@ -18,8 +18,8 @@
 
 设：
 
-* 原始权重矩阵：$W \in \mathbb{R}^{d \times k}$
-* LoRA 参数：$A_t \in \mathbb{R}^{r \times k}, B_t \in \mathbb{R}^{d \times r}$
+* 原始权重矩阵： $W \in \mathbb{R}^{d \times k}$
+* LoRA 参数： $A_t \in \mathbb{R}^{r \times k}, B_t \in \mathbb{R}^{d \times r}$
 * 有效权重：
 
 $$
