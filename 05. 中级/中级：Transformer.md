@@ -216,9 +216,8 @@ Transformer的数学核心在于：
 
 **完整的Transformer vs 编码器Transformer**
 
----
 
-## 📖 两种Transformer的比较
+##  两种Transformer的比较
 
 | 组件   | 完整Transformer | 编码器Transformer |
 | ---- | ------------- | -------------- |
@@ -226,9 +225,6 @@ Transformer的数学核心在于：
 | 解码器  | ✅             | ❌              |
 | 适用任务 | 翻译、摘要         | 分类、情感分析        |
 | 输入输出 | 序列→序列         | 序列→类别          |
-
----
-
 
 
 ```python
