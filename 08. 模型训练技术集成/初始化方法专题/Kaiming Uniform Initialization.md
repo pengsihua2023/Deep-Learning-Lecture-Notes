@@ -2,16 +2,16 @@
 
 
 
-## 定义
+## 📖 定义
 
 **Kaiming Uniform Initialization** 是 He Initialization 的 **均匀分布版本**，用于 ReLU 及其变体激活函数（如 ReLU、LeakyReLU）。
 它的目标是让 **前向传播时每一层的输出方差保持稳定**，避免梯度消失或梯度爆炸。
 
 Kaiming 初始化由何凯明（Kaiming He）等人在 2015 年论文 *Delving Deep into Rectifiers* 提出。
 
----
 
-## 数学描述
+
+## 📖 数学描述
 
 假设某一层的输入维度为 $n_\text{in}$（即 $fan_\text{in}$ ，输入神经元个数），则权重 $W$ 来自区间：
 
@@ -36,7 +36,7 @@ $$
 
 
 
-## 最简单的代码例子
+## 📖 最简单的代码例子
 
 ### PyTorch 实现
 
