@@ -8,7 +8,7 @@
 (此图引自Internet。)
 </div>
 
-### 核心思想
+### 📖 核心思想
 
 1. **自注意力机制（Self-Attention）**：
    每个元素（如词向量）与序列中其他元素计算相关性，动态获取上下文信息，从而捕捉长距离依赖。
@@ -24,7 +24,7 @@
    * **编码器 (Encoder)**：将输入序列映射为上下文表示。
    * **解码器 (Decoder)**：基于编码器的表示和已生成的输出，逐步预测目标序列。
 
-### 常见应用
+### 📖 常见应用
 
 * **自然语言处理 (NLP)**：机器翻译（如 Google 翻译）、文本生成（GPT 系列）、问答系统、文本摘要。
 * **计算机视觉 (CV)**：Vision Transformer (ViT) 用于图像分类、目标检测。
@@ -39,7 +39,7 @@ Transformer 使用“注意力机制”（Attention），关注输入中最重�
  为什么教：Transformer 代表 AI 的最新进展。
 
 
-## Transformer的数学描述
+### 📖 Transformer的数学描述
 Transformer架构是自然语言处理和深度学习领域的核心模型，最初由Vaswani等人在2017年论文《Attention is All You Need》中提出。以下是其数学描述，涵盖主要组成部分，包括输入表示、注意力机制、位置编码、前馈网络和层归一化等。    
 ### 1. 整体架构  
 Transformer由编码器（Encoder）和解码器（Decoder）组成，每部分包含多个堆叠的层（通常是 $ N $ 层）。编码器处理输入序列，解码器生成输出序列。核心创新是自注意力机制（Self-Attention），取代了传统循环神经网络（RNN）的序列处理方式。  
@@ -212,13 +212,13 @@ Transformer的数学核心在于：
 位置编码：弥补序列顺序信息。  
 残差与归一化：稳定训练并加速收敛。  
 
-## 一个只有编码器的Transformer
+## 📖 一个只有编码器的Transformer
 
 **完整的Transformer vs 编码器Transformer**
 
 ---
 
-### 两种Transformer的比较
+## 📖 两种Transformer的比较
 
 | 组件   | 完整Transformer | 编码器Transformer |
 | ---- | ------------- | -------------- |
@@ -647,7 +647,7 @@ if __name__ == "__main__":
 ```
 
 
-### 代码总体说明：
+### 📖 代码总体说明：
 1. **代码功能**：
    - 这是一个完整的PyTorch实现，用于基于Transformer的序列分类任务。
    - 包括位置编码、Transformer模型、数据集处理、数据生成、模型训练、结果可视化和预测功能。
@@ -667,7 +667,7 @@ if __name__ == "__main__":
    - 合成数据用于演示，实际应用可替换为真实数据集。
    - 可通过调整模型参数（如`d_model`、`nhead`等）优化性能。
 
-## 注释
+## 📖 注释
 ### 1. 数据准备
 ```
 # 生成2000个样本
@@ -703,7 +703,7 @@ for epoch in range(15):
 criterion = nn.CrossEntropyLoss()  # 交叉熵损失
 optimizer = optim.Adam(model.parameters(), lr=0.0005)  # Adam优化器
 ```
-### 总结
+### 📖 总结
 数据：程序生成的合成数据，基于统计特征分类 
 模型：只有编码器的Transformer，用于序列分类  
 解码器：没有，因为不需要生成序列输出  
