@@ -20,10 +20,10 @@
 
 设：
 
-* Transformer 隐状态向量：$h \in \mathbb{R}^d$
-* Adapter 降维矩阵：$W_{down} \in \mathbb{R}^{r \times d}$
-* Adapter 升维矩阵：$W_{up} \in \mathbb{R}^{d \times r}$
-* 激活函数：$\sigma(\cdot)$
+* Transformer 隐状态向量： $h \in \mathbb{R}^d$
+* Adapter 降维矩阵： $W_{down} \in \mathbb{R}^{r \times d}$
+* Adapter 升维矩阵： $W_{up} \in \mathbb{R}^{d \times r}$
+* 激活函数： $\sigma(\cdot)$
 
 **Adapter 前向计算**：
 
