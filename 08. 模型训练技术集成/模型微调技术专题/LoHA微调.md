@@ -1,6 +1,6 @@
 # LoHA微调方法 (Low-rank Hadamard Product Approximation) 
 
-## 1. 定义
+## 📖 1. 定义
 
 **LoHA** 是一种参数高效微调 (PEFT, Parameter-Efficient Fine-Tuning) 方法，它和 **LoRA** 类似，但在低秩分解时引入了 **Hadamard 逐元素乘积**，从而在保持低秩更新的同时增强表示能力。
 
@@ -25,7 +25,7 @@
 这样，LoHA 相比 LoRA 在相似参数规模下，能表示更复杂的变化。
 
 
-## 2. 数学公式
+## 📖 2. 数学公式
 
 设原始权重为 $W$，LoHA 训练时冻结 $W$，仅训练 $\Delta W$：
 
@@ -50,7 +50,7 @@ $$
 训练时只更新 $(A, B, C, D)$，原始权重 $W$ 保持冻结。
 
 
-## 3. 最简代码例子
+## 📖 3. 最简代码例子
 
 用 **PyTorch** 实现一个极简 LoHA 线性层：
 
@@ -87,7 +87,7 @@ print("输出形状:", out.shape)
 
 
 
-✅ 总结：
+📖  总结：
 
 * **LoRA**：低秩加法更新 $\Delta W = BA$。
 * **LoHA**：低秩 + Hadamard 更新 $\Delta W = (BA) \odot (DC)$，表示能力更强。
