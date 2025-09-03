@@ -40,7 +40,7 @@ AlexNet 是一种具有里程碑意义的卷积神经网络（Convolutional Neur
 
 在AlexNet的原始设计中，第二层卷积（CONV2）到第三层卷积（CONV3）的“交叉”指的是跨GPU连接，即CONV3的内核会从前一层（CONV2）的所有内核地图（kernel maps，包括两个GPU上的）获取输入。这种设计是为了在多GPU并行训练时，确保模型能够捕获更全面的特征信息，同时控制计算开销。原论文中指出，这种连接模式是通过交叉验证（cross-validation）实验选择的，以平衡GPU间的通信量和整体性能——如果所有层都交叉，通信开销会过高，成为训练瓶颈；如果完全无交叉，则模型准确率会下降（实验显示，相比单GPU一半内核的版本，这种设计降低了top-1错误率1.7%和top-5错误率1.2%）。 
 
-### 代码
+### 📖 代码
 该代码实现了一个**简化的AlexNet卷积神经网络**，用于在**CIFAR-10数据集**上进行图像分类任务。主要功能如下：
 
 1. **模型定义**：实现了一个适配CIFAR-10的AlexNet模型，包含5层卷积（`features`）和3层全连接层（`classifier`），使用ReLU激活、最大池化和Dropout正则化，输出10类分类结果。
@@ -189,7 +189,7 @@ if __name__ == "__main__":
     test_model()
     plot_training_curve()
 ```
-### 训练结果
+### 📖 训练结果
 [Epoch 29, Batch 600] Loss: 0.421  
 [Epoch 30, Batch 200] Loss: 0.378  
 [Epoch 30, Batch 400] Loss: 0.396  
