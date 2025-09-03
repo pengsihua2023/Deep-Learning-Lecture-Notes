@@ -176,7 +176,7 @@ for epoch in range(1, epochs + 1):
 - **深度学习**：适用于CNN、RNN等任务，特别是在需要强正则化的场景。
 - **与其他技术结合**：可与Dropout、BatchNorm、ReduceLROnPlateau（如前述问题）联合使用。
 
-#### 注意事项
+### 📖 注意事项
 - **权重衰减调优**：`weight_decay`需通过交叉验证或贝叶斯优化调整。
 - **学习率**：AdamW对学习率敏感，可结合学习率调度（如ReduceLROnPlateau）。
 - **内存需求**：与Adam相同，需存储动量信息。
