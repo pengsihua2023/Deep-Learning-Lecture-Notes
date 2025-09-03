@@ -13,7 +13,7 @@
 
 
 
-## 🔢 2. 数学描述
+## 📖 2. 数学描述
 
 设：
 
@@ -48,7 +48,7 @@ $$
 
 
 
-## 💻 3. 简单代码演示
+## 📖 3. 简单代码演示
 
 下面用 Hugging Face + PyTorch 给出一个简化的 **Prompt Tuning** 实现（文本分类为例）：
 
@@ -107,7 +107,7 @@ print(logits)
 
 
 
-## ✅ 总结
+## 📖 总结
 
 * **Prompt Tuning 定义**：在输入序列前添加 **可学习的 soft prompt**，冻结模型，仅训练 prompt 参数。
 * **数学形式**：$\mathcal{L}(P) = - \sum \log p(y \mid [P; X]; \theta)$。
