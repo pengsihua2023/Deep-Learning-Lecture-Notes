@@ -14,7 +14,7 @@
 (此图引自Internet。)
 </div>
 
-## 数学描述
+## 📖 数学描述
 
 ## 1. 网络结构
 
@@ -140,7 +140,7 @@ $$
 
 
 
-## 代码（pytorch）
+## 📖 代码（pytorch）
 ```python
 import torch
 import torch.nn as nn
@@ -243,7 +243,7 @@ if __name__ == "__main__":
     test_model()
 
 ```
-## 训练结果
+## 📖 训练结果
 Epoch [5/5], Step [800], Loss: 0.3124   
 Epoch [5/5], Step [900], Loss: 0.2941   
 
