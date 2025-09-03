@@ -98,7 +98,7 @@ plt.show()
 ## 总结
 
 * **定义**：Saliency Maps 用输入梯度解释模型预测。
-* **公式**：$M(x) = \left| \frac{\partial S_c(x)}{\partial x} \right|$。
+* **公式**： $M(x) = \left| \frac{\partial S_c(x)}{\partial x} \right|$。
 * **代码**：只需几行 PyTorch 梯度操作即可生成显著性图。
 
 ---
