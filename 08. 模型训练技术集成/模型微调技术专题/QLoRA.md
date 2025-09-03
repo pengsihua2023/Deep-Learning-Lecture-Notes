@@ -1,7 +1,7 @@
 # QLoRA (Quantized Low-Rank Adaptation) 微调方法
 
 
-## 1. 定义
+## 📖 1. 定义
 
 **QLoRA (Quantized Low-Rank Adaptation)** 是 2023 年提出的一种高效微调大语言模型 (LLM) 的方法，它结合了 **权重量化 (Quantization)** 和 **LoRA (Low-Rank Adaptation)**：
 
@@ -14,7 +14,7 @@
   * 保持高效和低显存开销。
 
 
-## 2. 数学公式
+## 📖 2. 数学公式
 
 设：
 
@@ -36,7 +36,7 @@ $$
 训练时仅更新 $A,B$，保持 $\hat{W}$ 不变，从而减少内存和计算开销。
 
 
-## 3. 最简代码例子
+## 📖 3. 最简代码例子
 
 用 Hugging Face **PEFT** 库进行 QLoRA 微调的最小示例（假设模型是一个小型 Transformers 模型）：
 
@@ -80,7 +80,7 @@ print("Logits shape:", outputs.logits.shape)
 ```
 
 
-## 解释
+## 📖 解释
 
 1. **`load_in_4bit=True`** → 模型权重加载为 4-bit，显著节省显存。
 2. **`prepare_model_for_kbit_training`** → 冻结量化权重，并启用必要的梯度支持。
@@ -92,7 +92,7 @@ print("Logits shape:", outputs.logits.shape)
 
 ---
 
-## QLoRA 微调完整示例
+## 📖 QLoRA 微调完整示例
 
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer, Trainer, TrainingArguments, TextDataset, DataCollatorForLanguageModeling
@@ -172,7 +172,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
 
 
-## 代码说明
+## 📖 代码说明
 
 1. **量化加载**：`load_in_4bit=True` → 使用 4-bit NF4 权重。
 2. **LoRA 配置**：仅在注意力层的 `q_proj, v_proj` 上插入低秩适配器。
