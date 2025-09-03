@@ -128,7 +128,7 @@ $$
 W_i^Q, W_i^K, W_i^V \in \mathbb{R}^{d \times d_k}, \quad W^O \in \mathbb{R}^{h \cdot d_k \times d}, \quad h \text{是头数}, d_k = \frac{d}{h}
 $$
 
----
+
 
 ### 掩码自注意力（解码器特有）
 
@@ -210,12 +210,13 @@ Transformer的数学核心在于：
 自注意力：通过Q, K, V捕捉序列内关系。  
 多头机制：并行捕捉多种语义关系。  
 位置编码：弥补序列顺序信息。  
-残差与归一化：稳定训练并加速收敛。  
+残差与归一化：稳定训练并加速收敛。 
+
+--- 
 
 ## 📖 一个只有编码器的Transformer
 
 **完整的Transformer vs 编码器Transformer**
-
 
 ##  两种Transformer的比较
 
