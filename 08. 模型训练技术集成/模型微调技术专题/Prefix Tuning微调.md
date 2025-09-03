@@ -1,7 +1,7 @@
 # Prefix Tuning 微调
 
 
-## 1. 定义
+## 📖 1. 定义
 
 **Prefix Tuning** 是一种参数高效微调 (PEFT, Parameter-Efficient Fine-Tuning) 方法。
 核心思想：
@@ -14,7 +14,7 @@
 
 
 
-## 2. 数学公式
+## 📖 2. 数学公式
 
 设 Transformer 的注意力层输入为 **query**、**key**、**value**：
 
@@ -44,7 +44,7 @@ $$
 训练时只更新 $\{P_k^l, P_v^l\}$，冻结原始 $W_Q, W_K, W_V$。
 
 
-## 3. 最简代码例子
+## 📖 3. 最简代码例子
 
 用 **PyTorch** 写一个最小化 Prefix Tuning 的示例（在一个 Transformer 层里加 prefix）：
 
@@ -98,7 +98,7 @@ print("输出形状:", out.shape)
 
 
 
-## 总结
+## 📖 总结
 
 * **Prefix Tuning**：在注意力层前引入 prefix key/value，不修改原始权重。
 * **优点**：极大降低训练参数量，方便多任务共享预训练模型。
@@ -110,10 +110,9 @@ $$
 
 ---
 
-下面使用 Hugging Face PEFT 在 BERT 上进行 Prefix Tuning 微调 的完整示例。我们用一个小型文本分类任务（SST-2 情感分类）来演示。
 
-## Prefix Tuning with Hugging Face PEFT
-
+## 📖 Prefix Tuning with Hugging Face PEFT
+下面使用 Hugging Face PEFT 在 BERT 上进行 Prefix Tuning 微调 的完整示例。我们用一个小型文本分类任务（SST-2 情感分类）来演示。  
 ```python
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, TrainingArguments, Trainer
 from datasets import load_dataset
@@ -180,7 +179,7 @@ print(f"输入: {text} → 预测类别: {pred}")
 ```
 
 
-## 说明
+## 📖 说明
 
 1. **Prefix Tuning 配置**
 
