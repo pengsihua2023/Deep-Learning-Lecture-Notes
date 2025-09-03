@@ -1,5 +1,5 @@
-## Adam变体 （AdamW）
-### 📖 什么是Adam变体（AdamW）？
+## AdamW
+### 📖 什么是AdamW？
 
 AdamW（Adaptive Moment Estimation with Weight Decay）是Adam优化器的一种变体，改进了Adam在正则化（特别是L2正则化或权重衰减）方面的处理方式。AdamW通过将权重衰减（Weight Decay）与自适应学习率解耦，解决了原始Adam在权重衰减上的次优表现问题，使其在许多任务中收敛更快且泛化能力更强。
 
