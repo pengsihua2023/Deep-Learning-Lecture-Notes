@@ -2,8 +2,9 @@
 
 ## 📖 1. P-Tuning v2 的定义
 
-**P-Tuning v2** 是清华大学提出的 **参数高效微调（PEFT）方法**，是对 P-Tuning 的改进版本。
-<img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/c4b2d742-c5fb-4f3b-ae3c-1c4645b46a5e" />
+**P-Tuning v2** 是清华大学提出的 **参数高效微调（PEFT）方法**，是对 P-Tuning 的改进版本。  
+
+<img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/c4b2d742-c5fb-4f3b-ae3c-1c4645b46a5e" />
 
 
 * **核心思想**：在模型 **每一层 Transformer 的输入** 都插入一组 **可学习的连续提示向量（prefix vectors）**。
