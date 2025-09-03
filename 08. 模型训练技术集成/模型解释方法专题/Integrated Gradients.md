@@ -19,9 +19,9 @@
 
 设：
 
-* 输入：$x$
+* 输入： $x$
 * 参考输入：$x'$（baseline）
-* 模型函数：$F(x)$
+* 模型函数： $F(x)$
 * 输入第 $i$ 个特征的 Integrated Gradient：
 
 $$
