@@ -24,9 +24,8 @@
 * 模型函数： $F(x)$
 * 输入第 $i$ 个特征的 Integrated Gradient：
 
-$$
-IG_i(x) = (x_i - x'_i) \times \int_{\alpha=0}^{1} \frac{\partial F\big(x' + \alpha (x - x')\big)}{\partial x_i} d\alpha
-$$
+<img width="432" height="70" alt="image" src="https://github.com/user-attachments/assets/71740f5a-5633-46c0-9a23-d3f5bc9ce906" />
+
 
 解释：
 
