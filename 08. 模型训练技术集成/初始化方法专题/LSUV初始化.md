@@ -1,6 +1,6 @@
 # LSUV初始化 (Layer-Sequential Unit-Variance Initialization)
 
-## 定义
+## 📖 定义
 
 **LSUV (Layer-Sequential Unit-Variance Initialization)** 是一种神经网络权重初始化方法，由 Mishkin 和 Matas 在 2015 年提出（论文 *All you need is a good init*）。
 
@@ -13,9 +13,8 @@
 
 这样可以确保在训练开始时，所有层的输出分布比较稳定，避免梯度消失或爆炸。
 
----
 
-## 数学描述
+## 📖 数学描述
 
 假设某一层的输出为：
 
@@ -58,7 +57,7 @@ $$
 
 
 
-## 最简单的代码例子
+## 📖 最简单的代码例子
 
 ### PyTorch 伪实现
 
@@ -129,7 +128,7 @@ print("LSUV 后输出方差:", np.var(x.dot(weights_lsuv.T)))
 
 
 
-✅ 总结：
+📖 总结：
 
 * **LSUV 初始化** = 正交初始化 + 逐层调整方差到 1；
 * 数学上就是通过缩放权重来保证 $\text{Var}(y) \approx 1$；
