@@ -1,5 +1,5 @@
 ## 标准化层输入
-### 什么是标准化层输入（Layer Normalization）？
+### 📖 什么是标准化层输入（Layer Normalization）？
 
 层标准化（Layer Normalization，简称LN）是一种在深度学习中用于归一化神经网络输入的正则化技术，特别适用于循环神经网络（RNN）、Transformer等模型。与批量标准化（Batch Normalization，BN）不同，LN在每一层的输入上对**单个样本的特征维度**进行归一化，而不是跨批量归一化。这使得LN对批量大小不敏感，尤其适合小批量或序列任务。
 
@@ -51,7 +51,7 @@ $$
 
 ---
 
-### Python代码示例
+### 📖 Python代码示例
 
 以下是一个使用PyTorch实现Layer Normalization的简单示例，基于MNIST手写数字分类任务。代码在全连接神经网络中添加LN层，并结合Adam优化器和早停（参考前述问题）。
 
@@ -175,7 +175,7 @@ print(f'Test Accuracy: {test_accuracy:.2f}%')
 
 ---
 
-### 代码说明
+### 📖 代码说明
 
 1. **模型定义**：
    - `LayerNormNet` 是一个全连接神经网络，输入为MNIST的28x28像素图像，输出为10类分类。
@@ -209,7 +209,7 @@ print(f'Test Accuracy: {test_accuracy:.2f}%')
 
 ---
 
-### 关键点
+### 📖 关键点
 - **LN位置**：通常放在线性层或卷积层后，激活函数前。
 - **批量无关**：LN对每个样本独立归一化，适合小批量或单样本推理。
 - **可学习参数**：`nn.LayerNorm`自动维护`gamma`和`beta`，通过优化器学习。
@@ -219,12 +219,12 @@ print(f'Test Accuracy: {test_accuracy:.2f}%')
 
 ---
 
-### 实际应用场景
+### 📖 实际应用场景
 - **Transformer模型**：LN是Transformer（如BERT、GPT）的标准组件，通常用于多头注意力（Multi-Head Attention）和前馈网络（Feed-Forward）后。
 - **序列任务**：在RNN、LSTM等模型中，LN比BN更稳定。
 - **小批量场景**：LN适合在线学习或批量大小为1的情况。
 
-#### 注意事项
+### 📖 注意事项
 - **特征维度**：`nn.LayerNorm`需指定归一化的维度（如128），确保与输入匹配。
 - **计算开销**：LN对高维特征的计算略高于BN，但通常影响不大。
 - **与其他正则化结合**：可与Dropout、L1/L2正则化（如前述问题）联合使用。
