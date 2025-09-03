@@ -9,7 +9,7 @@ BERT（Bidirectional Encoder Representations from Transformers）是 Google 在 
 </div>
 
 
-## BERT模型的数学描述
+## 📖 BERT模型的数学描述
 
 ### 1. 输入表示（Input Representation）
 
@@ -114,12 +114,12 @@ $\mathcal{L} = \mathcal{L}_ {MLM} + \mathcal{L}_ {NSP}. $
 ---
 
 
-### 适用场景：
+### 📖 适用场景：
 文本分类、问答、NER、翻译等。
 
 ---
 
-#### **具体问题实现：文本分类 + 数据集加载 + 注意力可视化**
+### 📖 **具体问题实现：文本分类 + 数据集加载 + 注意力可视化**
 以下是一个完整的 PyTorch 代码示例，使用 Hugging Face 的 `transformers` 库实现 BERT 模型，解决**文本分类任务**（以情感分析为例，使用 IMDb 数据集），包括：
 - 数据集加载（IMDb 数据集，简化版本）。
 - BERT 模型微调。
@@ -227,7 +227,7 @@ plt.ylabel('Tokens')
 plt.show()
 ```
 
-##### **代码说明**
+###  📖 **代码说明**
 - **数据集加载**：
   - 使用 `datasets` 库加载 IMDb 数据集（情感分析，二分类：正/负），取前 1000 条数据以简化。
   - 自定义 `IMDbDataset` 类，将文本编码为 `input_ids` 和 `attention_mask`，并提供标签。
@@ -247,7 +247,7 @@ plt.show()
   - 预测情感（正/负）。
   - 注意力热图，显示 `[CLS]` 和其他 token 的注意力权重。
 
-#### **注意事项**
+### 📖 **注意事项**
 1. **环境**：
    - 安装依赖：`pip install transformers datasets torch matplotlib seaborn`.
    - GPU 加速：将模型和数据移到 GPU（`model.to(device)`）。
@@ -264,7 +264,7 @@ plt.show()
    - BERT 计算密集，建议 GPU 运行。
    - 批大小和序列长度（`max_length`）需根据硬件调整。
 
-#### **扩展**
+### 📖 **扩展**
 1. **多任务**：
    - 问答：使用 `BertForQuestionAnswering`，输入问题和上下文，输出答案跨度。
    - NER：使用 `BertForTokenClassification`，为每个 token 预测标签。
@@ -274,5 +274,5 @@ plt.show()
 3. **反问题**：
    - 结合观测数据估计 BERT 参数（如注意力权重）。
 
-#### **总结**
+### 📖 **总结**
 BERT 通过双向 Transformer 建模语义，预训练后微调适配任务。上述代码展示了在 IMDb 数据集上的文本分类实现，包括数据加载、微调和注意力可视化。
