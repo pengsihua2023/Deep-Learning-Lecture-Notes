@@ -1,5 +1,5 @@
 ## AMSGrad优化器
-### Adagrad 优化器（Adaptive Gradient Algorithm）原理和用法
+### 📖 Adagrad 优化器（Adaptive Gradient Algorithm）原理和用法
 
 #### **原理**
 Adagrad（Adaptive Gradient Algorithm）是一种自适应学习率的优化算法，专门设计用于处理稀疏数据和凸优化问题。它通过根据历史梯度的累积调整每个参数的学习率，使得频繁更新的参数具有较小的学习率，而稀疏更新的参数具有较大的学习率。以下是 Adagrad 的核心原理：
@@ -57,7 +57,7 @@ $$
 
 ---
 
-#### **PyTorch 用法**
+### 📖 **PyTorch 用法**
 PyTorch 提供了内置的 `torch.optim.Adagrad` 优化器，使用非常简单。以下是最简洁的代码示例，展示如何在图像分类任务中使用 Adagrad 优化器训练一个简单的 CNN。
 
 ##### **代码示例**
@@ -102,7 +102,7 @@ print(f"Loss: {loss.item()}")
 
 ---
 
-#### **注意事项**
+### 📖 **注意事项**
 1. **超参数**：
    - `lr`：初始学习率，通常设为 0.01，需根据任务调整。
    - `eps`：防止除零，常用 1e-8，影响较小。
@@ -120,5 +120,5 @@ print(f"Loss: {loss.item()}")
 
 ---
 
-#### **总结**
+### 📖 **总结**
 Adagrad 是一种自适应学习率的优化器，通过累积梯度平方动态调整学习率，特别适合稀疏数据任务。PyTorch 的 `optim.Adagrad` 实现简单，只需指定学习率等少量参数即可。相比 SGD，Adagrad 减少了学习率调参；相比 Adadelta，Adagrad 更简单但可能因学习率衰减过快而停止优化。
