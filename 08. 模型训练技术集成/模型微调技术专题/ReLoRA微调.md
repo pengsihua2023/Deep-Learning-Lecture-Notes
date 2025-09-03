@@ -108,10 +108,10 @@ for step in range(steps):
 3. **训练循环**：每隔 `merge_every` 步调用一次 `merge_lora()`，实现 ReLoRA 的周期性“重启”。
 4. **效果**：相比单纯 LoRA，ReLoRA 可以获得更稳定的收敛效果。
 
-## ReLoRA vs LoRA 收敛效果对比的示例代码。
+## 📖 ReLoRA vs LoRA 收敛效果对比的示例代码。
 我们用一个 **简单的回归任务**，对比两者在相同条件下的损失下降情况。
 
-## ReLoRA vs LoRA 对比实验
+### ReLoRA vs LoRA 对比实验
 
 ```python
 import torch
