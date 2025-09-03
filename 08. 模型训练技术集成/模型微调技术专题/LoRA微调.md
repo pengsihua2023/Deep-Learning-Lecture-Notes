@@ -1,6 +1,6 @@
 # LoRA 微调（Low-Rank Adaptation）
 
-## 1. 定义
+## 📖  1. 定义
 
 **LoRA** 是一种 **参数高效微调（PEFT, Parameter-Efficient Fine-Tuning）** 方法，由微软在 2021 年提出。
 
@@ -17,7 +17,7 @@
 
 
 
-## 2. 数学描述
+## 📖 2. 数学描述
 
 设原始权重矩阵：
 
@@ -40,7 +40,7 @@ $$
 应用在 Transformer 中，LoRA 通常作用在 **注意力层的投影矩阵** $W_Q, W_V$。
 
 
-## 3. 简单代码示例（PyTorch 实现）
+## 📖 3. 简单代码示例（PyTorch 实现）
 
 下面用 PyTorch 写一个 **线性层 + LoRA** 的实现：
 
@@ -72,7 +72,7 @@ print("Output shape:", y.shape)  # (2, 6)
 在实际应用中，LoRA 通常插入到 Transformer 的 **Q (query projection)** 和 **V (value projection)** 矩阵中，用少量参数实现高效适配。
 
 
-## 4. 总结
+## 📖 4. 总结
 
 * **定义**：LoRA 通过低秩分解，仅训练增量参数矩阵，而冻结原始权重。
 * **公式**：
@@ -90,7 +90,7 @@ $$
 
 ---
 
-# 📘 在 Transformer 注意力层中集成 LoRA
+# 📖 在 Transformer 注意力层中集成 LoRA
 
 ## 1. 思路
 
@@ -170,7 +170,7 @@ print("Output shape:", y.shape)  # (2, 5, 16)
 
 ---
 
-## 3. 总结
+## 📖 3. 总结
 
 * **Q、V 投影矩阵** 被替换成 **LoRA 版本**，只训练低秩矩阵 $A, B$。
 * **参数量显著减少**：比如 $d=1024, k=1024, r=8$，LoRA 参数只有 $16k$，远小于全量参数 $1M+$。
@@ -179,7 +179,7 @@ print("Output shape:", y.shape)  # (2, 5, 16)
 ---
 
 
-# 📘 Hugging Face Transformers + LoRA 示例
+# 📖 Hugging Face Transformers + LoRA 示例
 
 ## 1. 安装依赖
 
@@ -290,7 +290,7 @@ model.save_pretrained("./lora-bert")
 
 ---
 
-## 🔑 总结
+## 📖 总结
 
 * **LoRA 在 Hugging Face 中的实现**非常方便，只需用 `peft.LoraConfig` 注入即可。
 * 只训练 **Q、V 矩阵**的低秩更新，大大减少参数量。
