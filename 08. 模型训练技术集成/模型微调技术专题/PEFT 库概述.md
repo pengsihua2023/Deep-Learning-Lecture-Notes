@@ -4,9 +4,8 @@
 
 以下是 PEFT 库的详细介绍，涵盖其核心功能、支持的微调方法、优势、应用场景以及与之前讨论的 Prefix Tuning 相关的代码示例。
 
----
 
-### 核心功能
+### 📖 核心功能
 PEFT 库的主要目标是让用户以极低的参数成本微调大型预训练模型，同时保持与全参数微调（Full Fine-Tuning）相当的性能。其核心功能包括：
 1. **参数高效微调**：仅更新少量新增参数（通常 <1% 的模型参数），冻结原始模型权重，减少内存和计算需求。
 2. **模块化设计**：支持多种高效微调方法，用户可根据任务选择合适的策略。
@@ -17,7 +16,7 @@ PEFT 库的主要目标是让用户以极低的参数成本微调大型预训练
 
 ---
 
-### 支持的微调方法
+### 📖 支持的微调方法
 PEFT 库支持以下主要参数高效微调方法：
 1. **LoRA（Low-Rank Adaptation）**：
    - 通过在权重矩阵中引入低秩分解（Low-Rank Updates）来微调模型。
@@ -39,32 +38,32 @@ PEFT 库支持以下主要参数高效微调方法：
 7. **LoHA（Low-Rank Hadamard Adaptation）**和 **LoKr（Low-Rank Kronecker Adaptation）**：
    - LoRA 的变体，使用不同矩阵分解方式进一步优化效率。
 
----
 
-### 优势
+
+### 📖 优势
 - **低资源需求**：只需微调少量参数（通常几十 KB 到几 MB），适合在普通 GPU 或 CPU 上运行。
 - **快速适配**：不同任务可使用独立的可学习参数，切换任务无需重新训练整个模型。
 - **存储高效**：保存的模型仅包含微调参数，大幅减少存储空间（相比全参数微调的 GB 级模型）。
 - **性能可比**：在许多任务上（如情感分析、文本生成），性能接近甚至优于全参数微调。
 - **开源与社区支持**：PEFT 是开源项目（Apache 2.0 许可证），与 Hugging Face 生态深度整合，社区活跃。
 
----
 
-### 应用场景
+
+### 📖 应用场景
 - **NLP 任务**：情感分析、文本分类、机器翻译、问答、文本生成等。
 - **多任务学习**：通过为每个任务训练独立的微调参数（LoRA 或 Adapter），实现高效任务切换。
 - **边缘设备部署**：在资源受限设备上微调和部署大型模型。
 - **领域适配**：将通用预训练模型快速适配到特定领域（如医疗、法律）。
 - **研究与实验**：快速测试不同微调策略，探索参数高效方法的效果。
 
----
 
-### 与 Prefix Tuning 的关系
+
+### 📖 与 Prefix Tuning 的关系
 你在之前的讨论中重点关注了 **Prefix Tuning**，这是 PEFT 库支持的一种方法。PEFT 通过 `PrefixTuningConfig` 和 `get_peft_model` 函数简化了 Prefix Tuning 的实现，自动将可学习前缀融入 Transformer 的注意力机制。以下是一个基于 IMDB 数据集的真实例子，展示如何使用 PEFT 实现 Prefix Tuning。
 
----
 
-### 代码示例：使用 PEFT 进行 Prefix Tuning（IMDB 数据集）
+
+### 📖 代码示例：使用 PEFT 进行 Prefix Tuning（IMDB 数据集）
 以下代码基于之前讨论的 IMDB 数据集，展示如何使用 PEFT 库进行 Prefix Tuning 实现文本分类（情感分析）。
 
 ```python
@@ -220,9 +219,9 @@ with torch.no_grad():
     print(f"Predicted sentiment: {label_map[predicted_class]}")
 ```
 
----
 
-### 代码说明
+
+### 📖 代码说明
 1. **数据集**：
    - 使用 Hugging Face 的 `datasets` 库加载 IMDB 数据集。
    - 为加速演示，限制训练数据为 2000 条，测试数据为 1000 条（可移除限制使用全部 50,000 条）。
@@ -239,9 +238,9 @@ with torch.no_grad():
    pip install torch transformers peft datasets scikit-learn tqdm
    ```
 
----
 
-### PEFT 库的安装与使用
+
+### 📖 PEFT 库的安装与使用
 - **安装**：
   ```bash
   pip install peft
@@ -250,9 +249,9 @@ with torch.no_grad():
 - **支持模型**：支持 Hugging Face `transformers` 中几乎所有 Transformer 模型。
 - **版本要求**：建议使用最新版本（截至 2025 年 8 月，推荐 PEFT>=0.5.0，transformers>=4.30.0）。
 
----
 
-### 扩展与进一步需求
+
+### 📖 扩展与进一步需求
 如果你需要以下内容，请告诉我，我可以进一步定制：
 1. **其他 PEFT 方法**：如 LoRA 或 Prompt Tuning 的实现。
 2. **其他数据集**：如 Yelp、SST-2、Twitter 等。
