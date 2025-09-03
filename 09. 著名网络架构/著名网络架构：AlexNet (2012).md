@@ -10,7 +10,7 @@ AlexNet 是一种具有里程碑意义的卷积神经网络（Convolutional Neur
 应用：图像分类、特征提取、迁移学习基础。  
 掌握要点：深层CNN设计、过拟合控制。  
 <div align="center">
-<img width="700" height="380" alt="image" src="https://github.com/user-attachments/assets/5bd0deb5-051a-43ba-95f7-931fcd671b32" />  
+<img width="5000" height="280" alt="image" src="https://github.com/user-attachments/assets/5bd0deb5-051a-43ba-95f7-931fcd671b32" />  
 </div>
 
 <div align="center">
@@ -18,7 +18,7 @@ AlexNet 是一种具有里程碑意义的卷积神经网络（Convolutional Neur
 </div>
 
 <div align="center">
-<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/e27296cb-2aee-4389-a119-7c2ac8120d4d" />  
+<img width="500" height="280" alt="image" src="https://github.com/user-attachments/assets/e27296cb-2aee-4389-a119-7c2ac8120d4d" />  
 </div>
 
 <div align="center">
@@ -26,7 +26,7 @@ AlexNet 是一种具有里程碑意义的卷积神经网络（Convolutional Neur
 </div>
 
 <div align="center">
-<img width="700" height="250" alt="image" src="https://github.com/user-attachments/assets/7b145c0e-205a-4c61-ad7f-b477203e8db6" /> 
+<img width="500" height="173" alt="image" src="https://github.com/user-attachments/assets/7b145c0e-205a-4c61-ad7f-b477203e8db6" /> 
 </div>
 
 
