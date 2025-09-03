@@ -1,9 +1,9 @@
 ## Adam变体 （AdamW）
-### 什么是Adam变体（AdamW）？
+### 📖 什么是Adam变体（AdamW）？
 
 AdamW（Adaptive Moment Estimation with Weight Decay）是Adam优化器的一种变体，改进了Adam在正则化（特别是L2正则化或权重衰减）方面的处理方式。AdamW通过将权重衰减（Weight Decay）与自适应学习率解耦，解决了原始Adam在权重衰减上的次优表现问题，使其在许多任务中收敛更快且泛化能力更强。
 
-#### 核心原理
+### 📖 核心原理
 Adam优化器结合了一阶动量（梯度均值）和二阶动量（梯度平方均值）来调整学习率（见前述Adam问题）。原始Adam将权重衰减直接融入梯度更新，相当于在损失函数中添加L2正则化项：
 
 
@@ -50,7 +50,7 @@ $$
 AdamW 直接对参数施加 $\lambda \theta_t$ 的衰减，而不是将其作为梯度的一部分，从而更好地平衡优化和正则化。
 
 
-#### 优势
+### 📖 优势
 - **更好的正则化**：解耦权重衰减提高泛化能力，优于原始Adam的L2正则化。
 - **收敛更快**：在许多任务（如Transformer、CNN）中，AdamW比Adam更稳定。
 - **广泛应用**：AdamW是现代深度学习（如BERT、GPT）的默认优化器。
@@ -61,7 +61,7 @@ AdamW 直接对参数施加 $\lambda \theta_t$ 的衰减，而不是将其作为
 
 ---
 
-### Python代码示例
+### 📖 Python代码示例
 
 以下是一个最简单的PyTorch示例，展示如何在MNIST手写数字分类任务中使用AdamW优化器。代码保持极简，聚焦AdamW的实现。
 
@@ -131,7 +131,7 @@ for epoch in range(1, epochs + 1):
 
 ---
 
-### 代码说明
+### 📖 代码说明
 
 1. **模型定义**：
    - `SimpleNet` 是一个极简的全连接神经网络，输入为MNIST的28x28像素图像，输出为10类分类。
@@ -162,7 +162,7 @@ for epoch in range(1, epochs + 1):
 
 ---
 
-### 关键点
+### 📖 关键点
 - **解耦权重衰减**：AdamW直接对参数施加衰减（`λθ`），而不是将其融入梯度，效果优于Adam的L2正则化。
 - **超参数**：
    - `lr=0.001`：默认值通常有效。
@@ -171,7 +171,7 @@ for epoch in range(1, epochs + 1):
 
 ---
 
-### 实际应用场景
+### 📖 实际应用场景
 - **Transformer模型**：AdamW是BERT、GPT等模型的标准优化器，因其正则化效果更好。
 - **深度学习**：适用于CNN、RNN等任务，特别是在需要强正则化的场景。
 - **与其他技术结合**：可与Dropout、BatchNorm、ReduceLROnPlateau（如前述问题）联合使用。
