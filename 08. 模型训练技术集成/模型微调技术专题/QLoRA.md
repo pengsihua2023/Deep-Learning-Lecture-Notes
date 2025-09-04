@@ -1,5 +1,7 @@
 # QLoRA (Quantized Low-Rank Adaptation) 微调方法
+<img width="256" height="256" alt="image" src="https://github.com/user-attachments/assets/9df080a8-2071-4dd3-981f-2f379a113902" />
 
+  QLoRA（Quantized Low-Rank Adaptation） 是由 Tim Dettmers、Artidoro Pagnoni、Ari Holtzman 和 Luke Zettlemoyer 在 2023 年首次提出的。
 
 ## 📖 1. 定义
 
