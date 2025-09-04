@@ -1,4 +1,5 @@
 # Prefix Tuning 微调
+<img width="222" height="247" alt="image" src="https://github.com/user-attachments/assets/0658e1c3-7158-4f8e-b727-6eb6b6b512a4" />
 
 
 ## 📖 1. 定义
