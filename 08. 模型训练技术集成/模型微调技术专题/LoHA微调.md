@@ -3,7 +3,7 @@
 ## 📖 1. 定义
 
 **LoHA** 是一种参数高效微调 (PEFT, Parameter-Efficient Fine-Tuning) 方法，它和 **LoRA** 类似，但在低秩分解时引入了 **Hadamard 逐元素乘积**，从而在保持低秩更新的同时增强表示能力。
-<img width="500" height="680" alt="image" src="https://github.com/user-attachments/assets/37e20da6-608b-4325-b3ff-3ab91549b5f0" />
+<img width="250" height="340" alt="image" src="https://github.com/user-attachments/assets/37e20da6-608b-4325-b3ff-3ab91549b5f0" />
 
 
 * **LoRA**：对权重矩阵 $W \in \mathbb{R}^{d \times k}$，采用低秩分解
