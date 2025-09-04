@@ -1,7 +1,7 @@
 # LoRA 微调（Low-Rank Adaptation）
 
 <img width="128" height="128" alt="image" src="https://github.com/user-attachments/assets/59e6bf3e-3bd0-43bc-84eb-cddec804cc1c" />
-
+LoRA（Low-Rank Adaptation of Large Language Models） 是由 微软研究院（Microsoft Research） 的研究人员在 2021 年提出的。第一作者：Edward J. Hu.
 
 ## 📖  1. 定义
 
