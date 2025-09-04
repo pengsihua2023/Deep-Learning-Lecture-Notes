@@ -1,6 +1,7 @@
 # Prefix Tuning 微调
 <img width="222" height="247" alt="image" src="https://github.com/user-attachments/assets/0658e1c3-7158-4f8e-b727-6eb6b6b512a4" />
-
+ 
+Prefix-Tuning 是由 斯坦福大学的 Li & Liang 在 2021 年首次提出的。第一作者：Xiang Lisa Li
 
 ## 📖 1. 定义
 
