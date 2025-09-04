@@ -1,6 +1,7 @@
 # Prompt Tuning微调
 <img width="182" height="238" alt="image" src="https://github.com/user-attachments/assets/8454aee4-3658-4429-81d4-c07e0d728ea6" />
 
+  Prompt Tuning 最早是 Google Research 的研究团队 在 2021 年提出的。第一作者：Brian Lester。  
 
 ## 📖 1. Prompt Tuning 的定义
 
