@@ -17,9 +17,9 @@ $$
 
 * **LoHA**：在低秩分解的基础上，引入 Hadamard 乘积（逐元素乘法），增强参数化表达能力：
 
-  $$
-  \Delta W = (B A) \odot (D C)
-  $$
+$$
+\Delta W = (B A) \odot (D C)
+$$
 
   其中：
 
