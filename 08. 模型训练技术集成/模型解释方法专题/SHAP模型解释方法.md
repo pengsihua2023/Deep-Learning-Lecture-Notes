@@ -66,7 +66,7 @@ SHAP 提供了多种直观的可视化：
 * **Dependence Plot**：特征取值与贡献之间的关系。
 
 
-## 6. 实战代码（PyTorch + SHAP）
+## 6. 代码实现（PyTorch + SHAP）
 
 下面给出一个 **完整 Notebook Demo**，展示如何训练模型并用 SHAP 解释。
 
