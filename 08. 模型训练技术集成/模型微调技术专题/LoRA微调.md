@@ -1,5 +1,8 @@
 # LoRA 微调（Low-Rank Adaptation）
 
+<img width="128" height="128" alt="image" src="https://github.com/user-attachments/assets/59e6bf3e-3bd0-43bc-84eb-cddec804cc1c" />
+
+
 ## 📖  1. 定义
 
 **LoRA** 是一种 **参数高效微调（PEFT, Parameter-Efficient Fine-Tuning）** 方法，由微软在 2021 年提出。
