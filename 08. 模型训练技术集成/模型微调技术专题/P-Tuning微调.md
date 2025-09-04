@@ -1,6 +1,6 @@
 # P-Tuning微调
 
-<img width="210" height="279" alt="image" src="https://github.com/user-attachments/assets/7baa59a8-490f-4c58-b11b-757bbecfcb69" />
+<img width="105" height="140" alt="image" src="https://github.com/user-attachments/assets/7baa59a8-490f-4c58-b11b-757bbecfcb69" />
 
 
 ## 📖 1. P-Tuning 的定义
