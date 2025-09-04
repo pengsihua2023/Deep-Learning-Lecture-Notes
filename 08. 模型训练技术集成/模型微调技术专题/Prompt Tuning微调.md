@@ -1,4 +1,6 @@
 # Prompt Tuning微调
+<img width="182" height="238" alt="image" src="https://github.com/user-attachments/assets/8454aee4-3658-4429-81d4-c07e0d728ea6" />
+
 
 ## 📖 1. Prompt Tuning 的定义
 
