@@ -1,5 +1,8 @@
 # P-Tuning微调
 
+<img width="210" height="279" alt="image" src="https://github.com/user-attachments/assets/7baa59a8-490f-4c58-b11b-757bbecfcb69" />
+
+
 ## 📖 1. P-Tuning 的定义
 
 **P-Tuning**（Prompt Tuning 的一种变体）是一种 **参数高效微调方法**，它通过在输入序列前插入 **可学习的连续提示向量**（continuous prompts），来引导预训练语言模型完成下游任务。
