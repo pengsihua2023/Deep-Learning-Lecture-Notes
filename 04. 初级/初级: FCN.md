@@ -1,5 +1,5 @@
-## FCN(MLP)
-全连接神经网络（Fully Connected Neural Network / MLP）  
+## FCN
+全连接神经网络（Fully Connected Neural Network）  
 - 重要性：这是深度学习的基础模型，理解它有助于掌握神经网络的核心概念（如神经元、权重、激活函数、梯度下降）。  
 - 核心概念：  
 神经网络由输入层、隐藏层和输出层组成，像大脑的神经元一样工作。  
