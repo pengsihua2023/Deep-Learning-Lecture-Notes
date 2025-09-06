@@ -39,7 +39,7 @@
     - [PINN简介](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/PINN%E4%B8%93%E9%A2%98/PINN%E7%AE%80%E4%BB%8B.md)
     
   - LIF专题     
-    - [LIF模型】（）
+    - [LIF模型](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/tree/main/07.%20%E7%A0%94%E7%A9%B6%E7%BA%A7/LIF%20%E7%A5%9E%E7%BB%8F%E5%85%83%E6%A8%A1%E5%9E%8B%E4%B8%93%E9%A2%98)
 
     
 
