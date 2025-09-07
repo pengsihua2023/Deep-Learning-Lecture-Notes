@@ -1,15 +1,14 @@
 # 多任务学习（Multi-Task Learning, MTL）
 
+
+## 📖 定义  
+多任务学习（Multi-Task Learning, MTL）是一种机器学习训练范式，核心思想是：一个模型同时学习多个相关任务，而不是像传统方法那样为每个任务单独训练模型。模型共享大部分参数，每个任务有特定输出头，联合优化多个目标。  
 <div align="center">
 <img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/4dd18183-6e9e-4418-ab2b-b0f9e8edb4bb" />
 </div>
 <div align="center">
 （此图引自Internet）
 </div>
-
-## 📖 定义  
-多任务学习（Multi-Task Learning, MTL）是一种机器学习训练范式，核心思想是：一个模型同时学习多个相关任务，而不是像传统方法那样为每个任务单独训练模型。模型共享大部分参数，每个任务有特定输出头，联合优化多个目标。  
-
 
 ## 📖 多任务学习的数学描述
 
