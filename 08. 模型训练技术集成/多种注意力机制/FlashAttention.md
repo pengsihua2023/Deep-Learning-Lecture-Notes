@@ -30,31 +30,31 @@ $$
 
 FlashAttention 的改进点：
 
-1. 不直接形成整个矩阵 $S = QK^\top / \sqrt{d_k}$，而是把它分块：
+1. 不直接形成整个矩阵 $S = QK^\top / \sqrt{d_k}$ ，而是把它分块：
 
-   $$
-   S_{i,j} = \frac{Q_i K_j^\top}{\sqrt{d_k}}
-   $$
+$$
+S_{i,j} = \frac{Q_i K_j^\top}{\sqrt{d_k}}
+$$
 
    按 $i$ 和 $j$ 的分块迭代计算。
 
 2. 逐块更新 softmax：
 
-   $$
-   \text{softmax}(S_{i,:}) = \frac{\exp(S_{i,j} - m_i)}{\sum_j \exp(S_{i,j} - m_i)}
-   $$
+$$
+\text{softmax}(S_{i,:}) = \frac{\exp(S_{i,j} - m_i)}{\sum_j \exp(S_{i,j} - m_i)}
+$$
 
    其中 $m_i$ 是该行的最大值（数值稳定性）。
 
 3. 在计算 softmax 的同时，立即与 $V$ 相乘并累加：
 
-   $$
-   O_i = \sum_j \text{softmax}(S_{i,j}) V_j
-   $$
+$$
+O_i = \sum_j \text{softmax}(S_{i,j}) V_j
+$$
 
 因此 **最终不需要存储 $S$**，只保留归一化因子和当前块的输出。
 
----
+
 
 ## 3. 最简代码实现
 
