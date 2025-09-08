@@ -4,6 +4,12 @@
 ### 基本定义
 
 在全连接神经网络中，相邻层之间的**每一个神经元都与下一层的所有神经元相连**。也就是说，一层的输出会作为加权输入传递给下一层的所有节点。
+<div align="center">
+<img width="600" height="180" alt="image" src="https://github.com/user-attachments/assets/4f07aa2a-dd72-4e95-8543-7f71810d8023" />
+</div>
+<div align="center">
+(此图引自Internet。)
+</div>
 
 ### 结构特点
 
@@ -13,29 +19,13 @@
 4. **权重与偏置（Weights & Biases）**：每一条连接线都有对应的权重参数，每个神经元通常还带有偏置项。
 5. **激活函数（Activation Function）**：在隐藏层或输出层中引入非线性，使网络具备拟合复杂函数的能力。
 
-### 数学形式
-
-假设第 $l$ 层的输入为 $\mathbf{x}^{(l)}$，权重矩阵为 $\mathbf{W}^{(l)}$，偏置为 $\mathbf{b}^{(l)}$，激活函数为 $f(\cdot)$，则第 $l+1$ 层的输出为：
-
-$$
-\mathbf{x}^{(l+1)} = f(\mathbf{W}^{(l)} \mathbf{x}^{(l)} + \mathbf{b}^{(l)})
-$$
-
 ### 特点与应用
 
 * **优点**：结构简单，通用性强，能逼近任意连续函数（通用近似定理）。
 * **缺点**：参数量大（尤其在输入维度很高时），容易过拟合，训练效率较低。
 * **应用**：早期多用于简单分类与回归问题，如手写数字识别（MNIST）、表格数据预测等。
 
-
  
-<div align="center">
-<img width="600" height="180" alt="image" src="https://github.com/user-attachments/assets/4f07aa2a-dd72-4e95-8543-7f71810d8023" />
-</div>
-<div align="center">
-(此图引自Internet。)
-</div>
-
 ## 📖 数学描述
 
 ## 1. 网络结构
