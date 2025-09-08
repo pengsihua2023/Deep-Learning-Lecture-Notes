@@ -15,7 +15,9 @@
 
 这样，PINN 既利用了数据驱动的优势，又融入了物理约束，能在数据稀缺或噪声较大时获得更可靠的解。
 
----
+<div align="center">
+<img width="560" height="355" alt="image" src="https://github.com/user-attachments/assets/1c193eb4-bb56-4619-ae69-4d4128bebb84" />
+</div>
 
 ## 1. PINN 的基本思想
 
