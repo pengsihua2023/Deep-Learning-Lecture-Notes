@@ -76,4 +76,7 @@
   - [Grad-CAM++](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A8%A1%E5%9E%8B%E8%A7%A3%E9%87%8A%E6%96%B9%E6%B3%95%E4%B8%93%E9%A2%98/Grad-CAM%2B%2B%E6%A8%A1%E5%9E%8B%E8%A7%A3%E9%87%8A%E6%96%B9%E6%B3%95.md) 
   - [Attention Visualization](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E6%A8%A1%E5%9E%8B%E8%A7%A3%E9%87%8A%E6%96%B9%E6%B3%95%E4%B8%93%E9%A2%98/Attention%20Visualization.md)
 - [注意力机制]
-  - [www]
+  - [多头潜在注意力](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%A4%9A%E7%A7%8D%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/%E5%A4%9A%E5%A4%B4%E6%BD%9C%E5%9C%A8%E6%B3%A8%E6%84%8F%E5%8A%9B.md)
+  - [多查询注意力](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%A4%9A%E7%A7%8D%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/%E5%A4%9A%E6%9F%A5%E8%AF%A2%E6%B3%A8%E6%84%8F%E5%8A%9B.md)
+  - [稀疏注意力](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%A4%9A%E7%A7%8D%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/%E7%A8%80%E7%96%8F%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6.md)
+  - [FlashAttention](https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes/blob/main/08.%20%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/%E5%A4%9A%E7%A7%8D%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/FlashAttention.md)
