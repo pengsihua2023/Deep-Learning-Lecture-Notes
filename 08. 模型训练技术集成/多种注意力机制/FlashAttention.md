@@ -25,7 +25,7 @@
 标准注意力：
 
 $$
-\text{Attn}(Q, K, V) = \text{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right) V
+\text{Attn}(Q, K, V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right) V
 $$
 
 FlashAttention 的改进点：
