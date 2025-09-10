@@ -18,7 +18,9 @@
 * 时间复杂度仍然是 $O(n^2)$，但是 **显存复杂度从 $O(n^2)$ 降到 $O(n)$**；
 * 可以在 GPU 上处理更长的序列（几千到几万 token）。
 
-
+<div align="center">
+  <img width="420" height="463" alt="image" src="https://github.com/user-attachments/assets/df33e347-ff65-47a4-827d-9e6a432bfed9" />
+</div>
 
 ## 2. 数学描述
 
