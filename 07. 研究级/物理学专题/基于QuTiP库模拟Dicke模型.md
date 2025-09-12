@@ -5,6 +5,29 @@ Dicke模型是量子光学领域的一个基本理论模型，用于描述光与
 ### 模型描述
 <img width="688" height="475" alt="image" src="https://github.com/user-attachments/assets/b3ae8741-0369-48fe-8484-662175700868" />
 
+* **哈密顿量**：Dicke模型的哈密顿量通常表述为（在旋转波近似下）：
+
+$$
+H = \omega_c a^\dagger a + \frac{\omega_a}{2} \sum_{j=1}^N \sigma_z^j + \frac{g}{\sqrt{N}} \sum_{j=1}^N \left( a^\dagger \sigma_-^j + a \sigma_+^j \right)
+$$
+
+其中：
+
+* $\omega_c$ 是腔场的频率。
+
+* $\omega_a$ 是原子的跃迁频率。
+
+* $a^\dagger, a$ 是腔场的产生和湮灭算符。
+
+* $\sigma_z^j, \sigma_\pm^j$ 是第 $j$ 个原子的 Pauli 算符。
+
+* $g$ 是原子–腔场耦合强度。
+
+* $N$ 是原子数（通常取大 $N$ 极限以简化分析）。
+
+* 该模型假设所有原子等效地耦合到腔场，形成集体行为。
+
+
 
 ### 关键现象
 - **超辐射相变**：当耦合强度g超过临界值时，系统从正常相（无宏观相干）过渡到超辐射相（原子集体激发并辐射相干光）。这是一个量子相变，常在零温下研究。
