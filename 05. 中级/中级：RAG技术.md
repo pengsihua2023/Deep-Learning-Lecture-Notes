@@ -12,9 +12,9 @@ $$
 
 RAG：
 
-[
+$$
 P(y \mid x) = \sum_{d \in \mathcal{D}} P(y \mid x, d) \cdot P(d \mid x)
-]
+$$
 
 含义是：
 
@@ -35,15 +35,15 @@ P(y \mid x) = \sum_{d \in \mathcal{D}} P(y \mid x, d) \cdot P(d \mid x)
 
 Embedding 本质是一个映射：
 
-[
+$$
 f: \text{text} \rightarrow \mathbb{R}^n
-]
+$$
 
 比如：
 
-[
+$$
 v_q = f(x), \quad v_d = f(d)
-]
+$$
 
 ---
 
@@ -51,15 +51,15 @@ v_q = f(x), \quad v_d = f(d)
 
 最常用是余弦相似度：
 
-[
+$$
 \text{sim}(q,d) = \frac{v_q \cdot v_d}{|v_q||v_d|}
-]
+$$
 
 检索：
 
-[
+$$
 d^* = \arg\max_d \text{sim}(q,d)
-]
+$$
 
 ---
 
@@ -67,9 +67,9 @@ d^* = \arg\max_d \text{sim}(q,d)
 
 最终模型实际学的是：
 
-[
+$$
 P(y_t \mid y_{<t}, x, d)
-]
+$$
 
 也就是：
 
@@ -81,9 +81,9 @@ P(y_t \mid y_{<t}, x, d)
 
 RAG 的作用其实是降低熵：
 
-[
+$$
 H(Y|X, D) < H(Y|X)
-]
+$$
 
 也就是：
 
@@ -203,9 +203,9 @@ print(rag_answer("RAG 有什么作用？"))
 
 数学上属于：
 
-[
+$$
 \text{Bayesian inference + Approximate posterior}
-]
+$$
 
 而不是深度学习创新。
 
