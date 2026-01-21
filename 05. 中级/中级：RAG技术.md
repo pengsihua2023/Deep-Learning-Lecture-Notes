@@ -68,11 +68,8 @@ $$
 最终模型是：
 
 
-$$
+<img width="122" height="38" alt="image" src="https://github.com/user-attachments/assets/8f28643b-e0a2-427d-b415-91566291e1a7" />
 
-P(y_t \mid y_{<t}, x, d)
-
-$$
 
 
 也就是：
