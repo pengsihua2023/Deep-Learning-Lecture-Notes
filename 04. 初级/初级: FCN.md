@@ -5,10 +5,7 @@
 
 在全连接神经网络中，相邻层之间的**每一个神经元都与下一层的所有神经元相连**。也就是说，一层的输出会作为加权输入传递给下一层的所有节点。
 <div align="center">
-<img width="600" height="180" alt="image" src="https://github.com/user-attachments/assets/4f07aa2a-dd72-4e95-8543-7f71810d8023" />
-</div>
-<div align="center">
-(此图引自Internet。)
+<img width="700" height="210" alt="image" src="https://github.com/pengsihua2023/Deep-Learning-Lecture-Notes-English/blob/main/images/FCN.png" />  
 </div>
 
 ### 结构特点
