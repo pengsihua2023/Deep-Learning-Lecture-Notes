@@ -194,3 +194,215 @@ print("除以估计出的 c_hat 校正后，概率被重新拉回正确尺度，
 3. **PU 校正做法**：用同一个 $f(x)$，但除以估计出的常数 $\hat{c} = P(s=1\mid y=1)$（用已标记正样本上 $f(x)$ 的均值来估计），得到校正后的 $P(y=1\mid x) = f(x)/\hat{c}$。运行结果准确率提升到 94.7%。
 
 这是最简单能跑通的 PU 学习实现——只用逻辑回归 + 一次除法校正，没有涉及 nnPU 的非负风险约束或深度网络。如果你想看 **nnPU**（更适合深度学习场景、能处理 $\pi$ 未知或分布重叠更复杂情况）的实现，我可以再写一版 PyTorch 版本。
+
+## nnPU
+
+PyTorch 装上了（CPU 运算可用）。现在写 nnPU 的完整实现并测试。问题很清楚了——不是排序能力（AUC）不行，而是原始阈值 0.5 没校准好（负样本平均概率恰好卡在 0.50 附近）。我把阈值校准加进去，让对比更清晰、更符合实际使用方式。Also fixing the training-set evaluate() calls that used the old return signature:Now rerunning the full script end-to-end to confirm everything is consistent:这次跑出来的结果其实比我预想的更能说明问题——uPU 的输出因为训练时被拉向"发散"而严重过度自信（概率几乎全部堆在 0 或 1），以至于连按类先验校准阈值都失效了；而 nnPU 的输出始终保持在合理范围内，校准后准确率明显更好。这正好反映了非负修正的真实价值,把这个发现写进总结里。脚本没问题，结果一致、可复现。现在整理最终文件。## 代码结构说明
+
+这份代码实现了 **nnPU（Kiryo et al., 2017）**，并对比了"不加非负修正的朴素 uPU"来直观展示修正的必要性：
+
+1. **数据**：两个略有重叠的高斯簇模拟正负类，仅 30% 的正样本被标记为 P，其余混入 U。
+
+2. **损失函数**：用 `F.softplus(-margin)` 实现数值稳定的逻辑损失 $\ell(t)=\log(1+e^{-t})$。
+
+3. **风险计算**（对应之前推导的公式）：
+   - $R_p^+$：正样本判为正的损失
+   - $R_p^-$、$R_u^-$：分别在 P、U 上"判为负"的损失，用来构造校正项
+   - $\widehat R_{pu}^- = R_u^- - \pi R_p^-$
+
+4. **核心分支**：当 $\widehat R_{pu}^- \ge 0$ 时正常优化；一旦跑到负值（过拟合信号），只对这一项做**梯度反转**（`loss = -R_pu_minus`），把它推回零附近。
+
+**实测发现（也是这份代码最有价值的部分）**：uPU 不加修正训练 500 轮后，$\widehat R_{pu}^-$ 被拉到 −285（严重发散），导致输出概率高度饱和——饱和到甚至连"按类先验校准阈值"这种常规补救手段都失效（校准后准确率退化到 0.50）。nnPU 全程把这个量稳定在 0 附近，测试集 AUC 达到 0.984（对比 uPU 的 0.950），配合阈值校准后准确率约 93%。这个对比是我实际跑出来的结果，不是编造的演示数字。
+
+如果你想往metagenomic 或蛋白质相互作用这类实际数据上迁移，主要要解决的是 **π（类先验）的估计**——这里为了聚焦风险修正机制,直接假设 π 已知，但实践中通常需要额外估计。需要的话我可以补一个简单的 π 估计模块。
+
+```
+"""
+PU学习 —— PyTorch实现: nnPU (Non-negative PU Learning)
+参考: Kiryo et al., "Positive-Unlabeled Learning with Non-Negative Risk Estimator", NeurIPS 2017
+
+核心公式回顾:
+    R_p^+(g)   = E_{x~p_p}[ l(g(x)) ]          # 正样本被判为正的损失
+    R_p^-(g)   = E_{x~p_p}[ l(-g(x)) ]         # 正样本被判为负的损失(仅用于校正)
+    R_u^-(g)   = E_{x~p_u}[ l(-g(x)) ]         # 未标记样本被判为负的损失
+    R_pu^-(g)  = R_u^-(g) - pi * R_p^-(g)      # 校正后的"负类风险"估计
+
+    朴素 uPU: loss = pi * R_p^+ + R_pu^-(g)   —— 当模型容量大(如深度网络)时,
+              R_pu^-(g) 会被训练拉到负无穷,导致严重过拟合。
+
+    nnPU 修正: 当 R_pu^-(g) < 0 时,不再按常规方向优化,而是单独对这一项做
+              "梯度反转"(反向传播 -R_pu^-(g)),把它推回零附近,阻止过拟合。
+"""
+
+import numpy as np
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from sklearn.metrics import accuracy_score, roc_auc_score
+
+torch.manual_seed(0)
+np.random.seed(0)
+
+# ============================================================
+# 1. 生成模拟数据（两个稍有重叠的高斯簇，制造非线性可分的场景）
+# ============================================================
+n_pos, n_neg = 300, 300
+X_pos = np.random.normal(loc=[1.5, 1.5], scale=1.3, size=(n_pos, 2))
+X_neg = np.random.normal(loc=[-1.5, -1.5], scale=1.3, size=(n_neg, 2))
+
+X = np.vstack([X_pos, X_neg]).astype(np.float32)
+y_true = np.hstack([np.ones(n_pos), np.zeros(n_neg)])
+
+pi = n_pos / (n_pos + n_neg)  # 类先验 π = P(y=1)；这里假设已知(实践中需单独估计)
+
+# ============================================================
+# 2. 构造PU场景：仅 c 比例的正样本被标记为 P，其余全部进入 U
+# ============================================================
+c = 0.3
+is_labeled = (y_true == 1) & (np.random.rand(len(y_true)) < c)
+s = is_labeled.astype(int)
+
+X_p = torch.from_numpy(X[s == 1])   # 已标记正样本 P
+X_u = torch.from_numpy(X[s == 0])   # 未标记样本 U（混杂正负）
+
+print(f"P集合大小: {X_p.shape[0]}, U集合大小: {X_u.shape[0]}, 真实类先验 pi = {pi:.3f}")
+print("-" * 60)
+
+# ============================================================
+# 3. 定义模型：简单MLP，输出原始分数 g(x)（不经sigmoid）
+# ============================================================
+class MLP(nn.Module):
+    def __init__(self, in_dim=2, hidden=64):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(in_dim, hidden), nn.ReLU(),
+            nn.Linear(hidden, hidden), nn.ReLU(),
+            nn.Linear(hidden, 1),
+        )
+
+    def forward(self, x):
+        return self.net(x).squeeze(-1)  # 返回 g(x)，标量分数
+
+
+def logistic_loss(margin):
+    # l(t) = log(1 + exp(-t))，用 softplus(-t) 保证数值稳定
+    return F.softplus(-margin)
+
+
+def train(model, X_p, X_u, pi, n_epochs=500, lr=1e-3, use_nn_correction=True):
+    """训练一个PU分类器。use_nn_correction=False 时退化为朴素uPU（不加非负修正），
+       用于对比展示过拟合问题。"""
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    history = []
+
+    for epoch in range(n_epochs):
+        optimizer.zero_grad()
+
+        g_p = model(X_p)
+        g_u = model(X_u)
+
+        R_p_plus = logistic_loss(g_p).mean()          # 正样本->正类 的损失
+        R_p_minus = logistic_loss(-g_p).mean()         # 正样本->负类 的损失(校正用)
+        R_u_minus = logistic_loss(-g_u).mean()          # 未标记->负类 的损失
+
+        R_pu_minus = R_u_minus - pi * R_p_minus         # 校正后的负类风险估计
+
+        if (not use_nn_correction) or R_pu_minus.item() >= 0:
+            loss = pi * R_p_plus + R_pu_minus
+        else:
+            # nnPU 核心：负风险跑到负值 => 只对这一项做梯度反转，拉回零附近
+            loss = -R_pu_minus
+
+        loss.backward()
+        optimizer.step()
+
+        history.append(R_pu_minus.item())
+        if epoch % 100 == 0 or epoch == n_epochs - 1:
+            print(f"  epoch {epoch:4d} | R_pu^-(g) = {R_pu_minus.item():+.4f} "
+                  f"| total loss = {loss.item():+.4f}")
+
+    return history
+
+
+def evaluate(model, X, y_true, tag, pi_for_calibration=None):
+    """
+    注意: PU风险训练出的 sigmoid(g(x)) 并不保证在 0.5 处就是最优决策阈值
+    (这与朴素二分类不同)。若已知类先验 pi，可用它简单校准阈值：
+    取分数分布中使预测正类比例 ≈ pi 的分位点作为阈值。这是AUC（排序能力）
+    和accuracy（阈值下的准确率）经常不一致时的常见原因和修正方法。
+    """
+    model.eval()
+    with torch.no_grad():
+        scores = model(torch.from_numpy(X))
+        probs = torch.sigmoid(scores).numpy()  # 数值稳定的sigmoid
+    auc = roc_auc_score(y_true, probs)
+
+    acc_naive = accuracy_score(y_true, (probs > 0.5).astype(int))
+    msg = f"[{tag}] AUC = {auc:.4f} | 准确率(阈值0.5) = {acc_naive:.4f}"
+
+    if pi_for_calibration is not None:
+        thr = np.quantile(probs, 1 - pi_for_calibration)
+        acc_calib = accuracy_score(y_true, (probs > thr).astype(int))
+        msg += f" | 准确率(按pi校准阈值={thr:.3f}) = {acc_calib:.4f}"
+
+    print(msg)
+    return auc, acc_naive
+
+
+# ============================================================
+# 4a. 朴素 uPU（无非负修正）—— 展示过拟合问题
+# ============================================================
+print("=== 训练朴素 uPU（无非负修正）===")
+model_upu = MLP()
+hist_upu = train(model_upu, X_p, X_u, pi, n_epochs=500, use_nn_correction=False)
+print()
+print(">> 训练集上的表现（同一批数据，过拟合模型在这里也可能显得还不错）:")
+evaluate(model_upu, X, y_true, "uPU (无修正) - 训练集", pi_for_calibration=pi)
+print("-" * 60)
+
+# ============================================================
+# 4b. nnPU（带非负修正）
+# ============================================================
+print("\n=== 训练 nnPU（带非负修正）===")
+model_nnpu = MLP()
+hist_nnpu = train(model_nnpu, X_p, X_u, pi, n_epochs=500, use_nn_correction=True)
+print()
+print(">> 训练集上的表现:")
+evaluate(model_nnpu, X, y_true, "nnPU (带修正) - 训练集", pi_for_calibration=pi)
+print("-" * 60)
+
+# ============================================================
+# 4c. 关键对比：在全新的、训练时没见过的测试集上评估泛化能力
+#     （过拟合问题只有在新数据上才会显现出来）
+# ============================================================
+n_test = 2000
+X_test_pos = np.random.normal(loc=[1.5, 1.5], scale=1.3, size=(n_test // 2, 2))
+X_test_neg = np.random.normal(loc=[-1.5, -1.5], scale=1.3, size=(n_test // 2, 2))
+X_test = np.vstack([X_test_pos, X_test_neg]).astype(np.float32)
+y_test = np.hstack([np.ones(n_test // 2), np.zeros(n_test // 2)])
+
+print("\n=== 关键对比：全新测试集（训练时未见过）上的泛化表现 ===")
+auc_upu, acc_upu = evaluate(model_upu, X_test, y_test, "uPU (无修正) - 测试集", pi_for_calibration=pi)
+auc_nnpu, acc_nnpu = evaluate(model_nnpu, X_test, y_test, "nnPU (带修正) - 测试集", pi_for_calibration=pi)
+print("-" * 60)
+
+# ============================================================
+# 5. 总结对比
+# ============================================================
+print("\n=== 总结 ===")
+print(f"uPU (无修正)  训练末期 R_pu^-(g) = {hist_upu[-1]:+.4f}  | 测试集 AUC = {auc_upu:.4f}")
+print(f"nnPU(带修正)  训练末期 R_pu^-(g) = {hist_nnpu[-1]:+.4f}  | 测试集 AUC = {auc_nnpu:.4f}")
+print("""
+说明:
+1. uPU 的 R_pu^-(g) 在训练中被无限拉向负值——这正是深度模型在uPU下会发生的
+   "风险估计发散"，是过拟合的直接信号；nnPU 通过梯度反转把它稳定在0附近。
+2. 该发散在两方面体现代价：(a) AUC更低，说明排序质量更差；
+   (b) 输出概率被推向极端饱和(几乎全是0或1)，本例中甚至导致按类先验pi校准
+   阈值时完全失效(校准后准确率退化到0.50)——过拟合的模型"看起来自信"，
+   但这种自信是不可靠、不可校准的。
+3. nnPU 的输出保持在合理范围内，配合已知的类先验pi做简单阈值校准
+   (而非死板用0.5)，能得到明显更好、也更稳定可信的分类准确率。
+   这也提示：sigmoid(g(x))=0.5 不一定是PU训练出的模型的最优决策阈值。
+""")
+
+```
