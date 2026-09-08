@@ -112,3 +112,73 @@ $\pi$ 的估计误差会直接线性地传递到 $\widehat{R}_{\text{pu}}(g)$ �
 
 ---
 
+## PU学习代码例子
+```
+import numpy as np
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, roc_auc_score
+
+# ============================================================
+# PU学习最简单示例：Elkan-Noto (2008) 校正法
+#
+# 核心思想：
+#   1. 直接训练一个分类器区分 "已标记正样本(P)" vs "未标记(U)"，
+#      得到 f(x) = P(s=1 | x)
+#   2. 在 SCAR 假设下（标记过程与 x 无关），可以证明：
+#         f(x) = c * P(y=1 | x)，其中 c = P(s=1 | y=1)
+#      于是校正后的真实正类概率为 P(y=1|x) = f(x) / c
+# ============================================================
+
+rng = np.random.RandomState(42)
+
+# ---------- 1. 生成模拟数据：两个高斯簇代表正类/负类 ----------
+n_pos, n_neg = 500, 500
+X_pos = rng.normal(loc=[2, 2], scale=1.5, size=(n_pos, 2))
+X_neg = rng.normal(loc=[-2, -2], scale=1.5, size=(n_neg, 2))
+
+X = np.vstack([X_pos, X_neg])
+# y_true 是"上帝视角"的真实标签，PU学习训练时完全不可见，只用来最后评估效果
+y_true = np.hstack([np.ones(n_pos), np.zeros(n_neg)])
+
+# ---------- 2. 模拟 PU 场景 ----------
+# 真实正样本里只有比例 c 被标记为 P，剩下的正样本 + 全部负样本 都混入 U
+c_true = 0.3
+is_labeled = (y_true == 1) & (rng.rand(len(y_true)) < c_true)
+s = is_labeled.astype(int)  # s=1: 已标记(P)；s=0: 未标记(U)
+
+print(f"总样本数: {len(y_true)}")
+print(f"标记为 P 的样本数: {s.sum()}")
+print(f"未标记 U 中样本数: {(s == 0).sum()}，其中真实正样本占比: {y_true[s == 0].mean():.3f}")
+print("-" * 50)
+
+# ---------- 3a. 【错误做法】把 U 直接当负样本训练 ----------
+# 用 s 当作"标签"直接训练一个普通二分类器，且直接把输出当作 P(y=1|x)
+clf = LogisticRegression().fit(X, s)
+f_scores = clf.predict_proba(X)[:, 1]     # f(x) = P(s=1|x)，未经校正
+pred_naive = f_scores                     # 朴素做法：直接拿 f(x) 当 P(y=1|x)
+
+# ---------- 3b. 【PU做法】用 c 校正 ----------
+# 估计 c = P(s=1|y=1)：在已标记正样本子集上取 f(x) 的均值
+c_hat = clf.predict_proba(X[s == 1])[:, 1].mean()
+pred_pu = np.clip(f_scores / c_hat, 0, 1)  # 校正后的 P(y=1|x)
+
+print(f"真实 c = {c_true}，估计出的 c_hat = {c_hat:.4f}")
+print("-" * 50)
+
+# ---------- 4. 对比效果（用 y_true 评估，仅用于演示）----------
+thresh = 0.5
+acc_naive = accuracy_score(y_true, pred_naive > thresh)
+acc_pu = accuracy_score(y_true, pred_pu > thresh)
+
+print("=== 分类准确率对比（阈值0.5）===")
+print(f"朴素方法 (未校正, 把U当负样本训练后直接用输出): {acc_naive:.4f}")
+print(f"PU学习方法 (Elkan-Noto 校正后):              {acc_pu:.4f}")
+print()
+print("=== AUC 对比（AUC对单调缩放不敏感，两者理论上相同，仅供参考）===")
+print(f"AUC: {roc_auc_score(y_true, f_scores):.4f}")
+print()
+print("结论：朴素方法把所有输出普遍压低了（因为只有约c比例的正样本被标记为P），")
+print("导致大量真正的正样本预测概率低于0.5被误判为负类；")
+print("除以估计出的 c_hat 校正后，概率被重新拉回正确尺度，分类效果大幅改善。")
+
+```
