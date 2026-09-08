@@ -85,7 +85,7 @@ $$
 
 其中 $\widehat{R}_p^{+}(g) = \frac{1}{n_p}\sum \ell(g(x_i^p),+1)$，$\widehat{R}_p^{-}, \widehat{R}_u^{-}$ 类似定义。
 
-理论上 $\widehat{R}_{\text{pu}}^{-}(g) \ge 0$（因为它逼近 $(1-\pi)\mathbb{E}_{p_n}[\ell(\cdot,-1)] \ge 0$），但当 $g$ 的假设空间足够灵活（深度网络）时，训练过程会让 $\widehat{R}_{\text{pu}}^{-}(g)$ **在有限样本上跑到负值**并被无限压低——模型通过过拟合让经验风险发散到 $-\infty$，导致严重过拟合。
+理论上  $\widehat{R}_{\text{pu}}^{-}(g) \ge 0$（因为它逼近 $(1-\pi)\mathbb{E}_{p_n}[\ell(\cdot,-1)] \ge 0$），但当 $g$ 的假设空间足够灵活（深度网络）时，训练过程会让  $\widehat{R}_{\text{pu}}^{-}(g)$ **在有限样本上跑到负值**并被无限压低——模型通过过拟合让经验风险发散到 $-\infty$，导致严重过拟合。
 
 ### 6. 非负修正（nnPU）
 
@@ -95,7 +95,7 @@ $$
 \widetilde{R}_{\text{pu}}(g) = \pi\, \widehat{R}_p^{+}(g) + \max\Big(0,\; \widehat{R}_u^{-}(g) - \pi\, \widehat{R}_p^{-}(g)\Big)
 $$
 
-当 $\widehat{R}_u^{-}(g) - \pi \widehat{R}_p^{-}(g) < 0$ 时，实践中常用**梯度反转**：对该 batch 反向传播 $-\big(\widehat{R}_u^{-}-\pi\widehat{R}_p^{-}\big)$ 的梯度而非直接截断为 0，以避免梯度消失、把模型往回拉。这是目前深度学习场景下 PU 学习的标准做法。
+当  $\widehat{R}_u^{-}(g) - \pi \widehat{R}_p^{-}(g) < 0$ 时，实践中常用**梯度反转**：对该 batch 反向传播 $-\big(\widehat{R}_u^{-}-\pi\widehat{R}_p^{-}\big)$ 的梯度而非直接截断为 0，以避免梯度消失、把模型往回拉。这是目前深度学习场景下 PU 学习的标准做法。
 
 ### 7. 类别先验 $\pi$ 的估计
 
