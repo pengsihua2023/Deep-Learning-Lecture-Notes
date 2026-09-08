@@ -83,7 +83,11 @@ $$
 \widehat{R}_{\text{pu}}(g) = \pi\, \widehat{R}_p^{+}(g) + \underbrace{\left[\widehat{R}_u^{-}(g) - \pi\, \widehat{R}_p^{-}(g)\right]}_{=: \widehat{R}_{\text{pu}}^{-}(g)}
 $$
 
-其中 $\widehat{R}_p^{+}(g) = \frac{1}{n_p}\sum \ell(g(x_i^p),+1)$，$\widehat{R}_p^{-} ,  \widehat{R}_u^{-}$ 类似定义。
+其中 
+
+$$
+\widehat{R}_p^{+}(g) = \frac{1}{n_p}\sum \ell(g(x_i^p),+1)$，$\widehat{R}_p^{-} ,  \widehat{R}_u^{-}  类似定义。
+$$
 
 理论上  $\widehat{R}_{\text{pu}}^{-}(g) \ge 0$ （因为它逼近  $(1-\pi)\mathbb{E}_{p_n}[\ell(\cdot,-1)] \ge 0$ ） ，但当 $g$ 的假设空间足够灵活（深度网络）时，训练过程会让  $\widehat{R}_{\text{pu}}^{-}(g)$  **在有限样本上跑到负值**并被无限压低——模型通过过拟合让经验风险发散到  $-\infty$ ，导致严重过拟合。
 
